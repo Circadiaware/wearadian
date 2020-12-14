@@ -15,4 +15,4 @@ To achieve that, we repurpose off-the-shelf components and devices where possibl
 This project was started by Stephen Karl Larroque.
 
 ## License
-All the documentation of this project (except for 3rd party's documentation such as the devices' providers') is under Creative Commons v4.0 with attribution and share-alike BY (CC-BY-SA 4.0). The source codes of custom devices and analysis softwares are under General Public License v3.0 (GPLv3).
+All the documentation of this project (except for 3rd party's documentation such as the devices' providers') is under Creative Commons v4.0 with attribution and share-alike (CC-BY-SA 4.0). The source codes of custom devices and analysis softwares are under General Public License v3.0 (GPLv3).
