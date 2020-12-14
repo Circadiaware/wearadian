@@ -1,5 +1,5 @@
 # wearadian
-Wearables for the non-invasive ambulatory self-monitoring of human circadian rhythm.
+(WIP) Wearables for the non-invasive ambulatory self-monitoring of human circadian rhythm.
 
 WORK-IN-PROGRESS, far from finished
 
