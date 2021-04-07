@@ -1,0 +1,938 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+    <title>SleepNon24BiologicalMeasures</title>
+
+    <meta name="generator" content="Zim Zim 0.67-merge, based on the Ecodiv-responsive template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+
+    <!-- Scripts -->
+    <script type='text/javascript' src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+    
+    <!-- !! Different stylesheets for different screen sizes. Adapt to your likening-->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <link rel="stylesheet" media="screen and (min-width: 741px)" href=./resources/style.css>
+    <link rel="stylesheet" media="screen and (max-width: 740px)" href=./resources/style_mobile.css>
+
+</head>
+<body onload="$.mobile.silentScroll(window.scrollY);" <!-- fix for jquery-mobile always scrolling to top at loading, see https://stackoverflow.com/questions/15255719/jquery-mobile-prevent-scroll-to-top-before-page-transition --> > 
+    
+    <!-- See the Zim help file on templates for options -->    <div class="container">
+        <div data-role="page" class="ui-responsive-panel">
+            
+            <!-- Header / title -->
+    
+            <div data-role="header" data-position="fixed">
+                <a href="#nav-panel" data-icon="bars">Table of content</a> 
+                
+                <!-- !! Fill in the website title, by default: Notebook -->
+                <h1>Notebook - SleepNon24BiologicalMeasures</h1> 
+                
+                <!-- !! Optionally, create button with custom link. To apply uncomment the next line and fill in the link (and optionally change the button and text)) -->
+                <!-- <a href="http://my.website.org" data-icon="home">Main website</a> -->
+                
+            </div>
+            
+            <!-- Warning message if java script is disabled -->
+            <noscript>
+                <div style="border: 1px solid purple; padding: 10px">
+                    <span style="color:red">This page is best viewed with JavaScript enabled!</span>
+                </div>
+            </noscript>
+
+            <!-- Page content -->
+            
+            <div data-role="content" class="content">
+                    <h1>SleepNon24BiologicalMeasures <a name='Perso:MyIssues:SleepNon24:SleepNon24BiologicalMeasures'></a></h1>
+    
+                    <p>
+Créée le vendredi 19 juin 2020
+</p>
+
+<p>
+TODO:<br>
+<ul>
+<li>temperature 2 ibuttons en plus: 1 sur trunk internal, 1 sur bras external (skin temperature). + GreenTEG Core en meme temps, pourra comparer.</li>
+<li>BEST CRITICAL: wrist skin temperature using iButton on the AX6 watch using velcro, this may allow to detect the circadian rhythm! See <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/23577201/" title="https://pubmed.ncbi.nlm.nih.gov/23577201/" class="https">https://pubmed.ncbi.nlm.nih.gov/23577201/</a> and especially <b>WTiO (Wrist skin temperature increase onset) which anticipates melatonin production</b>: <a href="https://pubmed.ncbi.nlm.nih.gov/24164100/" title="https://pubmed.ncbi.nlm.nih.gov/24164100/" class="https">https://pubmed.ncbi.nlm.nih.gov/24164100/</a>
+<ul>
+<li><b>To summarize: wrist skin temperature (WTiO) can detect start of biological night (associated with the DLMO), and minimal core body temperature (CBTmin) the end (light therapy)! It can also detect the siesta time, which is independent from feeding time!</b></li>
+<li><b>BEST CRITICAL: wrist skin temperature (distal temperature) placement using Velcro to attach the iButton to a cotton sports wristband! + one sample every 10min is very fine! So every 5min is even better!</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a></li>
+<li><a href="http://hdl.handle.net/10201/40027" title="proximal body temperature does NOT work, see figure 7" class="http">proximal body temperature does NOT work, see figure 7</a>, need to use core body temperature or distal (wrist) skin temperature!</li>
+</ul>
+</li>
+<li>Proximal iButton try back or neck, better than trunk: <a href="https://pubmed.ncbi.nlm.nih.gov/33061911/" title="https://pubmed.ncbi.nlm.nih.gov/33061911/" class="https">https://pubmed.ncbi.nlm.nih.gov/33061911/</a></li>
+<li>BEST CRITICAL: arduino DIY light sensor rethink with a light intensity sensor with blue-green light filter, to directly get the intensity of exposure to blue-light! <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
+<ul>
+<li>cut filter from red laser glasses, find one glasses with guaranteed range so that I know exactly what is filtered, I should mimic as closely as possible the range they had in this study.</li>
+</ul>
+</li>
+<li>BEST IDEA WEARABLE ME ALL-IN-ONE: make my own ECG optical + thermistor + 3-axis accelerometer on armband with microsd card and bluetooth streaming using an arduino-like board with breakouts, this should be sufficient to capture skin temperature + RR intervals (heart rate and heart rate variability) + activity (sleep-wake phases - actigraphy). First confirm that these measures work to monitor the circadian rhythm (and determine with what algorithms), then I can try to make this all-in-one wearable with both data storage for offline analysis and online streaming via bluetooth for users to monitor in real-time their circadian rhythm (and stream the history too this is necessary).
+<ul>
+<li>IT EXISTS! Except for ECG. Recommend for researchers this all-in-one system: <b>ACM KRONOWISE® 2.0 watch, all-in-one system for circadian rhythm study and assessment</b>, combined with the Circadianware platform for light sensing, wrist skin temperature and 3-axis actigraphy! Used in lots of research studies already with Circadianware software: <a href="http://www.kronohealth.com/productos-y-servicios/" title="http://www.kronohealth.com/productos-y-servicios/" class="http">http://www.kronohealth.com/productos-y-servicios/</a></li>
+</ul>
+</li>
+<li>CircaLog</li>
+<li>Polar H10 ECG and accelerometer BLE receiver Android app long term recording
+<ul>
+<li>like the one I use currently but with auto retry if communication failed at some point, will retry until connection is reestablished or logging is stopped</li>
+<li>save in csv file along the way, so that if crash then no issue it's already saved</li>
+<li>update battery periodically (old app only updates once when connecting to the H10)</li>
+<li>use the android sdk provided by Polar, better to code a native android app in Java to reduce memory and cpu consumption, a non-native Python or other app will consume more phone battery</li>
+<li>smartphone receiver app advantages: full ECG + accel data recording, restart automatically, long battery if using Realme 6i, but sometimes the signal can be cut and a dedicated phone to receive the data is necessary (to avoid aggressive background app kill by Android OS).</li>
+<li>or can also record 1Hz RR et HR on internal memory. But how long the internal memory would last? But still for people without a dedicated phone, it would be better than nothing, if at least 24h would be great, need to test.</li>
+<li>need to code in java, because in python kivy it will be using opengl and so use much more battery</li>
+<li>Docs and tools:
+<ul>
+<li><a href="https://github.com/watsonix/node-ble-hr" title="https://github.com/watsonix/node-ble-hr" class="https">https://github.com/watsonix/node-ble-hr</a></li>
+<li><a href="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" title="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" class="https">https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp</a></li>
+<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
+<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
+<li><a href="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" title="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" class="https">https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/</a></li>
+</ul>
+</li>
+<li>RR intervals can have as many as 4 in one packet!
+<ul>
+<li>"Q: Why there are sometimes 0-4 RR-intervals? A: Bluetooth exchanges data around 1 s intervals and if your heart rate is around 60 bpm, then almost every RR-interval hits between data transmission. If you have heartrate eg. 40, then your RR-interval is over 1s =&gt; not every BLE packet contain RR-interval. Then if your heartrate is eg. 180, then there is at least two RR-intervals in BLE packet." <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" class="https">https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger</a></li>
+</ul>
+</li>
+<li>even if persistent mode, send taskbar notification and vibrate to signal that the device disconnected, maybe bad contact with chest belt electrodes and skin, so if we don't notify the user then they may acquire useless data.</li>
+</ul>
+</li>
+<li><b>MY OBSERVATIONS:</b>
+<ul>
+<li>GreenTEG Core: core temperature decreases and stays low when biological night or nap, but rises up when waking up in the middle of the night or when awake. A rise of core temperature (at an odd time such as before the usual time for the biological night) indicates an energy boost.</li>
+<li>ECG: heart rate low and stable when asleep, but starts to become higher and more variable in the last cycle or even before if sleeping outside of the biological night, may be usable as a metric to indicate if one is sleeping under the biological night?</li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+Wearables list:<br>
+<ul>
+<li>iButtons DS1925L (or DS1925EVKIT starter kit) (skin temperature)</li>
+<li>Polar H10 (ECG+3-axis ACC), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
+<li>GreenTEG CORE (core body temperature + skin temperature + ACC)</li>
+<li>Axivity AX6 (6-axis ACC)</li>
+<li>custom arduino-based light sensor</li>
+</ul>
+</p>
+
+<h2>Wearables donning procedure</h2>
+
+<br>
+
+<h3>Actigraphy Axivity AX6</h3>
+
+<p>
+<ul>
+<li>wristwatch arrow facing outwards towards the ground on the left wrist (and the Axivity logo on the wrist facing towards the body).</li>
+<li>stick a hooks type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin) on the face without an arrow, and then scratch the velcro side on the cotton wristband (the one with the iButton). Can be scratched on the exterior (prone to water damage but if worn up the arm and under clothes it should be fine) or inside the cotton wristband (more resistance to water damage but may be less comfortable and will likely deform the band, which may decrease the reliability of the iButton contact with skin and hence skin temperature measurements). The preferred way is to attach the Axivity AX6 on the exterior of the cotton wristband. Then, wear on the non-dominant arm, as it slightly less biases the results compared to the dominant arm.
+<ul>
+<li>Can also use the provided silicon watch-like support that is waterproof, but it's difficult to wear both the cotton wristband and the watch-like support for AX6, so will likely have to wear on different arms. But then one will be on the dominant arm, which is suboptimal as it can slightly bias the results, but it's better than nothing.</li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Core body temperature with GreenTEG CORE</h3>
+
+<p>
+<ul>
+<li>Preferred way is to use a hooks-type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin), <b>vertically</b> placed on the face facing the belt (ie, the face with the CORE brand marking), and use a sewable and skin-soft (eg, for babies, this side will be in contact with the skin from time to time) loops or loops-and-hooks type velcro band formed in a mobius loop to strap around the Polar Pro chest strap band, and then attach the CORE's velcro onto the mobius loop on the chest strap. This provide great comfort and improve skin contact and hence much more reliable measurements, and eliminates the mechanical pressure of the L dominoes as used in the manufacturer's instructions that eventually cause the CORE's outer ring to break. This technique can also be applied on already broken CORE devices.
+<ul>
+<li>Place the CORE on the chest's right or left side, below the armpit, as shown in: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
+<li>Avoid twisting the Polar Pro chest band when removing or attaching the CORE, if you also use the band to acquire ECG with the Polar H10, as twisting the band can damage the electrodes.</li>
+<li>ALTERNATIVE: according to this brain study, better place where there is soft tissues beneath, not bones, so on solar plexus. Indeed, DHF can acquire temperature 2cm below skin (DHF being the evolution of zero-heat-flux ZHF that consumes less energy): zero-heat-flux sensor for deep sensing of core body temperature if possible on the chest. Ref: Temperature Monitoring With Zero Heat Flux Technology In Comparison With Thermocouple Needle Probe During Selective Hypothermia, Mohammad Fazel Bakhsheshi et al, 2018. <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
+</ul>
+</li>
+<li>IMPORTANT: Instruct the subject to regularly check and reposition the CORE device to be flat on the skin, as it's crucial that the device be in full contact with the skin for precise measurements. It's often necessary when changing positions or when laying in the bed. It's possible to move the sensor around (eg, more on the thorax, completely on the side or even slightly on the back, can also be moved up and down) with no loss of accuracy, what matters is full skin contact.</li>
+<li>Alternative, but much less effective methods:
+<ul>
+<li>with strap: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
+<li>with patches (may be able to replace with hypafix tape): <a href="https://corebodytemp.com/manual/mountingmaintenance/" title="https://corebodytemp.com/manual/mountingmaintenance/" class="https">https://corebodytemp.com/manual/mountingmaintenance/</a></li>
+<li>"The preferred mounting site is below the armpit, directly on the rib cage on the are between pectoral muscle and latissimus muscle"</li>
+<li>can be combined with Cardiosport strap for heart rate (900+h of battery life!!! + temperature sensor with TP5+ - but memory 16h max): <a href="https://www.cardiosport.com/cardiosport-heart-rate-monitors" title="https://www.cardiosport.com/cardiosport-heart-rate-monitors" class="https">https://www.cardiosport.com/cardiosport-heart-rate-monitors</a> - NO: low quality, uses PPG with green light (when PPG with red light is better and anyway it's not ECG contrary to what they write, it's only heart rate and PPG!)</li>
+</ul></li>
+</ul>
+</p>
+
+<h3>ECG Polar 10 and GreenTEG Core</h3>
+
+<p>
+<ul>
+<li>Clean the Polar Pro chest band with a tissue with 50-70% alcohol, <b>except the connectors</b> to avoid oxydizing them. See <a href="https://support.polar.com/en/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="here for more infos" class="https">here for more infos</a>.</li>
+<li>Attach the GreenTEG Core or the same belt as the Polar H10, on the side, just after the silicone electrode band.</li>
+<li>Wear the Polar H10 as indicated by the manufacturer.</li>
+<li>Use a Bluetooth receptor to acquire the ECG data, see the next section.</li>
+</ul>
+</p>
+
+<h3>Wrist skin temperature with iButton DS1925L and a cotton sports wristband</h3>
+
+<p>
+<ul>
+<li>DS1925L is preferred over DS1922L as it has a MUCH longer battery, although the temporal resolution is reduced (1 sample every 5min = 0.0034 Hz), this should be sufficient to monitor the circadian rhythm since there are several studies using older iButtons with an even lower temporal resolution (1 sample every 10 min) and it worked for this very same application (estimation of the circadian rhythm from wrist skin temperature).</li>
+<li><b>BEST CRITICAL: wrist skin temperature (distal temperature) placement using Velcro to attach the iButton to a cotton sports wristband! + one sample every 10min is fine, but we prefer to use one every 5min.</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a> : "In our experiments <b>iButtons were programmed to sample every 10 min, and were attached to a double-sided cotton sport wrist band using Velcro®, with the sensor face of the iButton being placed over the inside of the wrist, on the radial artery of the non-dominant hand</b>. <b>The non dominant hand was selected to reduce the potential masking effects generated by the higher activity of the dominant hand (i.e. writing in class, manual working...).</b> This procedure guarantees good skin contact with the sensor face of the iButton. <b>Wrist location was selected among other peripheral regions (ankle, sternum, armpit) after several trials performed in our laboratory, since it allows long term recording without significant complaints of discomfort from the subjects.</b> In addition, subjects could easily remove and replace the data logger when necessary (i.e., to have a bath or shower). After one week of monitoring, the information stored in the iButton was transferred through an adapter (DS1402D-DR8, IDC, Spain) to a personal computer using iButton Viewer v. 3.22© 1992–2005 Dallas Semiconductor MAXIM software provided by the manufacturer."
+<ul>
+<li>Using a cotton sport wrist band is a GREAT idea because it is flexible and hence allows to always press the iButton against the skin but not too hard and it conforms with movement, AND it also <a href="https://www.ncbi.nlm.nih.gov/pubmed/25813804" title="shields the iButton from ambient temperature" class="https">shields the iButton from ambient temperature</a>! Better than a medical tape!</li>
+<li>aim for the radial artery close to the elbow instead? <a href="https://www.healthline.com/health/arteries-of-the-body#organization" title="https://www.healthline.com/health/arteries-of-the-body#organization" class="https">https://www.healthline.com/health/arteries-of-the-body#organization</a></li>
+<li>Studies demonstrating this is an optimal placement site:</li>
+<li><a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="this study tested on 14 different body sites, and ideal where on limbs + on trunk" class="https">this study tested on 14 different body sites, and ideal where on limbs + on trunk</a></li>
+<li><a href="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" title="this other study" class="https">this other study</a> shows that wrist skin temperature was shown to be sufficient to estimate the circadian rhythm</li>
+<li>BEST METHODS: for proximal temperature, abdomen and forehead not reliable! <b>Better to place iButtons on back or neck</b>! Skin Temperatures of Back or Neck Are Better Than Abdomen for Indication of Average Proximal Skin Temperature During Sleep of School-Aged Children, 2020 <a href="https://pubmed.ncbi.nlm.nih.gov/33061911/" title="https://pubmed.ncbi.nlm.nih.gov/33061911/" class="https">https://pubmed.ncbi.nlm.nih.gov/33061911/</a></li>
+<li><b>CRITICAL: core body temperature versus proximal and distal (wrist) skin temperatures.</b> This shows why <b>proximal temperature such as on the trunk cannot reliably be used to estimate the circadian rhythm</b>. But core body temperature and distal (wrist) skin temperature both can. Ref: PhD Thesis: Crosstalk between Synchronizers and the Human Circadian System, D. Antonio Martinez Nicolas, 2014, PhD Thesis <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a></li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image009.png" width="500"></li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>Alternative sites and methods of wearing the iButtons, tested and considered less effective (with ineffective temperature measurements not reflective of the circadian rhythm, and much less comfortable to wear):
+<ul>
+<li>axillary = under the armpit, on the arm rather than the trunk to avoid sweat from corroding the iButton (it's not waterproof, only water resistante)</li>
+<li>infraclavicular, which means <a href="https://en.wikipedia.org/wiki/Deltopectoral_lymph_nodes#/media/File:Lymph_node_regions.svg" title="just below the clavicule" class="https">just below the clavicule</a>, check by touching to see if it's warm or reddish which means it's vascularized.
+<ul>
+<li>Alternative: 1cm above the navel</li>
+</ul>
+</li>
+<li>under the elbow or the interior of the wrist</li>
+<li>any place on the body that is warm and/or reddish, meaning it's vascularized and radiating body temperature. If it's blank color, then preferably don't use this site.</li>
+<li>Medical tape (comformable tape such as Hypafix) needs to be cut large enough (about 2x as large as the iButton's diameter) so that the iButton, placed in the middle of the tape, is entirely covered and also that all sides of the tape are in contact with skin.
+<ul>
+<li>For good fixation, tape in a cross-shape (2 bands in a cross, one on top of the other) if band too chin (&lt;5cm) or for &gt;5cm tape bands place the iButton in the middle of a 5x5cm square, so as to leave 1cm ("one-half inch") of tape on each side as <a href="https://web.archive.org/web/20160615102653/https://multimedia.3m.com/mws/media/128297O/tips-for-trouble-free-taping-brochure.pdf" title="recommended by 3M in its &quot;Tips for Trouble-Free Taping&quot; guide" class="https">recommended by 3M in its "Tips for Trouble-Free Taping" guide</a>.</li>
+</ul>
+</li>
+<li>Choose a flat skin surface, without hair, and with little to no deformation on movement (eg, avoid articulations).
+<ul>
+<li>That is also very important not only for the patch to stick but also for comfort. If properly placed on a flat surface, it should not become itchy even after a few days of wearing continuously.</li>
+<li>If axillary (armpit), thy on the arm rather than the trunk</li>
+</ul>
+</li>
+<li>If using multiple iButtons, distance them of at least 0.5cm apart so that they're not in contact and do not exchange heat.</li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Light sensor</h3>
+
+<p>
+<ul>
+<li>The selected light sensors are worn as pendants. This study shows pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors), and they are much more comfortable.</li>
+<li>The two available and selected sensors are:
+<ul>
+<li>A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).</li>
+<li>HOBO Pendant Temperature/Light Data Logger UA-002-64 (Onset Computer Corporation, Bourne, Massachusetts, USA), acquire only light intensity (and with a bigger range than human eyes), not color
+<ul>
+<li><a href="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" title="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" class="https">https://www.onsetcomp.com/products/data-loggers/ua-002-64/</a></li>
+<li>Price: 59.55 euros only!</li>
+<li>Battery is replaceable! "The logger requires one 3-Volt CR-2032 lithium battery. <b>A new battery typically lasts one year with logging intervals greater than one minute.</b> Deployments in extremely cold or hot temperatures, or logging intervals faster than one minute, may significantly reduce battery life. <b>Continuous logging at the fastest logging rate of one second will deplete the battery in as little as two weeks.</b>" For combined light and temperature sensing! <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf</a></li>
+<li>See figure D, spectrum captured is much wider than eyes... need to add a passband filter for the wavelength range of human eyes. <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf</a></li>
+<li>TODO:
+<ul>
+<li>need to add an optical filter to reduce the light wavelength range to humanly observable light only (ie, remove UVs and infrared)</li>
+<li>buy the PC USB adapter to transfer data (which incurs an additional cost)</li>
+</ul>
+</li>
+<li>"This miniature data logger can record temperature and relative light levels. Complete with waterproof casing, this product is designed for indoor, outdoor, and underwater deployment. This model can store approximately 52,000 measurments of 10-bit readings. <b>Use a solar radiation shield for accurate temperature measurement in sunlight. </b>See RS1 Solar Radiation Shield (assembly required) and M-RSA (pre-assembled) Solar Radiation Shield. Note that using a solar radiation shield prevents the use of the light sensor."</li>
+<li>"Data readout in less than 30 seconds via <b>fast Optic USB interface</b>" → very good idea, faster and more reliable than bluetooth!</li>
+<li>"The UA-002-64 data logger supports the following measurements: Light Intensity, Soil Temperature, Temperature and Water Temperature"</li>
+<li>So it only acquire light intensity, and in a range greater than human eyes (150-1200 nm). No color. But does acquire ambient temperature too simultaneously.</li>
+<li>Sampling rate: one sample every 30s.</li>
+<li>Used in <a href="http://hdl.handle.net/10201/40027" title="this incredible PhD study" class="http">this incredible PhD study</a>:
+<ul>
+<li>"According to the manufacturer specifications, the data logger has a measurement range between 0 and 320,000 lux, memory capacity for up to 28,000 values taken at regular, previously programmed intervals (in our case, every 30 s), and light-spectrum wavelength recording capacity of 150-1200 nm, which is broader than the sensitivity of the human eye. In order to validate the light sensor, a LX 101 lux meter (3E NDT, Pasadena, Texas, USA) was used to make a set of simultaneous recordings in different environments (data not shown). Readings from both devices demonstrated a strong, significant positive correlation at different intensities (r=0.997, p&lt;0.01). A high degree of repeatability of sensor measurements was observed when recordings were simultaneously performed with two different Hobo sensors (r=0.998, p&lt;0.01)."</li>
+<li>BEST METHODS: "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h3>General procedures for all wearables</h3>
+
+<p>
+<ul>
+<li>Method wearables avoid superficial skin damage:
+<ul>
+<li>BEST CRITICAL: Move wearable belt up or down every day and before sleeping, data quality a bit worse but it's still usable and it's necessary to avoid skin damage when worn 24/7. In practice this was found to be the most effective strategy, allowing to wear the wearables for a virtually unlimited length of time. It's also necessary to clean up the wearables with a tissue imbibed in alcohol from time to time (about once a week).</li>
+<li>BEST CRITICAL: Avoid using sticky-based patch wearables or tape-based wearables, as adhesives will worsen irritation and are thus inadequate for continuous 24/7 long term wearing.
+<ul>
+<li>It's important to avoid any wearable that requires the use of medical tape or sticky gel patches/electrodes, as they may feel comfortable at first but will invariable produce a skin reaction after some time (usually a few days). For continuous wear, it's necessary to use wearables that can be in contact with the skin without any adhesive, such as by strapping a belt.</li>
+</ul>
+</li>
+<li>Other strategies that did not work as well:
+<ul>
+<li>Good but does not allow for continuous wear and cannot be applied to all wearables: Use silicone micropore because can be moved and retaped, for ibuttons. </li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7147274/" title="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7147274/" class="https">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7147274/</a>
+<ul>
+<li>Not too much pressure, important to allow for blood circulation in the superficial skin layers.</li>
+<li>"One study found that 52% of medical staff with hand eczema wash their hands more than 10 times per day.10 Long-term disinfectant use also influences the microbiota and changes the immune microenvironment on the skin surface, resulting in conditions such as eczema, fungal infection, bacterial infection, and allergic dermatitis."</li>
+<li>"Adequate cleaning and moisturizing are the basis of skin barrier maintenance. An appropriate cleaning frequency removes dirt, bacteria, and some sweat and oil from the skin surface, which reduces the irritation caused by their long-term presence and reduces the risk of infection. Adequate moisturizing helps maintain the moisture content of the corneum, maintains the “brick-wall” structure of the epidermis, and facilitates cell self-repair.18 Basic moisturizing usually consists of two categories: the application of a water-soluble moisturizer (including glycerin and sodium hyaluronate) that supplements natural moisturizing factors to lock in moisture,19 and the application of squalane, mineral oils, and various natural oils to replenish sebum, which forms an oil film on the skin surface to prevent water loss. People with rich sebum in a closed equipment environment should use water-soluble moisturizers to prevent excessive oil from blocking the pores and causing acne."</li>
+<li>"Acne treatment: Apart from wearing appropriate PPE and avoiding prolonged use, general treatments include: proper skin cleansing, a reasonable selection of skincare products (mainly water-soluble moisturizers and no hormones), a low-sugar diet, and avoidance of squeezing pimples with the hands."</li>
+<li>WARNING source may not be very reliable: "Traditional Chinese medicine or photodynamic therapy can also be used."</li>
+</ul>
+</li>
+<li><a href="https://www.researchgate.net/publication/319008444_Understanding_Moisture-Associated_Skin_Damage_Medical_Adhesive-Related_Skin_Injuries_and_Skin_Tears" title="https://www.researchgate.net/publication/319008444_Understanding_Moisture-Associated_Skin_Damage_Medical_Adhesive-Related_Skin_Injuries_and_Skin_Tears" class="https">https://www.researchgate.net/publication/319008444_Understanding_Moisture-Associated_Skin_Damage_Medical_Adhesive-Related_Skin_Injuries_and_Skin_Tears</a></li>
+<li>Essayer de mettre une compresse en dessous pour absorber humidité ! </li>
+<li>Wearables change chestbelt position twice a day, at wake up and then before sleep.</li>
+<li>Ibuttons with medical tape move every 1 or 2 days to the other armpit. With the silicone micropore tape, it's possible to reuse the same tape, it will still stick because no adhesive is used, it's based on pressure.</li>
+<li>If itchy, don't hesitate to scratch gently and move the chest belt a bit. If the itchiness feeling is repeating, then it's a clear sign it's time to move the chest belt to another skin location.</li>
+<li>For the chest belt any location on the chest as high as below the nipples or as low as the belly should work fine to acquire a sufficiently good ecg signal, as can be checked by looking at the graph and observing a QRS shaped complex.</li>
+<li>It's the warmth and wetness and too tightness that causes skin irritation! <a href="https://www.muellersportsmed.com/blog/post/how-to-handle-skin-care-and-prevent-itching-when-wearing-a-brace" title="https://www.muellersportsmed.com/blog/post/how-to-handle-skin-care-and-prevent-itching-when-wearing-a-brace" class="https">https://www.muellersportsmed.com/blog/post/how-to-handle-skin-care-and-prevent-itching-when-wearing-a-brace</a>
+<ul>
+<li>"No matter what kind of brace you wear, skin has a universal response to being warmed and confined over a long period of time. Eventually, you will find yourself fighting the urge to scratch."</li>
+<li>"If your skin can't breathe because the brace is too tight, you can also bring on a heat rash or a sweat rash, which will appear and feel much like a rash and make wearing your brace more uncomfortably itchy in the future."</li>
+<li>"For many braces, the material of the brace is not necessarily absorbent or breathable, but cotton is. A layer of soft natural cotton between your skin and the brace can reduce chafing and the risk of forming a heat/sweat rash at the same time."</li>
+<li>"Apply Powder to Prevent Heat and Sweat Rash"</li>
+<li>"If you are experiencing excessive sweating and a moist sweat rash or heat rash, many people have found that this can be alleviated with a gentle layer of powder. Apply either <b>talcum powder or baby powder</b>, which are similar, to your skin or the inside of the brace before wearing to help both suppress sweat and create a soft absorbing layer between your skin and the brace material. Others have found relief with <b>lubricant like vaseline</b> instead, but this will depend on your needs and the type of brace you're using."</li>
+</ul>
+</li>
+<li>Silicone does not cause allergies: <a href="https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/" title="https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/" class="https">https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/</a> "Based on literature, most of the reactions caused by silicones are non-allergic and non-specific. It is usually plain irritation, caused by skin’s properties, skin care products and hygiene – and the combination of them all. Individual elements, like pH of the skin, microbes, sweat, skin lotions and personal hygiene, can cause the irritation. Irritation can increase when sweating is more prominent – for example in higher temperatures. One can remove some of the irritation by cleaning the silicone band and the skin below it more frequently than before. The silicone band can be wiped clean several times a day. The skin below can be left lotionless."</li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h2>Acquisition procedure</h2>
+
+<br>
+
+<h3>Actigraphy Axivity AX6 acquisition</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Remove from wristband/watch and connect to a computer through USB</li>
+<li>use OmGUI</li>
+<li>Download, wait for 100% transfer (and battery recharge, make sure the computer is plugged to outlet for faster recharge)</li>
+<li><b>Rename the downloaded file to append current datetime in the filename</b> (else it's not in the filename and it can get overwritten)</li>
+<li>Back up the cwa files directly, can always export and normalize later, directly from OmGUI or other softwares/libraries.</li>
+<li>Clear/Wipe device</li>
+<li>Click Record and Reconfigure with 100Hz sampling frequency, 16bit resolution and 2000dps gyro/rotation.</li>
+<li>Disconnect and put back inside silicon watch, matching the arrow on the AX6 with the watch's arrow marker.</li>
+</ul>
+</p>
+
+<h3>Wrist Skin temperature Thermocron iButton DS1925L (or DS1922L)</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>use softwares in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html</a> as described in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html</a> (note all softwares are opensource)</li>
+<li>DS9490R and DS1402D-DR8+ to connect by USB to computer</li>
+<li>install 1-Wire drivers, then launch <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools/viewer.html" title="OneWireViewer" class="https">OneWireViewer</a> — can use opensource java: <a href="https://adoptopenjdk.net/" title="https://adoptopenjdk.net/" class="https">https://adoptopenjdk.net/</a></li>
+<li>Main procedure to do each time:
+<ul>
+<li>Plug the iButton into one of the bluedot receptors.
+<ul>
+<li>Pro tip: buy a DS9093F+ plastic foab to easily plug the iButton out. It's easier to use than the other plastic foab that are supplied in the starter evaluation kit.</li>
+<li>Pro tip 2: if you don't have a plastic foab, don't worry, you can just avoid pushing the iButton all the way through, it's possible to just slightly push until the iButton connects to the surrounding metalling ring, that's enough for the software to detect the iButton. Just maintain the iButton in this position with your thumb and release when you're done transferring data and configuring the next mission. This way, the iButton never gets stuck in place, and so you don't need any additional tool to remove it.</li>
+</ul>
+</li>
+<li>download data of previous acquisition (if there is one): Mission tab &gt; Temperature Data Log subtab &gt; right click on chart &gt; Save as .csv file
+<ul>
+<li>Battery gas gauge app: <a href="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html" title="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html" class="https">https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html</a></li>
+<li>How to export data to Excel and how to fix issue with european convention comma delimiter for floating numbers: <a href="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html" title="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html" class="https">https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html</a></li>
+</ul>
+</li>
+<li>check the Real-Time Temperature tab that the iButton is working correctly (you can touch with your thumb to check that the temperature changes after a few seconds).</li>
+<li>sync button clock to computer</li>
+<li>click on the button "Start a new mission":
+<ul>
+<li><b>0.0625°C temperature precision</b></li>
+<li><b>300s sampling rate for DS1925L ; 120s (2 min) sampling rate for DS1922L</b></li>
+<li>For DS1922L only: <b>Enable rollover</b> (this will overwrite old data when the memory becomes full, this is necessary as I did not find a way to clean up the internal memory before a new mission, it seems File &gt; Wipe the device does not clean the memory, hence without rollover new data won't be saved after 10 days of experiment, even after the data is transferred, see Mission &gt; Total Device Samples count). This setting is unnecessary and unavailable for DS1925L as it can record years (4 years?) of data continuously due to its larger flash memory.</li>
+<li>Disable SUTA and alarms but enable sampling and set 0 delay (so it starts recording asap).</li>
+<li>Click OK</li>
+<li>This is what the setup should look like if properly configured for DS1925L:</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image011.png"></li>
+<li>And here for DS1922L:</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image.png" width="350"></li>
+</ul>
+</li>
+<li>Deploy (ie, attaching to the body with medical conformable tape such as Hypafix)
+<ul>
+<li>Orient the iButtons in a top-side fashion, with the top (smaller round side) in contact with the skin and the bottom (wider flat base) in contact with the exterior tape. This is because the top side contains the sensor and the base contains the battery, the latter insulating against fast temperature changes, so the response to sudden temperature shifts is faster with the top-side orientation, as <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="this study" class="https">this study</a> shows: "Upon contact with the hot plate, the iButtons with the top side facing the object were significantly warmer for the first 4 min than those with the bottom side against the object (Fig. 3). During exposure to the cold object the ‘top-side’ iButtons were significantly cooler during a 5-min period. We conclude that the top side has a faster response to thermal changes when placed on hard and flat surfaces. The difference between the bottom and top side thermal response may in part have been caused by the locations of the battery (towards the bottom) and the sensor (towards the top)."</li>
+<li>It takes only 10min to converge to the skin temperature.</li>
+</ul>
+</li>
+<li>Notes:
+<ul>
+<li>This setup will last about 5.6 days before the internal memory is full on the DS1922L (4096K with higher temperature resolution) and about 212 days for the DS1925L (because limited to 61K recording limit with higher temperature resolution, half of the lower temperature resolution).</li>
+<li>The internal battery will last about half a year before the iButton DS1922L is dead and 4 years before the DS1925L is dead. A paper shows <a href="https://www.researchgate.net/publication/270579725_Replacing_the_batteries_on_ibutton_Thermochron_Hygrochron_data_loggers" title="how researchers could change the battery manually" class="https">how researchers could change the battery manually</a>.</li>
+</ul></li>
+</ul>
+</li>
+<li>BESTTUTO for researchers of how to configure parameters (rollover, SUTA, etc): <a href="https://www.maximintegrated.com/en/design/technical-documents/app-notes/5/5335.html" title="https://www.maximintegrated.com/en/design/technical-documents/app-notes/5/5335.html" class="https">https://www.maximintegrated.com/en/design/technical-documents/app-notes/5/5335.html</a></li>
+<li>Can then disconnect, unstuck the iButton and use Hypafix or Flexifix medical comformable tapes, very comfortable. Interestingly, also advised by <a href="https://axivity.com/userguides/ax3/using/" title="Axivity for actigraphy" class="https">Axivity for actigraphy</a>.</li>
+</ul>
+</p>
+
+<h3>Core Body Temperature: GreenTEG CORE</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>The CORE can record up to 3.5 days of data in its internal memory, after which data stops from recording further until download (ie, no rollover), but only with the RESEARCH model, which costs 999 CHF. The consumer-grade version that costs 250 CHF can only show the last 2 days of core body temperature and it does not allow downloads. The resolution is 1Hz. Breaks under 5 months when worn 24/7 with the L dominos, but likely much longer when using velcro.</li>
+<li>Use any Android smartphone, use the CORE app on the Play store to download the data. It takes about 3.5h currently and the phone must not be used during this time. WiFi and Bluetooth must both be enabled (because the data will be sent online to GreenTEG's servers - although a local copy will be directly available).
+<ul>
+<li>The CORE device can only be paired with one single smartphone. Any other smartphone won't be able to detect the device until the first smartphone unpairs (ie, app is closed).</li>
+<li>Troubleshooting: if after a data download, the CORE app does not detect the CORE device, try to restart the smartphone that was last paired with the CORE device, sometimes the app (or smartphone, eg Realme 6i) has a bug that keeps the bluetooth pairing activated but does not show up. Restarting the smartphone will fix this issue and the CORE device can then be paired with the same smartphone or with another.</li>
+</ul>
+</li>
+<li><a href="https://corebodytemp.com/manual/" title="https://corebodytemp.com/manual/" class="https">https://corebodytemp.com/manual/</a>
+<ul>
+<li>"CORE can also be worn on any other body part, but measurement accuracy might be reduced." --&gt; eg on top of cavity, may be better, see: BEST STUDY: <a href="https://watermark.silverchair.com/v001t01a015-dmd2018-6930.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA8YwggPCBgkqhkiG9w0BBwagggOzMIIDrwIBADCCA6gGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJSyZzkzGmF0FhrBvAgEQgIIDeeaY424fFMxsfn93l0ooHNZ797biE_x4huoXdfokCGGnlF9CGWp0s0MOo5dw7miTQIiq2Vj_wyCD7LKK4tHxm-z1RV797y7NBkcTxSg3-hv9X_7wGJrUXCGaaNgh_Hl9BuR2QjW5iNizOjk4PgU-btnNA-YkI16MjgZn9MWJS80hcUbgRp7trHD5IsYGuCdhIKPvM5o91cuPKXrT8DnOlH6stBOlD-KBVlyI9wBMATheqcFOhH-VX_Q2yq7tTswDLMpZUl6dzob_KmXZLA9aa2TZg4_5_5dIR0yhUi9YODVnKoC7MumqiCETYhqCtR-17r7cbGBs5xYxyc4pyJP7zE8h5dewuipuagtlUerwjPQf-56KTNVcQ9Vq_hdKTTd83Giqxnu-LBVDd0vua_wHR99TNCkPQ2rOtdYLhjxbJC-zBlDjBXqw4UHN0OkB2hZT7IFABsHqg5YnTMdr55I403Cqw373sjD6Qo3zfmR-Ix4bVtiI9MAb1aTo8WOM94mpINHdVkARalA80YDCtQ6JIHKGgUUnGJkXfpm80Y-t5lPGxf-a4DrIsvQSxNKXUO4znXJa6Ed1D7SHbOr62qDNDrKJxR1J25Flv2kLJdDWh6w1-xNGdlEQs8W_JzQzsE_6n082GDxrKzZue-LwwOtE3qNFT5BKHBbgQS_-6xcYIPmDCVk5cPwyLy6EK1mmNJGb9vEZFaZbLllUUzP0HzoDt4GcUJnc9rl531JZwqK7QnCfo62Aw2mgfwI_j8UzuQeb4dL86yOOJ34E0rNws7RGNq3nLtsKD1E5YErVsQGum_0NH9A2fH6u2CQgo0WFhP8jF7EWSH1O4-6S5ql2cr9JLXrhsQ-CFroUT02MPHKysOw8AFotRTkFFuOGbjdO3PLIBDSMvwvPIrGf3vZ1d2hKKvw8getHGU5PFuD4yFuV_SN25tgIVgYa7EmwEbESR7a-9dsOSprbTYUdxuiIbySi5LcKtbRmo-xpkA2h2VeNngHeoOJdsZCXYLk6wMtWpC7w5w7Zk0l9fzFUBiEJXoux4xmUL5db8Xd5phICir0zKIgQRUGSJO9QYznKre3weWcNT6kfnNAMLrkDiJu32tZeWLatFcUgwCmZGeF3iRdbspJ22Ha1C3imiJE0rKDAPhB8PlptzKVIBmS2AFEQncdKY6pL-3ybDLcHUDs" title="TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA" class="https">TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA</a>, Mohammad Fazel Bakhsheshi et al, 2018</li>
+</ul>
+</li>
+<li>News on the blog:
+<ul>
+<li><a href="https://corebodytemp.com/core-wearable-already-in-production/" title="https://corebodytemp.com/core-wearable-already-in-production/" class="https">https://corebodytemp.com/core-wearable-already-in-production/</a></li>
+<li>not ready to be used for sports, but will be updated (likely it's because of too much movement messing with the readings): <a href="https://corebodytemp.com/core-body-temperature-monitoring-product-ready/" title="https://corebodytemp.com/core-body-temperature-monitoring-product-ready/" class="https">https://corebodytemp.com/core-body-temperature-monitoring-product-ready/</a></li>
+<li>Docking station for group use: <a href="https://corebodytemp.com/improve-core/" title="https://corebodytemp.com/improve-core/" class="https">https://corebodytemp.com/improve-core/</a></li>
+</ul>
+</li>
+<li>BEST TODO: Can use ePill (Gold Standard) to validate body temperature measurements of both CORE as done in doc (<a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" class="https">https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf</a>) and iButton!
+<ul>
+<li>Could use <a href="https://shop.greenteg.com/heat-flux-u-value-measurement-solutions-e-celsius/" title="https://shop.greenteg.com/heat-flux-u-value-measurement-solutions-e-celsius/" class="https">https://shop.greenteg.com/heat-flux-u-value-measurement-solutions-e-celsius/</a> BUT need activator and viewer and it's just too expensive. Maybe ask a sleep lab to partner for such a study to validate circadian rhythm measurements? But anyway with one subject it's not much, we would need multiple...</li>
+<li>Or use 3M SpotOn to compare absolute values!</li>
+</ul>
+</li>
+<li>BEST SPECS UPDATE: Internal memory: Record up to 84 hours of high-resolution data (= 3.5 days without a smartphone). More info from casing: battery lasts more than 6 days (but beyond 3.5 days old data will be lost, TODO: ask if rolling over or if it just won't store new data). Waterproof (up to 1.5m, <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="IPX7" class="https">IPX7</a>), because fully sealed. <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="Precision" class="https">Precision</a>: +- 0.10°C for skin temperature, +- 0.26°C (median absolute deviation or 0.66°C 2sigmas) for core body temperature. Added data quality metrics for core temperature (does not account for movement but it's better than nothing, TODO: ask if raw data access also means data quality can be downloaded for each sample). <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="Factory calibrated, no recalibration necessary" class="https">Factory calibrated, no recalibration necessary</a>.</li>
+<li>BEST TODO: try different body sites, with no bones below but organs (ie, a cavity)? A study shown that placing a zero-heat-flux sensor where there is tissues or organs below provides much more accurate measurements than sites where bones are below the skin. This makes sense since it's estimated that zero-heat-flux method can estimate temperature about <b>2cm below the skin and hence can measure the core body temperature if placed above a cavity</b>. See (for both claims): <a href="https://watermark.silverchair.com/v001t01a015-dmd2018-6930.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA8YwggPCBgkqhkiG9w0BBwagggOzMIIDrwIBADCCA6gGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJSyZzkzGmF0FhrBvAgEQgIIDeeaY424fFMxsfn93l0ooHNZ797biE_x4huoXdfokCGGnlF9CGWp0s0MOo5dw7miTQIiq2Vj_wyCD7LKK4tHxm-z1RV797y7NBkcTxSg3-hv9X_7wGJrUXCGaaNgh_Hl9BuR2QjW5iNizOjk4PgU-btnNA-YkI16MjgZn9MWJS80hcUbgRp7trHD5IsYGuCdhIKPvM5o91cuPKXrT8DnOlH6stBOlD-KBVlyI9wBMATheqcFOhH-VX_Q2yq7tTswDLMpZUl6dzob_KmXZLA9aa2TZg4_5_5dIR0yhUi9YODVnKoC7MumqiCETYhqCtR-17r7cbGBs5xYxyc4pyJP7zE8h5dewuipuagtlUerwjPQf-56KTNVcQ9Vq_hdKTTd83Giqxnu-LBVDd0vua_wHR99TNCkPQ2rOtdYLhjxbJC-zBlDjBXqw4UHN0OkB2hZT7IFABsHqg5YnTMdr55I403Cqw373sjD6Qo3zfmR-Ix4bVtiI9MAb1aTo8WOM94mpINHdVkARalA80YDCtQ6JIHKGgUUnGJkXfpm80Y-t5lPGxf-a4DrIsvQSxNKXUO4znXJa6Ed1D7SHbOr62qDNDrKJxR1J25Flv2kLJdDWh6w1-xNGdlEQs8W_JzQzsE_6n082GDxrKzZue-LwwOtE3qNFT5BKHBbgQS_-6xcYIPmDCVk5cPwyLy6EK1mmNJGb9vEZFaZbLllUUzP0HzoDt4GcUJnc9rl531JZwqK7QnCfo62Aw2mgfwI_j8UzuQeb4dL86yOOJ34E0rNws7RGNq3nLtsKD1E5YErVsQGum_0NH9A2fH6u2CQgo0WFhP8jF7EWSH1O4-6S5ql2cr9JLXrhsQ-CFroUT02MPHKysOw8AFotRTkFFuOGbjdO3PLIBDSMvwvPIrGf3vZ1d2hKKvw8getHGU5PFuD4yFuV_SN25tgIVgYa7EmwEbESR7a-9dsOSprbTYUdxuiIbySi5LcKtbRmo-xpkA2h2VeNngHeoOJdsZCXYLk6wMtWpC7w5w7Zk0l9fzFUBiEJXoux4xmUL5db8Xd5phICir0zKIgQRUGSJO9QYznKre3weWcNT6kfnNAMLrkDiJu32tZeWLatFcUgwCmZGeF3iRdbspJ22Ha1C3imiJE0rKDAPhB8PlptzKVIBmS2AFEQncdKY6pL-3ybDLcHUDs" title="TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA" class="https">TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA</a>, Mohammad Fazel Bakhsheshi et al, 2018 <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
+<li>Another great review on dual heat flux method: <a href="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" title="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" class="https">https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5</a></li>
+</ul>
+</p>
+
+<h3>ECG (heart rate and heart rhythm) + 3-axis trunk Accelerometer Polar H10</h3>
+
+<p>
+<ul>
+<li><a href="https://github.com/polarofficial/polar-ble-sdk/blob/1d3ff05bccbd3a5ccc00731e941c73285248fa6b/technical_documentation/H10_ECG_Explained.docx" title="Polar H10" class="https">Polar H10</a>. Costs about 80€. Comes with a chest strap. Battery: 16.5 days with one button (CR2320) battery. Chest strap (Polar Pro) needs to be changed every 6 months when worn 24/7. 
+<ul>
+<li>The Polar H10 sensor needs to be paired via Bluetooth to a smartphone, and an app needs to be used at all times to record the ECG (because only heart rate can be stored on the internal memory). No cloud service registration required, all data is stored locally.</li>
+<li>Use the <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="Polar Sensor Logger app on Android" class="https">Polar Sensor Logger app on Android</a> by Jukka Happonen to log both the <a href="https://github.com/polarofficial/polar-ble-sdk/blob/1d3ff05bccbd3a5ccc00731e941c73285248fa6b/technical_documentation/H10_ECG_Explained.docx" title="ECG and accelerometer data" class="https">ECG and accelerometer data</a> with the sampling rate of your choice (up to 200Hz/8G for the accelerometer and 130Hz for the ECG - <b>we use 100 Hz and 4G</b> to save on memory and it is sufficient for research purposes). It also saves the Heart Rate in a separate CSV file, and the extra columns represent the RR-interval in milliseconds. The timestamp format is in nanoseconds and the epoch is 1.1.2000. Note that the app requires both bluetooth and location (GPS), hence to save battery, the phone can be set to Plane mode and wi-fi can be disabled, everything can be disabled except bluetooth and location, and the screen can be turned off during data collection. Data is stored in realtime in csv files in the sensorDataLogs folder at the device's root, so that even if the logging is interrupted due to a bug or the device being out of battery, the last logging session won't be lost.
+<ul>
+<li>Note that although the app can work with only bluetooth, it won't be able to seek and automatically reconnect to the Polar H10 sensor in case of disconnection without location (GPS) enabled.</li>
+<li>Also to ensure automatic reconnection, it's necessary to enable the dual Bluetooth stream/pairing on the Polar H10 after each change of CR2025 battery (the memory is flushed then) using the official Polar Beats app. Note that this app requires enabling wi-fi temporarily (in addition to Bluetooth and GPS location) to pair with the Polar H10. This can be a good opportunity to also disable GymLink and ANT+ to extend the H10's battery life.
+<ul>
+<li>Here are the steps to do every time the battery of Polar H10 is changed: 1- restart phone (to free up connection slots) if the H10 can't be detected, 2- launch Polar Beats app (requires WiFi enabled to access the settings) and in the settings tap on the entry Receptor: Polar H10 and then enable dual receivers (ie, allows multiple devices to connect to Polar H10, this is necessary as otherwise when the data logger auto-reconnects, the Polar H10 may refuse the connection thinking the previous connection is still alive), 3- disable ANT+ and GymLink (to save battery, 4- Launch Polar Sensor Logger, enable ECG and ACC, connect, set 100Hz/4G (or a higher data collection rate for accelerometer), then click on Graph, activate all graphs, check that everything is alright and you can see your ECG, then pause the graph to save battery and leave Polar Sensor Logger in the forefront (don't multitask with another app as otherwise it will likely get killed).</li>
+</ul>
+</li>
+<li>Check the ECG and ACC graphs (but disable HR as it will make the app crash after a long enough acquisition) to check if the acquisition is fine.
+<ul>
+<li><b>If the ECG data is all wrong but ACC is fine, try to change for another CR2025 battery</b>, sometimes a defective battery can mangle the signal for some reason.</li>
+<li><b>If the ECG data is still wrong despite changing the battery, the Polar Pro chest band electrodes may be dead</b>, so it's then necessary to buy a new one (costs 30 to 40 euros for the band alone). If used 24/7, the Polar Pro band lasts for about 6 months. The warranty does not cover it as it is considered normal usage degradation of a consumable.</li>
+</ul>
+</li>
+<li>Always maintain phone battery above 20% otherwise app will likely get killed to save battery whatever the battery saving settings </li>
+<li>It might be a good idea to buy a dedicated <a href="https://www.gsmarena.com/battery-test.php3" title="Android phone with a long battery" class="https">Android phone with a long battery</a>, which can allow to continuously record up to 10 days with a single charge (the generated data with accelerometer set to 100Hz and 2G is 400KB/min total for accelerometer+ECG+Heart Rate, so this makes for 6GB for 10 days, or 17GB/month, or 200GB/year of data, so it all fits in any modern smartphone's internal memory).
+<ul>
+<li>Using as a bluetooth receiver the <b>Realme 6i and its 5000mAh battery</b> (cost about 170 euros), the <b>battery consumption rate is 10%/24h, hence up to 9-10 days can be acquired with one full charge</b>.</li>
+<li>Here are the steps to configure the Realme 6i to allow for continuous background task (as otherwise most Android smartphones automatically kill background apps when the screen is turned off) and low battery usage:
+<ul>
+<li>Enable developer's mode, then in developers options, set Background processes limit to 4 instead of standard limit.</li>
+<li>Then in battery optimizations (specific to this phone) disable all except screen optimization and standby optimization.</li>
+<li>Disable Do not disturb mode and any night mode, else they will kill apps during the night.</li>
+<li>Also activate plane mode, disable wifi, close all apps except ecg and activate only bluetooth.</li>
+<li>Finally, open the ECG acquisition app and lock it (tap on tasks button to show all windows then swipe down the ecg app window or tap on the 3 dots in the corner to enable the lock). Then go back to the app, launch the acquisition, then go to the graph tab, check if data is acquired alright and then click on the Pause button at the bottom of the Graph tab to disable graphs and save battery.</li>
+<li>Now switch back to the main tab, check if the BPM and accelerometer values at the bottom are dynamically changing, if yes then all is ok and you can switch off the smartphone screen. You need to leave the app in focus at all time, do not switch another app, the ECG need to remain on the foreground to not be killed. Android 11 may fix this issue but for now smartphone vendors are too aggressive with background tasks killing so there is no other way around.</li>
+<li>With all these steps done, the Realme 6i and its 5000mAh battery will be consumed at a rate of 10%/24h, hence with a full charge the ECG can be continuously acquired for 9 to 10 days! Which is an impressive feat that currently no other wearable ecg can do. Plus motion noise is greatly reduced thanks to the Polar chestband without dangling electrodes wires.</li>
+<li>The data will be continuously saved in CSV files in the sensorDataLogs folder, even if the app or phone crashes at some point.</li>
+<li>The Realme 6i needs of course to be kept within bluetooth range (ie, it can go through 2 thin walls but not the distance of a full apartment), so buying a <a href="https://www.amazon.fr/gp/product/B081BJRHK2" title="small shoulder bag for smartphones" class="https">small shoulder bag for smartphones</a> to carry the Realme 6i at all time on oneself is recommended. Do not use a neck strap, as the weight of the smartphone will be very noticeable, whereas with a shoulder strap it feels almost weightless, it's possible to get used to it and not feel carrying the shoulder strap bag, especially if carried under a jacket or pull as to reduce the degree of motion of the bag. Example of a smartphone shoulder bag:</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image007.png" width="300"></li>
+</ul></li>
+</ul>
+</li>
+<li>Alternative to get an even longer battery bluetooth receptor: make an Arduino-based bluetooth low energy (BLE = BT 4.0) logger to microsd card. <a href="https://github.com/SensorsIot/Bluetooth-BLE-on-Arduino-IDE/blob/master/Polar_Receiver/Polar_Receiver.ino" title="Some developers already made heart rate loggers for Arduino" class="https">Some developers already made heart rate loggers for Arduino</a> and Polar H7 chest bands (see also <a href="https://forum.arduino.cc/index.php?topic=116145.0" title="here" class="https">here</a> and <a href="https://makecademy.com/bluetooth-heart-rate-sensor-arduino" title="here" class="https">here</a>), but not the ECG, although the SDK is open so that should also be possible to do.</li>
+<li>Using the Polar Beat app, the H10 sensor can be configured to have a dual Bluetooth stream, so that it can send data to two different devices/apps simultaneously. This can be used advantageously to concurrently continuously record the ECG data on one device, and use another device (the day-to-day smartphone) for when you want to visualize your current heart rhythm in real-time. To do this, install the Polar Beat app, pair the sensor, then go to the settings, click on the sensor and the sensor's options will show up, and then you can enable the "2 BLE receptors" option.
+<ul>
+<li>Using the Polar Beat app, <a href="https://support.polar.com/en/support/How_to_make_the_most_out_of_H6_and_H7_sensor" title="disable GymLink and ANT+ to significantly increase battery duration" class="https">disable GymLink and ANT+ to significantly increase battery duration</a>.</li>
+<li>It's necessary to enable the dual Bluetooth stream to ensure auto-reconnection by the Polar Sensor Logger app.</li>
+</ul>
+</li>
+<li>This app is made by an employee of Polar (although this is not an official Polar app), so that it likely has a very robust and clean implementation respecting the Polar API.</li>
+<li>Combined with the EliteHRV Android and iOS app, the Polar H10 can be used for breathing relaxation exercises (fundamental resonance breathing etc), and also be used as a biofeedback tool.</li>
+<li>Big advantage of this setup compared to others: it really allows for continuous ECG, since there is no need to transfer data to restart a new session, as the phone's memory is used and it's vast. So only the smartphone's battery is the limitation, but it can be recharged while the acquisition continues, and even the data can be transferred concurrently using FTP or similar apps. This is a true 24/7 continuous ECG monitoring setup.</li>
+<li>Use Sony or Varta CR2025 batteries for the H10 to last ~10 days with one battery. Cheaper or rechargable batteries won't last as long. Some users reported that CR2032 can also fit, and they last longer since they have a bigger size and capacity, but Polar warns against using a battery of an incorrect type (ie, anything else than CR2025) as they claim <a href="https://support.polar.com/be-fr/support/entretien-de-l-metteur-de-fr-quence-cardiaque" title="this can cause an explosion" class="https">this can cause an explosion</a>.</li>
+<li><a href="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" class="https">https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap</a></li>
+</ul>
+</li>
+<li>Higher-grade alternatives (but with much shorter battery or storage space):
+<ul>
+<li><a href="https://www.vitalsignum.com/en/" title="VitalSignum Beat2Phone" class="https">VitalSignum Beat2Phone</a>, costs 500 euros, uses a chest strap, can record medical-grade 2000Hz ECG on internal memory for 24-48h, and data is exportable from the Android app to a computer directly without any cloud service necessary. Medical-grade device that is certified in European Union to diagnose atrial fibrillation. </li>
+<li>Shimmer3 ECG, costs 500 euros, 5-wires 4-leads. Medical-grade ECG using standard wet electrodes.</li>
+<li><a href="https://www.researchgate.net/publication/327659029_LoggerBIT_An_Optimization_of_the_OpenLog_Board_for_Data_Logging_with_Low_Cost_Hardware_Platforms_for_Biomedical_Applications" title="BitTalino revolution ECG board with the LoggerBIT firmware and OpenLog breakout board" class="https">BitTalino revolution ECG board with the LoggerBIT firmware and OpenLog breakout board</a> (<a href="https://github.com/BITalinoWorld/firmware-loggerbit" title="sourcecode here" class="https">sourcecode here</a>). Opensource ECG monitor, can record medical-grade 1000Hz ECG using 3-wires wet electrodes on internal memory for 40h with a 700mAh battery (but can use a much longer battery, with a 3000mAh battery the recording can last 7 days).</li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Light sensor Arduino Adalogger</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
+</ul>
+</p>
+
+<h2>Analysis</h2>
+
+<br>
+
+<h3>For all</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Clinically significant outcomes defined by AASM: "Table 2-Critical Outcomes and Their Clinical Significance Thresholds Defined by the TF" <a href="http://sleepeducation.org/docs/default-document-library/crswd-draft-executive-summary.pdf?sfvrsn=2" title="http://sleepeducation.org/docs/default-document-library/crswd-draft-executive-summary.pdf?sfvrsn=2" class="http">http://sleepeducation.org/docs/default-document-library/crswd-draft-executive-summary.pdf?sfvrsn=2</a></li>
+<li>temperature:  BEST REVIEW TOADD: A practical approach to circadian rhythm sleep disorders, 2008 <a href="https://pubmed.ncbi.nlm.nih.gov/18845459/" title="https://pubmed.ncbi.nlm.nih.gov/18845459/" class="https">https://pubmed.ncbi.nlm.nih.gov/18845459/</a>
+<ul>
+<li>"Bright light treatment and exogenous melatonin administration are considered to be the treatments of choice for these circadian rhythm sleep disorders. <b>Circadian phase needs to be estimated in order to time the treatments appropriately. Inappropriately timed bright light and melatonin will likely worsen the condition. Measurements of core body temperature or endogenous melatonin rhythms will objectively assess circadian phase; however, such measurements are seldom or never used in a busy clinical practice.</b> This review will focus on how to estimate circadian phase based on a careful patient history. Based on such estimations of circadian phase, we will recommend appropriate timing of bright light and/or melatonin in the different circadian rhythm sleep disorders. We hope this practical approach and simple recommendations will stimulate clinicians to treat patients with circadian rhythm sleep disorders."</li>
+<li>Non24 circadian rhythm monitoring via minimum core body temperature + adjustment with light therapy of circadian rhythm AND core body temperature! Case of a non‐24 h sleep–wake syndrome patient improved by phototherapy, 2001 <a href="https://doi.org/10.1046/j.1440-1819.2000.00719.x" title="https://doi.org/10.1046/j.1440-1819.2000.00719.x" class="https">https://doi.org/10.1046/j.1440-1819.2000.00719.x</a></li>
+</ul>
+</li>
+<li>non-24 melatonin and (oral) body temperature inverse correlation, but body temperature was non-24 (non circadian) whereas melatonin can be:
+<ul>
+<li>"Cosine analysis of melatonin and oral temperature rhythms revealed a significant 24-hour pattern of salivary melatonin (p &lt; .05); however, no significant circadian pattern was found for oral temperature rhythm and an uncoupling with melatonin rhythm was observed (Fig. 3)." <a href="https://doi.org/10.1097/01.chi.0000181040.83465.48" title="https://doi.org/10.1097/01.chi.0000181040.83465.48" class="https">https://doi.org/10.1097/01.chi.0000181040.83465.48</a></li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image002.png" width="400"></li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image003.png" width="350"></li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Actigraphy with AX6 (6-axis)</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li><a href="https://github.com/digitalinteraction/openmovement/wiki/AX3-GUI" title="https://github.com/digitalinteraction/openmovement/wiki/AX3-GUI" class="https">https://github.com/digitalinteraction/openmovement/wiki/AX3-GUI</a></li>
+<li><a href="https://www.youtube.com/watch?v=R8kqGg2pcwE" title="https://www.youtube.com/watch?v=R8kqGg2pcwE" class="https">https://www.youtube.com/watch?v=R8kqGg2pcwE</a></li>
+<li><a href="https://axivity.com/userguides/ax3/settings/#additional-sensors" title="https://axivity.com/userguides/ax3/settings/#additional-sensors" class="https">https://axivity.com/userguides/ax3/settings/#additional-sensors</a></li>
+<li><a href="https://github.com/digitalinteraction/openmovement/wiki/AX3" title="https://github.com/digitalinteraction/openmovement/wiki/AX3" class="https">https://github.com/digitalinteraction/openmovement/wiki/AX3</a></li>
+<li>drivers and softwares: <a href="https://axivity.com/downloads/ax3" title="https://axivity.com/downloads/ax3" class="https">https://axivity.com/downloads/ax3</a></li>
+<li>Methods:
+<ul>
+<li><a href="https://biobankaccanalysis.readthedocs.io/en/latest/methods.html" title="https://biobankaccanalysis.readthedocs.io/en/latest/methods.html" class="https">https://biobankaccanalysis.readthedocs.io/en/latest/methods.html</a></li>
+<li>BEST circadian rhythm detection through actigraphy using nonparametric method: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181762" title="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181762" class="https">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181762</a></li>
+<li>Optimizing actigraphic estimates of polysomnographic sleep features in insomnia disorder <a href="https://doi.org/10.1093/sleep/zsaa090" title="https://doi.org/10.1093/sleep/zsaa090" class="https">https://doi.org/10.1093/sleep/zsaa090</a></li>
+<li>the actual sample rate can fluctuate between 94-104Hz. <a href="https://biobankaccanalysis.readthedocs.io/en/latest/methods.html" title="https://biobankaccanalysis.readthedocs.io/en/latest/methods.html" class="https">https://biobankaccanalysis.readthedocs.io/en/latest/methods.html</a>
+<ul>
+<li>Over time this internal clock will drift slightly. For single device applications, that can tolerate a drift of 50 parts-per-million (0.18 seconds per hour) no action is needed. However, when using multiple devices for a single capture session, aligning the data sets from several sources can become difficult. To overcome this, you can add an easily identifiable signal (e.g. claps at the start and end of capture), and tools are available to help synchronize this to an external clock or between devices. <a href="https://axivity.com/userguides/ax3/settings/#additional-sensors" title="https://axivity.com/userguides/ax3/settings/#additional-sensors" class="https">https://axivity.com/userguides/ax3/settings/#additional-sensors</a></li>
+<li>For single handed monitoring the choice between dominant and non-dominant hand must be based on if the data set will be used for activity classification and physical activity monitoring type applications (for which the non-dominant hand is a popular choice) or finer grained skill assessment of activities (for which the dominant hand is often used). <a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a></li>
+<li>However, for successful data capture the AX3 must be securely fastened to the target with minimal room for vibration, slip or twist; this helps preserve only the motions of the target are captured. In addition, an attachment convention for device orientation will assist in consistent and comparable datasets being gathered. The below is a suggested orientation convention for popular body mounting sites. With the exception of the left wrist, the USB port is configured to point towards the ground.</li>
+</ul>
+</li>
+<li>ME: BUT QUESTION: changed usb port in AX3 is same direction as arrow, but for AX6 it's opposite. So should the position relative to the arrow or the usb port? <a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a></li>
+<li>Can resample CWA file into WAV file, will not overwrite original</li>
+<li><a href="https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers" title="https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers" class="https">https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers</a></li>
+<li><a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a> recommends: To fix the sensor to other body positions where a strap or clip is not feasible, Axivity recommends the use of Hypafix or Flexifix dressings.</li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Wrist skin temperature Thermocron iButtons</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Denoising: to clean up noise (denoising) of temperature data from home/wild settings, on humans at home and for circadian rhythm prediction:** "In contrast to most laboratory assessments, it seldom happens that field assessments are free of artefacts. Therefore an automated artefact rejection procedure was applied to exclude extreme drops and rises in temperature. Because of the bimodal rather than normal distribution of the temperature data, no artefact rejection was applied to exclude data more than two or three standard deviations from the mean, but rather a three-step nonparametric method. [...] the three-step artefact rejection procedure resulted in far fewer noisy distal and proximal curves, whereas the variability was maintained. Firstly, the rate of change (ROC) of all subsequent single channel data points was calculated, their quartiles Q25 and Q75, and their interquartile distance (IQRROC). Any data point with a rate of change exceeding 1 time the interquartile distance from Q25 or Q75 was removed. This step resulted in the rejection of very fast drops or increases in temperature. Secondly, in the resulting restricted raw data, the quartiles Q25 and Q75 and their interquartile distance (IQRLEVEL) were calculated. Any data point with a level exceeding 1 time the interquartile distance from Q25 or Q75 was removed. This step resulted in the rejection of very low temperatures. Thirdly, the resulting gaps in the single channels were interpolated linearly followed by an 11-point rectangular smoothing." <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="https://doi.org/10.1016/j.physbeh.2006.04.026" class="https">https://doi.org/10.1016/j.physbeh.2006.04.026</a></li>
+<li>Wrist skin temperature using iButton with ax3 to autodetect circadian highs and lows <a href="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" title="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" class="https">https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879</a></li>
+<li>validity of ibuttons: <a href="https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement" title="https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement" class="https">https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement</a></li>
+<li>distal-proximal iButtons placement + how to calculate: Evaluation of wireless determination of skin temperature using iButtons, van Marken Lichtenbelt et al, 2006 <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="https://doi.org/10.1016/j.physbeh.2006.04.026" class="https">https://doi.org/10.1016/j.physbeh.2006.04.026</a></li>
+<li>TODO ME: autodetect when a drop in temperature precedes wake up time, this is indicative of circadian rhythm, otherwise not if the temperature drops follows the wake up time. Detect sudden drops by using Savitzky-Golay filter:</li>
+</ul>
+</p>
+<div class="zim-object">
+<pre><code class="python">    def sgfilter(origdata, diffthreshold=2, verbose=False):
+        # Compute the Savitzky-Golay filter, a longer window allows us to detect the outbreak earlier (we don't want to miss it and start fitting too late)
+        # This essentially detects when there is a big change in the slope of the evolution of the outbreak
+        sgdata = savgol_filter(origdata, window_length=5, polyorder=1)
+        # Get the first index that surpass a threshold, 2 seems a good value
+        firstoutbreak = np.argmax(np.diff(sgdata) &gt; diffthreshold) + 1
+        firstoutbreakdate = origdata.index[firstoutbreak]
+        if verbose:
+            print('Autodetecting outbreak at day %i (%s)' % (firstoutbreak, str(firstoutbreakdate)))
+        # Return the sliced data from the pre-outbreak dates
+        return origdata[firstoutbreak:], firstoutbreak, firstoutbreakdate</code></pre>
+</div>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>how czeisler analyzed temperature: <a href="https://sci-hub.tw/https://doi.org/10.1126/science.3726555" title="https://sci-hub.tw/https://doi.org/10.1126/science.3726555" class="https">https://sci-hub.tw/https://doi.org/10.1126/science.3726555</a></li>
+<li>TAP method, using iButton on the wrist, similar accuracy to polysomnography: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031938413004423" title="https://www.sciencedirect.com/science/article/abs/pii/S0031938413004423" class="https">https://www.sciencedirect.com/science/article/abs/pii/S0031938413004423</a> Ambulatory Circadian Monitoring (ACM) based on Thermometry, motor Activity and body Position (TAP): A comparison with polysomnography, 2014
+<ul>
+<li>BEST TOSEE: all papers using Circadianware platform: <a href="https://kronowizard.um.es/kronowizard/plataforma.seam" title="https://kronowizard.um.es/kronowizard/plataforma.seam" class="https">https://kronowizard.um.es/kronowizard/plataforma.seam</a>
+<ul>
+<li>they used the Kronowise watch for light sensing combined with an accelerometer on the arm and iButton for wrist skin temperature</li>
+</ul>
+</li>
+<li><b>BEST CRITICAL VALIDATION AND METHODS: Uncovering Different Masking Factors on Wrist Skin Temperature Rhythm in Free-Living Subjects, 2013</b> <a href="https://www.ncbi.nlm.nih.gov/pubmed/23577201" title="https://www.ncbi.nlm.nih.gov/pubmed/23577201" class="https">https://www.ncbi.nlm.nih.gov/pubmed/23577201</a>
+<ul>
+<li>WT = wrist skin temperature: "<b>Although the overall circadian pattern of WT was similar regardless of the masking effects, its amplitude was the rhythmic parameter most affected by environmental conditions. The acrophase and mesor were determined to be the most robust parameters for characterizing this rhythm.</b> In addition, a circadian modulation of the masking effect was found for each masking variable. WT rhythm exhibits a strong endogenous component, despite the existence of multiple external influences. This was evidenced by simultaneously eliminating the influence of activity, body position, light exposure, environmental temperature and sleep. We therefore propose that it could be considered a <b>valuable and minimally-invasive means of recording circadian physiology in ambulatory conditions</b>."</li>
+</ul>
+</li>
+<li>Application of Machine Learning Methods to Ambulatory Circadian Monitoring (ACM) for Discriminating Sleep and Circadian Disorders, 2019 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6916421/" title="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6916421/" class="https">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6916421/</a>
+<ul>
+<li>Discriminates between 3 types of insomnia and DSPD and typical sleepers!</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image008.png" width="400"></li>
+</ul>
+</li>
+<li><b>BEST CRITICAL METHODS: Circadian rhythm of wrist temperature in normal-living subjects A candidate of new index of the circadian system, 2008</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a>
+<ul>
+<li>"The most frequent reference variables for human chronotherapy include salivary melatonin or cortisol, urinary 6-sulfatoximelatonin, actimetry and core body temperature (CBT). Recent evidence suggests that <b>sleepiness may be more closely linked to increased peripheral skin temperature than to a core temperature drop, and that distal skin temperature seems to be correlated and phase-advanced with respect to CBT, suggesting that heat loss from the extremities may drive the circadian CBT rhythm</b>."</li>
+<li>"Each subject wore a <b>wireless iButton sensor attached to the inner side of a sport wristband</b>."</li>
+<li>"Our results show that the <b>WT rhythm exhibits an inverse phase relationship with OT, and it is phase-advanced by 60 min with respect to OT. WT started to increase in association to bed time and dropped sharply after awakening. A secondary WT increase, independent of feeding, was observed in the early afternoon. In conclusion, WT wireless recording can be considered a reliable procedure to evaluate circadian rhythmicity, and an index to establish and follow the effects of chronotherapy in normal living subjects.</b>"</li>
+<li>WT = wrist skin temperature, OT = oral temperature.</li>
+</ul>
+</li>
+<li>A new integrated variable based on thermometry, actimetry and body position (TAP) to evaluate circadian system status in humans, 2010 <a href="https://pubmed.ncbi.nlm.nih.gov/21085644/" title="https://pubmed.ncbi.nlm.nih.gov/21085644/" class="https">https://pubmed.ncbi.nlm.nih.gov/21085644/</a>
+<ul>
+<li>"The disruption of the circadian system in humans has been associated with the development of chronic illnesses and the worsening of pre-existing pathologies. Therefore, the assessment of human circadian system function under free living conditions using non-invasive techniques needs further research."</li>
+<li>"we also tested the reliability of a single numerical index, the Circadian Function Index (CFI), to determine the circadian robustness."</li>
+<li>"the CFI proved to be very sensitive to changes in circadian robustness."</li>
+</ul>
+</li>
+<li>Wrist skin temperature, motor activity, and body position as determinants of the circadian pattern of blood pressure, 2012 <a href="https://pubmed.ncbi.nlm.nih.gov/22734575/" title="https://pubmed.ncbi.nlm.nih.gov/22734575/" class="https">https://pubmed.ncbi.nlm.nih.gov/22734575/</a>
+<ul>
+<li>Wrist skin temperature can be used to estimate blood pressure patterns! "Thus, these results suggest that the increase in WT produced by heat loss during the rest phase through peripheral skin blood vessels is the result of blood vessel vasodilatation reflexes in response to a shift from a standing to a supine position, together with shift in the circadian sympathetic/parasympathetic balance (nocturnal parasympathetic activation). In conclusion, WT could be considered as a potential new screening procedure to implement the diagnosis of non-dipping BP pattern."</li>
+</ul>
+</li>
+<li><a href="https://www.researchgate.net/publication/51460231_Differences_in_Daily_Rhythms_of_Wrist_Temperature_Between_Obese_and_Normal-Weight_Women_Associations_With_Metabolic_Syndrome_Features" title="https://www.researchgate.net/publication/51460231_Differences_in_Daily_Rhythms_of_Wrist_Temperature_Between_Obese_and_Normal-Weight_Women_Associations_With_Metabolic_Syndrome_Features" class="https">https://www.researchgate.net/publication/51460231_Differences_in_Daily_Rhythms_of_Wrist_Temperature_Between_Obese_and_Normal-Weight_Women_Associations_With_Metabolic_Syndrome_Features</a>
+<ul>
+<li>"Particularly interesting were the marked differences between obese and normal-weight women in the <b>secondary WT peak in the postprandial period</b> (second-harmonic power [P2]), <b>considered as a marker of chronodisruption and of metabolic alterations</b>."</li>
+<li>"In summary, obese women displayed a lower-quality WT daily rhythm with a more flattened pattern (particularly in the postprandial period) and increased IV, which suggests a greater fragmentation of the rest/activity rhythm compared to normal-weight women. These 24-h changes were associated with higher MetS risk."</li>
+</ul>
+</li>
+<li>BEST CRITICAL METHODS: "Nonparametric tests provided more reliable information than cosinor analysis for circadian rhythm assessment in infants." <a href="https://doi.org/10.3109/07420528.2011.565895" title="https://doi.org/10.3109/07420528.2011.565895" class="https">https://doi.org/10.3109/07420528.2011.565895</a> — the study also used Thermocron iButtons.
+<ul>
+<li>There are lots of other studies showing that nonparametric tests are more reliable for circadian rhythm assessment.</li>
+</ul>
+</li>
+<li><b>BEST CRITICAL METHODS: WTiO (Wrist skin temperature increase onset) anticipates melatonin production</b>: Circadian phase assessment by ambulatory monitoring in humans: correlation with dim light melatonin onset, 2014 <a href="https://pubmed.ncbi.nlm.nih.gov/24164100/" title="https://pubmed.ncbi.nlm.nih.gov/24164100/" class="https">https://pubmed.ncbi.nlm.nih.gov/24164100/</a>
+<ul>
+<li>"The devices measured skin temperature at wrist level (WT), motor activity and body position on the arm, and light exposure by means of a sensor placed on the chest. Dim light melatonin onset (DLMO) was used to compare and evaluate the accuracy of the ambulatory variables in assessing circadian phase."</li>
+<li>"<b>An evening increase in WT: WTOnset (WTOn) and "WT increase onset" (WTiO) was found to anticipate the evening increase in melatonin</b>, while decreases in motor activity (Activity Offset or AcOff), body position (Position Offset (POff)), integrative TAP (a combination of WT, activity and body position) (TAPOffset or TAPOff) and an increase in declared sleep propensity were phase delayed with respect to DLMO. The phase markers obtained from subjective sleep (R = 0.811), WT (R = 0.756) and the composite variable TAP (R = 0.720) were highly and significantly correlated with DLMO."</li>
+<li>"The findings <b>strongly support a new method to calculate circadian phase based on WT (WTiO) that accurately predicts and shows a temporal association with DLMO. WTiO is especially recommended due to its simplicity and applicability to clinical use under conditions where knowing endogenous circadian phase is important, such as in cancer chronotherapy and light therapy</b>."</li>
+</ul>
+</li>
+<li><b>BEST CRITICAL METHODS: Ontogeny and aging of the distal skin temperature rhythm in humans, 2015</b> <a href="https://www.ncbi.nlm.nih.gov/pubmed/25813804" title="https://www.ncbi.nlm.nih.gov/pubmed/25813804" class="https">https://www.ncbi.nlm.nih.gov/pubmed/25813804</a>
+<ul>
+<li>"Circadian aging in humans is characterized by a phase advance, accompanied by rhythm fragmentation and flattening."</li>
+<li>"<b>Circadian system maturation was associated with an increase in amplitude and a reduction in skin temperature during sleep.</b> During adulthood, women showed a more robust pattern (lower fragmentation, and higher night-time temperature, amplitude, circadian function index, and first harmonic relative power); <b>however, these differences were lost with aging</b>, a period of life that was consistently associated with a phase advance of the rhythm. In summary, distal skin temperature pattern can be used as a robust variable to discern between different ages throughout the life."</li>
+<li>"All adults wore a <b>Thermochron iButton DS1921H (Dallas, Maxim) for skin wrist temperature measurement, which had a precision of ±0.125 °C. This temperature sensor was placed on the wrist of the nondominant hand over the radial artery and isolated from the environmental temperature by a double-sided cotton sport wrist band, as previously described (Martinez-Nicolas et al. 2013).</b> The babies wore the device inside a sock to isolate it from the environmental temperature, as previously described (Zornoza-Moreno et al. 2011). All devices were programmed to sample once every 10 min, and they were worn for three (in the case of babies) or seven consecutive days (remaining groups)." → the cotton sports wristband also shields from ambient temperature!
+<ul>
+<li>Original ref for the cotton sport wrist band: <a href="https://pubmed.ncbi.nlm.nih.gov/23577201/" title="https://pubmed.ncbi.nlm.nih.gov/23577201/" class="https">https://pubmed.ncbi.nlm.nih.gov/23577201/</a> which itself references: <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a></li>
+<li>BEST CRITICAL METHODS: they using Velcro to attach the iButton to a cotton sports band! "In our experiments <b>iButtons were programmed to sample every 10 min, and were attached to a double-sided cotton sport wrist band using Velcro®, with the sensor face of the iButton being placed over the inside of the wrist, on the radial artery of the non-dominant hand</b>. <b>The non dominant hand was selected to reduce the potential masking effects generated by the higher activity of the dominant hand (i.e. writing in class, manual working...).</b> This procedure guarantees good skin contact with the sensor face of the iButton. <b>Wrist location was selected among other peripheral regions (ankle, sternum, armpit) after several trials performed in our laboratory, since it allows long term recording without significant complaints of discomfort from the subjects.</b> In addition, subjects could easily remove and replace the data logger when necessary (i.e., to have a bath or shower). After one week of monitoring, the information stored in the iButton was transferred through an adapter (DS1402D-DR8, IDC, Spain) to a personal computer using iButton Viewer v. 3.22© 1992–2005 Dallas Semiconductor MAXIM software provided by the manufacturer."</li>
+</ul></li>
+</ul>
+</li>
+<li><b>BEST CRITICAL METHODS:</b> PhD Thesis: Crosstalk between Synchronizers and the Human Circadian System, D. Antonio Martinez Nicolas, 2014, PhD Thesis <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a>
+<ul>
+<li><b>Summary: modern circadian rhythm science introduction + validation of wrist skin temperature as a reliable method for circadian rhythm monitoring, and methods to analyze!</b></li>
+<li><b>CRITICAL: core body temperature versus proximal and distal (wrist) skin temperatures.</b> This shows why <b>proximal temperature such as on the trunk cannot reliably be used to estimate the circadian rhythm</b>. But core body temperature and distal (wrist) skin temperature both can.</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image009.png" width="500"></li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image010.png" width="400"></li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Temperature core body GreenTEG CORE</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Data quality assessment:
+<ul>
+<li>use data quality to know if sensor was not well placed at this sample point.</li>
+<li>compare core and skin temperatures (from same sensor): if skin goes up but core goes down (inversed temperature profile), then exclude because the temperature was still stabilizing. Hence, the rolling derivative over a few samples should be the same sign, if not then exclude sample because did not reach steady-state (check how they do for MRI? I think they also simply detect and exclude).</li>
+<li>no access to accelerometer for the moment but maybe in the future?</li>
+</ul>
+</li>
+<li>How to calculate dual heat flux temperature from 4 sensors: <a href="https://doi.org/10.14326/abe.7.88" title="https://doi.org/10.14326/abe.7.88" class="https">https://doi.org/10.14326/abe.7.88</a></li>
+<li><b>BEST CRITICAL METHODS: several methods of purification of core body temperature</b>, helps to better see the peaks and trough: Estimates of the daily phase and amplitude of the endogenous component of the circadian rhythm of core temperature in sedentary humans living nychthemerally, 2000 <a href="https://pubmed.ncbi.nlm.nih.gov/11543399/" title="https://pubmed.ncbi.nlm.nih.gov/11543399/" class="https">https://pubmed.ncbi.nlm.nih.gov/11543399/</a>
+<ul>
+<li>"These results reflect the masking effects exerted upon raw temperature data by lifestyle. The extent to which the purification methods enable the endogenous component of a circadian rhythm - and, by implication, the output of the endogenous circadian oscillator - to be estimated in subjects living normally is addressed."</li>
+</ul>
+</li>
+<li>Preliminary validations by GreenTEG Core producer: <a href="https://www.greenteg.com/coreresearch/" title="https://www.greenteg.com/coreresearch/" class="https">https://www.greenteg.com/coreresearch/</a> (mirror: <a href="https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/" title="https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/" class="https">https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/</a> )</li>
+<li>ME IDEAS:
+<ul>
+<li>how to test whether it measures sleep or circadian rhythm or something else? Check correlation with sleep sessions start time, wake up time and interval contained, should be weak for start time but mid for wake up time and interval contained (sleep sessions generally occur inside the circadian night). But now test whether sleeping in phase with circadian night (ie, start time and wake up time close ~1 ultradian cycle to circadian night start and end times) have a longer duration, if yes then that's a strong hint. Furthermore can test sleep quality, but sleep quality is directly correlated with sleep duration so it's a bit redundant. This would show that when the sleep session is aligned with the device's detected circadian night, the sleep is longer and of increased quality, which would strongly suggests that indeed the device does measure the core body temperature and circadian rhythm, as opposed to just sleep sessions. We cannot verify this on all nights because when the user sleeps outside of the circadian night then we have no way of verifying whether what the device detects as a circadian night is true or false. Can also do a quantitative analysis: compare how sleep duration is related to how close the sleep session is to the circadian night, I expect the further, the shorter sleep, this should show up as a nice inverse linear relationship between sleep-circadian rhythm misalignment and sleep duration.</li>
+<li><b>BEST BETTER ANALYSIS: sleep schedule vs circadian night probabilistic window detection from core body temperature and correlation with sleep duration from sleep diary or actigraphy:</b> set an ideal sleep duration, eg 7 to 8h, then apply a probabilistsic model to find the most likely time the circadian night happened with such a duration (can be smaller or longer, but it will match the period with the closest duration and that is the low phase of the core body temperature). Could also be extended to find naps but it's likely more difficult. Then, calculate correlation between sleep diary's or actigraphy's sleep duration and distance or overlap with circadian night as detected by the probabilistic model. My hypothesis is that the most overlapping, the longer sleep and better quality. The opposite should hold true, the less overlapping, the shorter the sleep duration and quality. This would demonstrate that core body temperature indeed reflects the circadian rhythm AND that sleep in circadian misalignment leads to a shorter sleep. I expect that a longer sleep is observed only when at least half of the sleep session overlaps with the circadian rhythm (ie, 3-4h), otherwise if the overlap is less then it should be similar to sleeping in circadian misalignment, with sleep sessions not exceeding 5h. This should provide a nice inverse correlation between sleep-circadian distance and sleep duration. Then can also use sleep diary's tags such as LikelyPartiallyInPhase which means that the user estimates that there is an overlap of about half of the circadian night, but these tags are biased since they are subjective and they often rely on assessing sleep duration and expected circadian night window based on previous days/weeks.</li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Light sensor on AX6</h3>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Conversion: <a href="https://axivity.com/userguides/ax3/settings/#additional-sensors" title="https://axivity.com/userguides/ax3/settings/#additional-sensors" class="https">https://axivity.com/userguides/ax3/settings/#additional-sensors</a></li>
+<li>Check studies on Broadcom APDS9007, the internal light sensor used in AX6:
+<ul>
+<li>BEST VALIDATION: Tetervenoks, O., Avotins, A., &amp; Galkin, I. (2011). Illumination measurement stand for artificial light sources. In 10th international Symposium" Topical Problems in the Field of Electrical and Power Engineering (pp. 250-254). <a href="https://www.researchgate.net/profile/Ansis_Avotins/publication/268292350_Illumination_measurement_stand_for_artificial_light_sources/links/57bd4cfa08ae6918242f9c3d.pdf" title="https://www.researchgate.net/profile/Ansis_Avotins/publication/268292350_Illumination_measurement_stand_for_artificial_light_sources/links/57bd4cfa08ae6918242f9c3d.pdf" class="https">https://www.researchgate.net/profile/Ansis_Avotins/publication/268292350_Illumination_measurement_stand_for_artificial_light_sources/links/57bd4cfa08ae6918242f9c3d.pdf</a>
+<ul>
+<li>"To get readings in visible spectrum, a secondary sensor can be used like <b>APDS-9007, whose spectral response is close to the CIE standard photopic observer</b> (see Fig. 7.), it consists of a photodiode and an IC that performs amplification of the photodiode output signal and conversion to a logarithmic output current. [...] <b>A logarithmic current output is advantageous, when measuring low brightness levels, small changes in those levels need to be detected, and at high brightness levels, relatively bigger changes in those levels would be significant, thus logarithmic current output, is able to provide a good relative resolution over the entire ambient light brightness range [9].</b>"</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image001.png" height="300"></li>
+<li>This confirms <a href="http://axivity.com/files/resources/AX6_Data_Sheet.pdf" title="AX6 doc" class="http">AX6 doc</a> that says that the wavelength is "matched to the human eye"</li>
+<li>Light sensors comparison (including APDS-9301, also in the study above, it's the previous generation before APDS-9007): <a href="http://www.yoctopuce.com/EN/article/light-sensors-comparison" title="http://www.yoctopuce.com/EN/article/light-sensors-comparison" class="http">http://www.yoctopuce.com/EN/article/light-sensors-comparison</a>
+<ul>
+<li>Yocto-Light-V3 - Tiny USB ambiant light sensor (lux meter, but no spectral sensor): <a href="http://www.yoctopuce.com/EN/products/usb-environmental-sensors/yocto-light-v3" title="http://www.yoctopuce.com/EN/products/usb-environmental-sensors/yocto-light-v3" class="http">http://www.yoctopuce.com/EN/products/usb-environmental-sensors/yocto-light-v3</a></li>
+</ul></li>
+</ul>
+</li>
+<li>Very inexpensive sensor, <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9007-020?qs=dcm2zoLQumDd2VQ258SwUQ==" title="costs ~$1" class="https">costs ~$1</a> !</li>
+<li>Can also be used for PPG: <a href="https://ieeexplore.ieee.org/abstract/document/7047462" title="https://ieeexplore.ieee.org/abstract/document/7047462" class="https">https://ieeexplore.ieee.org/abstract/document/7047462</a> and <a href="https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12" title="https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12" class="https">https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12</a></li>
+</ul>
+</li>
+<li>TOSEE: ambient light *color* sensor? <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a>
+<ul>
+<li>low energy <a href="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" title="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D</a> + <a href="https://www.gravitech.us/i2c16coleser.html" title="https://www.gravitech.us/i2c16coleser.html" class="https">https://www.gravitech.us/i2c16coleser.html</a></li>
+<li>Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too</li>
+</ul>
+</li>
+<li>only other alternative is lightwatcher but expensive</li>
+<li>Spectrometer light analysis packages: Lucas Toolbox: Lucas, R.J.; Peirson, S.N.; Berson, D.M.; Brown, T.M.; Cooper, H.M.; <b>Czeisler, C.A.</b>; Figueiro, M.G.; Gamlin, P.D.; Lockley, S.W.; O’Hagan, J.B. Measuring and using light in the melanopsin age. Trends Neurosci. 2014, 37, 1–9. as used in <a href="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" title="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" class="https">https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research</a></li>
+<li><b>BEST CRITICAL METHODS and idea: use 2 light intensity sensors, one normal for the full visible spectrum + one with a blue-green light filter, the difference of both sensors will show the amount of blue-green light that can modify the circadian rhythm!</b> <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
+<ul>
+<li>My summary: The idea is to use a sensor for full visible light + same but blue light filtered, so that we can infer directly the intensity of blue-green light exposure which affects the circadian rhythm, contrary to using a color sensor which will be biased and only indirectly allow to calculate the intensity of exposure to blue-green light! It's very similar to what I was trying to make!</li>
+<li>"an algorithm that allows to determine light intensity, timing and circadian light stimulation by differentiating between full visible, infrared and circadian light, as well as to discriminate between different light sources (natural and artificial with low and high infrared composition) in subjects under free living conditions. The ACM device is provided with three light sensors: (i) a wide-spectrum sensor (380-1100 nm); (ii) an infrared sensor (700-1100 nm) and (iii) a sensor equipped with a blue filter that mimics the sensitivity curve of the melanopsin photopigment and the melatonin light suppression curve."</li>
+<li>But <b>why do they care about correcting infrared light??? To differenciate between the light source being natural or artificial:</b></li>
+<li>"Here, we reported the spatial and spectral ability of a wrist worn ACM device provided with three light sensors that combines full spectrum, infrared and blue light simultaneous monitoring, <b>allowing not only intensity and timing of visible and circadian light exposure to be evaluated, but also to infer light source and thus, differentiate between natural and artificial light exposure</b>." → but no color detection! They only consider blue-green light exposure, but it's sufficient since it's the light that maximally stimulate the ipRGC cells! But using the other sensor we have access to the full spectrum anyway!</li>
+<li>BEST CRITICAL: light sensor on the wrist does not make much difference in terms of detecting exposure to circadian light! (different from full light): "In order to facilitate the usability of the ACM device under normal living conditions, it has been designed to be worn on the wrist, discarding other placements closer to the eyes but much more uncomfortable for the subjects. Although, at first instance, it could be argued that this position could affect the accuracy of lighting measurements, <b>previous studies by Figueiro et al. (2013) have shown that differences in active circadian light exposure are surprisingly small, typically less than 10% on average, when data at eye and wrist level are compared</b>. Thus, light exposure measurement in other places than the eye seems to be also a reliable method when assessing circadian light exposure."
+<ul>
+<li>Original ref is the same one I use elsewhere: Figueiro, M. G., Hamner, R., Bierman, A., and Rea, M. S. (2013). Comparisons of three practical field devices used to measure personal light exposures and activity levels. Light. Res. Technol. 45, 421–434. doi: 10.1177/1477153512450453</li>
+</ul>
+</li>
+<li>BEST CRITICAL METHODS: technical details about the light sensors: "To record visible light (400–700 nm), a combination of two sensors is used in KronowiseR , one of full spectrum ranging from 400 to 1100 nm and another for infrared light (from 700 to 1100 nm). The combination of these two measures allows, on one hand, to differentiate whether light source is natural or artificial and among these, if light is provided by sources with high or low content in infrared radiation, or by the sun, as those light spectra shown in Figure 6. The circadianeffective light is detected thanks to blue filter covering a second full light spectrum sensor. The selected blue filter shows a transmittance profile to sunlight that is highly coincident both with the spectral inhibition curve of melatonin (Brainard et al., 2001) and with the model of melanopsin sensitivity curve of the ipRGCs (Enezi et al., 2011), letting pass visible wavelengths between 380 and 590 nm and above 680 nm. Thus, the “dose” of active circadian light to which the subject is exposed to can be calculated without inferences from combination of blue and green detectors, as it happens with Actiwatch Spectrum (Cao et al., 2015)."</li>
+<li>Comparison between Kronowise, Daisymeter and Actiwatch Spectrum: "To date, and to our knowledge, only two ambulatory devices are available for the detection of visible and circadian light: the Daysimeter (Bierman et al., 2005) and Actiwatch Spectrum (Phillips)."
+<ul>
+<li>"The Daysimeter, a head-mounted device, has been specifically designed for detecting light exposure, so its performance in this field is very interesting; however, the device only includes an accelerometer and must be placed close to the eyes, limiting seriously its ability to detect sleep and wakefulness states. In addition, and although its light sensor shows a sensitivity curve restricted to the photopic spectrum, it shows a significant drop between 550 and 600 nm, a band to which the human eye is sensitive (Dartnall et al., 1983; Roorda and Williams, 1999)."</li>
+<li>"The second device, Actiwach Spectrum, was primarily designed for detecting sleep and wake rhythms (Young et al., 2009; Kripke et al., 2010), and later incorporated RGB detection. This latter consists of three color sensors for light in the long wavelength (∼600–700 nm), middle-wavelength (450–600 nm) and short-wavelength range (∼400–550 nm), which correspond to R, G, B spectral outputs and a broadband “white light” (W) output (Price et al., 2012; Cao et al., 2015). However, its sensitivity spectrum does not match the one for the human retina. It shows a bimodal pattern, with a main peak at short wavelengths and a secondary peak at long wavelengths. In contrast, in the 570–600 nm band, the device is practically non-sensitive. This band, apart from its sensitivity of human retina, is characteristic of discharge light sources such as fluorescent lamps (Figueiro et al., 2013). Consequently, the photometric measurements of these common light sources will be systematically biased with this device and circadian light stimulation must be indirectly deduced from data recorded by blue and green sensors."</li>
+</ul>
+</li>
+<li>"Considering that the most powerful zeitgeber for circadian entrainment is the light-dark cycle (Roenneberg and Foster, 1997; Roenneberg et al., 2003), its simultaneous recording with other output signal seems a must to obtain an integrative assessment on the circadian function. In this sense, KronowiseR can constitute a useful and comfortable tool to deep our knowledge on light synchronization effects while people maintain their usual lifestyle."</li>
+</ul>
+</li>
+<li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "To facilitate the determination of light exposure, the presence/absence of natural light (solar day and night, respectively), and the light intensity analysis, the following ranges were established: very dim light (&lt;10 lux), indoor dim light (10-500 lux), indoor bright light (500-1000 lux), and outdoor bright light (&gt;1000 lux), as described in a previously conducted study (Turner &amp; Mainster, 2008). Environmental light intensities in lux were converted into logarithmic units and averaged every 10 mins to allow comparisons with temperature data."</li>
+</ul>
+</p>
+
+<h3>ECG and sleep</h3>
+
+<p>
+<ul>
+<li>ECG may be an objective estimator of sleep deprivation? And hence how many nights of good sleep are necessary before full recovery?
+<ul>
+<li>Robust circadian rhythm in heart rate and its variability: influence of exogenous melatonin and photoperiod, 2007 <a href="https://pubmed.ncbi.nlm.nih.gov/17542944/" title="https://pubmed.ncbi.nlm.nih.gov/17542944/" class="https">https://pubmed.ncbi.nlm.nih.gov/17542944/</a></li>
+<li>python module to analyze ECG data easily, in SleepNon24 notes</li>
+<li><b>BEST CRITICAL</b>: PhD Thesis: Crosstalk between Synchronizers and the Human Circadian System, D. Antonio Martinez Nicolas, 2014, PhD Thesis <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a>
+<ul>
+<li>"The cardiovascular system is the major effector of thermal changes in thermoneutrality. In thermoregulatory terms, blood means heat and cutaneous circulation is the variable heat insulator underneath the skin, which determines, depending on the skin proximity, the heat transference velocity. The cutaneous circulation is regulated by vessels patency that is controlled by the autonomic nervous system. Ambient temperature changes are translated into blood redistribution, if weather becomes cool, blood will be stored in the “core” (trunk) to diminish heat loss by the “shell” (extremities), whereas in warmer conditions blood is redistributed toward the periphery to dissipate heat from the core (Figure 8), which is the same that occurs in wake and sleep conditions (Krauchi, 2007). This <b>blood redistribution is controlled by sympathetic nervous system</b>, which dilates and constricts peripheral vessels in general, and arteriovenous anastomoses more specifically (which are abundant in glabrous skin and are widely innervated by sympathetic nerves)." → heart rate variability HRV (high frequency or low frequency can't remember) may be able to detect the biological night too by detecting when the heat redistribution is active???</li>
+<li>"In addition, cardiovascular system shows, as it has long been known, circadian modulation in blood pressure and heart rate (Blazquez et al., 2012; Kräuchi et al., 2012; Veerman et al., 1995). Recently, circadian rhythms have also been discovered in vascular tone and cardiac output (Veerman et al., 1995). All these rhythms have a similar pattern with high values during daytime and low values during nighttime. Nowadays, it is suggested that <b>all these rhythms are a consequence of a circadian pattern in the sympathetic tone instead of the sleep-wake or rest-activity cycle dependence</b> (Furlan et al., 1990; Yamasaki et al., 1996). <b>The sympathetic activity pattern is reflected in the heart rate variability rhythm with an inverse pattern, that it is, variability is higher during rest phase (lower sympathetic activity) and lower during activity phase (higher sympathetic activity) (for review see Guo &amp; Stein, 2003)</b>."</li>
+</ul>
+</li>
+<li>BEST CRITICAL: heart rate and sleep
+<ul>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image005.png" width="400"> </li>
+<li>BEST CRITICAL: "the longer we are awake during the day, the higher our heart rate throughout the night" → more sleep deprivation equals higher heart rate at night! + shows a delay in recovery (or may be due to bad lifestyle habits in the week-end such as alcohol consumption on friday and saturday)</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image004.png" width="500"> </li>
+<li>Bradycardia and Tachycardia are associated with suboptimal sleep quality!</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image006.png" width="400"></li>
+<li>from: <a href="https://www.fullpower.com/home/sleep-analytics" title="https://www.fullpower.com/home/sleep-analytics" class="https">https://www.fullpower.com/home/sleep-analytics</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<br>
+
+
+<hr>
+
+<br>
+
+<h2>Other notes</h2>
+
+<p>
+<ul>
+<li>circadian body temperature:
+<ul>
+<li>BEST TOSEE: Measuring circadian rhythm <a href="https://pubmed.ncbi.nlm.nih.gov/19268173/" title="https://pubmed.ncbi.nlm.nih.gov/19268173/" class="https">https://pubmed.ncbi.nlm.nih.gov/19268173/</a></li>
+<li>BEST TOSEE: How is the circadian rhythm of core body temperature regulated? Kurt Krauchi 2002 editorial <a href="http://www.chronobiology.ch/wp-content/uploads/publications/2002_02.pdf" title="http://www.chronobiology.ch/wp-content/uploads/publications/2002_02.pdf" class="http">http://www.chronobiology.ch/wp-content/uploads/publications/2002_02.pdf</a>
+<ul>
+<li>"The <b>circadian rhythm of core body temperature (CBT) is a well-documented physiological phenomenon</b>. Already in 1842, Gierse [6] had shown that his own oral temperature revealed a maximum temperature in the early evening and a minimum in the early morning hours with a maximum-minimum range of 0.9 °C. It had been <b>assumed for a long time that muscular activity (exercise) and digestive processes</b> were the most important factors for generation of the CBT rhythm [8]. Aschoff and his colleagues systematically explored the causes of this rhythm [1, 2]. He showed that the circadian rhythm of CBT is determined both by changes in heat production and changes in heat loss, and concluded that <b>heat production undergoes a circadian rhythm which is phase advanced by 1.2h with respect to the circadian rhythm of heat loss</b>, i. e. when heat production surpasses heat loss, CBT increases – transport of heat needs time. Therefore, <b>when we want to explain changes in CBT we need to know the relationship between heat production and heat loss</b>."</li>
+</ul>
+</li>
+<li>BEST: SCN and body temperature: Temperature rhythms keep body clocks in sync <a href="https://www.sciencedaily.com/releases/2010/10/101014144314.htm" title="https://www.sciencedaily.com/releases/2010/10/101014144314.htm" class="https">https://www.sciencedaily.com/releases/2010/10/101014144314.htm</a> + Ref: Temperature as a Universal Resetting Cue for Mammalian Circadian Oscillators. Science, 2010; 330 (6002): 379 DOI: 10.1126/science.1195262 </li>
+<li>The circadian rhythm of body temperature <a href="https://doi.org/10.1016/0031-9384(92)90188-8" title="https://doi.org/10.1016/0031-9384(92)90188-8" class="https">https://doi.org/10.1016/0031-9384(92)90188-8</a></li>
+<li>ghrelin and fasting hormones and circadian rhythm: Circadian Body Temperature Rhythm and the Interaction with Energy State <a href="https://www.intechopen.com/books/homeostasis-an-integrated-vision/circadian-body-temperature-rhythm-and-the-interaction-with-energy-state" title="https://www.intechopen.com/books/homeostasis-an-integrated-vision/circadian-body-temperature-rhythm-and-the-interaction-with-energy-state" class="https">https://www.intechopen.com/books/homeostasis-an-integrated-vision/circadian-body-temperature-rhythm-and-the-interaction-with-energy-state</a></li>
+<li>The circadian rhythm of body temperature <a href="https://pubmed.ncbi.nlm.nih.gov/1523238/" title="https://pubmed.ncbi.nlm.nih.gov/1523238/" class="https">https://pubmed.ncbi.nlm.nih.gov/1523238/</a></li>
+<li>Free-running melatonin, sleep propensity, cortisol and temperature rhythms in a totally blind person <a href="https://pubmed.ncbi.nlm.nih.gov/1635312/" title="https://pubmed.ncbi.nlm.nih.gov/1635312/" class="https">https://pubmed.ncbi.nlm.nih.gov/1635312/</a></li>
+<li>Sleep propensity free-runs with the temperature, melatonin and cortisol rhythms in a totally blind person <a href="https://pubmed.ncbi.nlm.nih.gov/1519008/" title="https://pubmed.ncbi.nlm.nih.gov/1519008/" class="https">https://pubmed.ncbi.nlm.nih.gov/1519008/</a>
+<ul>
+<li>Melatonin in circadian sleep disorders in the blind <a href="https://pubmed.ncbi.nlm.nih.gov/10085469/" title="https://pubmed.ncbi.nlm.nih.gov/10085469/" class="https">https://pubmed.ncbi.nlm.nih.gov/10085469/</a></li>
+</ul>
+</li>
+<li>Bright lights accelerate the re-entrainment of circadian clock to 8-hour phase-advance shift of sleep-wake schedule: 1) Circadian rhythms in rectal temperature and plasma melatonin level <a href="https://pubmed.ncbi.nlm.nih.gov/1753467/" title="https://pubmed.ncbi.nlm.nih.gov/1753467/" class="https">https://pubmed.ncbi.nlm.nih.gov/1753467/</a></li>
+<li>Non-photic entrainment of human circadian clock--effects of forced sleep-wake schedule on the circadian rhythm in plasma melatonin <a href="https://pubmed.ncbi.nlm.nih.gov/8752534/" title="https://pubmed.ncbi.nlm.nih.gov/8752534/" class="https">https://pubmed.ncbi.nlm.nih.gov/8752534/</a></li>
+<li>Model: Non-photic entrainment of human circadian clock--effects of forced sleep-wake schedule on the circadian rhythm in plasma melatonin <a href="https://pubmed.ncbi.nlm.nih.gov/8752534/" title="https://pubmed.ncbi.nlm.nih.gov/8752534/" class="https">https://pubmed.ncbi.nlm.nih.gov/8752534/</a></li>
+<li>BEST: More than a marker: interaction between the circadian regulation of temperature and sleep, age-related changes, and treatment possibilities <a href="https://pubmed.ncbi.nlm.nih.gov/10841209/" title="https://pubmed.ncbi.nlm.nih.gov/10841209/" class="https">https://pubmed.ncbi.nlm.nih.gov/10841209/</a>
+<ul>
+<li>"The neurobiological mechanisms of both sleep and circadian regulation have been unraveled partly in the last decades. A network of brain structures, rather than a single locus, is involved in arousal state regulation, whereas the suprachiasmatic nucleus (SCN) has been recognized as a key structure for the regulation of circadian rhythms. Although most models of sleep regulation include a circadian component, the actual mechanism by which the circadian timing system promotes--in addition to homeostatic pressure--transitions between sleep and wakefulness remains to be elucidated."</li>
+<li>"A review of the literature shows that increased brain temperature is associated with a type of neuronal activation typical of sleep in some structures (hypothalamus, basal forebrain), but typical of wakefulness in others (midbrain reticular formation, thalamus). Not only local temperature, but also skin temperature are related to the activation type in these structures. Warming of the skin is associated with an activation type typical of sleep in the midbrain reticular formation, hypothalamus, and cerebral cortex (CC). The decreasing part of the circadian rhythm in core temperature is mainly determined by heat loss from the skin of the extremities, which is associated with strongly increased skin temperature. As such, alterations in core and skin temperature over the day could modulate the neuronal activation state or "preparedness for sleep" in arousal-related brain structures. Body temperature may thus provide a third signaling pathway, in addition to synaptic and neurohumoral pathways, for the circadian modulation of sleep."</li>
+<li>"Finally, the model indicates that appropriately timed direct (passive heating) or indirect (bright light, melatonin, physical activity) manipulation of the nocturnal profile of skin and core temperature may be beneficial to disturbed sleep in the elderly. Although such procedures could be viewed by researchers as merely masking a marker for the endogenous rhythm, they may in fact be crucial for sleep improvement in elderly subjects."</li>
+</ul>
+</li>
+<li>Control of slow wave sleep by thermoregulatory mechanisms <a href="https://pubmed.ncbi.nlm.nih.gov/2377644/" title="https://pubmed.ncbi.nlm.nih.gov/2377644/" class="https">https://pubmed.ncbi.nlm.nih.gov/2377644/</a></li>
+<li>External temperature also influences our circadian rhythms, study reports <a href="https://www.zmescience.com/science/temperature-circadian-rhythm/" title="https://www.zmescience.com/science/temperature-circadian-rhythm/" class="https">https://www.zmescience.com/science/temperature-circadian-rhythm/</a></li>
+<li>Figure 3 of <a href="http://www.aulamedica.es/nh/pdf/8776.pdf" title="http://www.aulamedica.es/nh/pdf/8776.pdf" class="http">http://www.aulamedica.es/nh/pdf/8776.pdf</a> shows temperature gets higher in anticipation to sleep and in afternoon, using wrist limb skin temperature + methods such as cosinor and mesor (midline estimating statistic of rhythms)</li>
+<li>Researchers at UT Southwestern Medical Center have found that fluctuations in internal body temperature regulate the body's circadian rhythm, the 24-hour cycle that controls metabolism, sleep and other bodily functions. Temperature rhythms keep body clocks in sync <a href="https://www.sciencedaily.com/releases/2010/10/101014144314.htm" title="https://www.sciencedaily.com/releases/2010/10/101014144314.htm" class="https">https://www.sciencedaily.com/releases/2010/10/101014144314.htm</a></li>
+<li>Proximal skin temperature followed the same circadian rhythm as rectal temperature + temperature link with ecg: Circadian rhythm of heat production, heart rate, and skin and core temperature under unmasking conditions in men, 1994, Krauchi &amp; Wirz-Justice <a href="https://pubmed.ncbi.nlm.nih.gov/8092328/" title="https://pubmed.ncbi.nlm.nih.gov/8092328/" class="https">https://pubmed.ncbi.nlm.nih.gov/8092328/</a></li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>Tutos DIY sensors, with code to convert analog voltage to real measures:
+<ul>
+<li>light sensor: <a href="https://smartphonedaq.com/100102.page" title="https://smartphonedaq.com/100102.page" class="https">https://smartphonedaq.com/100102.page</a></li>
+<li>ECG (handheld): <a href="https://smartphonedaq.com/android-python-ecg.page" title="https://smartphonedaq.com/android-python-ecg.page" class="https">https://smartphonedaq.com/android-python-ecg.page</a></li>
+<li>temperature sensor (thermistor): <a href="https://smartphonedaq.com/100106.page" title="https://smartphonedaq.com/100106.page" class="https">https://smartphonedaq.com/100106.page</a></li>
+</ul></li>
+</ul>
+</p>
+
+                    <br></br>
+                    
+                    <hr class='footnotes'>
+                    <span class="backlinks">
+                    </span>
+    
+                <!-- !! The script will center all images. If you prefer the default (images at left delete these three lines -->    
+                <script>
+                    $( "img" ).wrap( "<div class='imgcenter'></div>" );
+                </script>
+    
+                
+            </div>
+            
+            <!-- Navigation panel -->
+            
+            <div data-role="panel" data-position-fixed="true" data-display="reveal" data-theme="a" id="nav-panel" data-dismissible="false">
+                <div style="display:inline-block;">
+                    
+                    <!-- !! If you want to place your logo, uncomment the next section and fill in the link between the quotation marks after href if you want the logo to link to another page or website -->
+                    <!-- <div id="logos" align="center">
+                        <a title="your title" href="" target="_blank">
+                            <img src=./SleepNon24BiologicalMeasures_files/_resources/zim_logo.png style="border-style:none" align="right"></a>
+                    </div> -->
+                    
+                    <div>
+                        <!-- !! optionally.. add your custom search engine script -->
+                        <a href="#header" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Close panel</a>
+    
+                        <!-- !! optionally.. add link to start page or index page. To do so, uncomment the next 2 lines and fill in the webpage name / url-->
+                        <!-- <br></br>
+                        <a href="./link-to-start-page.html">Name of page</a>-->
+                        
+                        <!-- Generate the links to other pages (between-pages table of contents -->
+                        <ul>
+<li><b>SleepNon24BiologicalMeasures</b></li>
+</ul>
+
+
+                        <!-- Current document's Table Of Contents placeholder and style, this table of content will be generated from headers in the document -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+                        <style src="text/css">
+                        .toc-link, .toc-list-item, .toc-list-item a {
+                            /* Remove underlining for all toc entries */
+                            text-decoration: none;
+                        }
+                        .toc-link:not(.is-active-link) {
+                            /* Only leave the active toc entry (currently watched) as bold, else put text in normal weight */
+                            font-weight: normal !important;
+                        }
+                        </style>
+                        <nav class="toc js-toc relative z-1 transition--300 pa4" style="position: relative; max-width:inherit;">
+                        </nav>
+
+                        <!-- !! Optionally, button which brings the user to your contact form. To enable this, remove comment mark below and fill in the link between the quoation marks after href -->
+                        <!--<br></br>
+                        <a title="Contact us" data-icon="info" href="" data-role="button" target="_blank">Contact us</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generate the Table Of Contents dynamically using javascript (via tocbot) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+    <script type="text/javascript">
+    var content = document.body
+    var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6, h7')
+    var headingMap = {}
+
+    <!-- generate ids dynamically for each header, that's necessary for tocbot to work, source makeids from tocbot repository -->
+    Array.prototype.forEach.call(headings, function (heading) {
+        var id = heading.id ? heading.id : heading.textContent.trim().toLowerCase()
+            .split(' ').join('-').replace(/[!@#$%^&*():]/ig, '').replace(/\//ig, '-')
+        headingMap[id] = !isNaN(headingMap[id]) ? ++headingMap[id] : 0
+        if (headingMap[id]) {
+            heading.id = id + '-' + headingMap[id]
+        } else {
+            heading.id = id
+        }
+        // Add a self-referential link on the header's anchor, easier to share + jump to this anchor if clicked
+        heading.innerHTML = "<a href=\"#"+id+"\" onclick=\"jumpToAnchor('"+id+"');\";>"+heading.innerHTML+"</a>"
+    })
+
+    function jumpToAnchor(anchorId) {
+    // jump to an anchor
+    // from: https://stackoverflow.com/a/52138511/1121352
+    $(document).ready(function() {
+        // Pure JS solution, that doesn't cause the window to go back to the top before sliding to the anchor
+        const element = document.querySelector('#'+anchorId)
+        const topPos = element.getBoundingClientRect().top + window.pageYOffset
+
+        window.scrollTo({
+            top: topPos, // scroll so that the element is at the top of the view
+            behavior: 'smooth' // smooth scroll
+        })
+        // JQuery solution
+        /*
+        $('html, body').animate({
+            'scrollTop':   $('#'+anchorId).offset().top
+        }, 500);
+        */
+        // Ensure the anchor is added in the URL so the user can more easily copy the link and share from the browser's address bar directly
+        location.hash = "#" + anchorId;
+    });
+    }; // }(JQuery);
+
+    <!-- initialize tocbot with some options -->
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+      // Header levels collapsing by default
+      collapseDepth: 2,
+    });
+
+    <!-- ensure the window is scrolled to the anchor after the page finished loading (else jquery may scroll back to top, particularly on mobile) -->
+    document.addEventListener('DOMContentLoaded', function() {
+        anchor = window.top.location.hash;
+        anchor = anchor.split("#").pop();
+        jumpToAnchor(anchor);
+    }, false);
+    </script>
+
+</body>
+</html>
