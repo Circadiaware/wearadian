@@ -10,7 +10,7 @@ Indeed, there is a lack of both accurate and non-invasive and durable devices to
 
 To achieve that, we repurpose off-the-shelf components and devices where possible, or create new ones with DIY Arduino boards where necessary. This repository will contain all the instructions to detail what components and devices are necessary, how to use them, and for the custom devices the hardware and software source codes are provided. Softwares to visualize and (rudimentarily) analyze the generated data is also provided.
 
-The full documentation can be read here: https://circadiaware.github.io/wearadian/SleepNon24BiologicalMeasures.html
+The full documentation can be read here: https://circadiaware.github.io/wearadian/docs/SleepNon24BiologicalMeasures.html
 
 # Author
 
