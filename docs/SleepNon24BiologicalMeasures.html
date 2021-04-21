@@ -56,71 +56,34 @@ Créée le vendredi 19 juin 2020
 </p>
 
 <p>
-TODO:<br>
-<ul>
-<li>temperature 2 ibuttons en plus: 1 sur trunk internal, 1 sur bras external (skin temperature). + GreenTEG Core en meme temps, pourra comparer.</li>
-<li>BEST CRITICAL: wrist skin temperature using iButton on the AX6 watch using velcro, this may allow to detect the circadian rhythm! See <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/23577201/" title="https://pubmed.ncbi.nlm.nih.gov/23577201/" class="https">https://pubmed.ncbi.nlm.nih.gov/23577201/</a> and especially <b>WTiO (Wrist skin temperature increase onset) which anticipates melatonin production</b>: <a href="https://pubmed.ncbi.nlm.nih.gov/24164100/" title="https://pubmed.ncbi.nlm.nih.gov/24164100/" class="https">https://pubmed.ncbi.nlm.nih.gov/24164100/</a>
-<ul>
-<li><b>To summarize: wrist skin temperature (WTiO) can detect start of biological night (associated with the DLMO), and minimal core body temperature (CBTmin) the end (light therapy)! It can also detect the siesta time, which is independent from feeding time!</b></li>
-<li><b>BEST CRITICAL: wrist skin temperature (distal temperature) placement using Velcro to attach the iButton to a cotton sports wristband! + one sample every 10min is very fine! So every 5min is even better!</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a></li>
-<li><a href="http://hdl.handle.net/10201/40027" title="proximal body temperature does NOT work, see figure 7" class="http">proximal body temperature does NOT work, see figure 7</a>, need to use core body temperature or distal (wrist) skin temperature!</li>
-</ul>
-</li>
-<li>Proximal iButton try back or neck, better than trunk: <a href="https://pubmed.ncbi.nlm.nih.gov/33061911/" title="https://pubmed.ncbi.nlm.nih.gov/33061911/" class="https">https://pubmed.ncbi.nlm.nih.gov/33061911/</a></li>
-<li>BEST CRITICAL: arduino DIY light sensor rethink with a light intensity sensor with blue-green light filter, to directly get the intensity of exposure to blue-light! <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
-<ul>
-<li>cut filter from red laser glasses, find one glasses with guaranteed range so that I know exactly what is filtered, I should mimic as closely as possible the range they had in this study.</li>
-</ul>
-</li>
-<li>BEST IDEA WEARABLE ME ALL-IN-ONE: make my own ECG optical + thermistor + 3-axis accelerometer on armband with microsd card and bluetooth streaming using an arduino-like board with breakouts, this should be sufficient to capture skin temperature + RR intervals (heart rate and heart rate variability) + activity (sleep-wake phases - actigraphy). First confirm that these measures work to monitor the circadian rhythm (and determine with what algorithms), then I can try to make this all-in-one wearable with both data storage for offline analysis and online streaming via bluetooth for users to monitor in real-time their circadian rhythm (and stream the history too this is necessary).
-<ul>
-<li>IT EXISTS! Except for ECG. Recommend for researchers this all-in-one system: <b>ACM KRONOWISE® 2.0 watch, all-in-one system for circadian rhythm study and assessment</b>, combined with the Circadianware platform for light sensing, wrist skin temperature and 3-axis actigraphy! Used in lots of research studies already with Circadianware software: <a href="http://www.kronohealth.com/productos-y-servicios/" title="http://www.kronohealth.com/productos-y-servicios/" class="http">http://www.kronohealth.com/productos-y-servicios/</a></li>
-</ul>
-</li>
-<li>CircaLog</li>
-<li>Polar H10 ECG and accelerometer BLE receiver Android app long term recording
-<ul>
-<li>like the one I use currently but with auto retry if communication failed at some point, will retry until connection is reestablished or logging is stopped</li>
-<li>save in csv file along the way, so that if crash then no issue it's already saved</li>
-<li>update battery periodically (old app only updates once when connecting to the H10)</li>
-<li>use the android sdk provided by Polar, better to code a native android app in Java to reduce memory and cpu consumption, a non-native Python or other app will consume more phone battery</li>
-<li>smartphone receiver app advantages: full ECG + accel data recording, restart automatically, long battery if using Realme 6i, but sometimes the signal can be cut and a dedicated phone to receive the data is necessary (to avoid aggressive background app kill by Android OS).</li>
-<li>or can also record 1Hz RR et HR on internal memory. But how long the internal memory would last? But still for people without a dedicated phone, it would be better than nothing, if at least 24h would be great, need to test.</li>
-<li>need to code in java, because in python kivy it will be using opengl and so use much more battery</li>
-<li>Docs and tools:
-<ul>
-<li><a href="https://github.com/watsonix/node-ble-hr" title="https://github.com/watsonix/node-ble-hr" class="https">https://github.com/watsonix/node-ble-hr</a></li>
-<li><a href="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" title="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" class="https">https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp</a></li>
-<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
-<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
-<li><a href="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" title="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" class="https">https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/</a></li>
-</ul>
-</li>
-<li>RR intervals can have as many as 4 in one packet!
-<ul>
-<li>"Q: Why there are sometimes 0-4 RR-intervals? A: Bluetooth exchanges data around 1 s intervals and if your heart rate is around 60 bpm, then almost every RR-interval hits between data transmission. If you have heartrate eg. 40, then your RR-interval is over 1s =&gt; not every BLE packet contain RR-interval. Then if your heartrate is eg. 180, then there is at least two RR-intervals in BLE packet." <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" class="https">https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger</a></li>
-</ul>
-</li>
-<li>even if persistent mode, send taskbar notification and vibrate to signal that the device disconnected, maybe bad contact with chest belt electrodes and skin, so if we don't notify the user then they may acquire useless data.</li>
-</ul>
-</li>
-<li><b>MY OBSERVATIONS:</b>
-<ul>
-<li>GreenTEG Core: core temperature decreases and stays low when biological night or nap, but rises up when waking up in the middle of the night or when awake. A rise of core temperature (at an odd time such as before the usual time for the biological night) indicates an energy boost.</li>
-<li>ECG: heart rate low and stable when asleep, but starts to become higher and more variable in the last cycle or even before if sleeping outside of the biological night, may be usable as a metric to indicate if one is sleeping under the biological night?</li>
-</ul></li>
-</ul>
+This project aims to provide a complete set of clinical-grade devices to monitor over the long-term (1 week to a year) various factors that are well-established in influencing or reflecting the circadian rhythm. In clinical jargon, the aim is to devise wearables for the non-invasive ambulatory supervised monitoring and self-monitoring of human circadian rhythm.
+</p>
+
+<p>
+Indeed, there is a lack of both accurate and non-invasive and durable devices to monitor the human circadian rhythm: often, the devices are invasive (such as for core body temperature sensing), or are inaccurate (wrist PPG instead of ECG, low sampling rate), and even when these two criteria are met, most devices cannot last at least 24h, which makes them unusable to monitor a full circadian cycle, especially for circadian rhythm disorders such as non-24 where one cycle can be much longer than 24h. However, to allow for self-monitoring of the circadian rhythm, a device needs to fulfill at least these 3 criteria (and more). This project aims to provide a set of devices to capture most of the biological signals that can objectively reflect or affect the human circadian rhythm.
+</p>
+
+<p>
+To achieve that, we repurpose off-the-shelf components and devices where possible, or create new ones with DIY Arduino boards where necessary. This repository will contain all the instructions to detail what components and devices are necessary, how to use them, and for the custom devices the hardware and software source codes are provided. Softwares to visualize and (rudimentarily) analyze the generated data is also provided.
+</p>
+
+<p>
+This technical document describes each device's setup, donning procedure and data acquisition.
 </p>
 
 <p>
 Wearables list:<br>
 <ul>
-<li>iButtons DS1925L (or DS1925EVKIT starter kit) (skin temperature)</li>
-<li>Polar H10 (ECG+3-axis ACC), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
-<li>GreenTEG CORE (core body temperature + skin temperature + ACC)</li>
-<li>Axivity AX6 (6-axis ACC)</li>
-<li>custom arduino-based light sensor</li>
+<li>Polar H10 (ECG + 3-axis actigraphy), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
+<li>GreenTEG CORE (core body temperature + trunk skin temperature).</li>
+<li>Axivity AX6 (6-axis actigraphy).</li>
+<li>iButtons DS1925L (or DS1925EVKIT starter kit) on a cotton sports wrist-band attached with a velcro (wrist skin temperature).</li>
+<li>Custom arduino-based photosensor (light intensity and color sensor).</li>
 </ul>
+</p>
+
+<p>
+See also the companion projects on Circadiaware: <a href="https://github.com/Circadiaware" title="https://github.com/Circadiaware" class="https">https://github.com/Circadiaware</a>
 </p>
 
 <h2>Wearables donning procedure</h2>
@@ -168,6 +131,7 @@ Wearables list:<br>
 <li>Clean the Polar Pro chest band with a tissue with 50-70% alcohol, <b>except the connectors</b> to avoid oxydizing them. See <a href="https://support.polar.com/en/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="here for more infos" class="https">here for more infos</a>.</li>
 <li>Attach the GreenTEG Core or the same belt as the Polar H10, on the side, just after the silicone electrode band.</li>
 <li>Wear the Polar H10 as indicated by the manufacturer.</li>
+<li>Tip: to avoid the CORE overlapping one end of the electrode band, wear the H10 sensor shifted to the left quadrant of the torso. This will allow to leave more room to place the CORE on the right side of the chest without overlapping with the electrode band, and without any loss in ECG accuracy (since the heart is slightly oriented towards the left side of the torso).</li>
 <li>Use a Bluetooth receptor to acquire the ECG data, see the next section.</li>
 </ul>
 </p>
@@ -313,8 +277,9 @@ Wearables list:<br>
 <li><b>Rename the downloaded file to append current datetime in the filename</b> (else it's not in the filename and it can get overwritten)</li>
 <li>Back up the cwa files directly, can always export and normalize later, directly from OmGUI or other softwares/libraries.</li>
 <li>Clear/Wipe device</li>
-<li>Click Record and Reconfigure with 100Hz sampling frequency, 16bit resolution and 2000dps gyro/rotation.</li>
+<li>Click Record and Reconfigure with <b>100Hz sampling frequency, 16bit resolution and 2000dps gyro/rotation</b>.</li>
 <li>Disconnect and put back inside silicon watch, matching the arrow on the AX6 with the watch's arrow marker.</li>
+<li>With these settings, AX6 can store up to 9 days included of continuous recordings.</li>
 </ul>
 </p>
 
@@ -426,6 +391,7 @@ Wearables list:<br>
 <ul>
 <li><b>If the ECG data is all wrong but ACC is fine, try to change for another CR2025 battery</b>, sometimes a defective battery can mangle the signal for some reason.</li>
 <li><b>If the ECG data is still wrong despite changing the battery, the Polar Pro chest band electrodes may be dead</b>, so it's then necessary to buy a new one (costs 30 to 40 euros for the band alone). If used 24/7, the Polar Pro band lasts for about 6 months. The warranty does not cover it as it is considered normal usage degradation of a consumable.</li>
+<li>After you checked ECG and ACC graphs, reopen the menus to completely disable both graphs AND uncheck the device too, because otherwise the app may crash on autoreconnection when the H10 gets out of bluetooth range. It's always possible to re-enable the graphs at anytime to check, but it's necessary to disable them entirely meanwhile, not just pause them.</li>
 </ul>
 </li>
 <li>Always maintain phone battery above 20% otherwise app will likely get killed to save battery whatever the battery saving settings </li>
@@ -460,6 +426,7 @@ Wearables list:<br>
 <li>Use Sony or Varta CR2025 batteries for the H10 to last ~10 days with one battery. Cheaper or rechargable batteries won't last as long. Some users reported that CR2032 can also fit, and they last longer since they have a bigger size and capacity, but Polar warns against using a battery of an incorrect type (ie, anything else than CR2025) as they claim <a href="https://support.polar.com/be-fr/support/entretien-de-l-metteur-de-fr-quence-cardiaque" title="this can cause an explosion" class="https">this can cause an explosion</a>.</li>
 <li><a href="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" class="https">https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap</a></li>
 <li>If after stopping acquisition, the Polar H10 is no longer detected by any app, reboot the Android phone, then the H10 should be detected correctly.</li>
+<li>Software alternative for iOS: <a href="https://github.com/poml88/ecg-recorder-ios" title="https://github.com/poml88/ecg-recorder-ios" class="https">https://github.com/poml88/ecg-recorder-ios</a> (not tested)</li>
 </ul>
 </li>
 <li>Higher-grade alternatives (but with much shorter battery or storage space):
@@ -669,10 +636,10 @@ Wearables list:<br>
 </ul>
 </li>
 <li>Preliminary validations by GreenTEG Core producer: <a href="https://www.greenteg.com/coreresearch/" title="https://www.greenteg.com/coreresearch/" class="https">https://www.greenteg.com/coreresearch/</a> (mirror: <a href="https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/" title="https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/" class="https">https://web.archive.org/web/20210105033254/https://www.greenteg.com/coreresearch/</a> )</li>
-<li>ME IDEAS:
+<li>ME IDEAS EXPERIMENTS DATA ANALYSIS:
 <ul>
 <li>how to test whether it measures sleep or circadian rhythm or something else? Check correlation with sleep sessions start time, wake up time and interval contained, should be weak for start time but mid for wake up time and interval contained (sleep sessions generally occur inside the circadian night). But now test whether sleeping in phase with circadian night (ie, start time and wake up time close ~1 ultradian cycle to circadian night start and end times) have a longer duration, if yes then that's a strong hint. Furthermore can test sleep quality, but sleep quality is directly correlated with sleep duration so it's a bit redundant. This would show that when the sleep session is aligned with the device's detected circadian night, the sleep is longer and of increased quality, which would strongly suggests that indeed the device does measure the core body temperature and circadian rhythm, as opposed to just sleep sessions. We cannot verify this on all nights because when the user sleeps outside of the circadian night then we have no way of verifying whether what the device detects as a circadian night is true or false. Can also do a quantitative analysis: compare how sleep duration is related to how close the sleep session is to the circadian night, I expect the further, the shorter sleep, this should show up as a nice inverse linear relationship between sleep-circadian rhythm misalignment and sleep duration.</li>
-<li><b>BEST BETTER ANALYSIS: sleep schedule vs circadian night probabilistic window detection from core body temperature and correlation with sleep duration from sleep diary or actigraphy:</b> set an ideal sleep duration, eg 7 to 8h, then apply a probabilistsic model to find the most likely time the circadian night happened with such a duration (can be smaller or longer, but it will match the period with the closest duration and that is the low phase of the core body temperature). Could also be extended to find naps but it's likely more difficult. Then, calculate correlation between sleep diary's or actigraphy's sleep duration and distance or overlap with circadian night as detected by the probabilistic model. My hypothesis is that the most overlapping, the longer sleep and better quality. The opposite should hold true, the less overlapping, the shorter the sleep duration and quality. This would demonstrate that core body temperature indeed reflects the circadian rhythm AND that sleep in circadian misalignment leads to a shorter sleep. I expect that a longer sleep is observed only when at least half of the sleep session overlaps with the circadian rhythm (ie, 3-4h), otherwise if the overlap is less then it should be similar to sleeping in circadian misalignment, with sleep sessions not exceeding 5h. This should provide a nice inverse correlation between sleep-circadian distance and sleep duration. Then can also use sleep diary's tags such as LikelyPartiallyInPhase which means that the user estimates that there is an overlap of about half of the circadian night, but these tags are biased since they are subjective and they often rely on assessing sleep duration and expected circadian night window based on previous days/weeks.</li>
+<li><b>BEST BETTER ANALYSIS: sleep schedule vs circadian night probabilistic window detection from core body temperature and correlation with sleep duration from sleep diary or actigraphy:</b> set an ideal sleep duration, eg 7 to 8h, then apply a probabilistsic model to find the most likely time the circadian night happened with such a duration (can be smaller or longer, but it will match the period with the closest duration and that is the low phase of the core body temperature). Could also be extended to find naps but it's likely more difficult. Then, calculate correlation between sleep diary's or actigraphy's sleep duration and distance or overlap with circadian night as detected by the probabilistic model. My hypothesis is that the most overlapping, the longer sleep and better quality. The opposite should hold true, the less overlapping, the shorter the sleep duration and quality. This would demonstrate that core body temperature indeed reflects the circadian rhythm AND that sleep in circadian misalignment leads to a shorter sleep. I expect that a longer sleep is observed only when at least half of the sleep session overlaps with the circadian rhythm (ie, 3-4h), otherwise if the overlap is less then it should be similar to sleeping in circadian misalignment, with sleep sessions not exceeding 5h. This should provide a nice inverse correlation between sleep-circadian distance and sleep duration. Then can also use sleep diary's tags such as LikelyPartiallyInPhase which means that the user estimates that there is an overlap of about half of the circadian night, but these tags are biased since they are subjective and they often rely on assessing sleep duration and expected circadian night window based on previous days/weeks. And LikelyInPhase should correlate with sleep durations &gt; 6h30 and PartiallyInPhase and OutOfPhase with sleep durations &lt; 6h.</li>
 </ul></li>
 </ul>
 </p>
@@ -814,6 +781,65 @@ Wearables list:<br>
 <li>light sensor: <a href="https://smartphonedaq.com/100102.page" title="https://smartphonedaq.com/100102.page" class="https">https://smartphonedaq.com/100102.page</a></li>
 <li>ECG (handheld): <a href="https://smartphonedaq.com/android-python-ecg.page" title="https://smartphonedaq.com/android-python-ecg.page" class="https">https://smartphonedaq.com/android-python-ecg.page</a></li>
 <li>temperature sensor (thermistor): <a href="https://smartphonedaq.com/100106.page" title="https://smartphonedaq.com/100106.page" class="https">https://smartphonedaq.com/100106.page</a></li>
+</ul></li>
+</ul>
+</p>
+
+<h2>My notes</h2>
+
+<p>
+TODO:<br>
+<ul>
+<li>temperature 2 ibuttons en plus: 1 sur trunk internal, 1 sur bras external (skin temperature). + GreenTEG Core en meme temps, pourra comparer.</li>
+<li>BEST CRITICAL: wrist skin temperature using iButton on the AX6 watch using velcro, this may allow to detect the circadian rhythm! See <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/23577201/" title="https://pubmed.ncbi.nlm.nih.gov/23577201/" class="https">https://pubmed.ncbi.nlm.nih.gov/23577201/</a> and especially <b>WTiO (Wrist skin temperature increase onset) which anticipates melatonin production</b>: <a href="https://pubmed.ncbi.nlm.nih.gov/24164100/" title="https://pubmed.ncbi.nlm.nih.gov/24164100/" class="https">https://pubmed.ncbi.nlm.nih.gov/24164100/</a>
+<ul>
+<li><b>To summarize: wrist skin temperature (WTiO) can detect start of biological night (associated with the DLMO), and minimal core body temperature (CBTmin) the end (light therapy)! It can also detect the siesta time, which is independent from feeding time!</b></li>
+<li><b>BEST CRITICAL: wrist skin temperature (distal temperature) placement using Velcro to attach the iButton to a cotton sports wristband! + one sample every 10min is very fine! So every 5min is even better!</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a></li>
+<li><a href="http://hdl.handle.net/10201/40027" title="proximal body temperature does NOT work, see figure 7" class="http">proximal body temperature does NOT work, see figure 7</a>, need to use core body temperature or distal (wrist) skin temperature!</li>
+</ul>
+</li>
+<li>Proximal iButton try back or neck, better than trunk: <a href="https://pubmed.ncbi.nlm.nih.gov/33061911/" title="https://pubmed.ncbi.nlm.nih.gov/33061911/" class="https">https://pubmed.ncbi.nlm.nih.gov/33061911/</a></li>
+<li>BEST CRITICAL: arduino DIY light sensor rethink with a light intensity sensor with blue-green light filter, to directly get the intensity of exposure to blue-light! <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
+<ul>
+<li>cut filter from red laser glasses, find one glasses with guaranteed range so that I know exactly what is filtered, I should mimic as closely as possible the range they had in this study.</li>
+</ul>
+</li>
+<li>BEST IDEA WEARABLE ME ALL-IN-ONE: make my own ECG optical + thermistor + 3-axis accelerometer on armband with microsd card and bluetooth streaming using an arduino-like board with breakouts, this should be sufficient to capture skin temperature + RR intervals (heart rate and heart rate variability) + activity (sleep-wake phases - actigraphy). First confirm that these measures work to monitor the circadian rhythm (and determine with what algorithms), then I can try to make this all-in-one wearable with both data storage for offline analysis and online streaming via bluetooth for users to monitor in real-time their circadian rhythm (and stream the history too this is necessary).
+<ul>
+<li>IT EXISTS! Except for ECG. Recommend for researchers this all-in-one system: <b>ACM KRONOWISE® 2.0 watch, all-in-one system for circadian rhythm study and assessment</b>, combined with the Circadianware platform for light sensing, wrist skin temperature and 3-axis actigraphy! Used in lots of research studies already with Circadianware software: <a href="http://www.kronohealth.com/productos-y-servicios/" title="http://www.kronohealth.com/productos-y-servicios/" class="http">http://www.kronohealth.com/productos-y-servicios/</a></li>
+</ul>
+</li>
+<li>CircaLog</li>
+<li>Polar H10 ECG and accelerometer BLE receiver Android app long term recording
+<ul>
+<li>like the one I use currently but with auto retry if communication failed at some point, will retry until connection is reestablished or logging is stopped</li>
+<li>save in csv file along the way, so that if crash then no issue it's already saved</li>
+<li>update battery periodically (old app only updates once when connecting to the H10)</li>
+<li>use the android sdk provided by Polar, better to code a native android app in Java to reduce memory and cpu consumption, a non-native Python or other app will consume more phone battery</li>
+<li>smartphone receiver app advantages: full ECG + accel data recording, restart automatically, long battery if using Realme 6i, but sometimes the signal can be cut and a dedicated phone to receive the data is necessary (to avoid aggressive background app kill by Android OS).</li>
+<li>or can also record 1Hz RR et HR on internal memory. But how long the internal memory would last? But still for people without a dedicated phone, it would be better than nothing, if at least 24h would be great, need to test.</li>
+<li>need to code in java, because in python kivy it will be using opengl and so use much more battery</li>
+<li>Docs and tools:
+<ul>
+<li><a href="https://github.com/watsonix/node-ble-hr" title="https://github.com/watsonix/node-ble-hr" class="https">https://github.com/watsonix/node-ble-hr</a></li>
+<li><a href="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" title="https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp" class="https">https://github.com/polarofficial/polar-ble-sdk/tree/master/examples/example-android/androidBleSdkTestApp</a></li>
+<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
+<li><a href="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" title="https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors" class="https">https://web.archive.org/web/20190621133931/https://developer.polar.com/wiki/H6,_H7_and_H10_Heart_rate_sensors</a></li>
+<li><a href="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" title="https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/" class="https">https://blog.alikhalil.tech/2014/11/polar-h7-bluetooth-le-heart-rate-sensor-on-ubuntu-14-04/</a></li>
+</ul>
+</li>
+<li>RR intervals can have as many as 4 in one packet!
+<ul>
+<li>"Q: Why there are sometimes 0-4 RR-intervals? A: Bluetooth exchanges data around 1 s intervals and if your heart rate is around 60 bpm, then almost every RR-interval hits between data transmission. If you have heartrate eg. 40, then your RR-interval is over 1s =&gt; not every BLE packet contain RR-interval. Then if your heartrate is eg. 180, then there is at least two RR-intervals in BLE packet." <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" class="https">https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger</a></li>
+</ul>
+</li>
+<li>even if persistent mode, send taskbar notification and vibrate to signal that the device disconnected, maybe bad contact with chest belt electrodes and skin, so if we don't notify the user then they may acquire useless data.</li>
+</ul>
+</li>
+<li><b>MY OBSERVATIONS:</b>
+<ul>
+<li>GreenTEG Core: core temperature decreases and stays low when biological night or nap, but rises up when waking up in the middle of the night or when awake. A rise of core temperature (at an odd time such as before the usual time for the biological night) indicates an energy boost.</li>
+<li>ECG: heart rate low and stable when asleep, but starts to become higher and more variable in the last cycle or even before if sleeping outside of the biological night, may be usable as a metric to indicate if one is sleeping under the biological night?</li>
 </ul></li>
 </ul>
 </p>
