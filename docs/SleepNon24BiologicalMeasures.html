@@ -113,6 +113,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Also avoid tightening belts too much. The more pressure, the faster skin will be damaged or itchy. The sweet spot is tightening just enough to ensure reliable and robust skin contact with the sensors, but not more than that.</li>
 <li>It's necessary to re-do this procedure anytime the wearables feel itchy. The sooner the wearables are moved and pressure loosened, the less damage the skin will sustain. By taking on the habit of doing this as soon as itchiness feelings appear, it's possible to wear the devices continuously 24/7 (the author could wear the wearables continuously for 2 weeks).</li>
+<li>Use this opportunity to check and re-position if necessary the sensors to ensure good skin contact (ie, the whole surface of the sensor must be in contact with the skin). Checking and repositioning sensors must become a regular habit.</li>
 </ul>
 </li>
 <li>BEST CRITICAL: Avoid using sticky-based patch wearables or tape-based wearables, as adhesives will worsen irritation and are thus inadequate for continuous 24/7 long term wearing.
@@ -173,6 +174,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Place the CORE on the chest's right or left side, below the armpit, as shown in: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
 <li>Avoid twisting the Polar Pro chest band when removing or attaching the CORE, if you also use the band to acquire ECG with the Polar H10, as twisting the band can damage the electrodes.</li>
+<li>Wearing a t-shirt while sleeping always improve the temperature measurements during the sleep sessions by reducing frictions with blankets and bed. During warm weather periods, try to tighten more the chest belt to compensate, although this will increase respiratory discomfort and itchiness.</li>
 <li>ALTERNATIVE: according to this brain study, better place where there is soft tissues beneath, not bones, so on solar plexus. Indeed, DHF can acquire temperature 2cm below skin (DHF being the evolution of zero-heat-flux ZHF that consumes less energy): zero-heat-flux sensor for deep sensing of core body temperature if possible on the chest. Ref: Temperature Monitoring With Zero Heat Flux Technology In Comparison With Thermocouple Needle Probe During Selective Hypothermia, Mohammad Fazel Bakhsheshi et al, 2018. <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
 </ul>
 </li>
@@ -645,6 +647,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>use data quality to know if sensor was not well placed at this sample point.</li>
 <li>compare core and skin temperatures (from same sensor): if skin goes up but core goes down (inversed temperature profile), then exclude because the temperature was still stabilizing. Hence, the rolling derivative over a few samples should be the same sign, if not then exclude sample because did not reach steady-state (check how they do for MRI? I think they also simply detect and exclude).</li>
 <li>no access to accelerometer for the moment but maybe in the future?</li>
+<li>see how Czeisler et al did + math model predictive of optimal time for light therapy: <a href="https://doi.org/10.1371/journal.pone.0030037" title="https://doi.org/10.1371/journal.pone.0030037" class="https">https://doi.org/10.1371/journal.pone.0030037</a></li>
 </ul>
 </li>
 <li>How to calculate dual heat flux temperature from 4 sensors: <a href="https://doi.org/10.14326/abe.7.88" title="https://doi.org/10.14326/abe.7.88" class="https">https://doi.org/10.14326/abe.7.88</a></li>
@@ -714,6 +717,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </li>
 <li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "To facilitate the determination of light exposure, the presence/absence of natural light (solar day and night, respectively), and the light intensity analysis, the following ranges were established: very dim light (&lt;10 lux), indoor dim light (10-500 lux), indoor bright light (500-1000 lux), and outdoor bright light (&gt;1000 lux), as described in a previously conducted study (Turner &amp; Mainster, 2008). Environmental light intensities in lux were converted into logarithmic units and averaged every 10 mins to allow comparisons with temperature data."</li>
+<li>Methods more:
+<ul>
+<li>Estimating Representative Group Intrinsic Circadian Period from Illuminance-Response Curve Data <a href="https://doi.org/10.1177%2F0748730419886992" title="https://doi.org/10.1177%2F0748730419886992" class="https">https://doi.org/10.1177%2F0748730419886992</a></li>
+<li>math model predictive of optimal time for light therapy compared to CBTmin: <a href="https://doi.org/10.1371/journal.pone.0030037" title="https://doi.org/10.1371/journal.pone.0030037" class="https">https://doi.org/10.1371/journal.pone.0030037</a></li>
+</ul></li>
 </ul>
 </p>
 
@@ -739,9 +747,41 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Bradycardia and Tachycardia are associated with suboptimal sleep quality!</li>
 <li><img src="./SleepNon24BiologicalMeasures_files/pasted_image006.png" width="400"></li>
 <li>from: <a href="https://www.fullpower.com/home/sleep-analytics" title="https://www.fullpower.com/home/sleep-analytics" class="https">https://www.fullpower.com/home/sleep-analytics</a></li>
+</ul>
+</li>
+<li>Respiratory, cardiac, EEG, BOLD signals and functional connectivity over multiple microsleep episodes, 2021 <a href="https://doi.org/10.1016/j.neuroimage.2021.118129" title="https://doi.org/10.1016/j.neuroimage.2021.118129" class="https">https://doi.org/10.1016/j.neuroimage.2021.118129</a></li>
+<li>Work of Kleitman before 1966, seminal work on circadian rhythm, bright light exposure, core body temperature and heart rate: <a href="https://doi.org/10.1152/physrev.1966.46.1.128" title="https://doi.org/10.1152/physrev.1966.46.1.128" class="https">https://doi.org/10.1152/physrev.1966.46.1.128</a>
+<ul>
+<li>"Kleitman and Ramsaroop (I 34) present a vast accumulation of data on temperature and heart rate, whose circadian rhythms can be closely superimposed</li>
 </ul></li>
 </ul></li>
 </ul>
+<div style='padding-left: 60pt'>
+apart from slight interference due to a postprandial rise of pulse rate. For different<br>
+subjects the increase in minute pulse rate was between IO and 15 per degree F<br>
+increment in rectal temperature; and since temperature is known to affect the<br>
+heart rate directly, the pulse rhythm could have been a simple consequence of the<br>
+rhythm in temperature. The further observation that during and after a 14day<br>
+period of thyroid administration the temperature and pulse rate rose and fell in<br>
+parallel does not strengthen the case; the minute pulse rate change was here 26<br>
+per degree F, so the parallelism was more probably due to two independent effects<br>
+of thyroid hormone. Neither temperature nor pulse rate shows a circadian rhythm<br>
+at birth; both become rhythmic at about the same age of 4-6 weeks (I IO) and<br>
+increase in amplitude up to perhaps 2 years, although the age at which the rhythms<br>
+are established cannot be determined with any high precision.<br>
+A complete dissociation between these two periodicities, however, has been<br>
+demonstrated (133) in subjects on abnormal time schedules in the Arctic.’ Thus<br>
+Kleitman himself, when living on an 18- or 28-hr day, showed a continuing 24-hr<br>
+temperature rhythm, while his pulse rate clearly followed an 180 or 28-hr rhythm.<br>
+Unfortunately the conditions for these experiments were far from ideal; although<br>
+an Arctic summer provided continuous daylight, the subjects were living in a<br>
+community in which solar time was all too evident, with empty streets and closed<br>
+shops at night. This circadian influence may have maintained the 24-hr rhythm<br>
+in temperature. The immediate adaptation of pulse rate to a day of 18 or 28 hr<br>
+suggests that there is no endogenous rhythm and that pulse rate is determined<br>
+largely by habit, being low during rest and sleep and higher during activity; only<br>
+if these influences are small is it also determined by the rhythm of body temperature. "
+</div>
 </p>
 
 <br>
@@ -907,6 +947,8 @@ TODO:<br>
                         .toc-link, .toc-list-item, .toc-list-item a {
                             /* Remove underlining for all toc entries */
                             text-decoration: none;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
                         }
                         .toc-link:not(.is-active-link) {
                             /* Only leave the active toc entry (currently watched) as bold, else put text in normal weight */
