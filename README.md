@@ -19,7 +19,11 @@ https://figshare.com/projects/MyNon24/101804
 Alpha scripts to visualize and process the dataset can be found in the `Circalizer` project:
 https://github.com/Circadiaware/circalizer
 
-# Author
+## Future improvements
+
+Implementing a 9-axis actigraph, ie with absolute orientation in the space, would allow for a more precise characterization of positions (ie, did the subject stayed laid down during a time period? Does this correlate with body temperature changes?).
+
+## Author
 
 This project was started by Stephen Karl Larroque.
 
