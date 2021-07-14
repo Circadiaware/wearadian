@@ -180,6 +180,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </li>
 <li>IMPORTANT: Instruct the subject to regularly check and reposition the CORE device to be flat on the skin, as it's crucial that the device be in full contact with the skin for precise measurements. It's often necessary when changing positions or when laying in the bed. It's possible to move the sensor around (eg, more on the thorax, completely on the side or even slightly on the back, can also be moved up and down) with no loss of accuracy, what matters is full skin contact.</li>
+<li>If the CORE cannot be discovered on the smartphone app anymore for unknown reasons and its green LED doesn't light up anymore, try to plug with the provided magnet cable to a computer USB port and the CORE, wait a few minutes, then disconnect. Connecting and disconnecting the CORE to the power outlet seems to systematically force it to turn back on. Nevertheless, even if there is no connection nor LED, the CORE continues to record data in the background even if it doesn't display it as long as there is enough battery left.</li>
 <li>Alternative, but much less effective methods:
 <ul>
 <li>with strap: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
@@ -297,7 +298,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Remove from wristband/watch and connect to a computer through USB</li>
 <li>use OmGUI</li>
 <li>Download, wait for 100% transfer (and battery recharge, make sure the computer is plugged to outlet for faster recharge)</li>
-<li><b>Rename the downloaded file to append current datetime in the filename</b> (else it's not in the filename and it can get overwritten)</li>
+<li><b>Rename the downloaded file to append current datetime in the filename</b> (else it's not in the filename and it can get overwritten)
+<ul>
+<li>Alternative: there are <a href="https://github.com/digitalinteraction/openmovement/issues/38" title="undocumented placeholder tags" class="https">undocumented placeholder tags</a> that can be set in the Options menu to add the datetime automatically, such as {EndTime}, {EndTimeNumeric}, {StartTime} and {StartTimeNumeric}</li>
+</ul>
+</li>
 <li>Back up the cwa files directly, can always export and normalize later, directly from OmGUI or other softwares/libraries.</li>
 <li>Clear/Wipe device</li>
 <li>Click Record and Reconfigure with <b>100Hz sampling frequency, 16bit resolution and 2000dps gyro/rotation</b>.</li>
@@ -698,15 +703,36 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </li>
 <li>Very inexpensive sensor, <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9007-020?qs=dcm2zoLQumDd2VQ258SwUQ==" title="costs ~$1" class="https">costs ~$1</a> !</li>
 <li>Can also be used for PPG: <a href="https://ieeexplore.ieee.org/abstract/document/7047462" title="https://ieeexplore.ieee.org/abstract/document/7047462" class="https">https://ieeexplore.ieee.org/abstract/document/7047462</a> and <a href="https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12" title="https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12" class="https">https://link.springer.com/chapter/10.1007/978-981-10-0534-3_12</a></li>
+</ul></li>
 </ul>
-</li>
-<li>TOSEE: ambient light *color* sensor? <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a>
+</p>
+
+<h3>Light sensor Arduino Adalogger</h3>
+
+<p>
 <ul>
+<li>COMPONENTS:
+<ul>
+<li>3 components:
+<ul>
+<li>Broadcom APDS9007 for light intensity sensor, see above, same as the internal light sensor used in AX6.</li>
+<li>Another APDS9007 but with a blue light filter, so as to measure by subtraction the intensity of blue light. Or better, a pass-band filter for any wavelength other than the blue-green spectrum.</li>
+<li>Light color (spectrum) sensor: Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too
+<ul>
+<li>Alternatives: <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a></li>
 <li>low energy <a href="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" title="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D</a> + <a href="https://www.gravitech.us/i2c16coleser.html" title="https://www.gravitech.us/i2c16coleser.html" class="https">https://www.gravitech.us/i2c16coleser.html</a></li>
-<li>Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too</li>
+</ul></li>
 </ul>
 </li>
 <li>only other alternative is lightwatcher but expensive</li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>METHODS:
+<ul>
 <li>Spectrometer light analysis packages: Lucas Toolbox: Lucas, R.J.; Peirson, S.N.; Berson, D.M.; Brown, T.M.; Cooper, H.M.; <b>Czeisler, C.A.</b>; Figueiro, M.G.; Gamlin, P.D.; Lockley, S.W.; O’Hagan, J.B. Measuring and using light in the melanopsin age. Trends Neurosci. 2014, 37, 1–9. as used in <a href="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" title="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" class="https">https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research</a></li>
 <li><b>BEST CRITICAL METHODS and idea: use 2 light intensity sensors, one normal for the full visible spectrum + one with a blue-green light filter, the difference of both sensors will show the amount of blue-green light that can modify the circadian rhythm!</b> <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
 <ul>
@@ -734,16 +760,8 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Estimating Representative Group Intrinsic Circadian Period from Illuminance-Response Curve Data <a href="https://doi.org/10.1177%2F0748730419886992" title="https://doi.org/10.1177%2F0748730419886992" class="https">https://doi.org/10.1177%2F0748730419886992</a></li>
 <li>math model predictive of optimal time for light therapy compared to CBTmin: <a href="https://doi.org/10.1371/journal.pone.0030037" title="https://doi.org/10.1371/journal.pone.0030037" class="https">https://doi.org/10.1371/journal.pone.0030037</a></li>
-</ul></li>
 </ul>
-</p>
-
-<h3>Light sensor Arduino Adalogger</h3>
-
-<p>
-<ul>
-<li>METHODS:
-<ul>
+</li>
 <li><b>BEST CRITICAL METHODS: Phasor analysis to quantify circadian misalignment and disruption relative to bright light exposure:</b> <a href="https://doi.org/10.1177/1477153517721598" title="https://doi.org/10.1177/1477153517721598" class="https">https://doi.org/10.1177/1477153517721598</a>
 <ul>
 <li>"In 2008, Rea et al.68 proposed a quantitative method for estimating circadian entrainment and disruption in the field. Called phasor analysis, this method permits examination of the relationship between the 24-hour (circadian) light–dark exposure pattern, the stimulus, and the activity–rest pattern. The response is quantified in terms of the phase and magnitude of their joint circular correlation function. The joint circular correlation function is determined by calculating correlations (r, not r2) between the entire, continuously repeating time series of light–dark exposure data and the entire, continuously repeating time series of activity–rest data as one time series is rotated with respect to the other. The circular correlation function is decomposed into its Fourier components from which the 24-hour frequency component can be represented by a vector, called a phasor. The vector length, or phasor magnitude, represents the amount of circadian entrainment exhibited in the light–dark pattern and the associated activity–rest pattern; the greater the phasor magnitude, the stronger the correlation between the light stimulus and the activity response. The vector angle, or phasor angle, reflects the phase relationship between the 24-hour light–dark exposure pattern and the 24-hour activity–rest pattern."</li>
