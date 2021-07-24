@@ -53,11 +53,12 @@
     
                     <p>
 Créée le vendredi 19 juin 2020<br>
-Last update: June 2021.
+Last update: July 2021.<br>
+Created by Stephen Karl Larroque.
 </p>
 
 <p>
-This project aims to provide a complete set of clinical-grade devices to monitor over the long-term (1 week to a year) various factors that are well-established in influencing or reflecting the circadian rhythm. In clinical jargon, the aim is to devise wearables for the non-invasive ambulatory supervised monitoring and self-monitoring of human circadian rhythm.
+The <a href="https://github.com/Circadiaware/wearadian" title="Wearadian" class="https">Wearadian</a> project aims to provide a complete set of clinical-grade devices to monitor over the long-term (1 week to a year) various factors that are well-established in influencing or reflecting the circadian rhythm. In clinical jargon, the aim is to devise wearables for the non-invasive ambulatory supervised monitoring and self-monitoring of human circadian rhythm. This document describes these tools, how to set them up, how to collect data and some leads to analyze them.
 </p>
 
 <p>
@@ -76,7 +77,7 @@ This technical document describes each device's setup, donning procedure and dat
 Wearables list:<br>
 <ul>
 <li>Polar H10 (ECG + 3-axis actigraphy), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
-<li>GreenTEG CORE (core body temperature + trunk skin temperature).</li>
+<li>GreenTEG CORE (core body temperature + trunk skin temperature), with a custom velcro attachment system.</li>
 <li>Axivity AX6 (6-axis actigraphy).</li>
 <li>iButtons DS1925L (or DS1925EVKIT starter kit) on a cotton sports wrist-band attached with a velcro (wrist skin temperature).</li>
 <li>Custom arduino-based photosensor (light intensity and color sensor).</li>
@@ -173,9 +174,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Preferred way is to use a hooks-type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin), <b>vertically</b> placed on the face facing the belt (ie, the face with the CORE brand marking), and use a sewable and skin-soft (eg, for babies, this side will be in contact with the skin from time to time) loops or loops-and-hooks type velcro band formed in a mobius loop to strap around the Polar Pro chest strap band, and then attach the CORE's velcro onto the mobius loop on the chest strap. This provide great comfort and improve skin contact and hence much more reliable measurements, and eliminates the mechanical pressure of the L dominoes as used in the manufacturer's instructions that eventually cause the CORE's outer ring to break. This technique can also be applied on already broken CORE devices.
 <ul>
+<li>See the schema in the github repository, under <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.svg" title="docs/schemas/greenteg-core-velcro.svg" class="https">docs/schemas/greenteg-core-velcro.svg</a> (or the <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.png" title="png version" class="https">png version</a>) for a visual depiction of the system and more informations.</li>
 <li>Place the CORE on the chest's right or left side, below the armpit, as shown in: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
 <li>Avoid twisting the Polar Pro chest band when removing or attaching the CORE, if you also use the band to acquire ECG with the Polar H10, as twisting the band can damage the electrodes.</li>
 <li>Wearing a t-shirt while sleeping always improve the temperature measurements during the sleep sessions by reducing frictions with blankets and bed. During warm weather periods, try to tighten more the chest belt to compensate, although this will increase respiratory discomfort and itchiness.</li>
+<li>Combine with a Polar Pro or other stretchable and breathable chest strap, the stretchiness of the material further improves the reliability of skin contact, especially when in movement/during sleep because the material better follows the skin movements.</li>
 <li>ALTERNATIVE: according to this brain study, better place where there is soft tissues beneath, not bones, so on solar plexus. Indeed, DHF can acquire temperature 2cm below skin (DHF being the evolution of zero-heat-flux ZHF that consumes less energy): zero-heat-flux sensor for deep sensing of core body temperature if possible on the chest. Ref: Temperature Monitoring With Zero Heat Flux Technology In Comparison With Thermocouple Needle Probe During Selective Hypothermia, Mohammad Fazel Bakhsheshi et al, 2018. <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
 </ul>
 </li>
@@ -262,8 +265,8 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li><a href="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" title="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" class="https">https://www.onsetcomp.com/products/data-loggers/ua-002-64/</a></li>
 <li>Price: 59.55 euros only!</li>
-<li>Battery is replaceable! "The logger requires one 3-Volt CR-2032 lithium battery. <b>A new battery typically lasts one year with logging intervals greater than one minute.</b> Deployments in extremely cold or hot temperatures, or logging intervals faster than one minute, may significantly reduce battery life. <b>Continuous logging at the fastest logging rate of one second will deplete the battery in as little as two weeks.</b>" For combined light and temperature sensing! <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf</a></li>
-<li>See figure D, spectrum captured is much wider than eyes... need to add a passband filter for the wavelength range of human eyes. <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M UA-002 Manual.pdf</a></li>
+<li>Battery is replaceable! "The logger requires one 3-Volt CR-2032 lithium battery. <b>A new battery typically lasts one year with logging intervals greater than one minute.</b> Deployments in extremely cold or hot temperatures, or logging intervals faster than one minute, may significantly reduce battery life. <b>Continuous logging at the fastest logging rate of one second will deplete the battery in as little as two weeks.</b>" For combined light and temperature sensing! <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M</a> UA-002 Manual.pdf</li>
+<li>See figure D, spectrum captured is much wider than eyes... need to add a passband filter for the wavelength range of human eyes. <a href="https://www.onsetcomp.com/files/manual_pdfs/9556-M" title="https://www.onsetcomp.com/files/manual_pdfs/9556-M" class="https">https://www.onsetcomp.com/files/manual_pdfs/9556-M</a> UA-002 Manual.pdf</li>
 <li>TODO:
 <ul>
 <li>need to add an optical filter to reduce the light wavelength range to humanly observable light only (ie, remove UVs and infrared)</li>
@@ -326,7 +329,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Pro tip 2: if you don't have a plastic foab, don't worry, you can just avoid pushing the iButton all the way through, it's possible to just slightly push until the iButton connects to the surrounding metalling ring, that's enough for the software to detect the iButton. Just maintain the iButton in this position with your thumb and release when you're done transferring data and configuring the next mission. This way, the iButton never gets stuck in place, and so you don't need any additional tool to remove it.</li>
 </ul>
 </li>
-<li>download data of previous acquisition (if there is one): Mission tab &gt; Temperature Data Log subtab &gt; right click on chart &gt; Save as .csv file
+<li>download data of previous acquisition (if there is one): click the Mission tab at the top, wait for data to be downloaded (there is a percentage shown in the Mission Tab), then click the Temperature Data Log subtab &gt; right click on chart &gt; Save as .csv file
 <ul>
 <li>Battery gas gauge app: <a href="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html" title="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html" class="https">https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3761.html</a></li>
 <li>How to export data to Excel and how to fix issue with european convention comma delimiter for floating numbers: <a href="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html" title="https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html" class="https">https://www.maximintegrated.com/en/design/technical-documents/app-notes/3/3809.html</a></li>
@@ -334,6 +337,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </li>
 <li>check the Real-Time Temperature tab that the iButton is working correctly (you can touch with your thumb to check that the temperature changes after a few seconds).</li>
 <li>sync button clock to computer</li>
+<li>Click on Clear Log to wipe out the old samples (the maximum number of samples seems to be 62720, beyond, no new data will be saved, there is no roll-over with DS1925L, although there is with DS1922L but it's messy to load rollover data for postprocessing).</li>
 <li>click on the button "Start a new mission":
 <ul>
 <li><b>0.0625°C temperature precision</b></li>
