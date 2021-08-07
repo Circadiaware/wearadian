@@ -53,7 +53,7 @@
     
                     <p>
 Créée le vendredi 19 juin 2020<br>
-Last update: July 2021.<br>
+Last update: August 2021.<br>
 Created by Stephen Karl Larroque.
 </p>
 
@@ -79,7 +79,7 @@ Wearables list:<br>
 <li>Polar H10 (ECG + 3-axis actigraphy), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
 <li>GreenTEG CORE (core body temperature + trunk skin temperature), with a custom velcro attachment system.</li>
 <li>Axivity AX6 (6-axis actigraphy).</li>
-<li>iButtons DS1925L (or DS1925EVKIT starter kit) on a cotton sports wrist-band attached with a velcro (wrist skin temperature).</li>
+<li>iButtons DS1925L (or DS1925EVKIT starter kit to also get the USB adapter to download the data) on a cotton sports wrist-band attached with a hooks-type solid base velcro (wrist skin temperature).</li>
 <li>Custom arduino-based photosensor (light intensity and color sensor).</li>
 </ul>
 </p>
@@ -174,7 +174,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Preferred way is to use a hooks-type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin), <b>vertically</b> placed on the face facing the belt (ie, the face with the CORE brand marking), and use a sewable and skin-soft (eg, for babies, this side will be in contact with the skin from time to time) loops or loops-and-hooks type velcro band formed in a mobius loop to strap around the Polar Pro chest strap band, and then attach the CORE's velcro onto the mobius loop on the chest strap. This provide great comfort and improve skin contact and hence much more reliable measurements, and eliminates the mechanical pressure of the L dominoes as used in the manufacturer's instructions that eventually cause the CORE's outer ring to break. This technique can also be applied on already broken CORE devices.
 <ul>
-<li>See the schema in the github repository, under <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.svg" title="docs/schemas/greenteg-core-velcro.svg" class="https">docs/schemas/greenteg-core-velcro.svg</a> (or the <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.png" title="png version" class="https">png version</a>) for a visual depiction of the system and more informations.</li>
+<li>See the schema in the github repository, under <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.svg" title="docs/schemas/greenteg-core-velcro.svg" class="https">docs/schemas/greenteg-core-velcro.svg</a> (or the <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.png" title="png version" class="https">png version</a>) for a visual depiction of the system and more informations.
+<ul>
+<li>The exact products used were: "<a href="https://www.amazon.fr/gp/product/B00186Q9AK" title="Velcro Heavy Duty Stick On" class="https">Velcro Heavy Duty Stick On</a>" for the hooks type solid base velcro on the CORE device itself, which is usually used on walls furnitures ; and "<a href="https://www.amazon.fr/gp/product/B00HR5G0LO" title="Velcro Snag Free Sew On" class="https">Velcro Snag Free Sew On</a>" for the hooks-and-loops type soft textile velcro to make a Mobius loop on the chest belt to receive the CORE device.</li>
+</ul>
+</li>
 <li>Place the CORE on the chest's right or left side, below the armpit, as shown in: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
 <li>Avoid twisting the Polar Pro chest band when removing or attaching the CORE, if you also use the band to acquire ECG with the Polar H10, as twisting the band can damage the electrodes.</li>
 <li>Wearing a t-shirt while sleeping always improve the temperature measurements during the sleep sessions by reducing frictions with blankets and bed. During warm weather periods, try to tighten more the chest belt to compensate, although this will increase respiratory discomfort and itchiness.</li>
@@ -210,17 +214,32 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 
 <p>
 <ul>
-<li>DS1925L is preferred over DS1922L as it has a MUCH longer battery, although the temporal resolution is reduced (1 sample every 5min = 0.0034 Hz), this should be sufficient to monitor the circadian rhythm since there are several studies using older iButtons with an even lower temporal resolution (1 sample every 10 min) and it worked for this very same application (estimation of the circadian rhythm from wrist skin temperature).</li>
+<li>Buy an iButton DS1925L, cost about $40 on industrial shipping websites such as Mouser. A OneWire-to-USB adapter is required to connect to a computer and download the data as CSV, if you don't have one, buy the <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" title="DS1925EVKIT" class="https">DS1925EVKIT</a>. If this kit is unavailable, the adapter can be bought separately, it's made of two pieces: DS9490R and DS1402D-DR8+ .
+<ul>
+<li>Model DS1925L is preferred over DS1922L as it has a MUCH longer battery, although the temporal resolution is reduced (1 sample every 5min = 0.0034 Hz), this should be sufficient to monitor the circadian rhythm since there are several studies using older iButtons with an even lower temporal resolution (1 sample every 10 min) and it worked for this very same application (estimation of the circadian rhythm from wrist skin temperature).</li>
+</ul>
+</li>
 <li><b>BEST CRITICAL: wrist skin temperature (distal temperature) placement using Velcro to attach the iButton to a cotton sports wristband! + one sample every 10min is fine, but we prefer to use one every 5min.</b> <a href="https://pubmed.ncbi.nlm.nih.gov/18761026/" title="https://pubmed.ncbi.nlm.nih.gov/18761026/" class="https">https://pubmed.ncbi.nlm.nih.gov/18761026/</a> : "In our experiments <b>iButtons were programmed to sample every 10 min, and were attached to a double-sided cotton sport wrist band using Velcro®, with the sensor face of the iButton being placed over the inside of the wrist, on the radial artery of the non-dominant hand</b>. <b>The non dominant hand was selected to reduce the potential masking effects generated by the higher activity of the dominant hand (i.e. writing in class, manual working...).</b> This procedure guarantees good skin contact with the sensor face of the iButton. <b>Wrist location was selected among other peripheral regions (ankle, sternum, armpit) after several trials performed in our laboratory, since it allows long term recording without significant complaints of discomfort from the subjects.</b> In addition, subjects could easily remove and replace the data logger when necessary (i.e., to have a bath or shower). After one week of monitoring, the information stored in the iButton was transferred through an adapter (DS1402D-DR8, IDC, Spain) to a personal computer using iButton Viewer v. 3.22© 1992–2005 Dallas Semiconductor MAXIM software provided by the manufacturer."
 <ul>
-<li>Using a cotton sport wrist band is a GREAT idea because it is flexible and hence allows to always press the iButton against the skin but not too hard and it conforms with movement, AND it also <a href="https://www.ncbi.nlm.nih.gov/pubmed/25813804" title="shields the iButton from ambient temperature" class="https">shields the iButton from ambient temperature</a>! Better than a medical tape!</li>
-<li>aim for the radial artery close to the elbow instead? <a href="https://www.healthline.com/health/arteries-of-the-body#organization" title="https://www.healthline.com/health/arteries-of-the-body#organization" class="https">https://www.healthline.com/health/arteries-of-the-body#organization</a></li>
-<li>Studies demonstrating this is an optimal placement site:</li>
+<li>Using a cotton sport wrist band is a GREAT idea because it is flexible and hence allows to always press the iButton against the skin but not too hard and it conforms with movement, AND it also <a href="https://www.ncbi.nlm.nih.gov/pubmed/25813804" title="shields the iButton from ambient temperature" class="https">shields the iButton from ambient temperature</a>! Better than a medical tape!
+<ul>
+<li>Buy at least 2 so that you can regularly (ie, every 1 or 2 weeks) wash one while still using the iButton with the other (simply detach the iButton since we use a velcro attachment system and reattach to the other).</li>
+</ul>
+</li>
+<li>Use a hooks type solid base velcro with an adhesive to stick on the larger base of the iButton, and scratch the velcro on the interior of the cotton wristband. The exact product used was: "<a href="https://www.amazon.fr/gp/product/B00186Q9AK" title="Velcro Heavy Duty Stick On" class="https">Velcro Heavy Duty Stick On</a>", which is usually used on walls furnitures.</li>
+<li>Try to position the iButton in the horizontal middle of the foreram, on the radial artery close to the hand (the big vein that we can see when opening the wrist).
+<ul>
+<li><b>You can move the cotton wristband: aim for the radial artery anywhere on the forearm</b>, the cotton wristband can be regularly moved when it feels itchy or when you need more room to wash your hands. Indeed, you need to avoid humidifying the cotton wristband, the iButton is not waterproof and this will make bacteria proliferate on the wristband and hence become more itchy! As long as the iButton is on the radial artery on the forearm, which goes from the wrist to the interior of the elbow ( <a href="https://www.healthline.com/health/arteries-of-the-body#organization" title="https://www.healthline.com/health/arteries-of-the-body#organization" class="https">https://www.healthline.com/health/arteries-of-the-body#organization</a> ) then it should work. Closer to the wrist is better though.</li>
+</ul>
+</li>
+<li>Studies demonstrating this is an optimal placement site:
+<ul>
 <li><a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="this study tested on 14 different body sites, and ideal where on limbs + on trunk" class="https">this study tested on 14 different body sites, and ideal where on limbs + on trunk</a></li>
 <li><a href="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" title="this other study" class="https">this other study</a> shows that wrist skin temperature was shown to be sufficient to estimate the circadian rhythm</li>
 <li>BEST METHODS: for proximal temperature, abdomen and forehead not reliable! <b>Better to place iButtons on back or neck</b>! Skin Temperatures of Back or Neck Are Better Than Abdomen for Indication of Average Proximal Skin Temperature During Sleep of School-Aged Children, 2020 <a href="https://pubmed.ncbi.nlm.nih.gov/33061911/" title="https://pubmed.ncbi.nlm.nih.gov/33061911/" class="https">https://pubmed.ncbi.nlm.nih.gov/33061911/</a></li>
 <li><b>CRITICAL: core body temperature versus proximal and distal (wrist) skin temperatures.</b> This shows why <b>proximal temperature such as on the trunk cannot reliably be used to estimate the circadian rhythm</b>. But core body temperature and distal (wrist) skin temperature both can. Ref: PhD Thesis: Crosstalk between Synchronizers and the Human Circadian System, D. Antonio Martinez Nicolas, 2014, PhD Thesis <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a></li>
 <li><img src="./SleepNon24BiologicalMeasures_files/pasted_image009.png" width="500"></li>
+</ul></li>
 </ul></li>
 </ul>
 </p>
@@ -304,6 +323,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li><b>Rename the downloaded file to append current datetime in the filename</b> (else it's not in the filename and it can get overwritten)
 <ul>
 <li>Alternative: there are <a href="https://github.com/digitalinteraction/openmovement/issues/38" title="undocumented placeholder tags" class="https">undocumented placeholder tags</a> that can be set in the Options menu to add the datetime automatically, such as {EndTime}, {EndTimeNumeric}, {StartTime} and {StartTimeNumeric}</li>
+<li>Here is the exact placeholder string that was used: <tt>{DeviceId}_{SessionId}_{StartTime}-{EndTime}</tt></li>
 </ul>
 </li>
 <li>Back up the cwa files directly, can always export and normalize later, directly from OmGUI or other softwares/libraries.</li>
@@ -318,9 +338,12 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 
 <p>
 <ul style='padding-left: 30pt'>
-<li>use softwares in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html</a> as described in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html</a> (note all softwares are opensource)</li>
-<li>DS9490R and DS1402D-DR8+ to connect by USB to computer</li>
-<li>install 1-Wire drivers, then launch <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools/viewer.html" title="OneWireViewer" class="https">OneWireViewer</a> — can use opensource java: <a href="https://adoptopenjdk.net/" title="https://adoptopenjdk.net/" class="https">https://adoptopenjdk.net/</a></li>
+<li>Prerequisite hardware: DS9490R and DS1402D-DR8+ to connect by USB to computer.</li>
+<li>install 1-Wire drivers, then launch <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools/viewer.html" title="OneWireViewer" class="https">OneWireViewer</a> — can use opensource java: <a href="https://adoptopenjdk.net/" title="https://adoptopenjdk.net/" class="https">https://adoptopenjdk.net/</a>
+<ul>
+<li>Alternative: for programmers, there are also lots of other opensource software Maxim provides, to develop custom tools: <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html</a> as described in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html</a> (note all softwares are opensource)</li>
+</ul>
+</li>
 <li>Main procedure to do each time:
 <ul>
 <li>Plug the iButton into one of the bluedot receptors.
@@ -424,6 +447,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li><b>If the ECG data is all wrong but ACC is fine, try to change for another CR2025 battery</b>, sometimes a defective battery can mangle the signal for some reason.</li>
 <li><b>If the ECG data is still wrong despite changing the battery, the Polar Pro chest band electrodes may be dead</b>, so it's then necessary to buy a new one (costs 30 to 40 euros for the band alone). If used 24/7, the Polar Pro band lasts for about 6 months. The warranty does not cover it as it is considered normal usage degradation of a consumable.</li>
 <li>After you checked ECG and ACC graphs, reopen the menus to completely disable both graphs AND uncheck the device too, because otherwise the app may crash on autoreconnection when the H10 gets out of bluetooth range. It's always possible to re-enable the graphs at anytime to check, but it's necessary to disable them entirely meanwhile, not just pause them.</li>
+<li>Note that after showers, when the skin is drying up, the ECG readings will be very noisy (with inputs from respiratory movements). This is to be expected because of the change in skin conductance. The ECG readings should stabilize after wearing the chest belt electrodes for one or two hours, with respiratory movements not affecting the ECG measures anymore at this point.</li>
 </ul>
 </li>
 <li>Always maintain phone battery above 20% otherwise app will likely get killed to save battery whatever the battery saving settings </li>
