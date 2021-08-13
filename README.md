@@ -21,7 +21,8 @@ https://github.com/Circadiaware/circalizer
 
 ## Future improvements
 
-Implementing a 9-axis actigraph, ie with absolute orientation in the space, would allow for a more precise characterization of positions (ie, did the subject stayed laid down during a time period? Does this correlate with body temperature changes?).
+* Finish making the light intensity and color sensor using a custom program on an Adalogger/Arduino board (help is welcome!).
+* Implementing a 9-axis actigraph, ie with absolute orientation in the space, would allow for a more precise characterization of positions (ie, did the subject stayed laid down during a time period? Does this correlate with body temperature changes?).
 
 ## Author
 
