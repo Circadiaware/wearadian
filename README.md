@@ -19,6 +19,12 @@ https://figshare.com/projects/MyNon24/101804
 Alpha scripts to visualize and process the dataset can be found in the `Circalizer` project:
 https://github.com/Circadiaware/circalizer
 
+## Current state
+
+All wearables except the light color sensor are implemented, and are being actively used to collect data.
+
+There is one light sensor already in the actigraphic device, but it only measures light intensity and is placed on the wrist, which is suboptimal to reflect the exposure of the eyes to bright light.
+
 ## Future improvements
 
 * Finish making the light intensity and color sensor using a custom program on an Adalogger/Arduino board (help is welcome!).
