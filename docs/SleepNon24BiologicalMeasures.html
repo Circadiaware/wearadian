@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-    <title>SleepNon24BiologicalMeasures</title>
+    <title>Wearadian (ex-SleepNon24BiologicalMeasures)</title>
 
     <meta name="generator" content="Zim Zim 0.67-merge, based on the Ecodiv-responsive template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,7 @@
                 <a href="#nav-panel" data-icon="bars">Table of content</a> 
                 
                 <!-- !! Fill in the website title, by default: Notebook -->
-                <h1>Notebook - SleepNon24BiologicalMeasures</h1> 
+                <h1>Notebook - Wearadian (ex-SleepNon24BiologicalMeasures)</h1> 
                 
                 <!-- !! Optionally, create button with custom link. To apply uncomment the next line and fill in the link (and optionally change the button and text)) -->
                 <!-- <a href="http://my.website.org" data-icon="home">Main website</a> -->
@@ -49,11 +49,11 @@
             <!-- Page content -->
             
             <div data-role="content" class="content">
-                    <h1>SleepNon24BiologicalMeasures <a name='Perso:MyIssues:SleepNon24:SleepNon24BiologicalMeasures'></a></h1>
+                    <h1>Wearadian (ex-SleepNon24BiologicalMeasures) <a name='Perso:MyIssues:SleepNon24:SleepNon24BiologicalMeasures'></a></h1>
     
                     <p>
 Créée le vendredi 19 juin 2020<br>
-Last update: August 2021.<br>
+Last update: September 2021.<br>
 Created by Stephen Karl Larroque.
 </p>
 
@@ -281,10 +281,48 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 
 <p>
 <ul>
-<li>The selected light sensors are worn as pendants. This study shows pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors), and they are much more comfortable.</li>
-<li>The two available and selected sensors are:
+<li>Ideally, melanopic light intensity (mLux) need to be sensed at the very least. Photopic illuminance (lux, aka light sensor) and full light spectrum are also desirable.</li>
+<li>The selected light sensors are worn as pendants. A study shown <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892948/" title="pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)" class="https">pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)</a>, at least in terms of photopic illuminance since melanopic illuminance was not tested, and they are much more comfortable.</li>
+<li>The three available and selected sensors are:
 <ul>
-<li>A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).</li>
+<li>A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).
+<ul>
+<li>Adalogger M0 Feather is an open-source hardware data logging board, based on Arduino, so it can be reproduced.</li>
+<li>BESTTUTO: get an Adalogger M0 Feather + DS3231 FeatherWing to add an accurate real-time clock with a battery (RTC), no soldering required, it clips on. Alternatives are also discussed in this link. <a href="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" title="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" class="https">https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging</a> (<a href="https://web.archive.org/web/20210224185816/https://p" title="mirror1" class="https">mirror1</a>, <a href="https://archive.is/Gm95A" title="mirror2" class="https">mirror2</a>)</li>
+<li>Libraries:
+<ul>
+<li><a href="https://github.com/rickkas7/AdafruitDataLoggerRK" title="https://github.com/rickkas7/AdafruitDataLoggerRK" class="https">https://github.com/rickkas7/AdafruitDataLoggerRK</a></li>
+<li><a href="https://github.com/cavemoa/Feather-M0-Adalogger" title="https://github.com/cavemoa/Feather-M0-Adalogger" class="https">https://github.com/cavemoa/Feather-M0-Adalogger</a>
+<ul>
+<li>Note: not opensource, although he gave the authorization to one person and saying that's the purpose of this code anyway, to be used as opensource: <a href="https://github.com/cavemoa/Feather-M0-Adalogger/issues/2" title="https://github.com/cavemoa/Feather-M0-Adalogger/issues/2" class="https">https://github.com/cavemoa/Feather-M0-Adalogger/issues/2</a> — <a href="https://archive.is/3KVcP" title="mirror" class="https">mirror</a></li>
+</ul>
+</li>
+<li>BESTTUTO: sample codes for the Adalogger with a tutorial: <a href="https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html" title="https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html" class="https">https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html</a> + <a href="https://github.com/tigoe/DataloggingExamples" title="https://github.com/tigoe/DataloggingExamples" class="https">https://github.com/tigoe/DataloggingExamples</a></li>
+</ul>
+</li>
+<li>Low energy discussions:
+<ul>
+<li><a href="https://forum.arduino.cc/t/low-power-logger-adafruit-featherlogger-m0-and-lsm9ds0/430754/4" title="https://forum.arduino.cc/t/low-power-logger-adafruit-featherlogger-m0-and-lsm9ds0/430754/4" class="https">https://forum.arduino.cc/t/low-power-logger-adafruit-featherlogger-m0-and-lsm9ds0/430754/4</a></li>
+<li><a href="https://forum.arduino.cc/t/sleep-mode-adafruit-feather-m0-adalogger/528767" title="https://forum.arduino.cc/t/sleep-mode-adafruit-feather-m0-adalogger/528767" class="https">https://forum.arduino.cc/t/sleep-mode-adafruit-feather-m0-adalogger/528767</a></li>
+</ul>
+</li>
+<li>Alternative data loggers:
+<ul>
+<li><a href="https://publiclab.org/wiki/data-logging" title="https://publiclab.org/wiki/data-logging" class="https">https://publiclab.org/wiki/data-logging</a></li>
+<li>(open-source hardware datalogger, just like adalogger) <a href="https://publiclab.org/wiki/riffle" title="https://publiclab.org/wiki/riffle" class="https">https://publiclab.org/wiki/riffle</a></li>
+</ul></li>
+</ul>
+</li>
+<li>BEST CRITICAL: Lys Button <a href="https://lystechnologies.io/for-research/" title="https://lystechnologies.io/for-research/" class="https">https://lystechnologies.io/for-research/</a>
+<ul>
+<li>costs 151 pounds (without shipping) per person per year (96 pounds for the yearly renewal, the initial higher price includes one Lys Button sensor) to get access to the raw data. Select the Lys Plan &gt; Research &gt; LYS Light Diet® app and Data Platform</li>
+<li>It is already calibrated</li>
+<li>Can capture mLux, lux, spectrum and even 3-axis actigraphy.</li>
+<li>Already used by other circadian rhythm researchers.</li>
+<li>Can be clipped on clothes, or worn as a pendant if I make a custom support.</li>
+<li>Thank you to Coral for the tip!</li>
+</ul>
+</li>
 <li>HOBO Pendant Temperature/Light Data Logger UA-002-64 (Onset Computer Corporation, Bourne, Massachusetts, USA), acquire only light intensity (and with a bigger range than human eyes), not color
 <ul>
 <li><a href="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" title="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" class="https">https://www.onsetcomp.com/products/data-loggers/ua-002-64/</a></li>
@@ -373,7 +411,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>click on the button "Start a new mission":
 <ul>
 <li><b>0.0625°C temperature precision</b></li>
-<li><b>300s sampling rate for DS1925L ; 120s (2 min) sampling rate for DS1922L</b></li>
+<li><b>300s (5min) sampling rate for DS1925L ; 120s (2 min) sampling rate for DS1922L</b></li>
 <li>For DS1922L only: <b>Enable rollover</b> (this will overwrite old data when the memory becomes full, this is necessary as I did not find a way to clean up the internal memory before a new mission, it seems File &gt; Wipe the device does not clean the memory, hence without rollover new data won't be saved after 10 days of experiment, even after the data is transferred, see Mission &gt; Total Device Samples count). This setting is unnecessary and unavailable for DS1925L as it can record years (4 years?) of data continuously due to its larger flash memory.</li>
 <li>Disable SUTA and alarms but enable sampling and set 0 delay (so it starts recording asap).</li>
 <li>Click OK</li>
@@ -577,6 +615,17 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Over time this internal clock will drift slightly. For single device applications, that can tolerate a drift of 50 parts-per-million (0.18 seconds per hour) no action is needed. However, when using multiple devices for a single capture session, aligning the data sets from several sources can become difficult. To overcome this, you can add an easily identifiable signal (e.g. claps at the start and end of capture), and tools are available to help synchronize this to an external clock or between devices. <a href="https://axivity.com/userguides/ax3/settings/#additional-sensors" title="https://axivity.com/userguides/ax3/settings/#additional-sensors" class="https">https://axivity.com/userguides/ax3/settings/#additional-sensors</a></li>
 <li>For single handed monitoring the choice between dominant and non-dominant hand must be based on if the data set will be used for activity classification and physical activity monitoring type applications (for which the non-dominant hand is a popular choice) or finer grained skill assessment of activities (for which the dominant hand is often used). <a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a></li>
 <li>However, for successful data capture the AX3 must be securely fastened to the target with minimal room for vibration, slip or twist; this helps preserve only the motions of the target are captured. In addition, an attachment convention for device orientation will assist in consistent and comparable datasets being gathered. The below is a suggested orientation convention for popular body mounting sites. With the exception of the left wrist, the USB port is configured to point towards the ground.</li>
+</ul>
+</li>
+<li>Actigraphy-based parameter tuning process for adaptive notch filter and circadian phase shift estimation, 2020 <a href="https://doi.org/10.1080/07420528.2020.1805460" title="https://doi.org/10.1080/07420528.2020.1805460" class="https">https://doi.org/10.1080/07420528.2020.1805460</a>
+<ul>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image018.png" width="400"></li>
+<li>With phase shift estimation!</li>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image019.png" width="600"></li>
+<li>Also works with low quality actigraphy sampling rate:
+<ul>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image020.png" width="500"></li>
+</ul></li>
 </ul>
 </li>
 <li>ME: BUT QUESTION: changed usb port in AX3 is same direction as arrow, but for AX6 it's opposite. So should the position relative to the arrow or the usb port? <a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a></li>
