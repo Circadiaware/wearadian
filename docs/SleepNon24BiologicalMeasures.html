@@ -283,20 +283,21 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Ideally, melanopic light intensity (mLux) aka alpha-opic light, need to be sensed at the very least. Photopic illuminance (lux, aka light sensor) and full light spectrum are also desirable.</li>
 <li>The selected light sensors are worn as pendants. A study shown <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892948/" title="pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)" class="https">pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)</a>, at least in terms of photopic illuminance since melanopic illuminance was not tested, and they are much more comfortable.</li>
-<li>The three available and selected sensors are:
-<ul>
-<li>A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).
-<ul>
+<li>The three available and selected sensors are:</li>
+</ul>
+</p>
+
+<h4>Adalogger + RTC module</h4>
+
+<p>
+A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).<br>
+<ul style='padding-left: 60pt'>
 <li>Adalogger M0 Feather is an open-source hardware data logging board, based on Arduino, so it can be reproduced.</li>
 <li>BESTTUTO: get an Adalogger M0 Feather + DS3231 FeatherWing to add an accurate real-time clock with a battery (RTC), no soldering required, it clips on. Alternatives are also discussed in this link. <a href="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" title="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" class="https">https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging</a> (<a href="https://web.archive.org/web/20210224185816/https://p" title="mirror1" class="https">mirror1</a>, <a href="https://archive.is/Gm95A" title="mirror2" class="https">mirror2</a>)</li>
 <li>Libraries:
 <ul>
 <li><a href="https://github.com/rickkas7/AdafruitDataLoggerRK" title="https://github.com/rickkas7/AdafruitDataLoggerRK" class="https">https://github.com/rickkas7/AdafruitDataLoggerRK</a></li>
-<li><a href="https://github.com/cavemoa/Feather-M0-Adalogger" title="https://github.com/cavemoa/Feather-M0-Adalogger" class="https">https://github.com/cavemoa/Feather-M0-Adalogger</a>
-<ul>
-<li>Note: not opensource, although he gave the authorization to one person and saying that's the purpose of this code anyway, to be used as opensource: <a href="https://github.com/cavemoa/Feather-M0-Adalogger/issues/2" title="https://github.com/cavemoa/Feather-M0-Adalogger/issues/2" class="https">https://github.com/cavemoa/Feather-M0-Adalogger/issues/2</a> — <a href="https://archive.is/3KVcP" title="mirror" class="https">mirror</a></li>
-</ul>
-</li>
+<li>BEST CRITICAL: open-source code to use the Feather as a CSV data logger on SD card, by Jonathan Davies (cavemoa): <a href="https://github.com/cavemoa/Feather-M0-Adalogger" title="https://github.com/cavemoa/Feather-M0-Adalogger" class="https">https://github.com/cavemoa/Feather-M0-Adalogger</a> — open-source! Combine with the <a href="https://github.com/rickkas7/AdafruitDataLoggerRK" title="AdafruitDataLoggerRK" class="https">AdafruitDataLoggerRK</a> library when using the RTC featherwing (module).</li>
 <li>BESTTUTO: sample codes for the Adalogger with a tutorial: <a href="https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html" title="https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html" class="https">https://tigoe.github.io/DataloggingExamples/feather-m0-adalogger.html</a> + <a href="https://github.com/tigoe/DataloggingExamples" title="https://github.com/tigoe/DataloggingExamples" class="https">https://github.com/tigoe/DataloggingExamples</a></li>
 </ul>
 </li>
@@ -312,9 +313,61 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>(open-source hardware datalogger, just like adalogger) <a href="https://publiclab.org/wiki/riffle" title="https://publiclab.org/wiki/riffle" class="https">https://publiclab.org/wiki/riffle</a></li>
 </ul></li>
 </ul>
-</li>
-<li>BEST CRITICAL: Lys Button <a href="https://lystechnologies.io/for-research/" title="https://lystechnologies.io/for-research/" class="https">https://lystechnologies.io/for-research/</a>
+</p>
+
+<p>
 <ul>
+<li>COMPONENTS:
+<ul>
+<li>3 components:
+<ul>
+<li>Broadcom APDS9007 for light intensity sensor, see above, same as the internal light sensor used in AX6.</li>
+<li>Another APDS9007 but with a blue light filter, so as to measure by subtraction the intensity of blue light. Or better, a pass-band filter for any wavelength other than the blue-green spectrum.</li>
+<li>Light color (spectrum) sensor: Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too
+<ul>
+<li>Alternatives: <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a></li>
+<li>low energy <a href="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" title="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D</a> + <a href="https://www.gravitech.us/i2c16coleser.html" title="https://www.gravitech.us/i2c16coleser.html" class="https">https://www.gravitech.us/i2c16coleser.html</a></li>
+</ul></li>
+</ul>
+</li>
+<li>only other alternative is lightwatcher but expensive</li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>METHODS:
+<ul>
+<li><b>BEST CRITICAL METHODS and idea: use 2 light intensity sensors, one normal for the full visible spectrum + one with a blue-green light filter, the difference of both sensors will show the amount of blue-green light that can modify the circadian rhythm!</b> <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
+<ul>
+<li>My summary: The idea is to use a sensor for full visible light + same but blue light filtered, so that we can infer directly the intensity of blue-green light exposure which affects the circadian rhythm, contrary to using a color sensor which will be biased and only indirectly allow to calculate the intensity of exposure to blue-green light! It's very similar to what I was trying to make!</li>
+<li>"an algorithm that allows to determine light intensity, timing and circadian light stimulation by differentiating between full visible, infrared and circadian light, as well as to discriminate between different light sources (natural and artificial with low and high infrared composition) in subjects under free living conditions. The ACM device is provided with three light sensors: (i) a wide-spectrum sensor (380-1100 nm); (ii) an infrared sensor (700-1100 nm) and (iii) a sensor equipped with a blue filter that mimics the sensitivity curve of the melanopsin photopigment and the melatonin light suppression curve."</li>
+<li>But <b>why do they care about correcting infrared light??? To differenciate between the light source being natural or artificial:</b></li>
+<li>"Here, we reported the spatial and spectral ability of a wrist worn ACM device provided with three light sensors that combines full spectrum, infrared and blue light simultaneous monitoring, <b>allowing not only intensity and timing of visible and circadian light exposure to be evaluated, but also to infer light source and thus, differentiate between natural and artificial light exposure</b>." → but no color detection! They only consider blue-green light exposure, but it's sufficient since it's the light that maximally stimulate the ipRGC cells! But using the other sensor we have access to the full spectrum anyway!</li>
+<li>BEST CRITICAL: light sensor on the wrist does not make much difference in terms of detecting exposure to circadian light! (different from full light): "In order to facilitate the usability of the ACM device under normal living conditions, it has been designed to be worn on the wrist, discarding other placements closer to the eyes but much more uncomfortable for the subjects. Although, at first instance, it could be argued that this position could affect the accuracy of lighting measurements, <b>previous studies by Figueiro et al. (2013) have shown that differences in active circadian light exposure are surprisingly small, typically less than 10% on average, when data at eye and wrist level are compared</b>. Thus, light exposure measurement in other places than the eye seems to be also a reliable method when assessing circadian light exposure."
+<ul>
+<li>Original ref is the same one I use elsewhere: Figueiro, M. G., Hamner, R., Bierman, A., and Rea, M. S. (2013). Comparisons of three practical field devices used to measure personal light exposures and activity levels. Light. Res. Technol. 45, 421–434. doi: 10.1177/1477153512450453</li>
+</ul>
+</li>
+<li>BEST CRITICAL METHODS: technical details about the light sensors: "To record visible light (400–700 nm), a combination of two sensors is used in KronowiseR , one of full spectrum ranging from 400 to 1100 nm and another for infrared light (from 700 to 1100 nm). The combination of these two measures allows, on one hand, to differentiate whether light source is natural or artificial and among these, if light is provided by sources with high or low content in infrared radiation, or by the sun, as those light spectra shown in Figure 6. The circadianeffective light is detected thanks to blue filter covering a second full light spectrum sensor. The selected blue filter shows a transmittance profile to sunlight that is highly coincident both with the spectral inhibition curve of melatonin (Brainard et al., 2001) and with the model of melanopsin sensitivity curve of the ipRGCs (Enezi et al., 2011), letting pass visible wavelengths between 380 and 590 nm and above 680 nm. Thus, the “dose” of active circadian light to which the subject is exposed to can be calculated without inferences from combination of blue and green detectors, as it happens with Actiwatch Spectrum (Cao et al., 2015)."</li>
+<li>Comparison between Kronowise, Daisymeter and Actiwatch Spectrum: "To date, and to our knowledge, only two ambulatory devices are available for the detection of visible and circadian light: the Daysimeter (Bierman et al., 2005) and Actiwatch Spectrum (Phillips)."
+<ul>
+<li>"The Daysimeter, a head-mounted device, has been specifically designed for detecting light exposure, so its performance in this field is very interesting; however, the device only includes an accelerometer and must be placed close to the eyes, limiting seriously its ability to detect sleep and wakefulness states. In addition, and although its light sensor shows a sensitivity curve restricted to the photopic spectrum, it shows a significant drop between 550 and 600 nm, a band to which the human eye is sensitive (Dartnall et al., 1983; Roorda and Williams, 1999)."</li>
+<li>"The second device, Actiwach Spectrum, was primarily designed for detecting sleep and wake rhythms (Young et al., 2009; Kripke et al., 2010), and later incorporated RGB detection. This latter consists of three color sensors for light in the long wavelength (∼600–700 nm), middle-wavelength (450–600 nm) and short-wavelength range (∼400–550 nm), which correspond to R, G, B spectral outputs and a broadband “white light” (W) output (Price et al., 2012; Cao et al., 2015). However, its sensitivity spectrum does not match the one for the human retina. It shows a bimodal pattern, with a main peak at short wavelengths and a secondary peak at long wavelengths. In contrast, in the 570–600 nm band, the device is practically non-sensitive. This band, apart from its sensitivity of human retina, is characteristic of discharge light sources such as fluorescent lamps (Figueiro et al., 2013). Consequently, the photometric measurements of these common light sources will be systematically biased with this device and circadian light stimulation must be indirectly deduced from data recorded by blue and green sensors."</li>
+</ul>
+</li>
+<li>"Considering that the most powerful zeitgeber for circadian entrainment is the light-dark cycle (Roenneberg and Foster, 1997; Roenneberg et al., 2003), its simultaneous recording with other output signal seems a must to obtain an integrative assessment on the circadian function. In this sense, KronowiseR can constitute a useful and comfortable tool to deep our knowledge on light synchronization effects while people maintain their usual lifestyle."</li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h4>Lys Button</h4>
+
+<p>
+Lys Button is a light sensor designed specifically by and for circadian rhythm researchers: <a href="https://lystechnologies.io/for-research/" title="https://lystechnologies.io/for-research/" class="https">https://lystechnologies.io/for-research/</a><br>
+<ul style='padding-left: 30pt'>
 <li>costs 151 pounds (without shipping) per person per year (96 pounds for the yearly renewal, the initial higher price includes one Lys Button sensor) to get access to the raw data. Select the Lys Plan &gt; Research &gt; LYS Light Diet® app and Data Platform</li>
 <li>It is already calibrated</li>
 <li>Can capture mLux, lux, spectrum and even 3-axis actigraphy.</li>
@@ -322,7 +375,12 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Can be clipped on clothes, or worn as a pendant if I make a custom support.</li>
 <li>Thank you to Coral for the tip!</li>
 </ul>
-</li>
+</p>
+
+<h4>HOBO Pendant</h4>
+
+<p>
+<ul>
 <li>HOBO Pendant Temperature/Light Data Logger UA-002-64 (Onset Computer Corporation, Bourne, Massachusetts, USA), acquire only light intensity (and with a bigger range than human eyes), not color
 <ul>
 <li><a href="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" title="https://www.onsetcomp.com/products/data-loggers/ua-002-64/" class="https">https://www.onsetcomp.com/products/data-loggers/ua-002-64/</a></li>
@@ -345,9 +403,6 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>"According to the manufacturer specifications, the data logger has a measurement range between 0 and 320,000 lux, memory capacity for up to 28,000 values taken at regular, previously programmed intervals (in our case, every 30 s), and light-spectrum wavelength recording capacity of 150-1200 nm, which is broader than the sensitivity of the human eye. In order to validate the light sensor, a LX 101 lux meter (3E NDT, Pasadena, Texas, USA) was used to make a set of simultaneous recordings in different environments (data not shown). Readings from both devices demonstrated a strong, significant positive correlation at different intensities (r=0.997, p&lt;0.01). A high degree of repeatability of sensor measurements was observed when recordings were simultaneously performed with two different Hobo sensors (r=0.998, p&lt;0.01)."</li>
 <li>BEST METHODS: "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
 </ul></li>
-</ul>
-</li>
-<li>Comparison of light sensors (includes Actiwatch and actigraphic devices with a light sensor and Daysimeters): <a href="https://doi.org/10.1177/1477153517721598" title="https://doi.org/10.1177/1477153517721598" class="https">https://doi.org/10.1177/1477153517721598</a></li>
 </ul></li>
 </ul>
 </p>
@@ -543,11 +598,26 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </p>
 
-<h3>Light sensor Arduino Adalogger</h3>
+<h3>Light sensors (acquisition)</h3>
+
+<br>
+
+<h4>Positioning</h4>
 
 <p>
 <ul style='padding-left: 30pt'>
-<li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
+<li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"
+<ul>
+<li>Same method as used for Lys</li>
+<li>Or also here in a Nature paper: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a></li>
+</ul></li>
+</ul>
+</p>
+
+<h4>Calibration</h4>
+
+<p>
+<ul style='padding-left: 30pt'>
 <li>BEST METHODS: for calibration of light intensity and color (spectrometer) sensor, see this study as a reference: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a> -- they used certifiably calibrated light bulbs as one of the ways to calibrate.
 <ul>
 <li>they also used a mini spectrometer sensor part: C12666MA from Hamamatsu Photonics "The device (Fig. 1) measured 44 × 20 × 29 mm, weighed 20 g, and was designed to be attached to clothing near to eye level. The device contained a C12666MA mini-spectrometer (spectral range 340–780 nm) from Hamamatsu Photonics, chosen due to its compactness, relatively high spectral resolution (15 nm), and high dynamic range. It is hermetically sealed and performs array spectroscopy using an array of 256 CMOS pixels with a reflective blazed grating for light diffraction."</li>
@@ -608,11 +678,12 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </p>
 
 <p>
-<ul style='padding-left: 60pt'>
+<ul style='padding-left: 30pt'>
 <li>About whether the Luminette could be used as a calibration light source, there are pros and cons: the pros is that it's a certified medical device so theoretically the luminance and light spectrum are bounded, and that it can emit at 3 different light intensities (500 lux, 1000 lux and 1500 lux), hence providing 3 points to calibrate luminance instead of one. The cons is that it's a LED, not an incandescent bulb, which according to eeror are much less reliable, and another potential issue is that medical certification may not necessarily mean that all devices are tested and hence individual devices may vary by quite some amount, so this approach should only be considered appropriate for an approximately calibrated light sensor, but not a very accurate one, ie, if margin of error of plus or minus 100 lux is acceptable then that may be fine.</li>
 </ul>
 </p>
 
+<br>
 <br>
 
 <h2>Analysis</h2>
@@ -871,61 +942,15 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </ul>
 </p>
 
-<h3>Light sensor Arduino Adalogger</h3>
+<h3>Light sensor Adalogger (analysis)</h3>
 
 <p>
-<ul>
-<li>COMPONENTS:
-<ul>
-<li>3 components:
-<ul>
-<li>Broadcom APDS9007 for light intensity sensor, see above, same as the internal light sensor used in AX6.</li>
-<li>Another APDS9007 but with a blue light filter, so as to measure by subtraction the intensity of blue light. Or better, a pass-band filter for any wavelength other than the blue-green spectrum.</li>
-<li>Light color (spectrum) sensor: Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too
-<ul>
-<li>Alternatives: <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a></li>
-<li>low energy <a href="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" title="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D</a> + <a href="https://www.gravitech.us/i2c16coleser.html" title="https://www.gravitech.us/i2c16coleser.html" class="https">https://www.gravitech.us/i2c16coleser.html</a></li>
-</ul></li>
-</ul>
-</li>
-<li>only other alternative is lightwatcher but expensive</li>
-</ul></li>
-</ul>
-</p>
-
-<p>
-<ul>
-<li>METHODS:
-<ul>
+<ul style='padding-left: 30pt'>
+<li>Very detailed methods in a nature paper: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a></li>
 <li>Spectrometer light analysis packages: Lucas Toolbox: Lucas, R.J.; Peirson, S.N.; Berson, D.M.; Brown, T.M.; Cooper, H.M.; <b>Czeisler, C.A.</b>; Figueiro, M.G.; Gamlin, P.D.; Lockley, S.W.; O’Hagan, J.B. Measuring and using light in the melanopsin age. Trends Neurosci. 2014, 37, 1–9. as used in <a href="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" title="https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research" class="https">https://www.researchgate.net/publication/340603112_Accuracy_of_the_GENEActiv_Device_for_Measuring_Light_Exposure_in_Sleep_and_Circadian_Research</a></li>
-<li><b>BEST CRITICAL METHODS and idea: use 2 light intensity sensors, one normal for the full visible spectrum + one with a blue-green light filter, the difference of both sensors will show the amount of blue-green light that can modify the circadian rhythm!</b> <a href="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" title="https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device" class="https">https://www.researchgate.net/publication/334043969_Determining_Light_Intensity_Timing_and_Type_of_Visible_and_Circadian_Light_From_an_Ambulatory_Circadian_Monitoring_Device</a>
-<ul>
-<li>My summary: The idea is to use a sensor for full visible light + same but blue light filtered, so that we can infer directly the intensity of blue-green light exposure which affects the circadian rhythm, contrary to using a color sensor which will be biased and only indirectly allow to calculate the intensity of exposure to blue-green light! It's very similar to what I was trying to make!</li>
-<li>"an algorithm that allows to determine light intensity, timing and circadian light stimulation by differentiating between full visible, infrared and circadian light, as well as to discriminate between different light sources (natural and artificial with low and high infrared composition) in subjects under free living conditions. The ACM device is provided with three light sensors: (i) a wide-spectrum sensor (380-1100 nm); (ii) an infrared sensor (700-1100 nm) and (iii) a sensor equipped with a blue filter that mimics the sensitivity curve of the melanopsin photopigment and the melatonin light suppression curve."</li>
-<li>But <b>why do they care about correcting infrared light??? To differenciate between the light source being natural or artificial:</b></li>
-<li>"Here, we reported the spatial and spectral ability of a wrist worn ACM device provided with three light sensors that combines full spectrum, infrared and blue light simultaneous monitoring, <b>allowing not only intensity and timing of visible and circadian light exposure to be evaluated, but also to infer light source and thus, differentiate between natural and artificial light exposure</b>." → but no color detection! They only consider blue-green light exposure, but it's sufficient since it's the light that maximally stimulate the ipRGC cells! But using the other sensor we have access to the full spectrum anyway!</li>
-<li>BEST CRITICAL: light sensor on the wrist does not make much difference in terms of detecting exposure to circadian light! (different from full light): "In order to facilitate the usability of the ACM device under normal living conditions, it has been designed to be worn on the wrist, discarding other placements closer to the eyes but much more uncomfortable for the subjects. Although, at first instance, it could be argued that this position could affect the accuracy of lighting measurements, <b>previous studies by Figueiro et al. (2013) have shown that differences in active circadian light exposure are surprisingly small, typically less than 10% on average, when data at eye and wrist level are compared</b>. Thus, light exposure measurement in other places than the eye seems to be also a reliable method when assessing circadian light exposure."
-<ul>
-<li>Original ref is the same one I use elsewhere: Figueiro, M. G., Hamner, R., Bierman, A., and Rea, M. S. (2013). Comparisons of three practical field devices used to measure personal light exposures and activity levels. Light. Res. Technol. 45, 421–434. doi: 10.1177/1477153512450453</li>
-</ul>
-</li>
-<li>BEST CRITICAL METHODS: technical details about the light sensors: "To record visible light (400–700 nm), a combination of two sensors is used in KronowiseR , one of full spectrum ranging from 400 to 1100 nm and another for infrared light (from 700 to 1100 nm). The combination of these two measures allows, on one hand, to differentiate whether light source is natural or artificial and among these, if light is provided by sources with high or low content in infrared radiation, or by the sun, as those light spectra shown in Figure 6. The circadianeffective light is detected thanks to blue filter covering a second full light spectrum sensor. The selected blue filter shows a transmittance profile to sunlight that is highly coincident both with the spectral inhibition curve of melatonin (Brainard et al., 2001) and with the model of melanopsin sensitivity curve of the ipRGCs (Enezi et al., 2011), letting pass visible wavelengths between 380 and 590 nm and above 680 nm. Thus, the “dose” of active circadian light to which the subject is exposed to can be calculated without inferences from combination of blue and green detectors, as it happens with Actiwatch Spectrum (Cao et al., 2015)."</li>
-<li>Comparison between Kronowise, Daisymeter and Actiwatch Spectrum: "To date, and to our knowledge, only two ambulatory devices are available for the detection of visible and circadian light: the Daysimeter (Bierman et al., 2005) and Actiwatch Spectrum (Phillips)."
-<ul>
-<li>"The Daysimeter, a head-mounted device, has been specifically designed for detecting light exposure, so its performance in this field is very interesting; however, the device only includes an accelerometer and must be placed close to the eyes, limiting seriously its ability to detect sleep and wakefulness states. In addition, and although its light sensor shows a sensitivity curve restricted to the photopic spectrum, it shows a significant drop between 550 and 600 nm, a band to which the human eye is sensitive (Dartnall et al., 1983; Roorda and Williams, 1999)."</li>
-<li>"The second device, Actiwach Spectrum, was primarily designed for detecting sleep and wake rhythms (Young et al., 2009; Kripke et al., 2010), and later incorporated RGB detection. This latter consists of three color sensors for light in the long wavelength (∼600–700 nm), middle-wavelength (450–600 nm) and short-wavelength range (∼400–550 nm), which correspond to R, G, B spectral outputs and a broadband “white light” (W) output (Price et al., 2012; Cao et al., 2015). However, its sensitivity spectrum does not match the one for the human retina. It shows a bimodal pattern, with a main peak at short wavelengths and a secondary peak at long wavelengths. In contrast, in the 570–600 nm band, the device is practically non-sensitive. This band, apart from its sensitivity of human retina, is characteristic of discharge light sources such as fluorescent lamps (Figueiro et al., 2013). Consequently, the photometric measurements of these common light sources will be systematically biased with this device and circadian light stimulation must be indirectly deduced from data recorded by blue and green sensors."</li>
-</ul>
-</li>
-<li>"Considering that the most powerful zeitgeber for circadian entrainment is the light-dark cycle (Roenneberg and Foster, 1997; Roenneberg et al., 2003), its simultaneous recording with other output signal seems a must to obtain an integrative assessment on the circadian function. In this sense, KronowiseR can constitute a useful and comfortable tool to deep our knowledge on light synchronization effects while people maintain their usual lifestyle."</li>
-</ul>
-</li>
 <li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "To facilitate the determination of light exposure, the presence/absence of natural light (solar day and night, respectively), and the light intensity analysis, the following ranges were established: very dim light (&lt;10 lux), indoor dim light (10-500 lux), indoor bright light (500-1000 lux), and outdoor bright light (&gt;1000 lux), as described in a previously conducted study (Turner &amp; Mainster, 2008). Environmental light intensities in lux were converted into logarithmic units and averaged every 10 mins to allow comparisons with temperature data."</li>
-<li>Methods more:
-<ul>
 <li>Estimating Representative Group Intrinsic Circadian Period from Illuminance-Response Curve Data <a href="https://doi.org/10.1177%2F0748730419886992" title="https://doi.org/10.1177%2F0748730419886992" class="https">https://doi.org/10.1177%2F0748730419886992</a></li>
-<li>math model predictive of optimal time for light therapy compared to CBTmin: <a href="https://doi.org/10.1371/journal.pone.0030037" title="https://doi.org/10.1371/journal.pone.0030037" class="https">https://doi.org/10.1371/journal.pone.0030037</a></li>
-</ul>
-</li>
+<li><b>BEST:</b> <b>math model predictive of optimal time for light therapy compared to CBTmin:</b> <a href="https://doi.org/10.1371/journal.pone.0030037" title="https://doi.org/10.1371/journal.pone.0030037" class="https">https://doi.org/10.1371/journal.pone.0030037</a></li>
 <li><b>BEST CRITICAL METHODS: Phasor analysis to quantify circadian misalignment and disruption relative to bright light exposure:</b> <a href="https://doi.org/10.1177/1477153517721598" title="https://doi.org/10.1177/1477153517721598" class="https">https://doi.org/10.1177/1477153517721598</a>
 <ul>
 <li>"In 2008, Rea et al.68 proposed a quantitative method for estimating circadian entrainment and disruption in the field. Called phasor analysis, this method permits examination of the relationship between the 24-hour (circadian) light–dark exposure pattern, the stimulus, and the activity–rest pattern. The response is quantified in terms of the phase and magnitude of their joint circular correlation function. The joint circular correlation function is determined by calculating correlations (r, not r2) between the entire, continuously repeating time series of light–dark exposure data and the entire, continuously repeating time series of activity–rest data as one time series is rotated with respect to the other. The circular correlation function is decomposed into its Fourier components from which the 24-hour frequency component can be represented by a vector, called a phasor. The vector length, or phasor magnitude, represents the amount of circadian entrainment exhibited in the light–dark pattern and the associated activity–rest pattern; the greater the phasor magnitude, the stronger the correlation between the light stimulus and the activity response. The vector angle, or phasor angle, reflects the phase relationship between the 24-hour light–dark exposure pattern and the 24-hour activity–rest pattern."</li>
@@ -937,7 +962,6 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </ul>
 </li>
 <li>BEST METHODS: "we analysed data from nineteen different laboratory studies that measured melatonin suppression, circadian phase resetting and/or alerting responses in humans to a wide array of stimulus types, intensities and durations with or without pupil dilation. Using newly established SI-compliant metrics to quantify ipRGC-influenced responses to light, we show that <b>melanopic illuminance consistently provides the best available predictor for responses of the human circadian system</b>. In almost all cases, melanopic illuminance is able to fully account for differences in sensitivity to stimuli of varying spectral composition, acting to drive responses that track variations in illumination characteristic of those encountered over civil twilight (~1-1000 lux melanopic equivalent daylight illuminance)." <a href="https://doi.org/10.1111/jpi.12655" title="https://doi.org/10.1111/jpi.12655" class="https">https://doi.org/10.1111/jpi.12655</a></li>
-</ul></li>
 </ul>
 </p>
 
