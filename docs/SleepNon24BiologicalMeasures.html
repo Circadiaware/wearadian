@@ -277,11 +277,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </p>
 
-<h3>Light sensor</h3>
+<h3>Light sensors</h3>
 
 <p>
 <ul>
-<li>Ideally, melanopic light intensity (mLux) need to be sensed at the very least. Photopic illuminance (lux, aka light sensor) and full light spectrum are also desirable.</li>
+<li>Ideally, melanopic light intensity (mLux) aka alpha-opic light, need to be sensed at the very least. Photopic illuminance (lux, aka light sensor) and full light spectrum are also desirable.</li>
 <li>The selected light sensors are worn as pendants. A study shown <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892948/" title="pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)" class="https">pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)</a>, at least in terms of photopic illuminance since melanopic illuminance was not tested, and they are much more comfortable.</li>
 <li>The three available and selected sensors are:
 <ul>
@@ -517,10 +517,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </li>
 <li>Alternative to get an even longer battery bluetooth receptor: make an Arduino-based bluetooth low energy (BLE = BT 4.0) logger to microsd card. <a href="https://github.com/SensorsIot/Bluetooth-BLE-on-Arduino-IDE/blob/master/Polar_Receiver/Polar_Receiver.ino" title="Some developers already made heart rate loggers for Arduino" class="https">Some developers already made heart rate loggers for Arduino</a> and Polar H7 chest bands (see also <a href="https://forum.arduino.cc/index.php?topic=116145.0" title="here" class="https">here</a> and <a href="https://makecademy.com/bluetooth-heart-rate-sensor-arduino" title="here" class="https">here</a>), but not the ECG, although the SDK is open so that should also be possible to do.</li>
-<li>Using the Polar Beat app, the H10 sensor can be configured to have a dual Bluetooth stream, so that it can send data to two different devices/apps simultaneously. This can be used advantageously to concurrently continuously record the ECG data on one device, and use another device (the day-to-day smartphone) for when you want to visualize your current heart rhythm in real-time. To do this, install the Polar Beat app, pair the sensor, then go to the settings, click on the sensor and the sensor's options will show up, and then you can enable the "2 BLE receptors" option.
+<li>Using the Polar Beat app (enable wifi and bluetooth on the phone, these are necessary for the app to work), the H10 sensor can be configured to have a dual Bluetooth stream, so that it can send data to two different devices/apps simultaneously. This is necessary to allow the Polar Sensor Logger to reconnect to the sensor automatically, as otherwise sometimes the reconnection will be refused, the Polar H10 thinking two different devices tried to connect when it's the same one just trying to reconnect. This can also be used advantageously to concurrently continuously record the ECG data on one device, and use another device (the day-to-day smartphone) for when you want to visualize your current heart rhythm in real-time. To do this, install the Polar Beat app, pair the sensor, then go to the settings, click on the sensor and the sensor's options will show up, and then you can enable the "2 BLE receptors" option.
 <ul>
 <li>Using the Polar Beat app, <a href="https://support.polar.com/en/support/How_to_make_the_most_out_of_H6_and_H7_sensor" title="disable GymLink and ANT+ to significantly increase battery duration" class="https">disable GymLink and ANT+ to significantly increase battery duration</a>.</li>
 <li>It's necessary to enable the dual Bluetooth stream to ensure auto-reconnection by the Polar Sensor Logger app.</li>
+<li>This step needs to be redone after each change of battery of the Polar H10 sensor.</li>
 </ul>
 </li>
 <li>This app is made by an employee of Polar (although this is not an official Polar app), so that it likely has a very robust and clean implementation respecting the Polar API.</li>
@@ -528,7 +529,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>Big advantage of this setup compared to others: it really allows for continuous ECG, since there is no need to transfer data to restart a new session, as the phone's memory is used and it's vast. So only the smartphone's battery is the limitation, but it can be recharged while the acquisition continues, and even the data can be transferred concurrently using FTP or similar apps. This is a true 24/7 continuous ECG monitoring setup.</li>
 <li>Use Sony or Varta CR2025 batteries for the H10 to last ~10 days with one battery. Cheaper or rechargable batteries won't last as long. Some users reported that CR2032 can also fit, and they last longer since they have a bigger size and capacity, but Polar warns against using a battery of an incorrect type (ie, anything else than CR2025) as they claim <a href="https://support.polar.com/be-fr/support/entretien-de-l-metteur-de-fr-quence-cardiaque" title="this can cause an explosion" class="https">this can cause an explosion</a>.</li>
 <li><a href="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" class="https">https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap</a></li>
-<li>If after stopping acquisition, the Polar H10 is no longer detected by any app, reboot the Android phone, then the H10 should be detected correctly.</li>
+<li>If after stopping acquisition, the Polar H10 is no longer detected by any app, reboot the Android phone, then the H10 should be detected correctly. This often happens after changing the Polar H10 battery.</li>
 <li>Software alternative for iOS: <a href="https://github.com/poml88/ecg-recorder-ios" title="https://github.com/poml88/ecg-recorder-ios" class="https">https://github.com/poml88/ecg-recorder-ios</a> (not tested)</li>
 </ul>
 </li>
@@ -547,8 +548,72 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <p>
 <ul style='padding-left: 30pt'>
 <li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
+<li>BEST METHODS: for calibration of light intensity and color (spectrometer) sensor, see this study as a reference: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a> -- they used certifiably calibrated light bulbs as one of the ways to calibrate.
+<ul>
+<li>they also used a mini spectrometer sensor part: C12666MA from Hamamatsu Photonics "The device (Fig. 1) measured 44 × 20 × 29 mm, weighed 20 g, and was designed to be attached to clothing near to eye level. The device contained a C12666MA mini-spectrometer (spectral range 340–780 nm) from Hamamatsu Photonics, chosen due to its compactness, relatively high spectral resolution (15 nm), and high dynamic range. It is hermetically sealed and performs array spectroscopy using an array of 256 CMOS pixels with a reflective blazed grating for light diffraction."</li>
+<li>original price at $180: <a href="https://groupgets.com/manufacturers/hamamatsu-photonics/products/c12666ma-micro-spectrometer" title="https://groupgets.com/manufacturers/hamamatsu-photonics/products/c12666ma-micro-spectrometer" class="https">https://groupgets.com/manufacturers/hamamatsu-photonics/products/c12666ma-micro-spectrometer</a> -- available at $75 in a breakout board (but breakout board is discontinued, it may be sold out soon): <a href="https://groupgets.com/manufacturers/getlab/products/c12666ma-breakout-board" title="https://groupgets.com/manufacturers/getlab/products/c12666ma-breakout-board" class="https">https://groupgets.com/manufacturers/getlab/products/c12666ma-breakout-board</a></li>
+</ul>
+</li>
+<li>BEST METHODS: calibration of light spectrum sensor using calibrated incandescent light bulbs, thanks to eeror for sharing his experience with exactly this approach, here are the relevant quotes from his discussion:</li>
 </ul>
 </p>
+
+<p>
+<div style='padding-left: 60pt'>
+I approached this by buying LED bulbs that had their light spectrum somewhere in their documentation.<br>
+The idea is that you can combine that data with the lux meter result to arrive quite close to the correct value.<br>
+That was a few years ago (still have a stockpile of bulbs left :D) so I can't quite remember the details anymore but I also tried to validate it against data from better lux meters.<br>
+And I remember I found the approach accurate enough.<br>
+The tricky bit with making a sensor like that can be calibrating it. Would be rather easy if you make many but somewhat more difficult if people assemble their own.<br>
+I wonder if there's a place you can buy a range of different filters with known properties.<br>
+I.e., data about what and how much it filters out.<br>
+Though it's likely that our use case doesn't need too much accuracy, of course. Most LEDs have similar properties, for instance.<br>
+I understood from quickly skimming the article you linked that they also tried to classify light sources.<br>
+Another thing I remembered about my own experiment.<br>
+Essentially, a lot of lux meters have bad filters.<br>
+Compared to the CIE luminosity function, their peak is usually in the correct place but the sides of the curve are often wrong.<br>
+Mine actually had the curve in its documentation.<br>
+So in the end, it was about combining the lux meter result with the light spectrum of the bulb and with the data about the filter of the lux meter.<br>
+So getting an accurate result still depends on factory calibration.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+Let me just quickly find the relevant details.<br>
+So, while exactly the same bulbs aren't on sale anymore, these seem to be the ones they were replaced with: <a href="https://www.lighting.philips.com/main/prof/led-lamps-and-tubes/led-bulbs/classic-filament-ledbulbs/929002372601_EU/product" title="https://www.lighting.philips.com/main/prof/led-lamps-and-tubes/led-bulbs/classic-filament-ledbulbs/929002372601_EU/product" class="https">https://www.lighting.philips.com/main/prof/led-lamps-and-tubes/led-bulbs/classic-filament-ledbulbs/929002372601_EU/product</a><br>
+But the main point is that Philips publishes the photometrics data about their bulbs.<br>
+If you scroll down on that page, you'll see a luminosity chart.<br>
+Now, it seems like it's not for exactly that bulb (13 W vs. 17.5 W) but I'm sure the chart's similar enough if they've put it there.<br>
+I might have the characteristics for my bulbs stored somewhere but I'm fairly certain they look similar.<br>
+In any case, it's really all about the shape of the spectrum and not absolute values in this step.<br>
+I use a cheap lux meter (mine actually has a few more things in it, it can measure sound levels as well, for instance) from PeakTech (<a href="https://www.peaktech.de/" title="https://www.peaktech.de/" class="https">https://www.peaktech.de/</a>).<br>
+Looks like this one: <a href="https://www.peaktech.de/uk/PeakTech-P-5035-Multifunction-environment-tester/P-5035" title="https://www.peaktech.de/uk/PeakTech-P-5035-Multifunction-environment-tester/P-5035" class="https">https://www.peaktech.de/uk/PeakTech-P-5035-Multifunction-environment-tester/P-5035</a><br>
+They're produced in China for multiple companies anyway.<br>
+The main thing is that they provide individual calibration results.<br>
+So you know the properties of the filter it came with.<br>
+Then you just have to figure out if you need to scale the absolute value.<br>
+But from what I know, they have done factory calibration against incandescent light sources.<br>
+I verified using a more expensive device that I borrowed.<br>
+I can probably find the details but I'm not sure about the make and model without checking.<br>
+Anyway, I validated that my batch of bulbs matched the published spectrum. I also figured out that for this particular bulb, I can multiply the result on my lux meter with a certain constant to know the exact value.<br>
+If you can trust the published data, you can find a similar constant for any light source.<br>
+For your own lux meter, of course. :)<br>
+Other than that, I can recommend the bulbs: the light is pleasant, they are efficient, and they seem to survive for a long time. :)<br>
+But after validating, I trust Philips to provide correct spectrum data. And that knowledge might be more useful than a particular model.<br>
+The PeakTech one works well for the price, I think. But I just bought what I could get from the store without waiting.<br>
+One more thing: they also sell lux meters that claim to measure LED light. I don't think those are any good: with just one filter, they can really only be accurate for some specific LED light source. It's quite likely that they're just multiplying all values with a constant similar to the one I found for my bulbs and my lux meter.<br>
+But you will lose the ability to sanity check against an incandescent bulb (or more specifically, standard illuminant A :)).
+</div>
+</p>
+
+<p>
+<ul style='padding-left: 60pt'>
+<li>About whether the Luminette could be used as a calibration light source, there are pros and cons: the pros is that it's a certified medical device so theoretically the luminance and light spectrum are bounded, and that it can emit at 3 different light intensities (500 lux, 1000 lux and 1500 lux), hence providing 3 points to calibrate luminance instead of one. The cons is that it's a LED, not an incandescent bulb, which according to eeror are much less reliable, and another potential issue is that medical certification may not necessarily mean that all devices are tested and hence individual devices may vary by quite some amount, so this approach should only be considered appropriate for an approximately calibrated light sensor, but not a very accurate one, ie, if margin of error of plus or minus 100 lux is acceptable then that may be fine.</li>
+</ul>
+</p>
+
+<br>
 
 <h2>Analysis</h2>
 
