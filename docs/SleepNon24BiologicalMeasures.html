@@ -253,7 +253,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Alternative sites and methods of wearing the iButtons, tested and considered less effective (with ineffective temperature measurements not reflective of the circadian rhythm, and much less comfortable to wear):
 <ul>
-<li>axillary = under the armpit, on the arm rather than the trunk to avoid sweat from corroding the iButton (it's not waterproof, only water resistante)</li>
+<li>axillary = under the armpit, on the arm rather than the trunk to avoid sweat from corroding the iButton (it's not waterproof, only water resistante)
+<ul>
+<li>But: Axillary and Thoracic Skin Temperatures Poorly Comparable to Core Body Temperature Circadian Rhythm: Results from 2 Adult Populations, 2004 <a href="https://doi.org/10.1177%2F1099800403260620" title="https://doi.org/10.1177%2F1099800403260620" class="https">https://doi.org/10.1177%2F1099800403260620</a></li>
+</ul>
+</li>
 <li>infraclavicular, which means <a href="https://en.wikipedia.org/wiki/Deltopectoral_lymph_nodes#/media/File:Lymph_node_regions.svg" title="just below the clavicule" class="https">just below the clavicule</a>, check by touching to see if it's warm or reddish which means it's vascularized.
 <ul>
 <li>Alternative: 1cm above the navel</li>
@@ -291,7 +295,7 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 
 <p>
 A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).<br>
-<ul style='padding-left: 60pt'>
+<ul style='padding-left: 30pt'>
 <li>Adalogger M0 Feather is an open-source hardware data logging board, based on Arduino, so it can be reproduced.</li>
 <li>BESTTUTO: get an Adalogger M0 Feather + DS3231 FeatherWing to add an accurate real-time clock with a battery (RTC), no soldering required, it clips on. Alternatives are also discussed in this link. <a href="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" title="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" class="https">https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging</a> (<a href="https://web.archive.org/web/20210224185816/https://p" title="mirror1" class="https">mirror1</a>, <a href="https://archive.is/Gm95A" title="mirror2" class="https">mirror2</a>)</li>
 <li>Libraries:
@@ -502,7 +506,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>Use any Android smartphone, use the CORE app on the Play store to download the data. It takes about 3.5h currently and the phone must not be used during this time. WiFi and Bluetooth must both be enabled (because the data will be sent online to GreenTEG's servers - although a local copy will be directly available).
 <ul>
 <li>The CORE device can only be paired with one single smartphone. Any other smartphone won't be able to detect the device until the first smartphone unpairs (ie, app is closed).</li>
-<li>Troubleshooting: if after a data download, the CORE app does not detect the CORE device, try to restart the smartphone that was last paired with the CORE device, sometimes the app (or smartphone, eg Realme 6i) has a bug that keeps the bluetooth pairing activated but does not show up. Restarting the smartphone will fix this issue and the CORE device can then be paired with the same smartphone or with another.</li>
+<li>Troubleshooting: if after a data download, the CORE app does not detect the CORE device, try to restart the smartphone that was last paired with the CORE device, sometimes the app (or smartphone, eg Realme 6i) has a bug that keeps the bluetooth pairing activated with a single smartphone and does not want to pair with anything else. Restarting the smartphone may fix this issue and the CORE device can then be paired with the same smartphone or with another. Or if it does not work, re-use the last phone that was paired with the CORE. This bug needs to be fixed in the future, it is very confusing and limiting for teams working with one same device (eg, in the clinical setting).</li>
 </ul>
 </li>
 <li><a href="https://corebodytemp.com/manual/" title="https://corebodytemp.com/manual/" class="https">https://corebodytemp.com/manual/</a>
@@ -779,7 +783,12 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 <li>Denoising: to clean up noise (denoising) of temperature data from home/wild settings, on humans at home and for circadian rhythm prediction:** "In contrast to most laboratory assessments, it seldom happens that field assessments are free of artefacts. Therefore an automated artefact rejection procedure was applied to exclude extreme drops and rises in temperature. Because of the bimodal rather than normal distribution of the temperature data, no artefact rejection was applied to exclude data more than two or three standard deviations from the mean, but rather a three-step nonparametric method. [...] the three-step artefact rejection procedure resulted in far fewer noisy distal and proximal curves, whereas the variability was maintained. Firstly, the rate of change (ROC) of all subsequent single channel data points was calculated, their quartiles Q25 and Q75, and their interquartile distance (IQRROC). Any data point with a rate of change exceeding 1 time the interquartile distance from Q25 or Q75 was removed. This step resulted in the rejection of very fast drops or increases in temperature. Secondly, in the resulting restricted raw data, the quartiles Q25 and Q75 and their interquartile distance (IQRLEVEL) were calculated. Any data point with a level exceeding 1 time the interquartile distance from Q25 or Q75 was removed. This step resulted in the rejection of very low temperatures. Thirdly, the resulting gaps in the single channels were interpolated linearly followed by an 11-point rectangular smoothing." <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="https://doi.org/10.1016/j.physbeh.2006.04.026" class="https">https://doi.org/10.1016/j.physbeh.2006.04.026</a></li>
 <li>Wrist skin temperature using iButton with ax3 to autodetect circadian highs and lows <a href="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" title="https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879" class="https">https://eudl.eu/pdf/10.4108/eai.20-5-2019.2282879</a></li>
 <li>validity of ibuttons: <a href="https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement" title="https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement" class="https">https://www.researchgate.net/publication/40033570_The_validity_of_wireless_iButtonsR_and_thermistors_for_human_skin_temperature_measurement</a></li>
-<li>distal-proximal iButtons placement + how to calculate: Evaluation of wireless determination of skin temperature using iButtons, van Marken Lichtenbelt et al, 2006 <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="https://doi.org/10.1016/j.physbeh.2006.04.026" class="https">https://doi.org/10.1016/j.physbeh.2006.04.026</a></li>
+<li>distal-to-proximal iButtons placement + how to calculate: Evaluation of wireless determination of skin temperature using iButtons, van Marken Lichtenbelt et al, 2006 <a href="https://doi.org/10.1016/j.physbeh.2006.04.026" title="https://doi.org/10.1016/j.physbeh.2006.04.026" class="https">https://doi.org/10.1016/j.physbeh.2006.04.026</a>
+<ul>
+<li><img src="./SleepNon24BiologicalMeasures_files/pasted_image021.png" width="500"></li>
+<li>But contradicts with the findings of another study showing that proximal temperature is not reliable, maybe confounded by body posture? Axillary and Thoracic Skin Temperatures Poorly Comparable to Core Body Temperature Circadian Rhythm: Results from 2 Adult Populations, 2004 <a href="https://doi.org/10.1177%2F1099800403260620" title="https://doi.org/10.1177%2F1099800403260620" class="https">https://doi.org/10.1177%2F1099800403260620</a></li>
+</ul>
+</li>
 <li>TODO ME: autodetect when a drop in temperature precedes wake up time, this is indicative of circadian rhythm, otherwise not if the temperature drops follows the wake up time. Detect sudden drops by using Savitzky-Golay filter:</li>
 </ul>
 </p>
