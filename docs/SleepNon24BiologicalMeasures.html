@@ -52,9 +52,10 @@
                     <h1>Wearadian (ex-SleepNon24BiologicalMeasures) <a name='Perso:MyIssues:SleepNon24:SleepNon24BiologicalMeasures'></a></h1>
     
                     <p>
-Créée le vendredi 19 juin 2020<br>
-Last update: September 2021.<br>
-Created by Stephen Karl Larroque.
+First created on 19 June 2020<br>
+Last update: October 2021.<br>
+Written by Stephen Karl Larroque.<br>
+ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
 
 <p>
@@ -297,7 +298,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 A custom-made Arduino-based light sensor, can capture both light intensity and color. See next section. (Still under development - the hardware is available but not the software code to save measurements!).<br>
 <ul style='padding-left: 30pt'>
 <li>Adalogger M0 Feather is an open-source hardware data logging board, based on Arduino, so it can be reproduced.</li>
-<li>BESTTUTO: get an Adalogger M0 Feather + DS3231 FeatherWing to add an accurate real-time clock with a battery (RTC), no soldering required, it clips on. Alternatives are also discussed in this link. <a href="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" title="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" class="https">https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging</a> (<a href="https://web.archive.org/web/20210224185816/https://p" title="mirror1" class="https">mirror1</a>, <a href="https://archive.is/Gm95A" title="mirror2" class="https">mirror2</a>)</li>
+<li>BESTTUTO: get an Adalogger M0 Feather + DS3231 FeatherWing to add an accurate real-time clock with a battery (RTC), no soldering required, it clips on. Alternatives are also discussed in this link. <a href="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" title="https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging" class="https">https://publiclab.org/notes/cfastie/11-14-2017/adafruit-feathers-for-datalogging</a> (<a href="https://web.archive.org/web/20210224185816/https://p" title="mirror1" class="https">mirror1</a>, <a href="https://archive.is/Gm95A" title="mirror2" class="https">mirror2</a>)
+<ul>
+<li>Beware, the "Adalogger FeatherWing - RTC PCF8523 + microSD" is <a href="https://shop.mchobby.be/fr/feather-adafruit/1056-adalogger-featherwing-rtc-pcf8523-microsd-3232100010567-adafruit.html" title="not a precision RTC clock" class="https">not a precision RTC clock</a>, only the DS3231 is!</li>
+</ul>
+</li>
 <li>Libraries:
 <ul>
 <li><a href="https://github.com/rickkas7/AdafruitDataLoggerRK" title="https://github.com/rickkas7/AdafruitDataLoggerRK" class="https">https://github.com/rickkas7/AdafruitDataLoggerRK</a></li>
@@ -325,12 +330,22 @@ A custom-made Arduino-based light sensor, can capture both light intensity and c
 <ul>
 <li>3 components:
 <ul>
-<li>Broadcom APDS9007 for light intensity sensor, see above, same as the internal light sensor used in AX6.</li>
+<li>Broadcom APDS9007 for light intensity sensor, see above, same as the internal light sensor used in AX6.
+<ul>
+<li>Alternative: TSL2591, better than photoresistive sensors (CdS cells): <a href="https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1599-tsl2591-capteur-lux-luminosite-lumiere-numerique-3232100015999-adafruit.html" title="https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1599-tsl2591-capteur-lux-luminosite-lumiere-numerique-3232100015999-adafruit.html" class="https">https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1599-tsl2591-capteur-lux-luminosite-lumiere-numerique-3232100015999-adafruit.html</a>
+<ul>
+<li>"can separately measure infrared, full-spectrum or human-visible light" <a href="https://www.amazon.fr/Adafruit-TSL2591-Dynamic-Digital-ADA1980/dp/B00XW2OFWW" title="https://www.amazon.fr/Adafruit-TSL2591-Dynamic-Digital-ADA1980/dp/B00XW2OFWW" class="https">https://www.amazon.fr/Adafruit-TSL2591-Dynamic-Digital-ADA1980/dp/B00XW2OFWW</a></li>
+</ul></li>
+</ul>
+</li>
 <li>Another APDS9007 but with a blue light filter, so as to measure by subtraction the intensity of blue light. Or better, a pass-band filter for any wavelength other than the blue-green spectrum.</li>
 <li>Light color (spectrum) sensor: Broadcom APDS9253 <a href="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" title="https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Broadcom-Avago/APDS-9253-001?qs=T3oQrply3y9os9rwnJ1p%252Bg%3D%3D</a> with 3 peak wavelengths at 470 nm, 550 nm, 610 nm + <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a> + does light intensity too
 <ul>
 <li>Alternatives: <a href="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" title="https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk" class="https">https://www.mouser.fr/Optoelectronics/Optical-Detectors-and-Sensors/Ambient-Light-Sensors/_/N-a13gh?P=1y95bgk</a></li>
 <li>low energy <a href="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" title="https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D" class="https">https://www.mouser.fr/ProductDetail/Gravitech/I2C-COLOR?qs=fkzBJ5HM%252BdBHFNCPEuxzHw%3D%3D</a> + <a href="https://www.gravitech.us/i2c16coleser.html" title="https://www.gravitech.us/i2c16coleser.html" class="https">https://www.gravitech.us/i2c16coleser.html</a></li>
+<li>alternative: Capteur Spectral 6 canaux - AMS AS7262 - Spectromètre (450, 500, 550, 570, 600, 650nm) <a href="https://shop.mchobby.be/fr/autres-capteurs/1991-capteur-spectral-6-canaux-as7262-spectrometre-3232100019911-pimoroni.html" title="https://shop.mchobby.be/fr/autres-capteurs/1991-capteur-spectral-6-canaux-as7262-spectrometre-3232100019911-pimoroni.html" class="https">https://shop.mchobby.be/fr/autres-capteurs/1991-capteur-spectral-6-canaux-as7262-spectrometre-3232100019911-pimoroni.html</a></li>
+<li><a href="https://shop.mchobby.be/fr/autres-capteurs/1513-tcs34725-capteur-de-couleur-rgb-filtre-ir-led-blanche-3232100015135-adafruit.html" title="https://shop.mchobby.be/fr/autres-capteurs/1513-tcs34725-capteur-de-couleur-rgb-filtre-ir-led-blanche-3232100015135-adafruit.html" class="https">https://shop.mchobby.be/fr/autres-capteurs/1513-tcs34725-capteur-de-couleur-rgb-filtre-ir-led-blanche-3232100015135-adafruit.html</a></li>
+<li>UV index can be calculated from visible light spectrum + infrared? <a href="https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1173-si1145-senseur-lumiere-visibleinfrarougeindex-uv-3232100011731-adafruit.html" title="https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1173-si1145-senseur-lumiere-visibleinfrarougeindex-uv-3232100011731-adafruit.html" class="https">https://shop.mchobby.be/fr/environnemental-press-temp-hrel-gaz/1173-si1145-senseur-lumiere-visibleinfrarougeindex-uv-3232100011731-adafruit.html</a></li>
 </ul></li>
 </ul>
 </li>
@@ -527,7 +542,11 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 
 <p>
 <ul style='padding-left: 30pt'>
-<li>The CORE can record up to 3.5 days of data in its internal memory, after which data stops from recording further until download (ie, no rollover), but only with the RESEARCH model, which costs 999 CHF. The consumer-grade version that costs 250 CHF can only show the last 2 days of core body temperature and it does not allow downloads. The resolution is 1Hz. Breaks under 5 months when worn 24/7 with the L dominos, but likely much longer when using velcro.</li>
+<li>The CORE can record up to 3.5 days of data in its internal memory, after which data stops from recording further until download (ie, no rollover), but only with the RESEARCH model, which costs 999 CHF. The consumer-grade version that costs 250 CHF can only show the last 2 days of core body temperature and it does not allow downloads. The resolution is 1Hz. Breaks under 5 months when worn 24/7 with the L dominos, but likely much longer when using velcro.
+<ul>
+<li>Note that the CORE can either record 3.5 days at 1Hz sampling resolution with the RESEARCH license, or 6.5 days (or however long the battery can last) at 1 sample every 5 min in standard without the RESEARCH license by using the cloud, or both 1Hz sampling via logging (need RESEARCH license to see the option in the app) and 1 sample every 5 min via the cloud simultaneously but only for 3.5 days as the internal storage memory will then be full and no new data will be recorded/displayed in the app. Indeed, the RESEARCH license's logging feature is a limited space option, and then transferring data requires losing at least 3.5h for the transfer to complete, whereas the standard 1 sample every 5 minute sampling via the cloud transfers very fast under a few seconds to the cloud and works with a rollover (ie, data older than 2 days is overwritten), so that if you can recharge the device (even while wearing it - although note that the cable is very short), then you can continue to log data as long as you wish, just keep uploading data at least once every 2 days via the app.</li>
+</ul>
+</li>
 <li>Use any Android smartphone, use the CORE app on the Play store to download the data. It takes about 3.5h currently and the phone must not be used during this time. WiFi and Bluetooth must both be enabled (because the data will be sent online to GreenTEG's servers - although a local copy will be directly available).
 <ul>
 <li>The CORE device can only be paired with one single smartphone. Any other smartphone won't be able to detect the device until the first smartphone unpairs (ie, app is closed).</li>
