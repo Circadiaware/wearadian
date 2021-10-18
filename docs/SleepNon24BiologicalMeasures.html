@@ -157,26 +157,31 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </p>
 
-<h3>Actigraphy Axivity AX6</h3>
+<h3>Polar Pro chest strap with ECG and core body temperature sensors</h3>
+
+<br>
+
+<h4>ECG Polar H10</h4>
 
 <p>
 <ul>
-<li>wristwatch arrow facing outwards towards the ground on the left wrist (and the Axivity logo on the wrist facing towards the body).</li>
-<li>stick a hooks type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin) on the face without an arrow, and then scratch the velcro side on the cotton wristband (the one with the iButton). Can be scratched on the exterior (prone to water damage but if worn up the arm and under clothes it should be fine) or inside the cotton wristband (more resistance to water damage but may be less comfortable and will likely deform the band, which may decrease the reliability of the iButton contact with skin and hence skin temperature measurements). The preferred way is to attach the Axivity AX6 on the exterior of the cotton wristband. Then, wear on the non-dominant arm, as it slightly less biases the results compared to the dominant arm.
-<ul>
-<li>Can also use the provided silicon watch-like support that is waterproof, but it's difficult to wear both the cotton wristband and the watch-like support for AX6, so will likely have to wear on different arms. But then one will be on the dominant arm, which is suboptimal as it can slightly bias the results, but it's better than nothing.</li>
-</ul></li>
+<li>Clean the Polar Pro chest band with a tissue with 50-70% alcohol, <b>except the connectors</b> to avoid oxydizing them. See <a href="https://support.polar.com/en/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="here for more infos" class="https">here for more infos</a>.</li>
+<li>Attach the GreenTEG Core or the same belt as the Polar H10, on the side, just after the silicone electrode band.</li>
+<li>Wear the Polar H10 as indicated by the manufacturer.</li>
+<li>Tip: to avoid the CORE overlapping one end of the electrode band, wear the H10 sensor shifted to the left quadrant of the torso. This will allow to leave more room to place the CORE on the right side of the chest without overlapping with the electrode band, and without any loss in ECG accuracy (since the heart is slightly oriented towards the left side of the torso).</li>
+<li>Use a Bluetooth receptor to acquire the ECG data, see the next section.</li>
 </ul>
 </p>
 
-<h3>Core body temperature with GreenTEG CORE</h3>
+<h4>Core body temperature with GreenTEG CORE</h4>
 
 <p>
 <ul>
-<li>Preferred way is to use a hooks-type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin), <b>vertically</b> placed on the face facing the belt (ie, the face with the CORE brand marking), and use a sewable and skin-soft (eg, for babies, this side will be in contact with the skin from time to time) loops or loops-and-hooks type velcro band formed in a mobius loop to strap around the Polar Pro chest strap band, and then attach the CORE's velcro onto the mobius loop on the chest strap. This provide great comfort and improve skin contact and hence much more reliable measurements, and eliminates the mechanical pressure of the L dominoes as used in the manufacturer's instructions that eventually cause the CORE's outer ring to break. This technique can also be applied on already broken CORE devices.
+<li>It's highly recommended to change the fixation system. The default one provided involves using plastic L dominos to fix the CORE outer ring on the chest belt, but this leads to mechanical breakage over time. The recommended alternative is to make a DIY velcro attachment system, which both improves measurements accuracy by increasing skin contact, and eliminates risks of outer ring breakage. Note this can also be done on an already broken CORE device (hence lengthening its longevity).
 <ul>
-<li>See the schema in the github repository, under <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.svg" title="docs/schemas/greenteg-core-velcro.svg" class="https">docs/schemas/greenteg-core-velcro.svg</a> (or the <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.png" title="png version" class="https">png version</a>) for a visual depiction of the system and more informations.
+<li>How to make it: use a hooks-type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin), <b>vertically</b> placed on the face facing the belt (ie, the face with the CORE brand marking), and use a sewable and skin-soft (eg, for babies, this side will be in contact with the skin from time to time) loops or loops-and-hooks type velcro band formed in a mobius loop to strap around the Polar Pro chest strap band, and then attach the CORE's velcro onto the mobius loop on the chest strap. This provide great comfort and improve skin contact and hence much more reliable measurements, and eliminates the mechanical pressure of the L dominoes as used in the manufacturer's instructions that eventually cause the CORE's outer ring to break. This technique can also be applied on already broken CORE devices.
 <ul>
+<li>See the schema in the github repository, under <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.svg" title="docs/schemas/greenteg-core-velcro.svg" class="https">docs/schemas/greenteg-core-velcro.svg</a> (or the <a href="https://github.com/Circadiaware/wearadian/blob/main/docs/schemas/greenteg-core-velcro.png" title="png version" class="https">png version</a>) for a visual depiction of the system and more informations.</li>
 <li>The exact products used were: "<a href="https://www.amazon.fr/gp/product/B00186Q9AK" title="Velcro Heavy Duty Stick On" class="https">Velcro Heavy Duty Stick On</a>" for the hooks type solid base velcro on the CORE device itself, which is usually used on walls furnitures ; and "<a href="https://www.amazon.fr/gp/product/B00HR5G0LO" title="Velcro Snag Free Sew On" class="https">Velcro Snag Free Sew On</a>" for the hooks-and-loops type soft textile velcro to make a Mobius loop on the chest belt to receive the CORE device.</li>
 </ul>
 </li>
@@ -191,27 +196,33 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <li>If the CORE cannot be discovered on the smartphone app anymore for unknown reasons and its green LED doesn't light up anymore, try to plug with the provided magnet cable to a computer USB port and the CORE, wait a few minutes, then disconnect. Connecting and disconnecting the CORE to the power outlet seems to systematically force it to turn back on. Nevertheless, even if there is no connection nor LED, the CORE continues to record data in the background even if it doesn't display it as long as there is enough battery left.</li>
 <li>Alternative, but much less effective methods:
 <ul>
-<li>with strap: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
+<li>with clips: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
 <li>with patches (may be able to replace with hypafix tape): <a href="https://corebodytemp.com/manual/mountingmaintenance/" title="https://corebodytemp.com/manual/mountingmaintenance/" class="https">https://corebodytemp.com/manual/mountingmaintenance/</a></li>
 <li>"The preferred mounting site is below the armpit, directly on the rib cage on the are between pectoral muscle and latissimus muscle"</li>
 <li>can be combined with Cardiosport strap for heart rate (900+h of battery life!!! + temperature sensor with TP5+ - but memory 16h max): <a href="https://www.cardiosport.com/cardiosport-heart-rate-monitors" title="https://www.cardiosport.com/cardiosport-heart-rate-monitors" class="https">https://www.cardiosport.com/cardiosport-heart-rate-monitors</a> - NO: low quality, uses PPG with green light (when PPG with red light is better and anyway it's not ECG contrary to what they write, it's only heart rate and PPG!)</li>
+<li>Invasive rectal probe: "Rectal temperatures were measured every minute with a small, disposable probe (YSI 4491E, Dayton, OH) inserted to a depth of 8 cm. Probes were marked to ensure consistent insertion depth. In past research using the above instrumentation, female subjects have consented to rectal temperature measurements and experienced minimal distress related to the recordings (Landis and others 1998)." — the study was done over 24h and the participants could do their activities as usual. <a href="https://doi.org/10.1177%2F1099800403260620" title="https://doi.org/10.1177%2F1099800403260620" class="https">https://doi.org/10.1177%2F1099800403260620</a>
+<ul>
+<li>Reusable probe version, YSI-401 at $70 (without the logger, just the sensor): <a href="https://www.cablesandsensors.com/products/ysi-compatible-reusable-temperature-probe-409b?variant=33809003400" title="https://www.cablesandsensors.com/products/ysi-compatible-reusable-temperature-probe-409b?variant=33809003400" class="https">https://www.cablesandsensors.com/products/ysi-compatible-reusable-temperature-probe-409b?variant=33809003400</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </p>
 
-<h3>ECG Polar 10 and GreenTEG Core</h3>
+<h4>Chest belt (Polar Pro Chest Strap)</h4>
 
 <p>
 <ul>
-<li>Clean the Polar Pro chest band with a tissue with 50-70% alcohol, <b>except the connectors</b> to avoid oxydizing them. See <a href="https://support.polar.com/en/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="here for more infos" class="https">here for more infos</a>.</li>
-<li>Attach the GreenTEG Core or the same belt as the Polar H10, on the side, just after the silicone electrode band.</li>
-<li>Wear the Polar H10 as indicated by the manufacturer.</li>
-<li>Tip: to avoid the CORE overlapping one end of the electrode band, wear the H10 sensor shifted to the left quadrant of the torso. This will allow to leave more room to place the CORE on the right side of the chest without overlapping with the electrode band, and without any loss in ECG accuracy (since the heart is slightly oriented towards the left side of the torso).</li>
-<li>Use a Bluetooth receptor to acquire the ECG data, see the next section.</li>
+<li>Tip: Feel free to loosen or tighten the chest belt at various moments in the day depending on your body position, just ensure it is tight enough to stick to the skin all around your chest, but not so much that you feel a resistance when breathing. For example, while sleeping, you will likely need to tighten it up a bit especially when sleeping on the side, and loosen it when sitting.</li>
+<li>Tip: Feel free to move the chest belt up or down at various times of the day, especially when it starts to feel itchy. Do not wait if itchiness appears, as it will damage the skin (temporarily, but still it's better to act as soon as you feel itchiness).</li>
+<li>Avoid twisting the latex (more solid) part of the Polar Pro chest band when removing it or attaching/detaching sensors, as the electrodes inside can be broken by twisting.</li>
 </ul>
 </p>
 
-<h3>Wrist skin temperature with iButton DS1925L and a cotton sports wristband</h3>
+<h3>Wristband with skin temperature and actigraphy sensors</h3>
+
+<br>
+
+<h4>Wrist skin temperature with iButton DS1925L and a cotton sports wristband</h4>
 
 <p>
 <ul>
@@ -278,6 +289,18 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </li>
 <li>If using multiple iButtons, distance them of at least 0.5cm apart so that they're not in contact and do not exchange heat.</li>
+</ul></li>
+</ul>
+</p>
+
+<h4>Actigraphy with Axivity AX6</h4>
+
+<p>
+<ul>
+<li>wristwatch arrow facing outwards towards the ground on the left wrist (and the Axivity logo on the wrist facing towards the body).</li>
+<li>stick a hooks type velcro band (a strong one as used for mural supports, as it won't be in contact with the skin) on the face without an arrow, and then scratch the velcro side on the cotton wristband (the one with the iButton). Can be scratched on the exterior (prone to water damage but if worn up the arm and under clothes it should be fine) or inside the cotton wristband (more resistance to water damage but may be less comfortable and will likely deform the band, which may decrease the reliability of the iButton contact with skin and hence skin temperature measurements). The preferred way is to attach the Axivity AX6 on the exterior of the cotton wristband. Then, wear on the non-dominant arm, as it slightly less biases the results compared to the dominant arm.
+<ul>
+<li>Can also use the provided silicon watch-like support that is waterproof, but it's difficult to wear both the cotton wristband and the watch-like support for AX6, so will likely have to wear on different arms. But then one will be on the dominant arm, which is suboptimal as it can slightly bias the results, but it's better than nothing.</li>
 </ul></li>
 </ul>
 </p>
@@ -402,6 +425,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>Already used by other circadian rhythm researchers.</li>
 <li>Can be clipped on clothes, or worn as a pendant if I make a custom support.</li>
 <li>Thank you to Coral for the tip!</li>
+<li>The Android app does not yet work, raw data is not sent. The iOS app should work according to the manufacturer. They are currently investigating this issue (as of October 2021).</li>
 </ul>
 </p>
 
@@ -447,6 +471,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>"What needs to be checked, though, is how the method performs under more widely varying changes in illumination, both spectral changes and illuminance levels. Perhaps a more sophisticated colorimetric characterization approach is needed, like worked out for a set of digital cameras [5]."</li>
 <li>"With less than 3% average error in the RAW measurements for the two most recentsmartphones, this is already more than enough to measure relevant differences in practical lighting situations."</li>
 <li>They made an Android app but did not release it.</li>
+<li>It seems a similar algo is implemented in the Lys app on Android, in the menu enable Camera mode, and it will evaluate ambient lighting and its effect on the circadian rhythm from the camera (although it seems to overestimate a lot compared to the sensor). Not sure this mode is accessible without a Lys button. <a href="https://play.google.com/store/apps/details?id=uk.co.lystechnologies.lys" title="https://play.google.com/store/apps/details?id=uk.co.lystechnologies.lys" class="https">https://play.google.com/store/apps/details?id=uk.co.lystechnologies.lys</a> (<a href="https://apkpremier.com/details/uk-co-lystechnologies-lys" title="mirror" class="https">mirror</a>)</li>
 </ul></li>
 </ul>
 </p>
@@ -634,6 +659,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li><a href="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" class="https">https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap</a></li>
 <li>If after stopping acquisition, the Polar H10 is no longer detected by any app, reboot the Android phone, then the H10 should be detected correctly. This often happens after changing the Polar H10 battery.</li>
 <li>Software alternative for iOS: <a href="https://github.com/poml88/ecg-recorder-ios" title="https://github.com/poml88/ecg-recorder-ios" class="https">https://github.com/poml88/ecg-recorder-ios</a> (not tested)</li>
+<li>Use a microfiber cloth imbibed with alcohol to clean the entire Polar Pro chest band strap every 1-2 weeks. Do not clean the metallic connectors to the Polar H10 sensor, as ethanol will erode them.</li>
 </ul>
 </li>
 <li>Higher-grade alternatives (but with much shorter battery or storage space):
@@ -1015,6 +1041,7 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </ul>
 </li>
 <li>BEST METHODS: "we analysed data from nineteen different laboratory studies that measured melatonin suppression, circadian phase resetting and/or alerting responses in humans to a wide array of stimulus types, intensities and durations with or without pupil dilation. Using newly established SI-compliant metrics to quantify ipRGC-influenced responses to light, we show that <b>melanopic illuminance consistently provides the best available predictor for responses of the human circadian system</b>. In almost all cases, melanopic illuminance is able to fully account for differences in sensitivity to stimuli of varying spectral composition, acting to drive responses that track variations in illumination characteristic of those encountered over civil twilight (~1-1000 lux melanopic equivalent daylight illuminance)." <a href="https://doi.org/10.1111/jpi.12655" title="https://doi.org/10.1111/jpi.12655" class="https">https://doi.org/10.1111/jpi.12655</a></li>
+<li>METHOD: "We chose the violet (410 nm) and the blue (440 nm) wavelengths known to be harmful for the retina [28,29], the turquoise blue (480 nm) implicated in circadian rhythms [30], the green light (510 nm) reported to be soothing for photophobic migraineurs [31,32] and also the red light (630 nm). The part of the plate was kept in the dark for the control condition; the red-illuminated part served as a second control since, to our knowledge, there are no data about any damage from red-light exposure. We used the irradiance range that would approximate the real-life conditions. Indeed, according to recent measurements performed in the R&amp;D department of Essilor (personal communication), on a sunny slightly cloudy day, we can easily be exposed to 4.89 mW/cm2 of 380–780 nm light (entire solar visible spectrum) and to 1.28 and 1.4 mW/cm2 of its blue (380–500 nm) and yellow (500–600 nm) spectral parts respectively (at 10 a.m. in the center Paris at the end of May). We set the illumination time at 3 h since longer exposures to violet light were too harmful for cells and the shorter ones did not induce any cell death (Fig. S3)." <a href="https://pubmed.ncbi.nlm.nih.gov/30496813/" title="https://pubmed.ncbi.nlm.nih.gov/30496813/" class="https">https://pubmed.ncbi.nlm.nih.gov/30496813/</a></li>
 </ul>
 </p>
 
@@ -1087,7 +1114,9 @@ if these influences are small is it also determined by the rhythm of body temper
 <li><b>BEST GRAPH: core body temperature (CBT) and heart rate and distal-proximal temperature:</b> Kräuchi K, Cajochen C, Werth E, Wirz-Justice A. Functional link between distal vasodilation and sleep-onset latency? Am J Physiol Regul Integr Comp Physiol. 2000 Mar;278(3):R741-8. doi: 10.1152/ajpregu.2000.278.3.R741. PMID: 10712296. <a href="https://pubmed.ncbi.nlm.nih.gov/10712296/" title="https://pubmed.ncbi.nlm.nih.gov/10712296/" class="https">https://pubmed.ncbi.nlm.nih.gov/10712296/</a> (<a href="https://www.researchgate.net/publication/12604092_Functional_Link_between_Distal_Vasodilation_and_Sleep-Onset_Latency" title="mirror" class="https">mirror</a>)
 <ul>
 <li><img src="./SleepNon24BiologicalMeasures_files/pasted_image013.png" width="350"></li>
-</ul></li>
+</ul>
+</li>
+<li>METHOD: "Using a mixed-effect cosinor model, the mean amplitude of the circadian pattern of the standard deviation of the interbeat interval of normal sinus beats (SDNN), an HRV metric, differed between subjects with and without COVID-19 (P=.006)." <a href="https://www.ncbi.nlm.nih.gov/pubmed/33529156" title="https://www.ncbi.nlm.nih.gov/pubmed/33529156" class="https">https://www.ncbi.nlm.nih.gov/pubmed/33529156</a></li>
 </ul>
 </p>
 
