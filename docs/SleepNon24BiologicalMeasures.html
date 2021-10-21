@@ -454,8 +454,25 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <ul>
 <li>"According to the manufacturer specifications, the data logger has a measurement range between 0 and 320,000 lux, memory capacity for up to 28,000 values taken at regular, previously programmed intervals (in our case, every 30 s), and light-spectrum wavelength recording capacity of 150-1200 nm, which is broader than the sensitivity of the human eye. In order to validate the light sensor, a LX 101 lux meter (3E NDT, Pasadena, Texas, USA) was used to make a set of simultaneous recordings in different environments (data not shown). Readings from both devices demonstrated a strong, significant positive correlation at different intensities (r=0.997, p&lt;0.01). A high degree of repeatability of sensor measurements was observed when recordings were simultaneously performed with two different Hobo sensors (r=0.998, p&lt;0.01)."</li>
 <li>BEST METHODS: "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"</li>
+</ul>
+</li>
+<li>SPECS: <a href="https://lystechnologies.io/help/" title="https://lystechnologies.io/help/" class="https">https://lystechnologies.io/help/</a>
+<ul>
+<li>Spectral range of the LYS Button: LYS is an RGB sensor with a spectral range from 350-750nm.</li>
+<li>Intensity range of the devices have in lux: 0-100.000 Lux.</li>
+<li>Units of measurement and definition metrics:</li>
 </ul></li>
 </ul></li>
+</ul>
+<div style='padding-left: 60pt'>
+Kelvin: Colour temperature measured in Kelvin<br>
+RGB: Counts/μW/cm^2<br>
+Lux: Light intensity measured in Lux<br>
+Movement (3-axis accelerometer): Proxy for activity. Count the number of times acceleration exceeds 0.1875g (g=gravitational force) in any of the 3 axis over the logging time interval<br>
+mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral age correction
+</div>
+<ul style='padding-left: 30pt'>
+<li>Need to sync LYS data twice a day (morning and evening): "The LYS Button has 18 hours of internal memory, which means that the LYS Button can be worn during a whole day without having to carry the phone. Once a day the phone should be next to the Button in order to enable data transfer."</li>
 </ul>
 </p>
 
@@ -511,7 +528,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>Alternative: for programmers, there are also lots of other opensource software Maxim provides, to develop custom tools: <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/one-wire/software-tools.html</a> as described in <a href="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" title="https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html" class="https">https://www.maximintegrated.com/en/products/ibutton-one-wire/data-loggers/DS1925EVKIT.html</a> (note all softwares are opensource)</li>
 </ul>
 </li>
-<li>Main procedure to do each time <b>(at least once every 7 months)</b>:
+<li>Main procedure to do each time <b>(at least once every 7 months for DS1925L, once every 10 days for DS1922L)</b>:
 <ul>
 <li>Plug the iButton into one of the bluedot receptors.
 <ul>
@@ -554,7 +571,8 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>Notes:
 <ul>
 <li>This setup will last about 5.6 days before the internal memory is full on the DS1922L (4096K with higher temperature resolution) and about 212 days for the DS1925L (because limited to 61K recording limit with higher temperature resolution, half of the lower temperature resolution).</li>
-<li>The internal battery will last about half a year before the iButton DS1922L is dead and 4 years before the DS1925L is dead. A paper shows <a href="https://www.researchgate.net/publication/270579725_Replacing_the_batteries_on_ibutton_Thermochron_Hygrochron_data_loggers" title="how researchers could change the battery manually" class="https">how researchers could change the battery manually</a>.</li>
+<li>The internal battery will last about half a year before the iButton DS1922L is dead and 4 years before the DS1925L is dead. A paper shows <a href="https://www.researchgate.net/publication/270579725_Replacing_the_batteries_on_ibutton_Thermochron_Hygrochron_data_loggers" title="how researchers could change the battery manually" class="https">how researchers could change the battery manually</a> but then the device is much less airtight.</li>
+<li>Data need to be transferred to a computer every 6 months (for the DS1925L, the interval is much smaller with DS1922L, about 10 days), and the device memory (mission) needs to be reset, otherwise it will stop recording new records.</li>
 </ul></li>
 </ul>
 </li>
@@ -599,6 +617,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>BEST SPECS UPDATE: Internal memory: Record up to 84 hours of high-resolution data (= 3.5 days without a smartphone). More info from casing: battery lasts more than 6 days (but beyond 3.5 days old data will be lost, TODO: ask if rolling over or if it just won't store new data). Waterproof (up to 1.5m, <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="IPX7" class="https">IPX7</a>), because fully sealed. <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="Precision" class="https">Precision</a>: +- 0.10°C for skin temperature, +- 0.26°C (median absolute deviation or 0.66°C 2sigmas) for core body temperature. Added data quality metrics for core temperature (does not account for movement but it's better than nothing, TODO: ask if raw data access also means data quality can be downloaded for each sample). <a href="https://corebodytemp.com/wp-content/uploads/2020/05/CORE-SpecSheet-V1.9.4.pdf" title="Factory calibrated, no recalibration necessary" class="https">Factory calibrated, no recalibration necessary</a>.</li>
 <li>BEST TODO: try different body sites, with no bones below but organs (ie, a cavity)? A study shown that placing a zero-heat-flux sensor where there is tissues or organs below provides much more accurate measurements than sites where bones are below the skin. This makes sense since it's estimated that zero-heat-flux method can estimate temperature about <b>2cm below the skin and hence can measure the core body temperature if placed above a cavity</b>. See (for both claims): <a href="https://watermark.silverchair.com/v001t01a015-dmd2018-6930.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA8YwggPCBgkqhkiG9w0BBwagggOzMIIDrwIBADCCA6gGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJSyZzkzGmF0FhrBvAgEQgIIDeeaY424fFMxsfn93l0ooHNZ797biE_x4huoXdfokCGGnlF9CGWp0s0MOo5dw7miTQIiq2Vj_wyCD7LKK4tHxm-z1RV797y7NBkcTxSg3-hv9X_7wGJrUXCGaaNgh_Hl9BuR2QjW5iNizOjk4PgU-btnNA-YkI16MjgZn9MWJS80hcUbgRp7trHD5IsYGuCdhIKPvM5o91cuPKXrT8DnOlH6stBOlD-KBVlyI9wBMATheqcFOhH-VX_Q2yq7tTswDLMpZUl6dzob_KmXZLA9aa2TZg4_5_5dIR0yhUi9YODVnKoC7MumqiCETYhqCtR-17r7cbGBs5xYxyc4pyJP7zE8h5dewuipuagtlUerwjPQf-56KTNVcQ9Vq_hdKTTd83Giqxnu-LBVDd0vua_wHR99TNCkPQ2rOtdYLhjxbJC-zBlDjBXqw4UHN0OkB2hZT7IFABsHqg5YnTMdr55I403Cqw373sjD6Qo3zfmR-Ix4bVtiI9MAb1aTo8WOM94mpINHdVkARalA80YDCtQ6JIHKGgUUnGJkXfpm80Y-t5lPGxf-a4DrIsvQSxNKXUO4znXJa6Ed1D7SHbOr62qDNDrKJxR1J25Flv2kLJdDWh6w1-xNGdlEQs8W_JzQzsE_6n082GDxrKzZue-LwwOtE3qNFT5BKHBbgQS_-6xcYIPmDCVk5cPwyLy6EK1mmNJGb9vEZFaZbLllUUzP0HzoDt4GcUJnc9rl531JZwqK7QnCfo62Aw2mgfwI_j8UzuQeb4dL86yOOJ34E0rNws7RGNq3nLtsKD1E5YErVsQGum_0NH9A2fH6u2CQgo0WFhP8jF7EWSH1O4-6S5ql2cr9JLXrhsQ-CFroUT02MPHKysOw8AFotRTkFFuOGbjdO3PLIBDSMvwvPIrGf3vZ1d2hKKvw8getHGU5PFuD4yFuV_SN25tgIVgYa7EmwEbESR7a-9dsOSprbTYUdxuiIbySi5LcKtbRmo-xpkA2h2VeNngHeoOJdsZCXYLk6wMtWpC7w5w7Zk0l9fzFUBiEJXoux4xmUL5db8Xd5phICir0zKIgQRUGSJO9QYznKre3weWcNT6kfnNAMLrkDiJu32tZeWLatFcUgwCmZGeF3iRdbspJ22Ha1C3imiJE0rKDAPhB8PlptzKVIBmS2AFEQncdKY6pL-3ybDLcHUDs" title="TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA" class="https">TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA</a>, Mohammad Fazel Bakhsheshi et al, 2018 <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
 <li>Another great review on dual heat flux method: <a href="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" title="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" class="https">https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5</a></li>
+<li>Tip by GreenTEG Core personnel in private communications: "When you are offline, your data will be added to the cloud the next time you go back online (with the app opened on the History tab). It is important though that in the meantime, you do not reset your CORE, or let it run out of battery."</li>
 </ul>
 </p>
 
@@ -634,7 +653,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li>Enable developer's mode, then in developers options, set Background processes limit to 4 instead of standard limit.</li>
 <li>Then in battery optimizations (specific to this phone) disable all except screen optimization and standby optimization.</li>
 <li>Disable Do not disturb mode and any night mode, else they will kill apps during the night.</li>
-<li>Also activate plane mode, disable wifi, close all apps except ecg and activate only bluetooth.</li>
+<li>Also activate plane mode, disable wifi (you will re-enable wifi from time to time when changing battery because it's necessary for the Polar Beats app to work), close all apps except ecg and activate only bluetooth.</li>
 <li>Finally, open the ECG acquisition app and lock it (tap on tasks button to show all windows then swipe down the ecg app window or tap on the 3 dots in the corner to enable the lock). Then go back to the app, launch the acquisition, then go to the graph tab, check if data is acquired alright and then click on the Pause button at the bottom of the Graph tab to disable graphs and save battery.</li>
 <li>Now switch back to the main tab, check if the BPM and accelerometer values at the bottom are dynamically changing, if yes then all is ok and you can switch off the smartphone screen. You need to leave the app in focus at all time, do not switch another app, the ECG need to remain on the foreground to not be killed. Android 11 may fix this issue but for now smartphone vendors are too aggressive with background tasks killing so there is no other way around.</li>
 <li>With all these steps done, the Realme 6i and its 5000mAh battery will be consumed at a rate of 10%/24h, hence with a full charge the ECG can be continuously acquired for 9 to 10 days! Which is an impressive feat that currently no other wearable ecg can do. Plus motion noise is greatly reduced thanks to the Polar chestband without dangling electrodes wires.</li>
@@ -659,7 +678,7 @@ Lys Button is a light sensor designed specifically by and for circadian rhythm r
 <li><a href="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" title="https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap" class="https">https://support.polar.com/fr/support/maintenance_of_heart_rate_sensor_with_textile_strap</a></li>
 <li>If after stopping acquisition, the Polar H10 is no longer detected by any app, reboot the Android phone, then the H10 should be detected correctly. This often happens after changing the Polar H10 battery.</li>
 <li>Software alternative for iOS: <a href="https://github.com/poml88/ecg-recorder-ios" title="https://github.com/poml88/ecg-recorder-ios" class="https">https://github.com/poml88/ecg-recorder-ios</a> (not tested)</li>
-<li>Use a microfiber cloth imbibed with alcohol to clean the entire Polar Pro chest band strap every 1-2 weeks. Do not clean the metallic connectors to the Polar H10 sensor, as ethanol will erode them.</li>
+<li>Use a microfiber cloth imbibed with alcohol to clean the entire Polar Pro chest band strap every 1-2 weeks. A microfiber will be better than tissue as it will avoid spreading lints which will make the chest belt more itchy. Do not clean the metallic connectors to the Polar H10 sensor, as ethanol will erode them.</li>
 </ul>
 </li>
 <li>Higher-grade alternatives (but with much shorter battery or storage space):
