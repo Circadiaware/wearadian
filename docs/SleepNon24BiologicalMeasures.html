@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020<br>
-Last update: October 2021.<br>
+Last update: November 2021.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -193,7 +193,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </ul>
 </li>
 <li>IMPORTANT: Instruct the subject to regularly check and reposition the CORE device to be flat on the skin, as it's crucial that the device be in full contact with the skin for precise measurements. It's often necessary when changing positions or when laying in the bed. It's possible to move the sensor around (eg, more on the thorax, completely on the side or even slightly on the back, can also be moved up and down) with no loss of accuracy, what matters is full skin contact.</li>
-<li>If the CORE cannot be discovered on the smartphone app anymore for unknown reasons and its green LED doesn't light up anymore, try to plug with the provided magnet cable to a computer USB port and the CORE, wait a few minutes, then disconnect. Connecting and disconnecting the CORE to the power outlet seems to systematically force it to turn back on. Nevertheless, even if there is no connection nor LED, the CORE continues to record data in the background even if it doesn't display it as long as there is enough battery left.</li>
+<li>If the CORE cannot be discovered on the smartphone app anymore for unknown reasons and its green LED doesn't light up anymore, try to plug with the provided magnet cable to a computer USB port and the CORE, wait a few minutes, then disconnect. Connecting and disconnecting the CORE to the power outlet seems to systematically force it to turn back on. Nevertheless, even if there is no connection nor LED, the CORE continues to record data in the background even if it doesn't display it as long as there is enough battery left.
+<ul>
+<li>Also the app only detects the CORE when the user is moving their chest. Rocking forward and backward while sitting on a chair is sufficient.</li>
+</ul>
+</li>
 <li>Alternative, but much less effective methods:
 <ul>
 <li>with clips: <a href="https://corebodytemp.com/coreclips/" title="https://corebodytemp.com/coreclips/" class="https">https://corebodytemp.com/coreclips/</a></li>
@@ -588,6 +592,7 @@ mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral
 <li>The CORE can record up to 3.5 days of data in its internal memory, after which data stops from recording further until download (ie, no rollover), but only with the RESEARCH model, which costs 999 CHF. The consumer-grade version that costs 250 CHF can only show the last 2 days of core body temperature and it does not allow downloads. The resolution is 1Hz. Breaks under 5 months when worn 24/7 with the L dominos, but likely much longer when using velcro.
 <ul>
 <li>Note that the CORE can either record 3.5 days at 1Hz sampling resolution with the RESEARCH license, or 6.5 days (or however long the battery can last) at 1 sample every 5 min in standard without the RESEARCH license by using the cloud, or both 1Hz sampling via logging (need RESEARCH license to see the option in the app) and 1 sample every 5 min via the cloud simultaneously but only for 3.5 days as the internal storage memory will then be full and no new data will be recorded/displayed in the app. Indeed, the RESEARCH license's logging feature is a limited space option, and then transferring data requires losing at least 3.5h for the transfer to complete, whereas the standard 1 sample every 5 minute sampling via the cloud transfers very fast under a few seconds to the cloud and works with a rollover (ie, data older than 2 days is overwritten), so that if you can recharge the device (even while wearing it - although note that the cable is very short), then you can continue to log data as long as you wish, just keep uploading data at least once every 2 days via the app.</li>
+<li>The RESEARCH license with the 1Hz resolution is useful if we want to study ultradian rhythms in addition to circadian rhythm, as a higher sampling resolution reduces <a href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3663600/" title="aliasing and spurious rhythms" class="https">aliasing and spurious rhythms</a>.</li>
 </ul>
 </li>
 <li>Use any Android smartphone, use the CORE app on the Play store to download the data. It takes about 3.5h currently and the phone must not be used during this time. WiFi and Bluetooth must both be enabled (because the data will be sent online to GreenTEG's servers - although a local copy will be directly available).
@@ -618,6 +623,7 @@ mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral
 <li>BEST TODO: try different body sites, with no bones below but organs (ie, a cavity)? A study shown that placing a zero-heat-flux sensor where there is tissues or organs below provides much more accurate measurements than sites where bones are below the skin. This makes sense since it's estimated that zero-heat-flux method can estimate temperature about <b>2cm below the skin and hence can measure the core body temperature if placed above a cavity</b>. See (for both claims): <a href="https://watermark.silverchair.com/v001t01a015-dmd2018-6930.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA8YwggPCBgkqhkiG9w0BBwagggOzMIIDrwIBADCCA6gGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJSyZzkzGmF0FhrBvAgEQgIIDeeaY424fFMxsfn93l0ooHNZ797biE_x4huoXdfokCGGnlF9CGWp0s0MOo5dw7miTQIiq2Vj_wyCD7LKK4tHxm-z1RV797y7NBkcTxSg3-hv9X_7wGJrUXCGaaNgh_Hl9BuR2QjW5iNizOjk4PgU-btnNA-YkI16MjgZn9MWJS80hcUbgRp7trHD5IsYGuCdhIKPvM5o91cuPKXrT8DnOlH6stBOlD-KBVlyI9wBMATheqcFOhH-VX_Q2yq7tTswDLMpZUl6dzob_KmXZLA9aa2TZg4_5_5dIR0yhUi9YODVnKoC7MumqiCETYhqCtR-17r7cbGBs5xYxyc4pyJP7zE8h5dewuipuagtlUerwjPQf-56KTNVcQ9Vq_hdKTTd83Giqxnu-LBVDd0vua_wHR99TNCkPQ2rOtdYLhjxbJC-zBlDjBXqw4UHN0OkB2hZT7IFABsHqg5YnTMdr55I403Cqw373sjD6Qo3zfmR-Ix4bVtiI9MAb1aTo8WOM94mpINHdVkARalA80YDCtQ6JIHKGgUUnGJkXfpm80Y-t5lPGxf-a4DrIsvQSxNKXUO4znXJa6Ed1D7SHbOr62qDNDrKJxR1J25Flv2kLJdDWh6w1-xNGdlEQs8W_JzQzsE_6n082GDxrKzZue-LwwOtE3qNFT5BKHBbgQS_-6xcYIPmDCVk5cPwyLy6EK1mmNJGb9vEZFaZbLllUUzP0HzoDt4GcUJnc9rl531JZwqK7QnCfo62Aw2mgfwI_j8UzuQeb4dL86yOOJ34E0rNws7RGNq3nLtsKD1E5YErVsQGum_0NH9A2fH6u2CQgo0WFhP8jF7EWSH1O4-6S5ql2cr9JLXrhsQ-CFroUT02MPHKysOw8AFotRTkFFuOGbjdO3PLIBDSMvwvPIrGf3vZ1d2hKKvw8getHGU5PFuD4yFuV_SN25tgIVgYa7EmwEbESR7a-9dsOSprbTYUdxuiIbySi5LcKtbRmo-xpkA2h2VeNngHeoOJdsZCXYLk6wMtWpC7w5w7Zk0l9fzFUBiEJXoux4xmUL5db8Xd5phICir0zKIgQRUGSJO9QYznKre3weWcNT6kfnNAMLrkDiJu32tZeWLatFcUgwCmZGeF3iRdbspJ22Ha1C3imiJE0rKDAPhB8PlptzKVIBmS2AFEQncdKY6pL-3ybDLcHUDs" title="TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA" class="https">TEMPERATURE MONITORING WITH ZERO HEAT FLUX TECHNOLOGY IN COMPARISON WITH THERMOCOUPLE NEEDLE PROBE DURING SELECTIVE HYPOTHERMIA</a>, Mohammad Fazel Bakhsheshi et al, 2018 <a href="https://doi.org/10.1115/DMD2018-6930" title="https://doi.org/10.1115/DMD2018-6930" class="https">https://doi.org/10.1115/DMD2018-6930</a></li>
 <li>Another great review on dual heat flux method: <a href="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" title="https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5" class="https">https://www.gssiweb.org/en/sports-science-exchange/Article/monitoring-internal-body-temperature#articleTopic_5</a></li>
 <li>Tip by GreenTEG Core personnel in private communications: "When you are offline, your data will be added to the cloud the next time you go back online (with the app opened on the History tab). It is important though that in the meantime, you do not reset your CORE, or let it run out of battery."</li>
+<li>Tip: never let the battery run out, otherwise the historical data will be lost!</li>
 </ul>
 </p>
 
@@ -799,6 +805,28 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 <li>"Cosine analysis of melatonin and oral temperature rhythms revealed a significant 24-hour pattern of salivary melatonin (p &lt; .05); however, no significant circadian pattern was found for oral temperature rhythm and an uncoupling with melatonin rhythm was observed (Fig. 3)." <a href="https://doi.org/10.1097/01.chi.0000181040.83465.48" title="https://doi.org/10.1097/01.chi.0000181040.83465.48" class="https">https://doi.org/10.1097/01.chi.0000181040.83465.48</a></li>
 <li><img src="./SleepNon24BiologicalMeasures_files/pasted_image002.png" width="400"></li>
 <li><img src="./SleepNon24BiologicalMeasures_files/pasted_image003.png" width="350"></li>
+</ul>
+</li>
+<li><b>BEST METHOD: double-plot actogram (conventional or heatmap) in Excel</b>, and application to any periodic data type (core body temperature, actigraphy, sleep ECG, etc) and to various circadian periods (including non-24!): <a href="https://pubmed.ncbi.nlm.nih.gov/31614567/" title="https://pubmed.ncbi.nlm.nih.gov/31614567/" class="https">https://pubmed.ncbi.nlm.nih.gov/31614567/</a> Oike H, Ogawa Y, Oishi K. Simple and Quick Visualization of Periodical Data Using Microsoft Excel. Methods Protoc. 2019 Oct 11;2(4):81. doi: 10.3390/mps2040081. PMID: 31614567; PMCID: PMC6961127.
+<ul>
+<li>Of course, this can "only" allow for the visualization of tens of thousands of data points. So for big datasets such as long term studies &gt; 6 months or 24/7 ECG, it's not going to work.</li>
+</ul>
+</li>
+<li>BEST METHOD: review of methods to analyze periodic timeseries: <a href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3663600/" title="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3663600/" class="https">https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3663600/</a>
+<ul>
+<li>See Figure 13, cosinor analysis allows to calculate period even when there is a lot of noise! <b>Periodogram</b>
+<ul>
+<li>Need at least 10 days of data to be reliable statistically</li>
+<li>Need to be continuous data (no discrete nor gaps eg during sleep) — EXCEPT if using <b>Lomb – Scargle periodogram or cosinor analysis.</b></li>
+</ul>
+</li>
+<li>cosinor analysis "is appropriate not only for <b>non-equidistant data</b> but also for <b>serially-independent data (that is, educed rhythms)</b>".
+<ul>
+<li>But require an estimation of the period, hence a periodogram can be useful as a first step!</li>
+<li>"MESOR (M, Midline Estimating Statistic Of Rhythm, a rhythm-adjusted mean that differs from the arithmetic mean when the data are not equidistant and/or do not cover an integer number of cycles)"</li>
+<li>Preferable over least-square and sum-of-squares regression fitting. But maybe these do not require any apriori period.</li>
+<li>"The single cosinor approach, which consists of fitting by least squares one or several cosine curves with or without polynomial terms to an individual time series (whether the data are serially-dependent or serially-independent as to individuals and/or as to the environment), has been complemented by the population-mean cosinor method that provides a summary of results from three or more individuals (Bingham et al. 1982; Halberg et al. 1967)."</li>
+</ul></li>
 </ul></li>
 </ul>
 </p>
@@ -1061,6 +1089,9 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </li>
 <li>BEST METHODS: "we analysed data from nineteen different laboratory studies that measured melatonin suppression, circadian phase resetting and/or alerting responses in humans to a wide array of stimulus types, intensities and durations with or without pupil dilation. Using newly established SI-compliant metrics to quantify ipRGC-influenced responses to light, we show that <b>melanopic illuminance consistently provides the best available predictor for responses of the human circadian system</b>. In almost all cases, melanopic illuminance is able to fully account for differences in sensitivity to stimuli of varying spectral composition, acting to drive responses that track variations in illumination characteristic of those encountered over civil twilight (~1-1000 lux melanopic equivalent daylight illuminance)." <a href="https://doi.org/10.1111/jpi.12655" title="https://doi.org/10.1111/jpi.12655" class="https">https://doi.org/10.1111/jpi.12655</a></li>
 <li>METHOD: "We chose the violet (410 nm) and the blue (440 nm) wavelengths known to be harmful for the retina [28,29], the turquoise blue (480 nm) implicated in circadian rhythms [30], the green light (510 nm) reported to be soothing for photophobic migraineurs [31,32] and also the red light (630 nm). The part of the plate was kept in the dark for the control condition; the red-illuminated part served as a second control since, to our knowledge, there are no data about any damage from red-light exposure. We used the irradiance range that would approximate the real-life conditions. Indeed, according to recent measurements performed in the R&amp;D department of Essilor (personal communication), on a sunny slightly cloudy day, we can easily be exposed to 4.89 mW/cm2 of 380–780 nm light (entire solar visible spectrum) and to 1.28 and 1.4 mW/cm2 of its blue (380–500 nm) and yellow (500–600 nm) spectral parts respectively (at 10 a.m. in the center Paris at the end of May). We set the illumination time at 3 h since longer exposures to violet light were too harmful for cells and the shorter ones did not induce any cell death (Fig. S3)." <a href="https://pubmed.ncbi.nlm.nih.gov/30496813/" title="https://pubmed.ncbi.nlm.nih.gov/30496813/" class="https">https://pubmed.ncbi.nlm.nih.gov/30496813/</a></li>
+</ul>
+<ul>
+<li>BEST TOOL: Tools for simulating human circadian rhythms for a given light schedule <a href="https://github.com/Arcascope/HCRSimPY" title="https://github.com/Arcascope/HCRSimPY" class="https">https://github.com/Arcascope/HCRSimPY</a> and <a href="https://doi.org/10.1177%2F0748730419878298" title="https://doi.org/10.1177%2F0748730419878298" class="https">https://doi.org/10.1177%2F0748730419878298</a></li>
 </ul>
 </p>
 
