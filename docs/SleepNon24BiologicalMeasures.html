@@ -80,8 +80,8 @@ Wearables list:<br>
 <li>Polar H10 (ECG + 3-axis actigraphy), combined with long battery dedicated Android smartphone <a href="https://www.gsmarena.com/realme_6i-10130.php" title="Realme i6" class="https">Realme i6</a> (160€) and <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="this android app" class="https">this android app</a>.</li>
 <li>GreenTEG CORE (core body temperature + trunk skin temperature), with a custom velcro attachment system.</li>
 <li>Axivity AX6 (6-axis actigraphy).</li>
-<li>iButtons DS1925L (or DS1925EVKIT starter kit to also get the USB adapter to download the data) on a cotton sports wrist-band attached with a hooks-type solid base velcro (wrist skin temperature).</li>
-<li>Custom arduino-based photosensor (light intensity and color sensor).</li>
+<li>Three iButtons DS1925L (or DS1925EVKIT starter kit to also get the USB adapter to download the data) on a cotton sports wrist-band attached with a hooks-type solid base velcro (wrist skin temperature).</li>
+<li>LYS Button for light sensing, with a dedicated iPhone device to upload collected data (iPhone 7 with iOS 15.3 tested to work OK).</li>
 </ul>
 </p>
 
@@ -153,6 +153,32 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 </li>
 <li>Silicone does not cause allergies: <a href="https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/" title="https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/" class="https">https://lymed.fi/en/ufaqs/tuotteen-silikoninauha-aiheuttaa-ihoarsytysta-ja-nappyloita-onko-kyseessa-silikoniallergia-ja-miten-voi-ehkaista-sita/</a> "Based on literature, most of the reactions caused by silicones are non-allergic and non-specific. It is usually plain irritation, caused by skin’s properties, skin care products and hygiene – and the combination of them all. Individual elements, like pH of the skin, microbes, sweat, skin lotions and personal hygiene, can cause the irritation. Irritation can increase when sweating is more prominent – for example in higher temperatures. One can remove some of the irritation by cleaning the silicone band and the skin below it more frequently than before. The silicone band can be wiped clean several times a day. The skin below can be left lotionless."</li>
 </ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h3>Consumables</h3>
+
+<p>
+A few items must be renewed regularly:
+</p>
+
+<p>
+<ul>
+<li>Accessories for ECG Polar Pro H10:
+<ul>
+<li>Polar Pro Chest Strap must be renewed every 4-6 months (depending on wear/twisting), costs about 35-40 euros.</li>
+<li>Battery CR2320 must be replaced once every 10 days.</li>
+</ul>
+</li>
+<li>Accessories for GreenTEG Core:
+<ul>
+<li>The velcro bands (for the DIY attachment system) wear down slowly and need replacement only about once per year. If the device is shared among multiple different patients, it needs to be replaced each time as it looks dirty fast since it captures fluffs from the chest belt, although if it is cleaned regularly with alcohol it isn't really.</li>
+</ul>
+</li>
+<li>iButtons:
+<ul>
+<li>if using the DS1925L variants, they can last several years, but once their battery is depleted, they must be replaced by new ones as they are not rechargeable. There are some papers showing how to manually replace the battery, but then the device is not airtight anymore and hence more prone to dysfunctions because of water.</li>
 </ul></li>
 </ul>
 </p>
@@ -554,6 +580,25 @@ mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral
 </p>
 
 <h3>Wrist Skin temperature Thermocron iButton DS1925L (or DS1922L)</h3>
+
+<br>
+
+<h4>Positioning</h4>
+
+<p>
+<ul>
+<li>Three iButtons DS1925L are used for this complete protocol, all attached using velcro to a sports cotton wristband worn on the <b>non-dominant arm</b>:
+<ol type="1" start="1">
+<li>the most important one positioned inside the wristband on top of the radial artery. This collects circadian rhythm pertinent data.</li>
+<li>one positioned dorsal interior, which means that it is attached inside the wristband but on the opposite side of the arm compared to the first iButton, to collect skin temperature at another position on the arm that apriori does not reflect the circadian rhythm. This is a sanity check.</li>
+<li>one positioned ventral exterior, which means it is attached just beside the first iButton but on the exterior of the wristband instead of the interior, to collect ambient temperature but with a positioning similar to the first iButton. This is a sanity check.</li>
+</ol>
+</li>
+<li>For end users, only the first iButton is useful, the other 2 are only for sanity check for research purposes. Indeed, the 2 other iButtons data can be used to demonstrate that the first iButton does really reflect the circadian rhythm variations, and not just limbs skin temperature (prone to influences such as washing hands) nor ambient temperature.</li>
+</ul>
+</p>
+
+<h4>Data collection</h4>
 
 <p>
 <ul style='padding-left: 30pt'>
