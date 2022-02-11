@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020<br>
-Last update: January 2022.<br>
+Last update: February 2022.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -90,7 +90,7 @@ After many iterations, since 2021-01-21 the system consists in 3 wearables:<br>
 <ol type="1" start="1">
 <li>on a chest belt, the following sensors are attached: the ECG Polar H10 in the center of the trunk + Core body temperature sensor GreenTEG CORE on the side of the trunk using a DIY velcro scratch and loop.</li>
 <li>on the non-dominant (here: left) forearm, the subject wears a cotton sports wrist band with the 3 iButtons to measure wrist skin temperature or ambient temperature + 6-axis actigraphy device AX-6 on the exterior. They are all attached with velcro on the cotton wrist band.</li>
-<li>a pendant hung on a necklace, with a photosensor for light intensity and color. This device is not yet realized.</li>
+<li>a pendant hung on a necklace or on the shirt neck, with a photosensor for ambient light conditions (light intensity and color), plus experimental usage history feature in new Luminette v3 devices to monitor light therapy use. The chosen device is LYS for ambient lighting measures. Alternatively, partial instructions to make a DIY light sensor are provided below, but this solution was not chosen due to the difficulties in calibrating DIY light sensors. Since the sensor is far from the eyes, it cannot detect light therapy when done with light therapy glasses such as Luminette, hence light therapy usage is monitored with Luminette's experimental history feature transferred via Bluetooth.</li>
 </ol>
 </p>
 
@@ -319,8 +319,11 @@ See also the other companion projects on Circadiaware: <a href="https://github.c
 <ul>
 <li>Ideally, melanopic light intensity (mLux) aka alpha-opic light, need to be sensed at the very least. Photopic illuminance (lux, aka light sensor) and full light spectrum are also desirable.</li>
 <li>The selected light sensors are worn as pendants. A study shown <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892948/" title="pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)" class="https">pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)</a>, at least in terms of photopic illuminance since melanopic illuminance was not tested, and they are much more comfortable.</li>
-<li>The three available and selected sensors are:</li>
 </ul>
+</p>
+
+<p>
+The three available and selected sensors are:
 </p>
 
 <h4>Adalogger + RTC module</h4>
@@ -427,13 +430,37 @@ A custom-made Arduino-based light sensor, can capture both light intensity and c
 <p>
 Lys Button is a light sensor designed specifically by and for circadian rhythm researchers: <a href="https://lystechnologies.io/for-research/" title="https://lystechnologies.io/for-research/" class="https">https://lystechnologies.io/for-research/</a><br>
 <ul style='padding-left: 30pt'>
-<li>costs 151 pounds (without shipping) per person per year (96 pounds for the yearly renewal, the initial higher price includes one Lys Button sensor) to get access to the raw data. Select the Lys Plan &gt; Research &gt; LYS Light Diet® app and Data Platform</li>
-<li>It is already calibrated</li>
+<li>costs 151 pounds (without shipping) per person per year (96 pounds for the yearly renewal, the initial higher price includes one Lys Button sensor) and access to the Data Platform to get access to the raw data. Select the Lys Plan &gt; Research &gt; LYS Light Diet® app and Data Platform. <a href="https://lystechnologies.io/pricing/" title="https://lystechnologies.io/pricing/" class="https">https://lystechnologies.io/pricing/</a></li>
+<li>It is already calibrated.</li>
 <li>Can capture mLux, lux, spectrum and even 3-axis actigraphy.</li>
 <li>Already used by other circadian rhythm researchers.</li>
 <li>Can be clipped on clothes, or worn as a pendant if I make a custom support.</li>
 <li>Thank you to Coral for the tip!</li>
-<li>The Android app does not yet work, raw data is not sent. The iOS app should work according to the manufacturer. They are currently investigating this issue (as of October 2021).</li>
+<li>The Android app does not yet work, raw data is not sent. The iOS app works according to the manufacturer. They are currently investigating this issue (as of October 2021) but no ETA.</li>
+<li><a href="https://lystechnologies.io/help/" title="Internal storage capacity is 18h" class="https">Internal storage capacity is 18h</a>, hence data must ideally be transferred twice a day in bluetooth via the app (every 12h).</li>
+<li>Technical specs: <a href="https://lystechnologies.io/help/" title="https://lystechnologies.io/help/" class="https">https://lystechnologies.io/help/</a>
+<ul>
+<li>Spectral range of the LYS Button: LYS is an RGB sensor with a spectral range from 350-750nm.</li>
+<li>Intensity range of the devices have in lux: 0-100.000 Lux.</li>
+<li>Units of measurement and definition metrics:
+<ul>
+<li>Kelvin: Colour temperature measured in Kelvin</li>
+<li>RGB: Counts/μW/cm^2</li>
+<li>Lux: Light intensity measured in Lux</li>
+<li>Movement (3-axis accelerometer): Proxy for activity. Count the number of times acceleration exceeds 0.1875g (g=gravitational force) in any of the 3 axis over the logging time interval</li>
+<li>mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral age correction</li>
+</ul></li>
+</ul></li>
+</ul>
+</p>
+
+<h4>Luminette usage history via Bluetooth</h4>
+
+<p>
+<ul>
+<li>A new batch of Luminette v3 destined to the American market is integrating a usage history feature that can be collected with a new app (not the ones on the app stores) via Bluetooth, although it works only on iOS 14+. As of February 2022, this feature (and app) is still experimental and only available to selected researchers and partners, so this is not accessible to consumers.</li>
+<li>Luminette usage history is necessary to complement cloth or pendant-worn light sensors such as LYS, as they are too far to sense the light from Luminette, and hence cannot track the usage (duration and timing) of light therapy.</li>
+<li>Alternative: light therapy usage could be monitored manually by the user simply writing down the time of start/end of each light therapy session in a file. An easy solution is to use a spreadsheet. A semi-automatic and faster solution would be to use a "tapper" software to start/stop tracking at the tap of a button, which is the goal envisioned for the <a href="https://github.com/Circadiaware/circalog" title="Circalog software" class="https">Circalog software</a> (still in development).</li>
 </ul>
 </p>
 
@@ -708,19 +735,19 @@ mLux: melanopic lux, α-opic equivalent daylight (D65) illuminance with spectral
 <h4>Positioning</h4>
 
 <p>
+The light sensor is worn either as a short-laced pendant or on the neck of a shirt, both being at about the same position (a few cm below the chin). A study shown <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892948/" title="pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)" class="https">pendants light sensors measure light with a close accuracy compared to eye-level light sensors (and much more than wristband light sensors)</a>, at least in terms of photopic illuminance since melanopic illuminance was not tested, and this positioning is much more comfortable than eye-level worn sensors such as light sensors in glasses-like structures.
+</p>
+
+<h4>Calibration (for DIY light sensors)</h4>
+
+<p>
 <ul style='padding-left: 30pt'>
 <li>BEST METHODS: <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a> "<b>Participants were instructed to wear the lux meter over clothing and to leave it on the bedside table during sleep. To compare the light exposure of our subjects to the natural sunlight cycle, environmental light intensity was recorded for 1 wk in the same area and for the same experimental period. To do this, a Hobo sensor was placed outdoors, facing North in a shady location to avoid direct light irradiance.</b>"
 <ul>
 <li>Same method as used for Lys</li>
 <li>Or also here in a Nature paper: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a></li>
-</ul></li>
 </ul>
-</p>
-
-<h4>Calibration</h4>
-
-<p>
-<ul style='padding-left: 30pt'>
+</li>
 <li>BEST METHODS: for calibration of light intensity and color (spectrometer) sensor, see this study as a reference: <a href="https://doi.org/10.1038/s41598-020-75622-4" title="https://doi.org/10.1038/s41598-020-75622-4" class="https">https://doi.org/10.1038/s41598-020-75622-4</a> -- they used certifiably calibrated light bulbs as one of the ways to calibrate.
 <ul>
 <li>they also used a mini spectrometer sensor part: C12666MA from Hamamatsu Photonics "The device (Fig. 1) measured 44 × 20 × 29 mm, weighed 20 g, and was designed to be attached to clothing near to eye level. The device contained a C12666MA mini-spectrometer (spectral range 340–780 nm) from Hamamatsu Photonics, chosen due to its compactness, relatively high spectral resolution (15 nm), and high dynamic range. It is hermetically sealed and performs array spectroscopy using an array of 256 CMOS pixels with a reflective blazed grating for light diffraction."</li>
@@ -786,7 +813,38 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 </ul>
 </p>
 
-<br>
+<h4>Data collection with Lys Button</h4>
+
+<p>
+Prerequisites:<br>
+<ul>
+<li>Launch the Lys app on iOS (tested on iOS 15.3 on an iPhone 7). The Android app does not work (it launches but does not send data to the cloud server) as of Feb 2022.</li>
+<li>Create a (user) account in the app</li>
+<li>Create another account on the Data Platform website using the provided credential in the e-mail post sale. This will make you create another account, which is the administrator/researcher account. It is different from the user account in the app. This requires a license to access the Data Platform (see in the Research tab in Pricing &gt; LYS Light Diet app and Data Platform: <a href="https://lystechnologies.io/pricing/" title="https://lystechnologies.io/pricing/" class="https">https://lystechnologies.io/pricing/</a>)</li>
+<li>In the website, add the user account (by e-mail) to be able to collect their data.</li>
+</ul>
+</p>
+
+<p>
+User procedure to upload data (must be done by the user at least once every 18h to send data to the cloud, otherwise older data is lost, hence instruct user to do this ideally twice a day, at wake up and before sleep):<br>
+<ol type="1" start="1">
+<li>Launch the Lys app on iOS</li>
+<li>Switch to the Now tab, and tap Scan with Lys Button</li>
+</ol>
+</p>
+
+<p>
+Admin procedure to download data (on the website):<br>
+<ol type="1" start="1">
+<li>Select Date Range (if the user just uploaded data, then select date range again even if it was already selected). Keep in mind the date range does NOT include the last selected day.</li>
+<li>Click on Download Device Data. This is the most important data, but other data types are also available.</li>
+</ol>
+</p>
+
+<p>
+Note that the "NotWorn" value is not reliable.<br>
+Note2: the LYS sensor is unable to detect the use of Luminette, this sensor is hence only to measure ambient lighting conditions, not monitor light therapy usage.
+</p>
 
 <h2>Data cleaning and preprocessing</h2>
 
