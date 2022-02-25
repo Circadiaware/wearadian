@@ -1,0 +1,565 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+    <title>SleepNon24LightSensorNotes</title>
+
+    <meta name="generator" content="Zim Zim 0.67-merge, based on the Ecodiv-responsive template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+
+    <!-- Scripts -->
+    <script type='text/javascript' src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+    
+    <!-- !! Different stylesheets for different screen sizes. Adapt to your likening-->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <link rel="stylesheet" media="screen and (min-width: 741px)" href=../resources/style.css>
+    <link rel="stylesheet" media="screen and (max-width: 740px)" href=../resources/style_mobile.css>
+
+</head>
+<body onload="$.mobile.silentScroll(window.scrollY);" <!-- fix for jquery-mobile always scrolling to top at loading, see https://stackoverflow.com/questions/15255719/jquery-mobile-prevent-scroll-to-top-before-page-transition --> > 
+    
+    <!-- See the Zim help file on templates for options -->    <div class="container">
+        <div data-role="page" class="ui-responsive-panel">
+            
+            <!-- Header / title -->
+    
+            <div data-role="header" data-position="fixed">
+                <a href="#nav-panel" data-icon="bars">Table of content</a> 
+                
+                <!-- !! Fill in the website title, by default: Notebook -->
+                <h1>Notebook - SleepNon24LightSensorNotes</h1> 
+                
+                <!-- !! Optionally, create button with custom link. To apply uncomment the next line and fill in the link (and optionally change the button and text)) -->
+                <!-- <a href="http://my.website.org" data-icon="home">Main website</a> -->
+                
+            </div>
+            
+            <!-- Warning message if java script is disabled -->
+            <noscript>
+                <div style="border: 1px solid purple; padding: 10px">
+                    <span style="color:red">This page is best viewed with JavaScript enabled!</span>
+                </div>
+            </noscript>
+
+            <!-- Page content -->
+            
+            <div data-role="content" class="content">
+                    <h1>SleepNon24LightSensorNotes <a name='Perso:MyIssues:SleepNon24:Wearadian:SleepNon24LightSensorNotes'></a></h1>
+    
+                    <p>
+Créée le jeudi 22 octobre 2020
+</p>
+
+<p>
+Best vendors: mchobby.be and mouser.be
+</p>
+
+<p>
+BEST FINAL LIGHT LUX AND SPECTROMETER (COLOR) SENSOR DIY:<br>
+<ul style='padding-left: 30pt'>
+<li>Adafruit Feather M0 DataLogger - ATSAMD21 25€ at mchobby.be <a href="https://shop.mchobby.be/fr/feather-adafruit/829-feather-m0-datalogger-atsamd21-3232100008298-adafruit.html?search_query=Adalogger&results=2" title="https://shop.mchobby.be/fr/feather-adafruit/829-feather-m0-datalogger-atsamd21-3232100008298-adafruit.html?search_query=Adalogger&amp;results=2" class="https">https://shop.mchobby.be/fr/feather-adafruit/829-feather-m0-datalogger-atsamd21-3232100008298-adafruit.html?search_query=Adalogger&amp;results=2</a>
+<ul>
+<li>supports CircuitPython! <a href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html" title="https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html" class="https">https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html</a>
+<ul>
+<li>CircuitPython can run as a kernel inside Jupyter Notebook, hence can prototype interactively the board! <a href="https://cleoqc.wordpress.com/2019/02/24/jupyter-notebook-and-circuitpython/" title="https://cleoqc.wordpress.com/2019/02/24/jupyter-notebook-and-circuitpython/" class="https">https://cleoqc.wordpress.com/2019/02/24/jupyter-notebook-and-circuitpython/</a></li>
+<li><a href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/sdcardio/index.html" title="https://circuitpython.readthedocs.io/en/latest/shared-bindings/sdcardio/index.html" class="https">https://circuitpython.readthedocs.io/en/latest/shared-bindings/sdcardio/index.html</a></li>
+<li><a href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/circuitpython" title="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/circuitpython" class="https">https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/circuitpython</a></li>
+</ul>
+</li>
+<li>TUTO: <a href="https://learn.adafruit.com/adafruit-feather-m0-adalogger/" title="https://learn.adafruit.com/adafruit-feather-m0-adalogger/" class="https">https://learn.adafruit.com/adafruit-feather-m0-adalogger/</a></li>
+<li>Alternative: ItsyBitsy even smaller than Feather: <a href="https://learn.adafruit.com/introducting-itsy-bitsy-32u4" title="https://learn.adafruit.com/introducting-itsy-bitsy-32u4" class="https">https://learn.adafruit.com/introducting-itsy-bitsy-32u4</a> -- with small charger: <a href="https://learn.adafruit.com/infinity-mirror-coaster/lipo-backpack-wiring" title="https://learn.adafruit.com/infinity-mirror-coaster/lipo-backpack-wiring" class="https">https://learn.adafruit.com/infinity-mirror-coaster/lipo-backpack-wiring</a></li>
+<li>Alternative: Adafruit Feather M0 Express - Designed for CircuitPython <a href="https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython" title="https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython" class="https">https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython</a> et <a href="https://shop.mchobby.be/fr/feather-adafruit/1119-feather-m0-express-atsamd21-cortex-m0-circuitpython-3232100011199-adafruit.html" title="https://shop.mchobby.be/fr/feather-adafruit/1119-feather-m0-express-atsamd21-cortex-m0-circuitpython-3232100011199-adafruit.html" class="https">https://shop.mchobby.be/fr/feather-adafruit/1119-feather-m0-express-atsamd21-cortex-m0-circuitpython-3232100011199-adafruit.html</a>
+<ul>
+<li>à combiner avec: <a href="https://shop.mchobby.be/fr/feather-adafruit/1056-adalogger-featherwing-rtc-pcf8523-microsd-3232100010567-adafruit.html" title="https://shop.mchobby.be/fr/feather-adafruit/1056-adalogger-featherwing-rtc-pcf8523-microsd-3232100010567-adafruit.html" class="https">https://shop.mchobby.be/fr/feather-adafruit/1056-adalogger-featherwing-rtc-pcf8523-microsd-3232100010567-adafruit.html</a></li>
+<li>only this featherwing has a RTC and microSD combined, else the Feather M0 Datalogger does not have RTC - NO, Adalogger M0 do have RTC! <a href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html" title="https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html" class="https">https://circuitpython.readthedocs.io/en/latest/shared-bindings/support_matrix.html</a>
+<ul>
+<li>See also: <a href="https://github.com/arduino-libraries/RTCZero" title="https://github.com/arduino-libraries/RTCZero" class="https">https://github.com/arduino-libraries/RTCZero</a></li>
+<li>and <a href="https://github.com/cavemoa/Feather-M0-Adalogger/blob/master/SimpleSleep/SimpleSleep.ino" title="https://github.com/cavemoa/Feather-M0-Adalogger/blob/master/SimpleSleep/SimpleSleep.ino" class="https">https://github.com/cavemoa/Feather-M0-Adalogger/blob/master/SimpleSleep/SimpleSleep.ino</a></li>
+</ul>
+</li>
+<li>Is RTC (real time clock) necessary? <a href="https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock" title="https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock" class="https">https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-real-time-clock</a></li>
+</ul>
+</li>
+<li>Alternative: ESP32, includes bluetooth, wifi and sd card: <a href="https://www.instructables.com/ESP32-BLE-Android-App-Arduino-IDE-AWESOME/?amp_page=true" title="https://www.instructables.com/ESP32-BLE-Android-App-Arduino-IDE-AWESOME/?amp_page=true" class="https">https://www.instructables.com/ESP32-BLE-Android-App-Arduino-IDE-AWESOME/?amp_page=true</a>
+<ul>
+<li>Board was made in 2020, compatible with MicroPython: <a href="https://makeradvisor.com/esp32-development-boards-review-comparison/" title="https://makeradvisor.com/esp32-development-boards-review-comparison/" class="https">https://makeradvisor.com/esp32-development-boards-review-comparison/</a></li>
+<li>Adafruit esp32 highest quality with lipoly charger (and maybe with CircuitPython?)</li>
+<li>NO: the BLE shares the connection with Wifi so it consumes way too much battery! 10x more than others! <a href="https://www.esp32.com/viewtopic.php?t=13963" title="https://www.esp32.com/viewtopic.php?t=13963" class="https">https://www.esp32.com/viewtopic.php?t=13963</a> — but might be fixed in the future: <a href="https://github.com/espressif/esp-idf/issues/947#issuecomment-500312453" title="https://github.com/espressif/esp-idf/issues/947#issuecomment-500312453" class="https">https://github.com/espressif/esp-idf/issues/947#issuecomment-500312453</a></li>
+<li><a href="https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/" title="https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/" class="https">https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/</a></li>
+<li><a href="https://stackoverflow.com/questions/23049137/bluetooth-low-energy-devices-go-to-deep-sleep-in-transactions/23077940" title="https://stackoverflow.com/questions/23049137/bluetooth-low-energy-devices-go-to-deep-sleep-in-transactions/23077940" class="https">https://stackoverflow.com/questions/23049137/bluetooth-low-energy-devices-go-to-deep-sleep-in-transactions/23077940</a></li>
+<li><a href="https://hal.archives-ouvertes.fr/hal-01775064/document" title="https://hal.archives-ouvertes.fr/hal-01775064/document" class="https">https://hal.archives-ouvertes.fr/hal-01775064/document</a></li>
+<li>BLE Bluetooth lower consumption than ANT+ and ZigBee <a href="https://www.researchgate.net/publication/261478466_Power_consumption_analysis_of_Bluetooth_Low_Energy_ZigBee_and_ANT_sensor_nodes_in_a_cyclic_sleep_scenario" title="https://www.researchgate.net/publication/261478466_Power_consumption_analysis_of_Bluetooth_Low_Energy_ZigBee_and_ANT_sensor_nodes_in_a_cyclic_sleep_scenario" class="https">https://www.researchgate.net/publication/261478466_Power_consumption_analysis_of_Bluetooth_Low_Energy_ZigBee_and_ANT_sensor_nodes_in_a_cyclic_sleep_scenario</a></li>
+<li><a href="https://www.adafruit.com/product/3405" title="https://www.adafruit.com/product/3405" class="https">https://www.adafruit.com/product/3405</a></li>
+</ul>
+</li>
+<li><b>BEST Alternative: Adafruit Feather nRF52840 Express (nRF52840)</b> <a href="https://learn.adafruit.com/adafruit-feather/bluetooth-feathers" title="https://learn.adafruit.com/adafruit-feather/bluetooth-feathers" class="https">https://learn.adafruit.com/adafruit-feather/bluetooth-feathers</a>
+<ul>
+<li>with low-profile Bluetooth, can act as central (like a phone connecting to a device - perfect for heart rate monitor in combination with Polar H10)</li>
+<li>compatible with Circuit Python</li>
+<li>Can add the microsd adalogger featherwing for microsd card logging + RTC</li>
+<li>power consumption 10ua/h! Single chipset doing both Bluetooth and the main processing! <a href="https://devzone.nordicsemi.com/cfs-file/__key/communityserver-discussions-components-files/4/nRF52840_5F00_currentconsumption.PNG" title="https://devzone.nordicsemi.com/cfs-file/__key/communityserver-discussions-components-files/4/nRF52840_5F00_currentconsumption.PNG" class="https">https://devzone.nordicsemi.com/cfs-file/__key/communityserver-discussions-components-files/4/nRF52840_5F00_currentconsumption.PNG</a> (mirror: <a href="./SleepNon24LightSensorNotes_files/nRF52840_currentconsumption.PNG" title=".\nRF52840_currentconsumption.PNG" class="file">.\nRF52840_currentconsumption.PNG</a> )</li>
+<li>nRF52840 supports Bluetooth 5.2!</li>
+<li>Likely lower consumption than PyBoard D but need to solder the Adafruit Featherwing myself (although yes it is compatible it was tested).</li>
+</ul>
+</li>
+<li><b>BEST ALTERNATIVE: pyBoard D</b>, tout en un avec micro SD card et Bluetooth LE
+<ul>
+<li><a href="https://shop.mchobby.be/fr/micropython/1467-pyboard-d-sf6w-stm32f767-wifi-et-bluetooth-3232100014671.html" title="https://shop.mchobby.be/fr/micropython/1467-pyboard-d-sf6w-stm32f767-wifi-et-bluetooth-3232100014671.html" class="https">https://shop.mchobby.be/fr/micropython/1467-pyboard-d-sf6w-stm32f767-wifi-et-bluetooth-3232100014671.html</a></li>
+<li>has RTC</li>
+<li>has Bluetooth 4.1 (LE only, classic in the future)</li>
+<li>supports MicroPython</li>
+<li>low battery consumption: <a href="https://forum.micropython.org/viewtopic.php?t=7084" title="https://forum.micropython.org/viewtopic.php?t=7084" class="https">https://forum.micropython.org/viewtopic.php?t=7084</a></li>
+<li><a href="https://github.com/peterhinch/micropython-micropower/blob/master/HARDWARE.md" title="https://github.com/peterhinch/micropython-micropower/blob/master/HARDWARE.md" class="https">https://github.com/peterhinch/micropython-micropower/blob/master/HARDWARE.md</a> — supports for pyboard D <a href="https://github.com/peterhinch/micropython-micropower" title="https://github.com/peterhinch/micropython-micropower" class="https">https://github.com/peterhinch/micropython-micropower</a>
+<ul>
+<li>"The Pyboard can be used to build systems with extremely low power consumption, and it is possible to build systems capable of running for over a year on standard batteries such as AA cells or even coin cells. With the Pyboard 1.x series, achieving the lowest possible power consumption where peripheral devices are attached requires a little additional hardware. The Pyboard D overcomes this requirement by virtue of a software switchable 3.3V regulator which also powers the I2C pullups. Broadly there are two approaches, depending on the acceptable level of power consumption. If an idle current in the range of 500uA to 1mA is acceptable, code can be largely conventional with pyb.stop() being employed to reduce power consumption during periods when the Pyboard is idle."</li>
+</ul>
+</li>
+<li>to test power consumption: <a href="https://www.aliexpress.com/item/32855845265.html" title="https://www.aliexpress.com/item/32855845265.html" class="https">https://www.aliexpress.com/item/32855845265.html</a></li>
+<li>Bluetooth now supported in PyBoard D and MicroPython: <a href="https://forum.micropython.org/viewtopic.php?t=6274" title="https://forum.micropython.org/viewtopic.php?t=6274" class="https">https://forum.micropython.org/viewtopic.php?t=6274</a></li>
+<li>BLE-only (no classic bluetooth) but supports central bluetooth (acting as a phone to receive data): <a href="https://github.com/micropython/micropython/blob/v1.13/examples/bluetooth/ble_simple_central.py" title="https://github.com/micropython/micropython/blob/v1.13/examples/bluetooth/ble_simple_central.py" class="https">https://github.com/micropython/micropython/blob/v1.13/examples/bluetooth/ble_simple_central.py</a></li>
+<li><a href="https://docs.micropython.org/en/latest/library/ubluetooth.html" title="https://docs.micropython.org/en/latest/library/ubluetooth.html" class="https">https://docs.micropython.org/en/latest/library/ubluetooth.html</a></li>
+<li>Dimensions: about 2x4cm : <a href="https://hackaday.com/2019/03/20/new-part-day-pyboard-d-is-smaller-wireless-and-has-expansion-modules/" title="https://hackaday.com/2019/03/20/new-part-day-pyboard-d-is-smaller-wireless-and-has-expansion-modules/" class="https">https://hackaday.com/2019/03/20/new-part-day-pyboard-d-is-smaller-wireless-and-has-expansion-modules/</a></li>
+<li><a href="https://blog.nordicsemi.com/getconnected/the-difference-between-classic-bluetooth-and-bluetooth-low-energy" title="https://blog.nordicsemi.com/getconnected/the-difference-between-classic-bluetooth-and-bluetooth-low-energy" class="https">https://blog.nordicsemi.com/getconnected/the-difference-between-classic-bluetooth-and-bluetooth-low-energy</a></li>
+<li>BLE is low consumption but slow: <a href="https://www.thedroidsonroids.com/blog/bluetooth-classic-vs-bluetooth-low-energy-ble" title="https://www.thedroidsonroids.com/blog/bluetooth-classic-vs-bluetooth-low-energy-ble" class="https">https://www.thedroidsonroids.com/blog/bluetooth-classic-vs-bluetooth-low-energy-ble</a></li>
+<li>Polar H10 battery duration is 400h with both BLE and 5GHz enabled! If only BLE with 2.4GHz (smartphone), then maybe twice the battery? <a href="https://www.polar.com/blog/new-polar-h10-heart-rate-sensor-2017/" title="https://www.polar.com/blog/new-polar-h10-heart-rate-sensor-2017/" class="https">https://www.polar.com/blog/new-polar-h10-heart-rate-sensor-2017/</a> — also confirms that the internal memory offline recording can only be started through the Polar Beat app at the moment</li>
+<li>Polar Beat can update Polar H10 firmware: <a href="https://support.polar.com/be-fr/support/how_can_i_update_polar_h10" title="https://support.polar.com/be-fr/support/how_can_i_update_polar_h10" class="https">https://support.polar.com/be-fr/support/how_can_i_update_polar_h10</a></li>
+<li>"Direction finding is a major feature of Bluetooth 5.1, which brings the possibility of absolute positioning of products and things in three-dimensional space to the world of low-power wireless connectivity. [...] Real-Time Location Services (RTLS) using Bluetooth have been available for a few years now. This became possible with the introduction of Bluetooth beacons, which could give an approximation of distance, or proximity, between objects." <a href="https://blog.nordicsemi.com/getconnected/bluetooth-5.1-puts-bluetooth-in-its-place" title="https://blog.nordicsemi.com/getconnected/bluetooth-5.1-puts-bluetooth-in-its-place" class="https">https://blog.nordicsemi.com/getconnected/bluetooth-5.1-puts-bluetooth-in-its-place</a></li>
+</ul></li>
+</ul>
+</li>
+<li>LiPo batteries?
+<ul>
+<li>BEST SUMMARY:
+<ul>
+<li>NIMh can sustain much higher temperature than Lipo (NIMh used for surgical devices), but for my use LiPo should be fine because human is wearing it so unlikely to reach max temperature 60-80°C</li>
+<li>But for added security:
+<ul>
+<li>Use polyimide tape (kapton tape) to insulate battery by wrapping it several times inside</li>
+<li>Get a LiPo battery with temperature control in the protection control board (lipo thermistance)</li>
+<li>Peut aussi acheter des dissipateur d'énergie thermique en céramique? À coller sur le film poliymide? <a href="https://shop.mchobby.be/fr/raspberry-pi-3/314-dissipateur-de-chaleur-pour-raspberry-3232100003149.html" title="https://shop.mchobby.be/fr/raspberry-pi-3/314-dissipateur-de-chaleur-pour-raspberry-3232100003149.html" class="https">https://shop.mchobby.be/fr/raspberry-pi-3/314-dissipateur-de-chaleur-pour-raspberry-3232100003149.html</a></li>
+</ul></li>
+</ul>
+</li>
+<li>WARNINGS: <a href="https://www.youtube.com/watch?v=8Cmq5H1ziOE" title="https://www.youtube.com/watch?v=8Cmq5H1ziOE" class="https">https://www.youtube.com/watch?v=8Cmq5H1ziOE</a></li>
+<li>exposed to sunlight! So how to avoid issues?</li>
+<li>interesting proof of concept, but solar panel is likely large, not small enough for a pendent: Self-Powered, Ambient Light Sensor Using bq25504 <a href="https://www.ti.com/lit/an/slua629a/slua629a.pdf?ts=1601376012985&ref_url=https%253A%252F%252Fwww.google.com%252F" title="https://www.ti.com/lit/an/slua629a/slua629a.pdf?ts=1601376012985&amp;ref_url=https%253A%252F%252Fwww.google.com%252F" class="https">https://www.ti.com/lit/an/slua629a/slua629a.pdf?ts=1601376012985&amp;ref_url=https%253A%252F%252Fwww.google.com%252F</a></li>
+<li>NIMh batteries safer for sunlight exposure: "The operating temperature range for NiMH cells has been extended to over 100 °C (-30 °C to + 75 °C) which far exceeds the temperature range currently achievable by Lithium cells making NiMH technology ideal for automotive use. NiMH can handle the high power levels typical in EV applications, the active chemicals are inherently safer than Lithium based cells and NiMH batteries don't need the complex battery management systems (BMS) essential with Lithium batteries." <a href="https://www.mpoweruk.com/nimh.htm" title="https://www.mpoweruk.com/nimh.htm" class="https">https://www.mpoweruk.com/nimh.htm</a></li>
+<li>But LiPo fine up to 60°C, and since the pendant is made to be worn, it's impossible a human can sustain such a high temperature, so the LiPo battery will never be exposed to such a high temperature in practice: <a href="https://www.rctech.net/forum/electric-off-road/453610-bad-if-lipo-battery-gets-warm.html" title="https://www.rctech.net/forum/electric-off-road/453610-bad-if-lipo-battery-gets-warm.html" class="https">https://www.rctech.net/forum/electric-off-road/453610-bad-if-lipo-battery-gets-warm.html</a></li>
+<li>BESTTUTO: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/overview" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/overview" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/overview</a> and <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/rechargeable-lithiums-names" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/rechargeable-lithiums-names" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/rechargeable-lithiums-names</a> LiPo vs LiCo vs NIMh
+<ul>
+<li>"For example, almost all lithium polymer batteries are 3.7V or 4.2V batteries. What this means is that the maximum voltage of the cell is 4.2v and that the "nominal" (average) voltage is 3.7V. As the battery is used, the voltage will drop lower and lower until the minimum which is around 3.0V. You should see the number 3.7V written on the battery itself somewhere."</li>
+<li>"For example, here is a profile of the voltage for a 'classic' 3.7V/4.2V battery. The voltage starts at 4.2 maximum and quickly drops down to about 3.7V for the majority of the battery life. Once you hit 3.4V the battery is dead and at 3.0V the cutoff circuitry disconnects the battery (more on that later."</li>
+<li>"Make sure when you're buying batteries and chargers to match them up! Overcharging a 3.6V battery by attaching it to a 4.2V battery charger can at the very least permanently damage your battery and at worst cause a fire!" --&gt; "When charging batteries you must make sure that the charger voltage is less than or equal to the battery voltage. For the best battery performance/life you should have them matched. For example: 3.7/4.2V battery and 3.7/4.2V charger: OK - 3.7/4.2V battery and 3.6/4.1V charger: OK (but not ideal) - 3.6/4.1V battery and 3.6/4.1V charger: OK - 3.6/4.1V battery and 3.7/4.2V charger NOT OK!"</li>
+<li>"Lithium ion/polymer batteries are extremely power dense. This makes them great for reducing size and weight of projects. However, they are not 'safe' batteries and require extra care. Charging or using the batteries incorrectly can cause explosion or fire (as shown by this and many other youtube videos)."</li>
+<li>TODO CRITICAL: tester pendant exposition au soleil SANS LE PORTER en mettant dans le parking au soleil
+<ul>
+<li>WHAT NOT TO DO: do NOT recharge when too hot, so not under the sun, but otherwise should be fine even if exposed to relatively high temperatures (as long as acceptable by the human wearing it), if not recharging the battery should sustain the temperature: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow</a></li>
+</ul>
+</li>
+<li>ALWAYS CHECK if protection board attached to the battery (not the charger!): "For specifics on each battery you must look at the datasheet to know what the safe voltages, currents and temperatures are - they can vary from cell to cell. For the first 3 items, a circuit board attached to the battery can monitor the battery voltage and the current going out. These are often referred to simply as protection circuits. They are very common on standard batteries but you must check the datasheet or product image to verify that a protection circuit is attached" <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/protection-circuitry?embeds=allow</a></li>
+<li>use regular/normal cells, NOT RC (radio control) batteries because the latter are unsafe and unnecessary for this project: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/rc-type-batteries" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/rc-type-batteries" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/rc-type-batteries</a></li>
+<li>can use hard shell camcorder and phone batteries: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/cell-phone-and-camcorder-batteries" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/cell-phone-and-camcorder-batteries" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/cell-phone-and-camcorder-batteries</a></li>
+<li>never make DIY parallel or serial batteries, buy a preassembled pack or better a larger single battery: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/multi-battery-packs" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/multi-battery-packs" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/multi-battery-packs</a></li>
+<li>"Important Note! Never charge a battery faster than 1C (so a 1300mAh battery should be charged at under 1300 mA) and we suggest staying at or below 0.5C Check the datasheet of the battery for more information about your cell" <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/proper-charging" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/proper-charging" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/proper-charging</a></li>
+<li>Other warnings: <a href="https://learn.adafruit.com/li-ion-and-lipoly-batteries/conclusion" title="https://learn.adafruit.com/li-ion-and-lipoly-batteries/conclusion" class="https">https://learn.adafruit.com/li-ion-and-lipoly-batteries/conclusion</a>
+<ul>
+<li>"Do NOT use or leave the battery in a high temperature environment (for example, under direct sunlight or in a vehicle in hot weather). Failure to take this precaution can lead to overheating of battery and/or fire or explosion. Also, performance of battery will degrade and lifetime will be reduced."</li>
+<li>"In case the battery terminals are dirty, clean the terminals with a dry cloth before use. Otherwise, poor performance may occur due to the poor connection with the instrument or device."</li>
+<li>"Be aware that discarded batteries may cause fire or explosion. Therefore, apply a non-conductive tape to the battery terminals to insulate them before discarding."</li>
+<li>"It the battery gives off an odor, generates heat, becomes discolored or deformed, or in any way appears abnormal during use, recharging, or storage, immediately remove it from the device or battery charger and stop using it."</li>
+<li>"Temp sensor FAQ: Most DIY/hobbyist chargers don't come with temperature sensors built in because they are not always right next to your battery and they are intended to be used at low charge rates and indoors where the temperature is around 25 degrees C. If you want to charge your batteries at high rates (above 0.5C) or outdoors, you should get a temperature-based charging solution."</li>
+</ul>
+</li>
+<li>BEST PAPER: about temperature maximum ranges for NIMh and LiPo, and NIMh can withstand much more temperature than LiPo: "Batteries Must Perform in Extreme Temperatures" by Dr. Robin Sarah Tichy 2007 <a href="http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf" title="http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf" class="http">http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf</a>
+<ul>
+<li>"Batteries for handheld surgical tools are exposed to a temperature extremes far beyond the cell manufacturer's recommendation. The tools and battery packs must be autoclaved, and withstand temperatures up to 137°C and are impermeable to 30 psi of superheated steam and they must have a battery that allows the surgeon enough run time and power to complete major orthopedic procedures. A surgical tool battery pack is specially designed to survive the extreme conditions of an autoclave with minimal deterioration in performance. For this application NiMH cells are used. The plastic housing is a glass blend that will help it to withstand the heat and the pieces are sealed"</li>
+</ul>
+</li>
+<li>NIMh vs LiPo batteries:
+<ul>
+<li>"NiMH batteries are easier to use. They must be fully discharged before charging and must be charged full before storing (Unless Manufacturer tells otherwise. Exampl. Traxxas). NiMH battery chargers are also very simple." <a href="https://www.genstattu.com/blog/the-difference-between-lipo-and-nimh/" title="https://www.genstattu.com/blog/the-difference-between-lipo-and-nimh/" class="https">https://www.genstattu.com/blog/the-difference-between-lipo-and-nimh/</a></li>
+<li>"LiPo batteries don’t have to be fully discharged and they must be stored with a 50−70 % charge level. The charging must be done with a charger with balance charging. It is good to charge and store LiPo batteries in a LiPo safe bag."</li>
+<li>"The weight/power ratio in LiPo batteries is significantly better. LiPo batteries are noticeably lighter and they can store the same amount or more energy relative to their capacity than NiMH batteries. The power output of LiPo batteries is greater in quality and quantity. The power output of LiPo batteries is steady throughout the discharge, whereas the power output of NiMH batteries starts to decrease soon after charging because of higher discharge rate of the battery type."</li>
+<li>"There is a fire threat, LiPo is much more unsteady and a nicked battery can cause a fire. LiPo is much more effort-intensive. You need to charge them, discharge them, and store them with the paramount care. Keeping the LiPo can cost a significant amount of money as one needs the right equipment to maintain for them. If the battery is not kept accurately or if it comes to be impaired and punctured, a fire could occur. They have an undersized lifespan. It is best if one doesn’t completely discharge the NiMH battery. It is recommended not to discharge the battery fully in an attempt to make them last longer as this can actually shorten the life of the cells if you do discharge the product regularly. The best method to store a NiMH battery is at room temperature in a dry setting to certify that they don’t get too hot and lead to the reduction of the life of your NiMH battery. After spending their lifespan they are easy to dispose of, NiMH batteries are recyclable." <a href="https://blog.ampow.com/lipo-vs-nimh/#LiPo_vs_NiMH_safety" title="https://blog.ampow.com/lipo-vs-nimh/#LiPo_vs_NiMH_safety" class="https">https://blog.ampow.com/lipo-vs-nimh/#LiPo_vs_NiMH_safety</a></li>
+</ul>
+</li>
+<li>BEST CRITICAL: From Adafruit discord:</li>
+</ul></li>
+</ul></li>
+</ul>
+<div style='padding-left: 120pt'>
+madbodgerAujourd’hui à 14:05<br>
+I think a LiPo cell would be fine.  If a person is wearing it, it's not going to get too hot, and they would presumably notice if it started to swell up or something.<br>
+lrq3000Aujourd’hui à 14:06<br>
+ok thank you <span class="zim-tag">@madbodger</span> yes that's my reasoning, since lipo can operate up to 60°C usually, it's unlikely even this temperature will be reached since a person will be wearing it<br>
+but maybe I can take some additional precautions? Are there techniques to insulate the battery (such as with a tape)?<br>
+I'm really new to boards :confused:<br>
+interesting read btw on the topic: <a href="http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf" title="http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf" class="http">http://www.batterypoweronline.com/images/PDFs_articles_whitepaper_appros/MicroPowerBatteriesExtreme.pdf</a><br>
+madbodgerAujourd’hui à 14:13<br>
+You could add polyimide tape or make sure its protection circuitry included a temperature sensor.<br>
+There's this interesting writeup of how you can get skin burns from even low voltage, but I doubt you're going to have any exposed wiring.  <a href="https://www.sparkfun.com/news/1513" title="https://www.sparkfun.com/news/1513" class="https">https://www.sparkfun.com/news/1513</a>
+</div>
+<ul style='padding-left: 30pt'>
+<li>polyimide tape = kapton</li>
+<li><a href="https://en.wikipedia.org/wiki/Kapton" title="https://en.wikipedia.org/wiki/Kapton" class="https">https://en.wikipedia.org/wiki/Kapton</a>
+<ul>
+<li>"Kapton-insulated electrical wiring has been widely used in civil and military aircraft because it is lighter than other insulators and has good insulating and temperature characteristics. However, Kapton insulation ages poorly: an FAA study shows degradation in hot, humid environments,[5] or in the presence of seawater. It was found to have very poor resistance to mechanical wear, mainly abrasion within cable harnesses due to aircraft movement."</li>
+<li>"Due to its large range of temperature stability, and its electrical isolation ability, Kapton tape is usually used in electronic manufacturing as an insulation and protection layer on electrostatic sensitive and fragile components. As it can sustain the temperature needed for a reflow soldering operation, its protection is available throughout the whole production process, and Kapton is often still present in the final consumer product."</li>
+<li>"Kapton and ABS adhere to each other very well, which has led to widespread use of Kapton as a build surface for 3D printers. Kapton is laid down on a flat surface and the ABS is extruded onto the Kapton surface."</li>
+</ul>
+</li>
+<li><a href="http://budgetlightforum.com/node/20258" title="http://budgetlightforum.com/node/20258" class="http">http://budgetlightforum.com/node/20258</a> and <a href="https://www.rcgroups.com/forums/showthread.php?677844-kapton-Tape" title="https://www.rcgroups.com/forums/showthread.php?677844-kapton-Tape" class="https">https://www.rcgroups.com/forums/showthread.php?677844-kapton-Tape</a>
+<ul>
+<li>"Actually Kapton is really tough stuff, tougher than almost any shrink wrap. I wouldnt mind wrapping a battery with it."</li>
+<li>can do multiple turns to be more scratch/tear resistant</li>
+</ul>
+</li>
+<li>Casing:
+<ul>
+<li>need to be transparent</li>
+<li>BEST IDEA: take a casing that filters UV light, so that it is less hot for the battery</li>
+</ul></li>
+</ul>
+</p>
+
+<br>
+
+<p>
+<a href="https://store.micropython.org/pyb-features" title="https://store.micropython.org/pyb-features" class="https">https://store.micropython.org/pyb-features</a><br>
+<a href="https://learn.adafruit.com/adafruit-apds9960-breakout" title="https://learn.adafruit.com/adafruit-apds9960-breakout" class="https">https://learn.adafruit.com/adafruit-apds9960-breakout</a><br>
+batteries how to choose: <a href="https://www.youtube.com/watch?v=U_Q3djsktQs" title="https://www.youtube.com/watch?v=U_Q3djsktQs" class="https">https://www.youtube.com/watch?v=U_Q3djsktQs</a><br>
+arduino tuto <a href="https://www.youtube.com/watch?v=nL34zDTPkcs" title="https://www.youtube.com/watch?v=nL34zDTPkcs" class="https">https://www.youtube.com/watch?v=nL34zDTPkcs</a> + <a href="https://www.youtube.com/watch?v=p40OetppIDg" title="https://www.youtube.com/watch?v=p40OetppIDg" class="https">https://www.youtube.com/watch?v=p40OetppIDg</a> bloklyduino and shields and node-red<br>
+tinycircuits <a href="https://www.youtube.com/watch?v=5bb3npa3uDI" title="https://www.youtube.com/watch?v=5bb3npa3uDI" class="https">https://www.youtube.com/watch?v=5bb3npa3uDI</a><br>
+flora vs gemma <a href="https://www.youtube.com/watch?v=bGVBR4BwIPs" title="https://www.youtube.com/watch?v=bGVBR4BwIPs" class="https">https://www.youtube.com/watch?v=bGVBR4BwIPs</a>
+</p>
+
+<br>
+<br>
+
+<p>
+<a href="https://www.youtube.com/watch?time_continue=728&v=i-ksb-gzfyE" title="https://www.youtube.com/watch?time_continue=728&amp;v=i-ksb-gzfyE" class="https">https://www.youtube.com/watch?time_continue=728&amp;v=i-ksb-gzfyE</a>
+</p>
+
+<p>
+LiPo battery + LiPo charger module to be able to easily charge through USB<br>
+Simply wrap in plastic to make rain resistant<br>
+BESTTUTO: <a href="https://www.instructables.com/id/Make-your-own-activity-tracker/" title="https://www.instructables.com/id/Make-your-own-activity-tracker/" class="https">https://www.instructables.com/id/Make-your-own-activity-tracker/</a> + <a href="https://github.com/godstale/retroband" title="https://github.com/godstale/retroband" class="https">https://github.com/godstale/retroband</a><br>
+soldering iron and wires<br>
+"It’s very simple to supply the power. Just connect (+) -&gt; RAW with (-) -&gt; GND. But if you care about recharging, you can use a Li-Po recharging module. In this case, you should connect (+) and (-) connectors on the battery with B+,B- on the recharging module, and out+, out- on the module should be connected with RAW, GND on the Arduino board respectively."<br>
+<a href="https://www.arduino.cc/en/tutorial/memory" title="https://www.arduino.cc/en/tutorial/memory" class="https">https://www.arduino.cc/en/tutorial/memory</a> --&gt; need to extend EEPROM<br>
+use micro-sd card reader! <a href="https://create.arduino.cc/projecthub/electropeak/sd-card-module-with-arduino-how-to-read-write-data-37f390" title="https://create.arduino.cc/projecthub/electropeak/sd-card-module-with-arduino-how-to-read-write-data-37f390" class="https">https://create.arduino.cc/projecthub/electropeak/sd-card-module-with-arduino-how-to-read-write-data-37f390</a><br>
+<a href="https://www.arduino.cc/en/reference/SD" title="https://www.arduino.cc/en/reference/SD" class="https">https://www.arduino.cc/en/reference/SD</a><br>
+<a href="https://docs.micropython.org/en/latest/library/machine.SDCard.html" title="https://docs.micropython.org/en/latest/library/machine.SDCard.html" class="https">https://docs.micropython.org/en/latest/library/machine.SDCard.html</a><br>
+<a href="https://docs.micropython.org/en/latest/pyboard/general.html" title="https://docs.micropython.org/en/latest/pyboard/general.html" class="https">https://docs.micropython.org/en/latest/pyboard/general.html</a><br>
+<a href="https://itechnofrance.wordpress.com/2019/06/21/utilisation-dune-carte-sd-en-micropython/" title="https://itechnofrance.wordpress.com/2019/06/21/utilisation-dune-carte-sd-en-micropython/" class="https">https://itechnofrance.wordpress.com/2019/06/21/utilisation-dune-carte-sd-en-micropython/</a><br>
+pyboard includes microsd <a href="https://store.micropython.org/product/PYBv1.1H#image4" title="https://store.micropython.org/product/PYBv1.1H#image4" class="https">https://store.micropython.org/product/PYBv1.1H#image4</a>
+</p>
+
+<p>
+micropython vs circuitpython <a href="https://www.youtube.com/watch?v=wyOcb2MHzIs" title="https://www.youtube.com/watch?v=wyOcb2MHzIs" class="https">https://www.youtube.com/watch?v=wyOcb2MHzIs</a>
+</p>
+
+<p>
+<a href="https://www.youtube.com/watch?v=iswES_5HkeM" title="https://www.youtube.com/watch?v=iswES_5HkeM" class="https">https://www.youtube.com/watch?v=iswES_5HkeM</a>
+</p>
+
+<p>
+no bluetooth or later? Because battery cosumption and need to program receiver app, usb is easier
+</p>
+
+<p>
+adafruit quickstart with arduino: <a href="https://www.youtube.com/watch?v=YDa5FjnT9mw" title="https://www.youtube.com/watch?v=YDa5FjnT9mw" class="https">https://www.youtube.com/watch?v=YDa5FjnT9mw</a><br>
+adafruit history <a href="https://www.youtube.com/watch?v=D27U3wHN8fs" title="https://www.youtube.com/watch?v=D27U3wHN8fs" class="https">https://www.youtube.com/watch?v=D27U3wHN8fs</a>
+</p>
+
+<p>
+TODO: need to mount resistances to mount leds in serial (since there is no other way)? But need to be in input, is resistance needed in input? <a href="https://www.youtube.com/watch?v=nL34zDTPkcs" title="https://www.youtube.com/watch?v=nL34zDTPkcs" class="https">https://www.youtube.com/watch?v=nL34zDTPkcs</a><br>
+TODO: calculate how much battery is needed: <a href="https://www.youtube.com/watch?v=U_Q3djsktQs" title="https://www.youtube.com/watch?v=U_Q3djsktQs" class="https">https://www.youtube.com/watch?v=U_Q3djsktQs</a><br>
+TODO: choose between Arduino and MicroPython/CircuitPython<br>
+TODO: if can't succeed, just ask someone or Arduino to make such a build under opensource (including software to save as csv) and pay him. I know what sensors to use and how i will wear it (as a pendant), so not hard.
+</p>
+
+<p>
+BESTTUTO on capacitors: <a href="https://www.youtube.com/watch?v=sy_G1oYRQmM" title="https://www.youtube.com/watch?v=sy_G1oYRQmM" class="https">https://www.youtube.com/watch?v=sy_G1oYRQmM</a>
+</p>
+
+<p>
+Energy for light sensors:<br>
+<ul style='padding-left: 30pt'>
+<li>Pages 22-23 for mounting RGB sensor: <a href="https://docs.broadcom.com/doc/APDS-9253-001-DS" title="https://docs.broadcom.com/doc/APDS-9253-001-DS" class="https">https://docs.broadcom.com/doc/APDS-9253-001-DS</a></li>
+</ul>
+<div style='padding-left: 30pt'>
+need capacitor and 3 pull-up resistors of 10K ohm impedance<br>
+bypass capacitor (1 micro Faraday connected between power source and device) that has a low effective series resistance (ESR) and low effective series inductance (ESI), such as the common ceramic types, which provide a low impedance path to ground at high frequencies to handle transient currents caused by internal logic switching. <br>
+After removal from the bag, the parts should be soldered within 168 hours if stored at the recommended storage conditions. If times longer than 168 hours are needed, the parts must be stored in a dry box.<br>
+Supply Current max: 154 microA in active mode, else 2 microA in standby mode<br>
+Accurate CCT, means can derive Kelvin: <a href="https://insights.regencylighting.com/what-is-correlated-color-temperature-cct-and-how-do-you-choose-it-for-your-lighting" title="https://insights.regencylighting.com/what-is-correlated-color-temperature-cct-and-how-do-you-choose-it-for-your-lighting" class="https">https://insights.regencylighting.com/what-is-correlated-color-temperature-cct-and-how-do-you-choose-it-for-your-lighting</a><br>
+Supply voltage 1.7V to 3.6V
+</div>
+</p>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>APDS-9007 <a href="https://www.mouser.fr/datasheet/2/678/av02-0512en-1827971.pdf" title="https://www.mouser.fr/datasheet/2/678/av02-0512en-1827971.pdf" class="https">https://www.mouser.fr/datasheet/2/678/av02-0512en-1827971.pdf</a></li>
+</ul>
+<div style='padding-left: 30pt'>
+Vcc supply 2 to 3.6V<br>
+27 KOhm resistor, makes output linear<br>
+see page 2 for Typical Application Circuit<br>
+Supply Current typical: 230 micro A<br>
+Appendix B: The thickness of the window should be kept as minimum as possible because there is a loss of power in every optical window of about 8% due to reflection (4% on each side) and an additional loss of energy in the plastic material.<br>
+The material of the window is recommended to be polycarbonate. The surface finish of the plastic should be smooth, without any texture. 
+</div>
+</p>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Total: from amperes to amperes-hours: mA * time in seconds / 3600 (1h) = mAh <a href="https://sciencing.com/relationship-between-amps-ah-12198988.html" title="https://sciencing.com/relationship-between-amps-ah-12198988.html" class="https">https://sciencing.com/relationship-between-amps-ah-12198988.html</a></li>
+</ul>
+<div style='padding-left: 30pt'>
+((150+230)*0.3+4) * 3600/3600 = 118 micro Ah = .118 mAh -- with a 200 mAh battery, it's 200/.118 = 70 days of battery with a continuously recording photoreceptor each second! -- but need to include the board consumption! With pyboard lite without accelerometer, it's 2 days only: (200/(13*0.3)+.118+.180)/24 <a href="https://store.micropython.org/pyb-features" title="https://store.micropython.org/pyb-features" class="https">https://store.micropython.org/pyb-features</a><br>
+A milliampere second (mA⋅s) is a unit of measure used in X-ray imaging, diagnostic imaging, and radiation therapy. It is equivalent to a millicoulomb. <a href="https://en.wikipedia.org/wiki/Ampere_hour" title="https://en.wikipedia.org/wiki/Ampere_hour" class="https">https://en.wikipedia.org/wiki/Ampere_hour</a><br>
+BESTTUTO CRITICAL: 1 amp-hour = 3600 coulombs = 3600 amps <a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-11/battery-ratings/" title="https://www.allaboutcircuits.com/textbook/direct-current/chpt-11/battery-ratings/" class="https">https://www.allaboutcircuits.com/textbook/direct-current/chpt-11/battery-ratings/</a><br>
+"A battery with a capacity of 1 amp-hour should be able to continuously supply current of 1 amp to a load for exactly 1 hour, or 2 amps for 1/2 hour, or 1/3 amp for 3 hours, etc., before becoming completely discharged. In an ideal battery, this relationship between continuous current and discharge time is stable and absolute, but real batteries don’t behave exactly as this simple linear formula would indicate. Therefore, when amp-hour capacity is given for a battery, it is specified at either a given current, given time, or assumed to be rated for a time period of 8 hours (if no limiting factor is given)."<br>
+"Conversely, if a very light load (1 mA) were to be connected to the battery, our equation would tell us that the battery should provide power for 70,000 hours, or just under 8 years (70 amp-hours / 1 milliamp), but the odds are that much of the chemical energy in a real battery would have been drained due to other factors (evaporation of electrolyte, deterioration of electrodes, leakage current within battery) long before 8 years had elapsed. Therefore, we must take the amp-hour relationship as being an ideal approximation of battery life, the amp-hour rating trusted only near the specified current or timespan given by the manufacturer. Some manufacturers will provide amp-hour derating factors specifying reductions in total capacity at different levels of current and/or temperature."<br>
+"Watt-hours acknowledges a battery’s voltage and amp-hours ignores it. As long as your units are consistent, either measure will work." <a href="https://sciencing.com/watt-hour-vs-amp-hour-12135955.html" title="https://sciencing.com/watt-hour-vs-amp-hour-12135955.html" class="https">https://sciencing.com/watt-hour-vs-amp-hour-12135955.html</a><br>
+"The ampere hour is frequently used in measurements of electrochemical systems such as electroplating and for battery capacity where the commonly known nominal voltage is dropped." <a href="https://en.wikipedia.org/wiki/Ampere_hour" title="https://en.wikipedia.org/wiki/Ampere_hour" class="https">https://en.wikipedia.org/wiki/Ampere_hour</a>
+</div>
+</p>
+
+<p>
+<ul style='padding-left: 30pt'>
+<li>Easy to make a wearable with PyBoard, integrates micro sd card reader and accelerometer: <a href="https://docs.micropython.org/en/latest/pyboard/tutorial/accel.html" title="https://docs.micropython.org/en/latest/pyboard/tutorial/accel.html" class="https">https://docs.micropython.org/en/latest/pyboard/tutorial/accel.html</a></li>
+<li>BESTTUTO: how to choose correct resistor ohm, calculate with Ohm's law given the nominal voltage of the board, so can precisely reduce the current for components requiring less: <a href="https://www.youtube.com/watch?v=thLv8S9t7S0&list=PLjF7R1fz_OOXWHQhEVEI5Jqf18TQRr5Hu&index=5" title="https://www.youtube.com/watch?v=thLv8S9t7S0&amp;list=PLjF7R1fz_OOXWHQhEVEI5Jqf18TQRr5Hu&amp;index=5" class="https">https://www.youtube.com/watch?v=thLv8S9t7S0&amp;list=PLjF7R1fz_OOXWHQhEVEI5Jqf18TQRr5Hu&amp;index=5</a></li>
+<li>reduced voltage should be fine, just plug sensors to analog inputs Ax, then just calculate to ratio since voltage is not covering the full 0-5V band, so the input values will be ratio'ed as well: <a href="https://forum.arduino.cc/index.php?topic=558146.0" title="https://forum.arduino.cc/index.php?topic=558146.0" class="https">https://forum.arduino.cc/index.php?topic=558146.0</a> - but then also less resolution...</li>
+</ul>
+</p>
+
+<p>
+BESTTUTO: light sensor on arduino: <a href="https://www.youtube.com/watch?v=z9PPfE8dvGs" title="https://www.youtube.com/watch?v=z9PPfE8dvGs" class="https">https://www.youtube.com/watch?v=z9PPfE8dvGs</a> and <a href="https://arduinogetstarted.com/tutorials/arduino-light-sensor" title="https://arduinogetstarted.com/tutorials/arduino-light-sensor" class="https">https://arduinogetstarted.com/tutorials/arduino-light-sensor</a><br>
+<a href="https://greenspector.com/en/measuring-the-energy-consumption-of-iot-using-arduino-to-measure-raspberry/" title="https://greenspector.com/en/measuring-the-energy-consumption-of-iot-using-arduino-to-measure-raspberry/" class="https">https://greenspector.com/en/measuring-the-energy-consumption-of-iot-using-arduino-to-measure-raspberry/</a><br>
+<a href="https://learn.adafruit.com/how-to-choose-a-microcontroller" title="https://learn.adafruit.com/how-to-choose-a-microcontroller" class="https">https://learn.adafruit.com/how-to-choose-a-microcontroller</a><br>
+kill a watt meter <a href="https://www.parkedinparadise.com/device-calculations/" title="https://www.parkedinparadise.com/device-calculations/" class="https">https://www.parkedinparadise.com/device-calculations/</a><br>
+<a href="https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/l-electricite-au-quotidien/volt-watt-ampere-les-unites-en-electricite" title="https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/l-electricite-au-quotidien/volt-watt-ampere-les-unites-en-electricite" class="https">https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/l-electricite-au-quotidien/volt-watt-ampere-les-unites-en-electricite</a>
+</p>
+
+<p>
+BESTTUTO: diode to protect circuit flow: <a href="https://www.youtube.com/watch?v=ap7edIKkykA" title="https://www.youtube.com/watch?v=ap7edIKkykA" class="https">https://www.youtube.com/watch?v=ap7edIKkykA</a> - light emitting diodes = LED<br>
+BESTTUTO: How ICs are number with dot + how to shrinkify any arduino project: <a href="https://www.youtube.com/watch?v=30rPt802n1k&t=1s" title="https://www.youtube.com/watch?v=30rPt802n1k&amp;t=1s" class="https">https://www.youtube.com/watch?v=30rPt802n1k&amp;t=1s</a> and MIT Media Lab's High-Low Tech Group and <a href="https://web.archive.org/web/20111012165316/http://blog.makezine.com/archive/2011/10/how-to-shrinkify-your-arduino-projects.html" title="https://web.archive.org/web/20111012165316/http://blog.makezine.com/archive/2011/10/how-to-shrinkify-your-arduino-projects.html" class="https">https://web.archive.org/web/20111012165316/http://blog.makezine.com/archive/2011/10/how-to-shrinkify-your-arduino-projects.html</a> and <a href="https://web.archive.org/web/20111012194731/http://hlt.media.mit.edu/?p=1229" title="https://web.archive.org/web/20111012194731/http://hlt.media.mit.edu/?p=1229" class="https">https://web.archive.org/web/20111012194731/http://hlt.media.mit.edu/?p=1229</a> (using ATtiny ICs)<br>
+BESTTUTO: how to solder + buy THT (through-hole perfboard) pcb that are not printed, just dots, then can make circuits myself using soldering or jumping wires + socket to put the IC on it so we can replace it if it becomes defective + SOLDER WICK to suck soldering out and remove without breaking! + smallest ICs are made for SMD (surface-mount) boards, so these are actually the smallest boards to make wearables: <a href="https://www.youtube.com/watch?v=VxMV6wGS3NY" title="https://www.youtube.com/watch?v=VxMV6wGS3NY" class="https">https://www.youtube.com/watch?v=VxMV6wGS3NY</a><br>
+BESTTUTO: use safety glasses and evacuate fumes <a href="https://www.youtube.com/watch?v=JCXGjD0Rpg8" title="https://www.youtube.com/watch?v=JCXGjD0Rpg8" class="https">https://www.youtube.com/watch?v=JCXGjD0Rpg8</a><br>
+A simple guide to electronic components: <a href="https://www.youtube.com/watch?v=6Maq5IyHSuc" title="https://www.youtube.com/watch?v=6Maq5IyHSuc" class="https">https://www.youtube.com/watch?v=6Maq5IyHSuc</a> - electrolytic capacitor round to avoid, obsolete after some time because of eletrolytes drying<br>
+<ul style='padding-left: 30pt'>
+<li>BEST: LEDs don't have a high reverse blocking voltage since they are optimized to emit light, so it's about 5V max of blocking reverse, whereas non light emitting diodes can block 1000 volts. When the threshold is trespassed, then it avalanches and actually worsen the circuit.</li>
+<li>use zener diodes for voltage regulation, ie, reduce voltage to exactly the amount required in the circuit</li>
+<li>transistors and mosfet are amplifiers of ampers and voltage</li>
+<li>voltage drop (such as with diodes, transistors etc) produces heat dissipation, unless there is very low impedance hence no voltage drop. Mosfet are such low impedance components, but because of that they are not as robust as traditional transistors.</li>
+<li>Watts = I * V, same as Ohm's law: V = I * R, another triangle.</li>
+<li>oversize resistor: take more ohm and wattage to dissipate more heat and be more robust</li>
+<li>electrolytic capacitor is flammable, prefer ceramic or film (polypropylene) or round aluminium polymer (solid electrolytes) capacitors: <a href="https://www.youtube.com/watch?v=2v8zBj7_sxg" title="https://www.youtube.com/watch?v=2v8zBj7_sxg" class="https">https://www.youtube.com/watch?v=2v8zBj7_sxg</a></li>
+<li>Inductors + electron flow (minus to plus) vs conventional flow (plus to minus) conventions: <a href="https://www.youtube.com/watch?v=KSylo01n5FY" title="https://www.youtube.com/watch?v=KSylo01n5FY" class="https">https://www.youtube.com/watch?v=KSylo01n5FY</a></li>
+<li>BESTTUTO on capacitors and how to handle safely and to mount in circuit (need to mount in parallel) - striped face is negative sign: <a href="https://www.youtube.com/watch?v=X4EUwTwZ110" title="https://www.youtube.com/watch?v=X4EUwTwZ110" class="https">https://www.youtube.com/watch?v=X4EUwTwZ110</a></li>
+</ul>
+How to Troubleshoot Electronics Down to the Component Level Without Schematics <a href="https://www.youtube.com/watch?v=QFAWb1F_EpE" title="https://www.youtube.com/watch?v=QFAWb1F_EpE" class="https">https://www.youtube.com/watch?v=QFAWb1F_EpE</a>
+</p>
+
+<p>
+etain Solder wire - Low vs High Quality <a href="https://youtu.be/5Ku7I3hA3AA" title="https://youtu.be/5Ku7I3hA3AA" class="https">https://youtu.be/5Ku7I3hA3AA</a>
+</p>
+
+<br>
+
+<p>
+TOBUY:<br>
+<ul>
+<li>battery LiPo 200 mAh?</li>
+<li>battery charger through USB</li>
+<li>breadboard to easily do tests, and breadboard wires (jumpers)</li>
+<li>resistors, 4 10KOhm + one 27 KOhm</li>
+<li>bypass capacitor in ceramic 1 micro farad x2 and 10 micro farad for both sensors</li>
+<li>starter kit with lots of resistors and leds etc maybe?</li>
+<li>buy leds and diodes, at least 6, to mount in serie to reduce voltage? <a href="https://forum.arduino.cc/index.php?topic=20967.0" title="https://forum.arduino.cc/index.php?topic=20967.0" class="https">https://forum.arduino.cc/index.php?topic=20967.0</a></li>
+<li>micro sd card breaker (reader)</li>
+<li>micro sd card of a few gb</li>
+<li>the 2 photosensors APDS-9007 and APDS-9253</li>
+<li>soldering iron + solder + solder wick + safety glasses</li>
+<li>multicolor LED to signal battery level (adalogger already has the peripherals necessary to report battery)</li>
+<li>TODO: finish <a href="https://www.youtube.com/watch?v=6Maq5IyHSuc" title="https://www.youtube.com/watch?v=6Maq5IyHSuc" class="https">https://www.youtube.com/watch?v=6Maq5IyHSuc</a> and <a href="https://learn.adafruit.com/how-to-choose-a-microcontroller" title="https://learn.adafruit.com/how-to-choose-a-microcontroller" class="https">https://learn.adafruit.com/how-to-choose-a-microcontroller</a> and battery measure</li>
+</ul>
+</p>
+
+<p>
+According to MCHobby about LiPo batteries:<br>
+<div style='padding-left: 30pt'>
+«Pour application électronique uniquement<br>
+Ces accus sont conçus pour l'alimentation de projet électronique et pas pour la propulsion de moteur. L'accu est équipé d'un circuit de protection désactivant l'accu si sa tension chute en dessous de 3V ou si le courant débité est trop important.<br>
+Le courant de décharge de ce type d'accu est de 0.5C à 1C MAX!<br>
+Par exemple: un accu de 500mAh 1C pourrait produire un courant de 1x500mA = 500mA max.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Si vous avez besoin de motoriser un projet, vous devez rechercher des accu de modélisme capables de délivrer plusieurs C. En effet, la mise en marche d'un moteur crée un appel de courant très important (proche du courant de court-circuit), il faut donc un accu adapté.<br>
+Certains accus pour modélisme sont capables de délivrer jusqu'à 35C!<br>
+Ex: un accu de 2500mAh 35C pourrait produire un courant 35x2500mA = 87500mA = 87.5A sans broncher! De quoi assurer le démarrage de n'importe quel type de moteur.<br>
+Attention cependant, ces accus ne disposent d'aucune protection et peuvent donc prendre feu s'ils ne sont pas utilisés/chargés/déchargés correctement.»
+</div>
+</p>
+
+<p>
+Pycom Pyscan, Pyscan Accelerometer Sensor, Barometric Pressure Sensor, Light Sensor, Temperature &amp; Humidity Sensor 37€ <a href="https://befr.rs-online.com/web/p/sensor-development-tools/1720649/" title="https://befr.rs-online.com/web/p/sensor-development-tools/1720649/" class="https">https://befr.rs-online.com/web/p/sensor-development-tools/1720649/</a>
+</p>
+
+<p>
+DIY 5Kohm resistor with paper and graphite pencil: <a href="https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/make-a-resistor#input-resistor" title="https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/make-a-resistor#input-resistor" class="https">https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/make-a-resistor#input-resistor</a><br>
+Capacitors: <a href="https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/capacitors" title="https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/capacitors" class="https">https://makecode.adafruit.com/learnsystem/pins-tutorial/devices/capacitors</a><br>
+<ul>
+<li>BESTTUTO capacitors: <a href="https://learn.adafruit.com/circuit-playground-c-is-for-capacitor/what-is-a-capacitor" title="https://learn.adafruit.com/circuit-playground-c-is-for-capacitor/what-is-a-capacitor" class="https">https://learn.adafruit.com/circuit-playground-c-is-for-capacitor/what-is-a-capacitor</a>
+<ul>
+<li>"Unlike a resistor, a capacitor does not dissipate energy. Instead, a capacitor stores energy in the form of an electrostatic field between its plates."</li>
+<li>"Capacitors are widely used in electronic circuits for blocking direct current while allowing alternating current to pass."</li>
+</ul>
+</li>
+<li>Solar kit: <a href="https://www.adafruit.com/product/390" title="https://www.adafruit.com/product/390" class="https">https://www.adafruit.com/product/390</a></li>
+</ul>
+</p>
+
+                    <br></br>
+                    
+                    <hr class='footnotes'>
+                    <span class="backlinks">
+                    </span>
+    
+                <!-- !! The script will center all images. If you prefer the default (images at left delete these three lines -->    
+                <script>
+                    $( "img" ).wrap( "<div class='imgcenter'></div>" );
+                </script>
+    
+                
+            </div>
+            
+            <!-- Navigation panel -->
+            
+            <div data-role="panel" data-position-fixed="true" data-display="reveal" data-theme="a" id="nav-panel" data-dismissible="false">
+                <div style="display:inline-block;">
+                    
+                    <!-- !! If you want to place your logo, uncomment the next section and fill in the link between the quotation marks after href if you want the logo to link to another page or website -->
+                    <!-- <div id="logos" align="center">
+                        <a title="your title" href="" target="_blank">
+                            <img src=./SleepNon24LightSensorNotes_files/_resources/zim_logo.png style="border-style:none" align="right"></a>
+                    </div> -->
+                    
+                    <div>
+                        <!-- !! optionally.. add your custom search engine script -->
+                        <a href="#header" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Close panel</a>
+    
+                        <!-- !! optionally.. add link to start page or index page. To do so, uncomment the next 2 lines and fill in the webpage name / url-->
+                        <!-- <br></br>
+                        <a href="./link-to-start-page.html">Name of page</a>-->
+                        
+                        <!-- Generate the links to other pages (between-pages table of contents -->
+                        <ul>
+<li><b>SleepNon24LightSensorNotes</b></li>
+</ul>
+
+
+                        <!-- Current document's Table Of Contents placeholder and style, this table of content will be generated from headers in the document -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+                        <style src="text/css">
+                        .toc-link, .toc-list-item, .toc-list-item a {
+                            /* Remove underlining for all toc entries */
+                            text-decoration: none;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
+                        }
+                        .toc-link:not(.is-active-link) {
+                            /* Only leave the active toc entry (currently watched) as bold, else put text in normal weight */
+                            font-weight: normal !important;
+                        }
+                        </style>
+                        <nav class="toc js-toc relative z-1 transition--300 pa4" style="position: relative; max-width:inherit;">
+                        </nav>
+
+                        <!-- !! Optionally, button which brings the user to your contact form. To enable this, remove comment mark below and fill in the link between the quoation marks after href -->
+                        <!--<br></br>
+                        <a title="Contact us" data-icon="info" href="" data-role="button" target="_blank">Contact us</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generate the Table Of Contents dynamically using javascript (via tocbot) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+    <script type="text/javascript">
+    var content = document.body
+    var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6, h7')
+    var headingMap = {}
+
+    <!-- generate ids dynamically for each header, that's necessary for tocbot to work, source makeids from tocbot repository -->
+    Array.prototype.forEach.call(headings, function (heading) {
+        var id = heading.id ? heading.id : heading.textContent.trim().toLowerCase()
+            .split(' ').join('-').replace(/[!@#$%^&*():]/ig, '').replace(/\//ig, '-')
+        headingMap[id] = !isNaN(headingMap[id]) ? ++headingMap[id] : 0
+        if (headingMap[id]) {
+            heading.id = id + '-' + headingMap[id]
+        } else {
+            heading.id = id
+        }
+        // Add a self-referential link on the header's anchor, easier to share + jump to this anchor if clicked
+        heading.innerHTML = "<a href=\"#"+id+"\" onclick=\"jumpToAnchor('"+id+"');\";>"+heading.innerHTML+"</a>"
+    })
+
+    function jumpToAnchor(anchorId) {
+    // jump to an anchor
+    // from: https://stackoverflow.com/a/52138511/1121352
+    $(document).ready(function() {
+        // Pure JS solution, that doesn't cause the window to go back to the top before sliding to the anchor
+        const element = document.querySelector('#'+anchorId)
+        const topPos = element.getBoundingClientRect().top + window.pageYOffset
+
+        window.scrollTo({
+            top: topPos, // scroll so that the element is at the top of the view
+            behavior: 'smooth' // smooth scroll
+        })
+        // JQuery solution
+        /*
+        $('html, body').animate({
+            'scrollTop':   $('#'+anchorId).offset().top
+        }, 500);
+        */
+        // Ensure the anchor is added in the URL so the user can more easily copy the link and share from the browser's address bar directly
+        location.hash = "#" + anchorId;
+    });
+    }; // }(JQuery);
+
+    <!-- initialize tocbot with some options -->
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+      // Header levels collapsing by default
+      collapseDepth: 2,
+    });
+
+    <!-- ensure the window is scrolled to the anchor after the page finished loading (else jquery may scroll back to top, particularly on mobile) -->
+    document.addEventListener('DOMContentLoaded', function() {
+        anchor = window.top.location.hash;
+        anchor = anchor.split("#").pop();
+        jumpToAnchor(anchor);
+    }, false);
+    </script>
+
+</body>
+</html>
