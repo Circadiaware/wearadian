@@ -450,9 +450,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.17500001"
-     inkscape:cx="523.10629"
-     inkscape:cy="3250.6419"
+     inkscape:zoom="0.49497477"
+     inkscape:cx="1251.7907"
+     inkscape:cy="1334.0916"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -2836,32 +2836,37 @@
            style="font-size:6.35px;stroke-width:0.264583">This solution provides the best fixation AND best skin contact </tspan></tspan><tspan
          x="294.11908"
          y="287.23118"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">simultaneously,so that the measurements are even more accurate. It has </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">simultaneously,so that the measurements are even more accurate,while </tspan></tspan><tspan
          x="294.11908"
          y="295.16868"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">the distinct advantage of being implementable even when the outer ring of </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">requiring no redesign of the sensor itself. It has </tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">the distinct advantage of </tspan></tspan><tspan
          x="294.11908"
          y="303.10618"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">the CORE gets broken because of the original design's flaws.
-</tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">being implementable even when the outer ring of </tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">the CORE gets broken </tspan></tspan><tspan
          x="294.11908"
          y="311.04368"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">
+           style="font-size:6.35px;stroke-width:0.264583">because of the original design's flaws.
 </tspan></tspan><tspan
          x="294.11908"
          y="318.98118"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">To get even better results,it is recommended to use a stretchable,breathable </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">
+</tspan></tspan><tspan
          x="294.11908"
          y="326.91868"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">chest belt,such as the Polar Pro chest strap, as the stretchiness of the </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">To get even better results,it is recommended to use a stretchable,breathable </tspan></tspan><tspan
          x="294.11908"
          y="334.85618"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">material further improves the reliability of skin contact, especially when in </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">chest belt,such as the Polar Pro chest strap, as the stretchiness of the </tspan></tspan><tspan
          x="294.11908"
          y="342.79368"><tspan
-           style="font-size:6.35px;stroke-width:0.264583">movement/during sleep because the material better follows the skin </tspan></tspan><tspan
+           style="font-size:6.35px;stroke-width:0.264583">material further improves the reliability of skin contact, especially when in </tspan></tspan><tspan
          x="294.11908"
          y="350.73118"><tspan
+           style="font-size:6.35px;stroke-width:0.264583">movement/during sleep because the material better follows the skin </tspan></tspan><tspan
+         x="294.11908"
+         y="358.66868"><tspan
            style="font-size:6.35px;stroke-width:0.264583">movements.</tspan></tspan></text>
     <image
        width="180.35835"
@@ -5144,5 +5149,54 @@
          x="-67.470268"
          y="1378.7883"
          style="font-size:16.9333px;stroke-width:0.264583">Products:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.29167px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:45.0754;stroke-width:0.264583"
+       x="109.65485"
+       y="101.16089"
+       id="text1948"
+       transform="translate(-3.7417732,18.441596)"><tspan
+         x="109.65485"
+         y="101.16089"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">Rigid chest strap </tspan></tspan><tspan
+         x="109.65485"
+         y="107.77547"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">(delivered by </tspan></tspan><tspan
+         x="109.65485"
+         y="114.39006"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">default with the </tspan></tspan><tspan
+         x="109.65485"
+         y="121.00465"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">CORE)</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.29167px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:41.941;stroke-width:0.264583"
+       x="112.522"
+       y="196.3515"
+       id="text1952"
+       transform="translate(1.6036171,52.384828)"><tspan
+         x="112.522"
+         y="196.3515"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">Stetchable chest </tspan></tspan><tspan
+         x="112.522"
+         y="202.9661"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">strap (Polar Pro) </tspan></tspan><tspan
+         x="112.522"
+         y="209.58069"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">improves skin </tspan></tspan><tspan
+         x="112.522"
+         y="216.19528"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">contact and </tspan></tspan><tspan
+         x="112.522"
+         y="222.80988"><tspan
+           style="font-size:5.29167px;stroke-width:0.264583">comfort</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.93068,123.15145 13.97778,-8.07007"
+       id="path1958" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.39615,272.02057 11.6925,20.25201"
+       id="path1960" />
   </g>
 </svg>
