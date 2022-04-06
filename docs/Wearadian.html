@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020<br>
-Last update: March 2022.<br>
+Last update: April 2022.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -1499,7 +1499,15 @@ The light sensor is worn either as a short-laced pendant or on the neck of a shi
 </ul>
 </p>
 
+<p>
+The participant must be instructed to regularly re-center the pendant and to ensure its orientation is either straight forward or slightly upwards, but not downwards. Carrying the Lys on a flat faux-leather necklace (as can be found for cheap in drugstores) allows to twist it to force the pendant to face slightly upwards. The necklace should be short, about 50cm, to ensure it stays above most layers of cloths and close to the face without being in skin contact nor too tight for the participant to breathe (it should be comfortable enough that they can sleep with it - the Lys sensor can be turned around while sleeping, it does not need to be centered, or it can alternatively be detached to be placed on a table on the bedside, there is no difference while sleeping between carrying it on oneself and placing it on the bedside).
+</p>
+
 <h4>Calibration (for DIY light sensors)</h4>
+
+<p>
+Calibration is apriori unnecessary for the LYS sensor since it is already calibrated at factory (it's purposed for research), but for DIY sensors it is necessary, and even for calibrated sensors like LYS it can be useful (although manual post-hoc calibration was not done for this study).
+</p>
 
 <p>
 <ul style='padding-left: 30pt'>
@@ -1572,6 +1580,20 @@ But you will lose the ability to sanity check against an incandescent bulb (or m
 <ul style='padding-left: 30pt'>
 <li>About whether the Luminette could be used as a calibration light source, there are pros and cons: the pros is that it's a certified medical device so theoretically the luminance and light spectrum are bounded, and that it can emit at 3 different light intensities (500 lux, 1000 lux and 1500 lux), hence providing 3 points to calibrate luminance instead of one. The cons is that it's a LED, not an incandescent bulb, which according to eeror are much less reliable, and another potential issue is that medical certification may not necessarily mean that all devices are tested and hence individual devices may vary by quite some amount, so this approach should only be considered appropriate for an approximately calibrated light sensor, but not a very accurate one, ie, if margin of error of plus or minus 100 lux is acceptable then that may be fine.</li>
 </ul>
+</p>
+
+<h3>Luminette (light therapy usage history data collection)</h3>
+
+<p>
+An experimental app Luminette only available on iOS &gt; 4 via TestFlight on invitation is required to collect usage history data.
+</p>
+
+<p>
+Data can be collected either when the Luminette is turned on (while in use for a light therapy session), or while recharging without being turned on.
+</p>
+
+<p>
+The participant must be instructed to turn off the Luminette when not used for more than 10min, since we want a faithful usage history data. If the Luminette is put aside just a few minutes to do an action that requires full sight (eg, moving a fragile object around under darkness), then that's fine without turning it off, but not more than 5-10min.
 </p>
 
 <h3>Dreem (when sleeping)</h3>
@@ -1704,8 +1726,14 @@ Prerequisites:<br>
 <p>
 User collection data for the GreenTEG Core, the user must follow 2 timeschedules in parallel, as there are two types of datasets that are generated:<br>
 <ul style='padding-left: 30pt'>
-<li>Cloud data upload (one sample per 5min) must be done once every 2 days by opening the app's History tab and waiting a few minutes for the full graph to display (data is uploaded simultaneously). Make sure WiFi or mobile data (4G/5G) is enabled before opening the app, otherwise the History tab won't display. Tip: on Android phones, the bandwidth usage can be displayed in the top information bar by enabling the option in the Android Developers parameters menu, this allows to know when the data upload is done.</li>
 <li>Locally stored high resolution data (one sample per second = 1Hz, stored on the phone but can be transferred by USB or FTP after) must be done once every 3.5 days and takes 3.5h to be fully processed, and cannot be paused (otherwise the whole process must be restarted from zero - with no loss of data, but no new data can be collected meanwhile). This is also a good opportunity to plug the CORE device to a computer with the provided USB-dipole cable, as the device is immobilized for 3.5h anyway, and a 100% battery recharge takes about 3.5h as well. Make sure WiFi or mobile data (4G/5G) is enabled before opening the app and <b>during the whole transfer</b>, as otherwise the transfer will fail at some point (and it will need to restart from zero).</li>
+<li>Cloud data upload (one sample per 5min) must be done once every 2 days by opening the app's History tab and waiting a few minutes for the full graph to display (data is uploaded simultaneously). Make sure WiFi or mobile data (4G/5G) is enabled before opening the app, otherwise the History tab won't display. Tip: on Android phones, the bandwidth usage can be displayed in the top information bar by enabling the option in the Android Developers parameters menu, this allows to know when the data upload is done.
+<ul>
+<li>To force data upload to the cloud, close the CORE phone app, toggle mobile data (if it was on, set it off, or if it was off, set it on), then launch the CORE app again and click on the History tab. This will force a refresh upload of the latest data. Unfortunately, it will not reupload previous data, so if there was a bug (eg, because low 1 bar on CORE sensor battery), the old data will be lost anyway, even if it is still stored in the CORE internal memory.</li>
+<li>Here is what it looks like to have a faulty, buggy cloud upload versus what is shown in the CORE sensor internal memory from the CORE app:</li>
+<li><img src="./Wearadian_files/pasted_image023.png" width="600"><img src="./Wearadian_files/Screenshot_20220324_015022_com.greenteg.core.app.jpg" width="300"></li>
+<li>Note that after a few days of re-attempted uploads, the missing data was finally collected (without a clear indication why it appeared later, maybe because the computing servers that generate the graphs were down?).</li>
+</ul></li>
 </ul>
 </p>
 
@@ -1877,10 +1905,12 @@ User procedure to upload data (must be done by the user <b>to send data to the c
 <li>Switch to the Now tab, and tap Scan with Lys Button. This uploads the first 8h-12h of data collected since the last upload (without rollover). Wait 60s with the screen turned on.</li>
 <li>Switch to the Track tab. This uploads the latest 37h32min of collected data inside the Lys Button's internal memory, with rollover (ie, old data is deleted to free up space for new data when storage capacity is exceeded). It appears the internal storage memory slot for the Track function is distinct from the dedicated storage space for the Now function, so that using both methods can theoretically allow to download up to 45h32min of data. On the Track tab, an upload progress percent estimation that shows up at the top of the Track page, but only when new data is being downloaded from the Lys device. The download (and concurrent upload to the cloud in the background) should end (ie, reach 100%) under just a few minutes.
 <ul>
-<li>need to keep the screen on while transferring data, until it reaches beyond 100% and the progress text disappears.</li>
+<li>the screen needs to be kept on while transferring data with the app on the foreground set on the Track tab, hence in the phone's settings, set the automatic screen switch off to a longer time like 10min to allow for the whole data to be transferred (until it reaches beyond 100% and the progress text disappears) before it automatically turns off.</li>
+<li>Even if the screen is turned off, the app may sometimes connect to the sensor in the background and transfer data, which will drain the battery faster.</li>
 </ul>
 </li>
-<li><b>Recharge</b> the device <b>once every 7 days</b>, by placing the Lys Button inside its docking station connected to USB on computer (safer) or an electrical outlet (be careful not to overload the tension). Do not close the cap, and try to stay close to the Lys Button while recharging, as the Lys Button still continues to record while being recharged (so that there is no disruption in data acquisition).</li>
+<li>Double tap the iPhone home button to display the list of apps, and close LYS. This will save both the iPhone's battery but also the LYS sensor's battery, otherwise the sensor will continue to transfer data in the background, consuming both the phone's and sensor's batteries much faster.</li>
+<li><b>Recharge</b> the device <b>once every 7 days (or when either reach below 20%)</b>, by placing the Lys Button inside its docking station connected to USB on computer (safer) or an electrical outlet (be careful not to overload the tension). Do not close the cap, and try to stay close to the Lys Button while recharging, as the Lys Button still continues to record while being recharged (so that there is no disruption in data acquisition).</li>
 <li>Recharge the iOS device simultaneously, by plugging the Lightning cable to an electrical outlet (it unfortunately does not recharge when connecting to a USB port on a non-Mac computer). The iPhone 7 lasts about as long as the Lys device as long as WiFi is disabled and all apps are closed when unused. If switched off between data transfers, the iPhone device can likely last much longer.</li>
 </ol>
 </p>
