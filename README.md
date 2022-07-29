@@ -1,3 +1,13 @@
+Hi! I can't find your contact info, so I am submitting a pull request so you can contact me instead :) Feel free to close this pull request.
+
+I independently discovered using the CORE device to measure my circadian rhythm (after years of trying things that didn't work). I wrote some software to automatically download the CORE data and analyze via continuous wavelet transform in order to locate circadian temperature nadir as accurately as I could even when temp data is partial and when circadian nadir may shift by some constrained amount from day to day.
+
+Happy to share screenshots / the software under some kind of free license in case helpful.
+
+Email = ted@suzman.net
+
+---
+
 # wearadian
 (WIP) Non-invasive wearable circadian rhythm monitors
 
