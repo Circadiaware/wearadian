@@ -1,5 +1,5 @@
 # wearadian
-(WIP) Non-invasive wearable circadian rhythm monitors
+Non-invasive wearable circadian rhythm monitors
 
 # Description
 This project aims to provide a complete set of clinical-grade devices to monitor over the long-term (1 week to a year) various factors that are well-established in influencing or reflecting the circadian rhythm. In clinical jargon, the aim is to devise wearables for the non-invasive ambulatory supervised monitoring and self-monitoring of human circadian rhythm.
@@ -11,8 +11,10 @@ To achieve that, we repurpose off-the-shelf components and devices where possibl
 The whole documentation is in the `docs` folder licensed under CC-BY-SA 4.0 and can be read here:
 https://circadiaware.github.io/wearadian/docs/Wearadian.html
 
-The full dataset can be found on FigShare, licensed under Creative Commons BY 4.0 (CC BY 4.0):
+The full dataset of the completed first year of data collection using Wearadian version 1 design can be found on FigShare, licensed under Creative Commons BY 4.0 (CC BY 4.0):
 https://figshare.com/projects/MyNon24/101804
+
+A new version 2 of the Wearadian design, which better accommodates a natural, out of lab setting, is currently being developed and tested for a 2nd year of data collection.
 
 Alpha scripts to visualize and process the dataset can be found in the `Circalizer` project:
 https://github.com/Circadiaware/circalizer
