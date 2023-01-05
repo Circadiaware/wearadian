@@ -29,7 +29,7 @@ hr.divide {
 
 img {
     max-width: 100%;
-    max-height: 500px;
+    /* max-height: 500px; */
     height: auto;
     width: auto\9; /* ie8 */
 }
