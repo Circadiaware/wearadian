@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020.<br>
-Last update: January 2023.<br>
+Last update: February 2023.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -465,10 +465,10 @@ Represents circadian alignment's contribution for sleep score. Sleep midpoint ti
 </ul></li>
 </ul>
 </li>
-<li>Cons: no ECG, no FDA nor medical CE validation, shipment starts in June 2020 (so not even started at the time of this writing, end of May 2020), <b>need to pay a subscription of 99CHF/month/sensor to download raw data</b></li>
-<li>Price: 240CHF (270€) with VAT in EU without chest strap (as of October 2020), for both B2B and consumers now (before it was only for B2B): <a href="https://corebodytemp.com/faq/" title="https://corebodytemp.com/faq/" class="https">https://corebodytemp.com/faq/</a> - maybe here for consumers: <a href="https://shop.greenteg.com/core" title="https://shop.greenteg.com/core" class="https">https://shop.greenteg.com/core</a>
+<li>Cons: no ECG, no FDA nor medical CE validation, shipment starts in June 2020 <s>(so not even started at the time of this writing, end of May 2020 </s>- shipping strted around September 2020 and sales to consumer started in 2021), <s>need to pay a subscription of 99CHF/month/sensor to download raw data</s><b> - the monthly subscription plan was dropped, data is downloadable for free from the cload for all consumer buyers.</b></li>
+<li>Price: 240CHF (270€) with VAT in EU without chest strap (as of October 2020), for both B2B and consumers now (before it was only for B2B): <a href="https://corebodytemp.com/faq/" title="https://corebodytemp.com/faq/" class="https">https://corebodytemp.com/faq/</a> - maybe here for consumers: <a href="https://shop.greenteg.com/core" title="https://shop.greenteg.com/core" class="https">https://shop.greenteg.com/core</a> - the consumer grade device allows one sample / 1 min resolution when downloading data as csv from the cloud server. For comparison, most circadian rhythm studies used sensors with a temporal resolution of one sample per 10 min, with only a few using more accurate sensors of one sample per 5 min.
 <ul>
-<li>However, to be able to download data as csv for post-processing and analysis on a computer, need to buy GreenTEG <b>CORE Research at 999CHF</b>, which includes both the CORE and the license to access the data for a lifetime (although this goes through their server). <a href="https://shop.greenteg.com/core-body-temperature/core-for-research/" title="https://shop.greenteg.com/core-body-temperature/core-for-research/" class="https">https://shop.greenteg.com/core-body-temperature/core-for-research/</a></li>
+<li>However, to be able to download data as csv for post-processing and analysis on a computer, need to buy <s>GreenTEG CORE Research</s> <b>CALERA Research at 999CHF</b>, which includes both the CORE rebranded as CALERA and the license to access the data for a lifetime (although this goes through their servers) and since 2022 access to the programming SDK, so that we can implement our own heat flux algorithm, and we can access both core body temperature but also the two heat flux values with an unmatched resolution of 1Hz (one sample per second!). <a href="https://shop.greenteg.com/core-body-temperature/core-for-research/" title="https://shop.greenteg.com/core-body-temperature/core-for-research/" class="https">https://shop.greenteg.com/core-body-temperature/core-for-research/</a></li>
 <li>Otherwise with standard GreenTEG CORE, we only get an access to the last 2 days of acquired data, on the phone, visually. Which is enough for simple purposes but not for data collection or a history of the circadian rhythm.</li>
 <li>For circadian rhythm disorders monitoring, it's likely that it's necessary to have data collection, because a window of 2 days is not enough to monitor the circadian rhythm, the patient needs at least one week and likely more, the circadian rhythm cannot be assessed just over one day especially for circadian rhythm disorders where the circadian rhythm is much more variable than with typical sleepers and can easily be masked by various factors. Circadian rhythm disorders, including DSPD, non-24 and hypersomnia, are a potentially huge market, but data collection would be necessary.</li>
 <li>As a workaround, the patient can write down when was the lowest period of core body temperature everyday. Not ideal because we lose data and it's cumbersome, but could be sufficient for the time being and certainly better than nothing, but it depends if that would be sufficient to estimate the circadian rhythm. If more complex algos are necessary to analyze and infer the circadian rhythm, then this pen-and-paper method won't work.</li>
@@ -2044,13 +2044,13 @@ Additional technical details:<br>
 <p>
 Simplified protocol for EEG to change batteries and acquire data: Polar H10 and Android phone's recharge need to be done once every 9-10 days. When battery reaches 40% or below, need to change battery under the next 18h.<br>
 <ol type="1" start="1">
-<li>On Android phone, stop recording, then restart the phone (not always necessary but if after changing batteries the sensor cannot be detected in the app, then a restart of the phone is necessary).</li>
+<li>On Android phone, stop recording, then restart the phone (not always necessary but if after changing batteries the sensor cannot be detected in the app, then a restart of the phone is necessary - in general, it's easier and faster to just restart the phone everytime when changing batteries).</li>
 <li>Open Polar H10 sensor and replace battery (can use a spoon if you don't have nails)</li>
 <li>Enable GPS (needs to be enabled at all time, even if there is no SIM card, for the Bluetooth to be able to autoreconnect to the sensor).</li>
 <li>Enable wifi, open polar beats, go to setting to enable dual use but disable ANTS and the GymLink. Then tap the "Back" button on the Android interface, then close the app in multitask browser. Disable Wifi.</li>
 <li>Launch <a href="https://play.google.com/store/apps/details?id=com.j_ware.polarsensorlogger" title="Polar Sensor Logger app on Android" class="https">Polar Sensor Logger app on Android</a> by Jukka Happonen (which is the ECG and ACC data recording app we use), then click on Start recording, set parameters: <b>100 Hz and 4G</b>, the recording should start.</li>
 <li>Check in Android multitasks that the app is locked (swipe to the top or bottom, a lock icon should appear), to reduce risks of it being shutdown by energy saving optimization process.</li>
-<li>Disable WIFI and switch off the screen to save battery.</li>
+<li>Switch off the screen to save battery. Leave WiFi On if you want to record for long periods of time without checking the screen regularly, as the WiFi helps the Bluetooth connection to stay active. But you can disable WiFi to save battery (this approximately doubles battery life) but you then need to check the screen more regularly (at least twice a day) as the Bluetooth connection and the app more often gets killed by the OS.</li>
 <li>Place the phone in the shoulder bag, and wear it at all time.</li>
 </ol>
 </p>
