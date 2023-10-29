@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020.<br>
-Last update: April 2023.<br>
+Last update: October 2023.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -1886,7 +1886,11 @@ This section describes other sensors that can be used in addition but are not ma
 <h2>Acquisition procedure</h2>
 
 <p>
-Instruct participants to clean up the sensors (with alcohol on a cloth) + upload data and free up space on sensors + recharge sensors (even if partially) everytime they take a shower.
+This section presents the data collection procedure, as well as devices recharging and cleaning, that must be done on a regular basis. The frequency is specified for each type of sensor.
+</p>
+
+<p>
+In general: instruct participants to clean up the sensors (with alcohol on a cloth) + upload data and free up space on sensors + recharge sensors (even if partially) everytime they take a shower.
 </p>
 
 <h3>Actigraphy Axivity AX6 acquisition</h3>
@@ -2002,7 +2006,11 @@ Prerequisites:<br>
 <p>
 Wearer (user) collection data for the GreenTEG Core, the user must follow 2 timeschedules in parallel, as there are two types of datasets that are generated:<br>
 <ul style='padding-left: 30pt'>
-<li>For both acquisition types below, the wearer must use the GreenTEG CORE app on an Android device. Both bluetooth and internet connection (wifi or 3-4-5G) must be enabled on the phone. If the CORE device cannot be discovered, recharge it by connecting in USB to a computer and shake it to activate it, a green LED should light up for a brief moment.</li>
+<li>For both acquisition types below, the wearer must use the <a href="https://play.google.com/store/apps/details?id=com.greenteg.core.app&hl=en_US" title="GreenTEG CORE app" class="https">GreenTEG CORE app</a> or the <a href="https://play.google.com/store/apps/details?id=ch.leitwert.apps.cbt_visualizer" title="CALERA research app" class="https">CALERA research app</a> on an Android device. Both bluetooth and internet connection (wifi or 3-4-5G) must be enabled on the phone. If the CORE device cannot be discovered, recharge it by connecting in USB to a computer and shake it to activate it, a green LED should light up for a brief moment.
+<ul>
+<li>About the two apps: All sensors can work with both apps, but when connecting the first time on CALERA, a specific firmware needs to be installed, but then the sensor will still work on both the CALERA app and the CORE app. The CALERA app is made for researchers, it includes additional features if you bought a CALERA sensor (which is the same as the CORE sensor but includes a more expensive licence that offers access to raw values and different calculation algorithms when including heart rate). The CALERA app is historically the original CORE app renamed, and the new CORE app is a new more consumer friendly app. Most of the screenshots shown below are from CALERA/old-CORE, but the instructions work similarly for both apps. An important difference: whereas CALERA can only download the last 48h of data, it seems <b>the new CORE app can download up to 4.5 days</b> (if not more) of data (tested in-situ)!</li>
+</ul>
+</li>
 <li>Locally stored high resolution data (one sample per second = 1Hz, stored on the phone but can be transferred by USB or FTP after) must be done once every 3.5 days and takes 3.5h to be fully processed, and cannot be paused (otherwise the whole process must be restarted from zero - with no loss of data, but no new data can be collected meanwhile). This is also a good opportunity to plug the CORE device to a computer with the provided USB-dipole cable, as the device is immobilized for 3.5h anyway, and a 100% battery recharge takes about 3.5h as well. Make sure WiFi or mobile data (4G/5G) is enabled before opening the app and <b>during the whole transfer</b>, as otherwise the transfer will fail at some point (and it will need to restart from zero).</li>
 <li>Cloud data upload (one sample per 5min) must be done once every 2 days by opening the app's History tab and waiting a few minutes for the full graph to display (data is uploaded simultaneously). Make sure WiFi or mobile data (4G/5G) is enabled before opening the app, otherwise the History tab won't display. Tip: on Android phones, the bandwidth usage can be displayed in the top information bar by enabling the option in the Android Developers parameters menu, this allows to know when the data upload is done.
 <ul>
@@ -2478,9 +2486,18 @@ Given a lot of these issues can only be known by the user/operator on the field,
 <li>BEST METHODS: 1Hz rythmic jerk signal from a tri-axis accelerometer reflects the heart rate at rest! Hence an accelerometer is sufficient to detect heart rate at rest! "Overall, these evaluations indicate that the rhythmic jerk signal can be attributed to the pulse signal and indicate that a simple accelerometer device can acquire pulse information at least when a subject is in the resting state. In the later sections, we will call the ∼1 Hz rhythmic signal of jerk PS as a “pulse-like signal.”" <a href="https://doi.org/10.1016/j.isci.2021.103727" title="https://doi.org/10.1016/j.isci.2021.103727" class="https">https://doi.org/10.1016/j.isci.2021.103727</a></li>
 <li>BEST CRITICAL SUPER VALIDATION: Human chronotype: Comparison of questionnaires and wrist-worn actigraphy, 2021: "Concerning required recording length, features estimated from recordings with 3-week and longer observation periods had sufficient predictive power on unseen data. (...) As actigraphy is considered accurate in sleep-wake cycle detection, we conclude that actigraphy-based chronotyping is appropriate for large-scale studies, especially where higher temporal variability in chronotype is expected." <a href="https://doi.org/10.1080/07420528.2021.1992418" title="https://doi.org/10.1080/07420528.2021.1992418" class="https">https://doi.org/10.1080/07420528.2021.1992418</a></li>
 <li>BEST CRITICAL VALIDATION: Wrist actigraphy has been compared to polysomnography – the “gold standard” for measuring sleep, demonstrating a correlation between subjects in sleep duration over 0.9 in healthy subjects (19) <a href="https://pubmed.ncbi.nlm.nih.gov/9293579" title="https://pubmed.ncbi.nlm.nih.gov/9293579" class="https">https://pubmed.ncbi.nlm.nih.gov/9293579</a></li>
+<li>BEST CRITICAL: The role of actigraphy in the assessment of primary insomnia: a retrospective study, 2014 <a href="https://doi.org/10.1016/j.sleep.2013.08.792" title="https://doi.org/10.1016/j.sleep.2013.08.792" class="https">https://doi.org/10.1016/j.sleep.2013.08.792</a> -- tst and twak ineffective for discrimination + 2 circadian indices from actigraphy?
+<ul>
+<li>We presented quantitative actigraphic criteria to assess sleep quality.</li>
+<li>Terminal wakefulness does not discriminate insomnia patients from normal sleepers.</li>
+<li>We considered the following actigraphic sleep parameters: time in bed (TIB), sleep-onset latency (SOL), total sleep time (TST), wake after sleep onset (WASO), sleep efficiency (SE), number of awakenings (NWAK), terminal wakefulness (TWAK), fragmentation index (FI), and mean motor activity (MA). We also considered two actigraphic circadian indexes: interdaily stability and intradaily variability. Using the Youden index, we calculated the quantitative actigraphic criteria that performed best for each actigraphic sleep parameter. Finally, we created receiver operating characteristic curves to test the accuracy of each criterion identified.</li>
+<li>All sleep parameters except TST and TWAK differentiated the two groups of participants, allowing calculation of quantitative actigraphic criteria. There were no differences in the circadian indices.</li>
+</ul></li>
 </ul></li>
 </ul>
 </p>
+
+<br>
 
 <h3>Wrist skin temperature Thermocron iButtons</h3>
 
