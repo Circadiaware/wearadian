@@ -1,5 +1,5 @@
 # wearadian
-Non-invasive wearable circadian rhythm monitors
+Non-invasive wearable circadian rhythm telemonitoring sensors.
 
 # Description
 This project aims to provide a complete set of clinical-grade devices to monitor over the long-term (1 week to a year) various factors that are well-established in influencing or reflecting the circadian rhythm. In clinical jargon, the aim is to devise wearables for the non-invasive ambulatory supervised monitoring and self-monitoring of human circadian rhythm.
