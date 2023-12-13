@@ -1,4 +1,4 @@
-# wearadian
+# Wearadian
 Non-invasive wearable circadian rhythm telemonitoring sensors.
 
 # Description
