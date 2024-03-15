@@ -11,8 +11,7 @@ To achieve that, we repurpose off-the-shelf components and devices where possibl
 The whole documentation is in the `docs` folder licensed under CC-BY-SA 4.0 and can be read here:
 https://circadiaware.github.io/wearadian/docs/Wearadian.html
 
-The Wearadian version 1 design was ued to acquire the data of the longest running continuously biomarkers-monitored circadian rhythm sleep-wake experiment yet as of March 2024, with the full datase of the completed first and a half year of data collection published on FigShare under the MyNon24Sleep project, licensed under Creative Commons BY 4.0 (CC BY 4.0):
-[https://figshare.com/projects/MyNon24Sleep_-_A_self-study_of_the_circadian_rhythm_and_its_altering_factors/101804](https://figshare.com/projects/MyNon24Sleep_-_A_self-study_of_the_circadian_rhythm_and_its_altering_factors/101804)
+The Wearadian version 1 design was ued to acquire the data of the longest running continuously biomarkers-monitored circadian rhythm sleep-wake experiment yet as of March 2024, with the full datase of the completed first and a half year of data collection published on FigShare under the [MyNon24Sleep project](https://figshare.com/projects/MyNon24Sleep_-_A_self-study_of_the_circadian_rhythm_and_its_altering_factors/101804), licensed under Creative Commons BY 4.0 (CC BY 4.0).
 
 A new version 2 of the Wearadian design, which better accommodates a natural, out of lab setting, is also described in the Wearadian technical documentation (this repository), and was partially collected and published on FigShare under the [MyNon24Sleep v2 project](https://figshare.com/projects/MyNon24Sleep_v2/142817), but was halted midway due to sensors malfunctions due to time wear anda lack of fundings (if you are interested in funding this research, please contact me by e-mail or on reddit private messages).
 
