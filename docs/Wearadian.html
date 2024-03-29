@@ -53,7 +53,7 @@
     
                     <p>
 First created on 19 June 2020.<br>
-Last update: October 2023.<br>
+Last update: March 2024.<br>
 Written by Stephen Karl Larroque.<br>
 ORCID: <a href="https://orcid.org/0000-0002-6248-0957" title="https://orcid.org/0000-0002-6248-0957" class="https">https://orcid.org/0000-0002-6248-0957</a>
 </p>
@@ -127,10 +127,11 @@ Since March 2022, the second year of data collection was done with a revamped ex
 <ul>
 <li>Add new metrics to cover potential confounding factors that were previously untracked, such as meal time, light therapy duration, bright light exposure pattern, hypnogram (EEG determined sleep stages). More precisely:
 <ul>
-<li>Added Dreem 2 at night to collect EEG hypnogram (sleep stages).</li>
+<li>(Rejected) Added Dreem 2 at night to collect EEG hypnogram (sleep stages). Deprecated because the occipital EEG sensor gets damaged very fast and cannot be replaced since the device is not supported anymore (Dreem 3 is now sold exclusively to clinical institutions).</li>
 <li>Circalog for sleep diary instead of Sleepmeter Free.</li>
 <li>Luminette v3 usage history for light therapy usage pattern.</li>
 <li>Lys button for bright light exposure pattern.</li>
+<li><a href="https://www.baeldung.com/cs/deprecated-vs-obsolete" title="Deprecation" class="https">Deprecation</a> and removal of GreenTEG CORE sensor due to <a href="http://dx.doi.org/10.3390/s21175932" title="inaccurate core body temperature measurements (ref)" class="http">inaccurate core body temperature measurements (ref)</a> and AI filtering algorithm is closed-source (difficult to model atypical circadian rhythms).</li>
 </ul>
 </li>
 <li>Minimize diruptions, when data is not collected.</li>
@@ -145,7 +146,7 @@ Since March 2022, the second year of data collection was done with a revamped ex
 <p>
 Overview of the whole wearables system that is worn 24/7:<br>
 <ol type="1" start="1">
-<li>on a chest belt, the following sensors are attached: the ECG Polar H10 in the center of the trunk + Core body temperature sensor GreenTEG CORE on the side of the trunk using a DIY velcro scratch and loop.</li>
+<li>(optional, not directly useful for circadian rhythm estimation) on a chest belt, the following sensors are attached: the ECG Polar H10 in the center of the trunk.</li>
 <li>on the non-dominant (here: left) forearm, the subject wears a cotton sports wrist band with the 3 iButtons to measure wrist skin temperature or ambient temperature + 6-axis actigraphy device AX-6 on the exterior. They are all attached with velcro on the cotton wrist band.</li>
 <li>a pendant hung on a necklace or on the shirt neck, with a photosensor for ambient light conditions (light intensity and color), plus experimental usage history feature in new Luminette v3 devices to monitor light therapy use. The chosen device is LYS for ambient lighting measures. Alternatively, partial instructions to make a DIY light sensor are provided below, but this solution was not chosen due to the difficulties in calibrating DIY light sensors. Since the sensor is relatively far from the eyes, it cannot detect light therapy when done with light therapy glasses such as Luminette because the glasses's leds are conceived to project 500 lux at a small distance just enough to reach the eyes but not much further, hence light therapy usage is monitored with Luminette's experimental usage history feature transferred via Bluetooth on an iPhone 7 device.</li>
 </ol>
@@ -344,7 +345,7 @@ Although there are technical factors specific to each domain of vitals that need
 <li>Higher-grade alternatives (but with much shorter battery or storage space):
 <ul>
 <li><a href="https://www.vitalsignum.com/en/" title="VitalSignum Beat2Phone" class="https">VitalSignum Beat2Phone</a>, costs 500 euros, uses a chest strap, can record medical-grade 2000Hz ECG on internal memory for 24-48h, and data is exportable from the Android app to a computer directly without any cloud service necessary. Medical-grade device that is certified in European Union to diagnose atrial fibrillation. </li>
-<li>Shimmer3 ECG, costs 500 euros, 5-wires 4-leads. Medical-grade ECG using standard wet electrodes.</li>
+<li><a href="https://shimmersensing.com/" title="Shimmer3" class="https">Shimmer3</a> ECG, costs 500 euros, 5-wires 4-leads. Medical-grade ECG using standard wet electrodes. An open-source analysis toolkit in Python is provided <a href="https://github.com/seemoo-lab/pyshimmer" title="here" class="https">here</a> and <a href="https://github.com/roflecopter/pyshimmer" title="here" class="https">here</a>. Shimmer also provides other wireless sensors.</li>
 <li><a href="https://www.researchgate.net/publication/327659029_LoggerBIT_An_Optimization_of_the_OpenLog_Board_for_Data_Logging_with_Low_Cost_Hardware_Platforms_for_Biomedical_Applications" title="BitTalino revolution ECG board with the LoggerBIT firmware and OpenLog breakout board" class="https">BitTalino revolution ECG board with the LoggerBIT firmware and OpenLog breakout board</a> (<a href="https://github.com/BITalinoWorld/firmware-loggerbit" title="sourcecode here" class="https">sourcecode here</a>). Opensource ECG monitor, can record medical-grade 1000Hz ECG using 3-wires wet electrodes on internal memory for 40h with a 700mAh battery (but can use a much longer battery, with a 3000mAh battery the recording can last 7 days).</li>
 <li>PPG devices such as Apple Watch, Oura ring and others are excluded since they cannot acquire the full ECG shape (the QRS), at most they can collect heart rate and heart rate variability.
 <ul>
@@ -386,6 +387,7 @@ Represents circadian alignment's contribution for sleep score. Sleep midpoint ti
 <ul>
 <li><b>GreenTeg CORE for core body temperature:</b>
 <ul>
+<li><b>IMPORTANT NOTE: This sensor is deprecated</b> in future protocols, as <a href="http://dx.doi.org/10.3390/s21175932" title="this paper" class="http">this paper</a> found that it does not accurately measure core body temperature and the AI filtering algorithm is closed-source (difficult to model atypical circadian rhythms), and personally the present document's author has some concerns about the company's customers/patients data management.</li>
 <li>Pros: <b>zero-heat-flux temperature</b>, long battery (<a href="https://www.eoc-inc.com/wp-content/uploads/CORE-datasheet.pdf" title="6 days" class="https">6 days</a> or <a href="https://corebodytemp.com/faq/" title="3-5 days" class="https">3-5 days</a>), wireless bluetooth (and ANT+), 84h (3.5d) of internal storage, sampling rate 1Hz (1 data point per second), <b>chest strap</b>, data export fully possible but not explained in faq need to contact them
 <ul>
 <li>yes confirmed for zero-heat-flux: "CORE uses a thermal energy transfer sensor from greenTEG in combination with a skin temperature sensor to calculate the core body temperature. The AI algorithm calculates the core body temperature with the highest accuracy in comparison to competing technologies. Due to the <b>heat flux sensor</b>, this technology has a high accuracy even in a not controlled environment (e.g. under the sun, during intense physical activity, and within a large range of ambient temperatures and humidity)" <a href="https://corebodytemp.com/faq/" title="https://corebodytemp.com/faq/" class="https">https://corebodytemp.com/faq/</a></li>
@@ -393,7 +395,7 @@ Represents circadian alignment's contribution for sleep score. Sleep midpoint ti
 <li>David Gerritzen wrote in e-mail: "The raw data can be downloaded from the app." when I asked about the raw temperature measurements per second</li>
 <li>BEST CRITICAL VALIDATION: As of 2022: "Provides medical-grade accuracy according to ISO_80601-2-56, Mean Absolute Deviation of 0.21 °C" <a href="https://corebodytemp.com/pages/accuracy-validation" title="https://corebodytemp.com/pages/accuracy-validation" class="https">https://corebodytemp.com/pages/accuracy-validation</a> and <a href="https://www.greenteg.com/public-statement/" title="https://www.greenteg.com/public-statement/" class="https">https://www.greenteg.com/public-statement/</a>
 <ul>
-<li>Original independent study link, showing self-reliability and relative reliability but not absolute value reliability when compared to rectal (as expected): <a href="http://dx.doi.org/10.3390/s21175932" title="http://dx.doi.org/10.3390/s21175932" class="http">http://dx.doi.org/10.3390/s21175932</a>
+<li>Original independent study link, showing self-reliability and relative reliability but not absolute value reliability when compared to rectal: <a href="http://dx.doi.org/10.3390/s21175932" title="http://dx.doi.org/10.3390/s21175932" class="http">http://dx.doi.org/10.3390/s21175932</a>
 <ul>
 <li>"Monitoring core body temperature (Tc) during training and competitions, especially in a hot environment, can help enhance an athlete's performance, as well as lower the risk for heat stroke. Accordingly, a noninvasive sensor that allows reliable monitoring of Tc would be highly beneficial in this context. One such novel non-invasive sensor was recently introduced onto the market (CORE, greenTEG, Rümlang, Switzerland), but, to our knowledge, a validation study of this device has not yet been reported. Therefore, the purpose of this study was to evaluate the validity and reliability of the CORE sensor. In Study I, 12 males were subjected to a low-to-moderate heat load by performing, on two separate occasions several days apart, two identical 60-min bouts of steady-state cycling in the laboratory at 19 °C and 30% relative humidity. In Study II, 13 males were subjected to moderate-to-high heat load by performing 90 min of cycling in the laboratory at 31 °C and 39% relative humidity. In both cases the core body temperatures indicated by the CORE sensor were compared to the corresponding values obtained using a rectal sensor (Trec). The first major finding was that the reliability of the CORE sensor is acceptable, since the mean bias between the two identical trials of exercise (0.02 °C) was not statistically significant. However, under both levels of heat load, the body temperature indicated by the CORE sensor did not agree well with Trec, with approximately 50% of all paired measurements differing by more than the predefined threshold for validity of ≤ 0.3 °C. In conclusion, the results obtained do not support the manufacturer's claim that the CORE sensor provides a valid measure of core body temperature."</li>
 <li>“Compared to the data published by Ganio et al., the CORE sensor has proven to be more accurate than other non-invasive devices (i.e.,devices to assess forehead, oral, temporal, aural, and axillary) used in sports”</li>
@@ -1217,6 +1219,19 @@ New devices using artificial intelligence / machine learning may be able to prov
 
 <p>
 <ul>
+<li>BEST: <b>Hypnodyne ZMax</b>
+<ul>
+<li>Professional clinical-grade portable EEG headset specifically made for sleep stage scoring, but raw EEG is accessible, and a whole night of data is stored in memory sequentially without an operator involvement!</li>
+<li>Costs 1000 euros for the basic package, more to get nasal sensors and others to do at-home polysomnography.</li>
+<li>automatic sleep scoring algorithm provided (proprietary, no sourcecode)</li>
+</ul>
+</li>
+<li>OpenBCI EEG headsets:
+<ul>
+<li>ranges from 400 dollars to 2500 dollars but research grade high quality EEG, better than Hypnodyne and all other EEG headsets for sleep, but this one is generalist, so need to develop tools for sleep or use open-source packages!</li>
+<li>See Ultracortex "Mark IV" EEG Headset at 400 dollars, or Cyton at 999 dollars</li>
+</ul>
+</li>
 <li><b>Dreem 2 headband</b>: includes EEG and movement sensors.
 <ul>
 <li>BEST: scientific independent review <a href="https://www.youtube.com/watch?v=3JoxXVUB2Mo" title="https://www.youtube.com/watch?v=3JoxXVUB2Mo" class="https">https://www.youtube.com/watch?v=3JoxXVUB2Mo</a>
@@ -1230,7 +1245,12 @@ New devices using artificial intelligence / machine learning may be able to prov
 <li>12h battery: <a href="https://support.dreem.com/hc/en-us/articles/115003926545-The-battery" title="https://support.dreem.com/hc/en-us/articles/115003926545-The-battery" class="https">https://support.dreem.com/hc/en-us/articles/115003926545-The-battery</a></li>
 <li>Only v1 has replaceable electrodes, and a second pack is provided: <a href="https://support.dreem.com/hc/en-gb/articles/115001059911-How-to-Replace-the-back-sensors" title="https://support.dreem.com/hc/en-gb/articles/115001059911-How-to-Replace-the-back-sensors" class="https">https://support.dreem.com/hc/en-gb/articles/115001059911-How-to-Replace-the-back-sensors</a></li>
 <li>299e with discount in 2020: <a href="https://www.dealabs.com/bons-plans/dreem-2-avec-bloc-de-charge-2040159" title="https://www.dealabs.com/bons-plans/dreem-2-avec-bloc-de-charge-2040159" class="https">https://www.dealabs.com/bons-plans/dreem-2-avec-bloc-de-charge-2040159</a></li>
-<li>not sold to public anymore: <a href="https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php" title="https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php" class="https">https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php</a></li>
+<li>not sold to public anymore: <a href="https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php" title="https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php" class="https">https://business.lesechos.fr/entrepreneurs/actu/0610583378133-medtech-dreem-perd-son-pdg-et-pivote-vers-le-btob-342543.php</a>
+<ul>
+<li>Now it's only V3 that is sold and much more expensive (1700-2500 euros) and to clinical professionals only (B2B).</li>
+<li>also the EEG raw data is not accessible, even though it is stored on their servers, only the automatically computed hypnogram is downloadable, for the raw EEG need to get a V3 headset.</li>
+</ul>
+</li>
 <li><a href="https://support.dreem.com/hc/fr/articles/360029195871-Diff%C3%A9rences-entre-Dreem-1-et-Dreem-2" title="https://support.dreem.com/hc/fr/articles/360029195871-Diff%C3%A9rences-entre-Dreem-1-et-Dreem-2" class="https">https://support.dreem.com/hc/fr/articles/360029195871-Diff%C3%A9rences-entre-Dreem-1-et-Dreem-2</a></li>
 <li><a href="https://www.reddit.com/r/Biohackers/comments/r8qzs4/where_to_find_a_used_dreem_2_headband_device_in/" title="https://www.reddit.com/r/Biohackers/comments/r8qzs4/where_to_find_a_used_dreem_2_headband_device_in/" class="https">https://www.reddit.com/r/Biohackers/comments/r8qzs4/where_to_find_a_used_dreem_2_headband_device_in/</a></li>
 <li>Alternative: philips sleep band 2</li>
@@ -1240,6 +1260,7 @@ New devices using artificial intelligence / machine learning may be able to prov
 <li><a href="https://support.dreem.com/hc/en-gb/articles/4404699183506-Data-storage" title="https://support.dreem.com/hc/en-gb/articles/4404699183506-Data-storage" class="https">https://support.dreem.com/hc/en-gb/articles/4404699183506-Data-storage</a></li>
 <li><a href="https://support.dreem.com/hc/en-us/articles/4404459085202-How-to-connect-to-the-dreem-portal" title="https://support.dreem.com/hc/en-us/articles/4404459085202-How-to-connect-to-the-dreem-portal" class="https">https://support.dreem.com/hc/en-us/articles/4404459085202-How-to-connect-to-the-dreem-portal</a></li>
 <li>research license required to access raw eeg data... <a href="https://www.reddit.com/r/Biohackers/comments/d8vy9r/my_first_night_with_the_dreem_2_wish_me_luck/" title="https://www.reddit.com/r/Biohackers/comments/d8vy9r/my_first_night_with_the_dreem_2_wish_me_luck/" class="https">https://www.reddit.com/r/Biohackers/comments/d8vy9r/my_first_night_with_the_dreem_2_wish_me_luck/</a></li>
+<li>BIG ISSUE: the occipital electrode tends to break very easily and then the headset is broken for good. One way to increase durability is to add medical tape, but still it will break.</li>
 </ul>
 </li>
 <li>Muse S, an alternative to Dreem
@@ -2416,6 +2437,15 @@ Given a lot of these issues can only be known by the user/operator on the field,
 <li>Can resample CWA file into WAV file, will not overwrite original</li>
 <li><a href="https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers" title="https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers" class="https">https://cran.r-project.org/web/packages/GGIR/vignettes/GGIR.html#daysleepers-nights-workers</a></li>
 <li><a href="https://axivity.com/userguides/ax3/using/" title="https://axivity.com/userguides/ax3/using/" class="https">https://axivity.com/userguides/ax3/using/</a> recommends: To fix the sensor to other body positions where a strap or clip is not feasible, Axivity recommends the use of Hypafix or Flexifix dressings.</li>
+<li><b>BEST: AASM 2018 clinical guidelines recommend the use of actigraphy for diagnosis of CRSWD</b> + confirm that <b>actigraphy is complementary to sleep logs</b>, not a replacement:
+<ul>
+<li>Use of Actigraphy for the Evaluation of Sleep Disorders and Circadian Rhythm Sleep-Wake Disorders: An American Academy of Sleep Medicine Clinical Practice Guideline, 2018, <a href="https://pubmed.ncbi.nlm.nih.gov/29991437/" title="https://pubmed.ncbi.nlm.nih.gov/29991437/" class="https">https://pubmed.ncbi.nlm.nih.gov/29991437/</a> "We suggest that <b>clinicians use actigraphy in the assessment of adult patients with circadian rhythm sleep-wake disorder</b>."</li>
+<li>Use of Actigraphy for the Evaluation of Sleep Disorders and Circadian Rhythm Sleep-Wake Disorders: An American Academy of Sleep Medicine Systematic Review, Meta-Analysis, and GRADE Assessment, 2018, <a href="https://pubmed.ncbi.nlm.nih.gov/29991438/" title="https://pubmed.ncbi.nlm.nih.gov/29991438/" class="https">https://pubmed.ncbi.nlm.nih.gov/29991438/</a> 
+<ul>
+<li>"These data demonstrate that <b>actigraphy provides consistent objective data</b> that is <b>often unique from patient-reported sleep logs</b> for some sleep parameters in adult and pediatric patients with suspected or diagnosed insomnia, <b>circadian rhythm sleep-wake disorders</b>, sleep-disordered breathing, central disorders of hypersomnolence, and adults with insufficient sleep syndrome." (hypersomnia too = central disorders of hypersomnolence)</li>
+</ul></li>
+</ul>
+</li>
 <li><b>actigraphy: auto method to detect SPT window (ie, when sleep starts and ends), then can use their other tools to detect sleep stage:</b> Estimating sleep parameters using an accelerometer without sleep diary <a href="https://www.nature.com/articles/s41598-018-31266-z" title="https://www.nature.com/articles/s41598-018-31266-z" class="https">https://www.nature.com/articles/s41598-018-31266-z</a>
 <ul>
 <li>"Wrist-worn raw-data accelerometers are increasingly used for the assessment of physical activity in large population studies such as the Whitehall II study or mega-cohorts such as UK Biobank1,2,3. The decision to use raw-data accelerometers is motivated by the <b>improved comparability of output across different sensor brands</b>4,5, and better control over all steps in data processing6. Accelerometers are commonly worn for 24 hours per day, thus providing information over the day and night; making them potentially valuable for sleep research." using GGIR R package</li>
@@ -2526,7 +2556,7 @@ Given a lot of these issues can only be known by the user/operator on the field,
         if verbose:
             print('Autodetecting outbreak at day %i (%s)' % (firstoutbreak, str(firstoutbreakdate)))
         # Return the sliced data from the pre-outbreak dates
-        return origdata[firstoutbreak:], firstoutbreak, firstoutbreakdate</code></pre>
+    return origdata[firstoutbreak:], firstoutbreak, firstoutbreakdate</code></pre>
 </div>
 
 <p>
@@ -2671,8 +2701,16 @@ Given a lot of these issues can only be known by the user/operator on the field,
 <li>ME IDEA: for interventions targeting directly the body temperature (such as Circacadoo's sauna blanket method or heat training suit by GreenTEG CORE), check whether wearing these accelerates/shorten the circadian clock.
 <ul>
 <li>RATIONALE: temperature affects all biological organisms, with a higher temperature making cycles faster/shorter, including the circadian rhythm, see works on neuronal resilience under different temperatures simulating climate change by the legendary Pr. Eve Marder: <a href="https://www.quantamagazine.org/eve-marder-on-the-crucial-resilience-of-neurons-20210517/" title="https://www.quantamagazine.org/eve-marder-on-the-crucial-resilience-of-neurons-20210517/" class="https">https://www.quantamagazine.org/eve-marder-on-the-crucial-resilience-of-neurons-20210517/</a></li>
-</ul></li>
 </ul>
+</li>
+<li>BEST METHOD: method described by user maxiQS on the DSPD subreddit: <a href="https://old.reddit.com/r/DSPD/comments/18mpps5/circadian_rhythm_detection_with_greenteg_core/" title="https://old.reddit.com/r/DSPD/comments/18mpps5/circadian_rhythm_detection_with_greenteg_core/" class="https">https://old.reddit.com/r/DSPD/comments/18mpps5/circadian_rhythm_detection_with_greenteg_core/</a></li>
+</ul>
+&gt; Period calulated by using zeitgeber R package (Wavelet) and cosinor was fitted by using cosinor R package.<br>
+&gt; Device worn on the right part of abdomen.<br>
+&gt; I discarded values with quality less than 3 and values bigger than 99.5% percentile and lower than 0.5% percentile.<br>
+&gt; Circadian night can be clearly seen and siesta dip (16-17) can be seen too.<br>
+&gt; Morning and Evening spikes seems to be because of my usual activity - running / gym in the morning and evening walk.<br>
+<img src="./Wearadian_files/pasted_image025.png" width="600">
 </p>
 
 <h3>Light sensor on AX6</h3>
@@ -2730,6 +2768,7 @@ Given a lot of these issues can only be known by the user/operator on the field,
 <ul>
 <li>ECG may be an objective estimator of sleep deprivation? And hence how many nights of good sleep are necessary before full recovery?
 <ul>
+<li>BESTTUTO CRITICAL METHODS: HRV analysis tutorial in Python <a href="https://github.com/pickus91/HRV" title="https://github.com/pickus91/HRV" class="https">https://github.com/pickus91/HRV</a></li>
 <li>Robust circadian rhythm in heart rate and its variability: influence of exogenous melatonin and photoperiod, 2007 <a href="https://pubmed.ncbi.nlm.nih.gov/17542944/" title="https://pubmed.ncbi.nlm.nih.gov/17542944/" class="https">https://pubmed.ncbi.nlm.nih.gov/17542944/</a></li>
 <li>python module to analyze ECG data easily, in SleepNon24 notes</li>
 <li><b>BEST CRITICAL</b>: PhD Thesis: Crosstalk between Synchronizers and the Human Circadian System, D. Antonio Martinez Nicolas, 2014, PhD Thesis <a href="http://hdl.handle.net/10201/40027" title="http://hdl.handle.net/10201/40027" class="http">http://hdl.handle.net/10201/40027</a>
@@ -2809,10 +2848,22 @@ if these influences are small is it also determined by the rhythm of body temper
 <li>Dynamic heart rate variability: a tool for exploring sympathovagal balance continuously during sleep in men. 1998 <a href="https://pubmed.ncbi.nlm.nih.gov/9724299/" title="https://pubmed.ncbi.nlm.nih.gov/9724299/" class="https">https://pubmed.ncbi.nlm.nih.gov/9724299/</a></li>
 <li>Temporal relationship between dynamic heart rate variability and electroencephalographic activity during sleep in man. 1997 <a href="https://pubmed.ncbi.nlm.nih.gov/9237486/" title="https://pubmed.ncbi.nlm.nih.gov/9237486/" class="https">https://pubmed.ncbi.nlm.nih.gov/9237486/</a></li>
 <li>WTF is this BS from Oura??? It's literally like divination from tea leaves, but here from heart rate graph: <a href="https://ouraring.com/blog/sleeping-heart-rate/" title="https://ouraring.com/blog/sleeping-heart-rate/" class="https">https://ouraring.com/blog/sleeping-heart-rate/</a></li>
+<li>We reveal the presence of bidirectional couplings between the studied processes in all age groups. Our results show that the <b>coupling from respiration to the process of parasympathetic control of the heart rate is stronger than the coupling in the opposite direction</b>. The difference in the strength of bidirectional couplings between the considered processes is <b>most pronounced in deep sleep</b>. <a href="https://doi.org/10.3389/fnetp.2022.942700" title="https://doi.org/10.3389/fnetp.2022.942700" class="https">https://doi.org/10.3389/fnetp.2022.942700</a></li>
+<li>BEST SUPER TOP: sleep deprivation does not affect HRV measures? <a href="https://doi.org/10.1161/01.HYP.35.5.1173" title="https://doi.org/10.1161/01.HYP.35.5.1173" class="https">https://doi.org/10.1161/01.HYP.35.5.1173</a> But a more recent study found the opposite, using modern day wearables <a href="https://doi.org/10.3389/fnins.2021.642548" title="https://doi.org/10.3389/fnins.2021.642548" class="https">https://doi.org/10.3389/fnins.2021.642548</a></li>
+<li>BEST SUPER METHOD HRV by maxiQS: <a href="https://blog.kto.to/ecg-hrv-24-7-science-qs" title="https://blog.kto.to/ecg-hrv-24-7-science-qs" class="https">https://blog.kto.to/ecg-hrv-24-7-science-qs</a>
+<ul>
+<li>probably inspired by HRV analysis tutorial in Python <a href="https://github.com/pickus91/HRV" title="https://github.com/pickus91/HRV" class="https">https://github.com/pickus91/HRV</a></li>
+<li>sourcecode released: <a href="https://github.com/roflecopter/qskit" title="https://github.com/roflecopter/qskit" class="https">https://github.com/roflecopter/qskit</a></li>
+<li>BEST SUPER METHOD: Samuel Pröll. ECG R peak detection in Python: a comparison of libraries. <a href="https://www.samproell.io/posts/signal/ecg-library-comparison/" title="https://www.samproell.io/posts/signal/ecg-library-comparison/" class="https">https://www.samproell.io/posts/signal/ecg-library-comparison/</a>
+<ul>
+<li>sleepecg best by far</li>
+<li>for highest accuracy, use WFDB’s XQRS</li>
+</ul></li>
+</ul></li>
 </ul>
 </p>
 
-<h3>Hypnogram (sleep staging)</h3>
+<h3>Hypnogram EEG (sleep staging aka sleep scoring)</h3>
 
 <p>
 <ul>
@@ -2828,13 +2879,15 @@ if these influences are small is it also determined by the rhythm of body temper
 <li><a href="https://github.com/Dreem-Organization/dreem-learning-evaluation" title="https://github.com/Dreem-Organization/dreem-learning-evaluation" class="https">https://github.com/Dreem-Organization/dreem-learning-evaluation</a></li>
 </ul>
 </li>
-<li>BEST TOOL: An open-source, high-performance tool for automated sleep staging, Raphael Vallat (author of the famous scikit-learn) and Matthew P Walker, 2021 <a href="https://doi.org/10.7554/eLife.70092" title="https://doi.org/10.7554/eLife.70092" class="https">https://doi.org/10.7554/eLife.70092</a> and <a href="https://github.com/raphaelvallat/yasa" title="https://github.com/raphaelvallat/yasa" class="https">https://github.com/raphaelvallat/yasa</a>
+<li>BEST TOOL: An open-source, high-performance tool for automated sleep staging, Raphael Vallat (author of the famous scikit-learn) and Matthew P Walker, 2021 <a href="https://doi.org/10.7554/eLife.70092" title="https://doi.org/10.7554/eLife.70092" class="https">https://doi.org/10.7554/eLife.70092</a> and <a href="https://github.com/raphaelvallat/yasa" title="https://github.com/raphaelvallat/yasa" class="https">https://github.com/raphaelvallat/yasa</a> (used by one member of the DSPD subreddit: <a href="https://blog.kto.to/ecg-hrv-24-7-science-qs" title="https://blog.kto.to/ecg-hrv-24-7-science-qs" class="https">https://blog.kto.to/ecg-hrv-24-7-science-qs</a> )
 <ul>
 <li>python tool to analyze polysomnographic sleep recordings</li>
 <li>"Our sleep algorithm, colloquially termed YASA (Vallet, 2018) (<a href="https://github.com/raphaelvallat/yasa" title="https://github.com/raphaelvallat/yasa" class="https">https://github.com/raphaelvallat/yasa</a>), is part of a broader sleep analysis package (or ‘library’), written in Python. In addition to the automatic sleep-staging module we describe here, YASA also includes several additional functions such as automatic detection of sleep spindles and slow-waves, automatic artifact rejection, calculation of sleep statistics from a hypnogram, spectral power estimation (e.g., Figure 3B), and phase-amplitude coupling. However, use of the basic sleep-staging module is not at all contingent on a desire to quantify any of these metrics. Simply that they are on offer as additional tools in the software suit, should the user wish."</li>
 </ul>
 </li>
 <li>BEST DATASET and methods: Dreem Open Datasets: Multi-Scored Sleep Datasets to compare Human and Automated sleep staging, v4 2020, <a href="https://arxiv.org/abs/1911.03221" title="https://arxiv.org/abs/1911.03221" class="https">https://arxiv.org/abs/1911.03221</a></li>
+<li>BEST METHOD: a new way to score, without the time consuming manual approach of constructing a hypnogram: <a href="https://github.com/preraulab/multitaper_toolbox" title="https://github.com/preraulab/multitaper_toolbox" class="https">https://github.com/preraulab/multitaper_toolbox</a> and <a href="https://prerau.bwh.harvard.edu/multitaper/" title="https://prerau.bwh.harvard.edu/multitaper/" class="https">https://prerau.bwh.harvard.edu/multitaper/</a> and simplified implementation <a href="http://prerau.bwh.harvard.edu/multitaper_spectrogram/multitaper_spectrogram.m" title="http://prerau.bwh.harvard.edu/multitaper_spectrogram/multitaper_spectrogram.m" class="http">http://prerau.bwh.harvard.edu/multitaper_spectrogram/multitaper_spectrogram.m</a> and scoring manual using this method <a href="https://prerau.bwh.harvard.edu/spectral_scoring/Spectral%20Sleep%20Scoring%20Manual%2004-02-15.pdf" title="https://prerau.bwh.harvard.edu/spectral_scoring/Spectral%20Sleep%20Scoring%20Manual%2004-02-15.pdf" class="https">https://prerau.bwh.harvard.edu/spectral_scoring/Spectral%20Sleep%20Scoring%20Manual%2004-02-15.pdf</a></li>
+<li><a href="https://github.com/raphaelvallat/antropy" title="https://github.com/raphaelvallat/antropy" class="https">https://github.com/raphaelvallat/antropy</a></li>
 </ul>
 </p>
 
